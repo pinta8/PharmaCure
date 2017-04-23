@@ -240,5 +240,3 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-
-!/DB/DB/bin/Debug/DB.dll
