@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 
-namespace DB
+namespace Data_Layer
 {
     public class DBCon
     {

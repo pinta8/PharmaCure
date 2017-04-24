@@ -1,6 +1,6 @@
 ﻿namespace PharmaCure
 {
-    partial class Form1
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
 			this.btnPrijaviSe = new System.Windows.Forms.Button();
 			this.lblKorisnickoIme = new System.Windows.Forms.Label();
 			this.lblLozinka = new System.Windows.Forms.Label();
