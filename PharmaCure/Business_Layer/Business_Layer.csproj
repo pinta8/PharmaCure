@@ -43,6 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Akcija.cs" />
+    <Compile Include="ArtikliRacun.cs" />
+    <Compile Include="Dostupnost.cs" />
+    <Compile Include="Kategorija.cs" />
+    <Compile Include="Klijent.cs" />
+    <Compile Include="Lijekovi.cs" />
+    <Compile Include="LijekoviOsiguranje.cs" />
+    <Compile Include="LijekoviRecept.cs" />
+    <Compile Include="Narudzba.cs" />
+    <Compile Include="Osiguranje.cs" />
+    <Compile Include="PopisOsiguranihLijekova.cs" />
+    <Compile Include="PopisRezervacija.cs" />
+    <Compile Include="Poslovnica.cs" />
+    <Compile Include="Racun.cs" />
+    <Compile Include="Rezervacija.cs" />
     <Compile Include="Zaposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
