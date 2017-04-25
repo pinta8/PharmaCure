@@ -49,6 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDodajZaposlenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajZaposlenika.Designer.cs">
+      <DependentUpon>FrmDodajZaposlenika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDostava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDostava.Designer.cs">
+      <DependentUpon>FrmDostava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKolicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKolicine.Designer.cs">
+      <DependentUpon>FrmKolicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +78,30 @@
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNabava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNabava.Designer.cs">
+      <DependentUpon>FrmNabava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPopisLijekova.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPopisLijekova.Designer.cs">
+      <DependentUpon>FrmPopisLijekova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProdaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProdaja.Designer.cs">
+      <DependentUpon>FrmProdaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRecepti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRecepti.Designer.cs">
+      <DependentUpon>FrmRecepti.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
