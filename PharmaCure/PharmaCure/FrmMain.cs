@@ -10,22 +10,19 @@ using System.Windows.Forms;
 
 namespace PharmaCure
 {
-    public partial class FrmLogin : Form
+    public partial class FrmMain : Form
     {
-        public FrmLogin()
+        public FrmMain()
         {
             InitializeComponent();
         }
 
-		private void button1_Click(object sender, EventArgs e) {
-            FrmMain m = new FrmMain();
-            this.Hide();
-            m.Show();
-		}
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnIzlaz_Click_1(object sender, EventArgs e)
         {
+            FrmLogin l = new FrmLogin();
+            l.Show();
             this.Close();
+            
         }
     }
 }
