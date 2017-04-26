@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.btnPovratak = new System.Windows.Forms.Button();
+            this.dgvLijekovi = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLijekovi)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPovratak
@@ -41,15 +43,26 @@
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
+            // dgvLijekovi
+            // 
+            this.dgvLijekovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLijekovi.Location = new System.Drawing.Point(39, 87);
+            this.dgvLijekovi.Name = "dgvLijekovi";
+            this.dgvLijekovi.Size = new System.Drawing.Size(827, 359);
+            this.dgvLijekovi.TabIndex = 2;
+            // 
             // FrmPopisLijekova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 485);
+            this.Controls.Add(this.dgvLijekovi);
             this.Controls.Add(this.btnPovratak);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPopisLijekova";
             this.Text = "FrmPopisLijekova";
+            this.Load += new System.EventHandler(this.FrmPopisLijekova_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLijekovi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -57,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnPovratak;
+        private System.Windows.Forms.DataGridView dgvLijekovi;
     }
 }

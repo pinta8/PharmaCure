@@ -83,6 +83,7 @@
             this.tbxLozinka.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tbxLozinka.Location = new System.Drawing.Point(131, 144);
             this.tbxLozinka.Name = "tbxLozinka";
+            this.tbxLozinka.PasswordChar = '*';
             this.tbxLozinka.Size = new System.Drawing.Size(207, 23);
             this.tbxLozinka.TabIndex = 4;
             // 
