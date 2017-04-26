@@ -36,6 +36,9 @@
 			this.tbxLozinka = new System.Windows.Forms.TextBox();
 			this.cbxPoslovnice = new System.Windows.Forms.ComboBox();
 			this.btnDodaj = new System.Windows.Forms.Button();
+			this.dgvZaposlenici = new System.Windows.Forms.DataGridView();
+			this.lblZaposlenici = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnPovratak
@@ -52,7 +55,7 @@
 			// 
 			this.lblKorisnickoIme.AutoSize = true;
 			this.lblKorisnickoIme.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.lblKorisnickoIme.Location = new System.Drawing.Point(338, 134);
+			this.lblKorisnickoIme.Location = new System.Drawing.Point(560, 142);
 			this.lblKorisnickoIme.Name = "lblKorisnickoIme";
 			this.lblKorisnickoIme.Size = new System.Drawing.Size(100, 17);
 			this.lblKorisnickoIme.TabIndex = 1;
@@ -62,7 +65,7 @@
 			// 
 			this.lblLozinka.AutoSize = true;
 			this.lblLozinka.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.lblLozinka.Location = new System.Drawing.Point(338, 187);
+			this.lblLozinka.Location = new System.Drawing.Point(560, 195);
 			this.lblLozinka.Name = "lblLozinka";
 			this.lblLozinka.Size = new System.Drawing.Size(56, 17);
 			this.lblLozinka.TabIndex = 2;
@@ -72,7 +75,7 @@
 			// 
 			this.lblPoslovnica.AutoSize = true;
 			this.lblPoslovnica.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.lblPoslovnica.Location = new System.Drawing.Point(338, 243);
+			this.lblPoslovnica.Location = new System.Drawing.Point(560, 251);
 			this.lblPoslovnica.Name = "lblPoslovnica";
 			this.lblPoslovnica.Size = new System.Drawing.Size(78, 17);
 			this.lblPoslovnica.TabIndex = 3;
@@ -81,7 +84,7 @@
 			// tbxKorisnickoIme
 			// 
 			this.tbxKorisnickoIme.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.tbxKorisnickoIme.Location = new System.Drawing.Point(457, 134);
+			this.tbxKorisnickoIme.Location = new System.Drawing.Point(679, 142);
 			this.tbxKorisnickoIme.Name = "tbxKorisnickoIme";
 			this.tbxKorisnickoIme.Size = new System.Drawing.Size(146, 23);
 			this.tbxKorisnickoIme.TabIndex = 4;
@@ -89,7 +92,7 @@
 			// tbxLozinka
 			// 
 			this.tbxLozinka.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.tbxLozinka.Location = new System.Drawing.Point(457, 183);
+			this.tbxLozinka.Location = new System.Drawing.Point(679, 191);
 			this.tbxLozinka.Name = "tbxLozinka";
 			this.tbxLozinka.Size = new System.Drawing.Size(146, 23);
 			this.tbxLozinka.TabIndex = 5;
@@ -98,7 +101,7 @@
 			// 
 			this.cbxPoslovnice.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.cbxPoslovnice.FormattingEnabled = true;
-			this.cbxPoslovnice.Location = new System.Drawing.Point(457, 237);
+			this.cbxPoslovnice.Location = new System.Drawing.Point(679, 245);
 			this.cbxPoslovnice.Name = "cbxPoslovnice";
 			this.cbxPoslovnice.Size = new System.Drawing.Size(146, 25);
 			this.cbxPoslovnice.TabIndex = 6;
@@ -106,7 +109,7 @@
 			// btnDodaj
 			// 
 			this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.btnDodaj.Location = new System.Drawing.Point(420, 291);
+			this.btnDodaj.Location = new System.Drawing.Point(642, 299);
 			this.btnDodaj.Name = "btnDodaj";
 			this.btnDodaj.Size = new System.Drawing.Size(90, 36);
 			this.btnDodaj.TabIndex = 7;
@@ -114,11 +117,31 @@
 			this.btnDodaj.UseVisualStyleBackColor = true;
 			this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
 			// 
+			// dgvZaposlenici
+			// 
+			this.dgvZaposlenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvZaposlenici.Location = new System.Drawing.Point(31, 120);
+			this.dgvZaposlenici.Name = "dgvZaposlenici";
+			this.dgvZaposlenici.Size = new System.Drawing.Size(434, 226);
+			this.dgvZaposlenici.TabIndex = 8;
+			// 
+			// lblZaposlenici
+			// 
+			this.lblZaposlenici.AutoSize = true;
+			this.lblZaposlenici.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.lblZaposlenici.Location = new System.Drawing.Point(28, 94);
+			this.lblZaposlenici.Name = "lblZaposlenici";
+			this.lblZaposlenici.Size = new System.Drawing.Size(79, 17);
+			this.lblZaposlenici.TabIndex = 9;
+			this.lblZaposlenici.Text = "Zaposlenici";
+			// 
 			// FrmDodajZaposlenika
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(915, 485);
+			this.Controls.Add(this.lblZaposlenici);
+			this.Controls.Add(this.dgvZaposlenici);
 			this.Controls.Add(this.btnDodaj);
 			this.Controls.Add(this.cbxPoslovnice);
 			this.Controls.Add(this.tbxLozinka);
@@ -130,6 +153,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FrmDodajZaposlenika";
 			this.Text = "FrmDodajZaposlenika";
+			((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -145,5 +169,7 @@
 		private System.Windows.Forms.TextBox tbxLozinka;
 		private System.Windows.Forms.ComboBox cbxPoslovnice;
 		private System.Windows.Forms.Button btnDodaj;
+		private System.Windows.Forms.DataGridView dgvZaposlenici;
+		private System.Windows.Forms.Label lblZaposlenici;
 	}
 }

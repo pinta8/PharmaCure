@@ -19,7 +19,11 @@ namespace PharmaCure
 			cbxPoslovnice.DataSource = Poslovnica.DohvatiPoslovniceZaComboBox();
 			cbxPoslovnice.ValueMember = "PoslovnicaId";
 			cbxPoslovnice.DisplayMember = "Naziv";
-        }
+			dgvZaposlenici.DataSource = Zaposlenik.VratiSveZaposlenike();
+			dgvZaposlenici.Columns[2].Visible = false;
+			dgvZaposlenici.Columns[3].Visible = false;
+
+		}
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {

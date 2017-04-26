@@ -100,7 +100,7 @@ namespace Business_Layer
 		static public void ZapisiPoslovnicu(Poslovnica poslovnicaUnos) {
 			Poslovnica p = poslovnicaUnos;
 			DBCon baza = new DBCon();
-			SqlCommand command = new SqlCommand("INSERT INTO Poslovnica (Naziv,Drzava,Grad,Ulica,Broj) VALUES (@ID_Poslovnica, @Naziv, @Drzava, @Grad, @Ulica, @Broj)");
+			SqlCommand command = new SqlCommand("INSERT INTO Poslovnica (Naziv,Drzava,Grad,Ulica,Broj) VALUES (@Naziv, @Drzava, @Grad, @Ulica, @Broj)");
 			command.Parameters.AddWithValue("@Naziv", p.Naziv);
 			command.Parameters.AddWithValue("@Drzava", p.Drzava);
 			command.Parameters.AddWithValue("@Grad", p.Grad);

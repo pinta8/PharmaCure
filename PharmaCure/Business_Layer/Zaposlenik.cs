@@ -15,6 +15,7 @@ namespace Business_Layer
 		string korisnickoIme;
 		string lozinka;
 		int poslovnicaId;
+		string nazivPoslovnice;
 
 		public string KorisnickoIme {
 			get {
@@ -55,7 +56,17 @@ namespace Business_Layer
 				zaposlenikId = value;
 			}
 		}
-		
+
+		public string NazivPoslovnice {
+			get {
+				return nazivPoslovnice;
+			}
+
+			set {
+				nazivPoslovnice = value;
+			}
+		}
+
 		static public Zaposlenik DohvatiZaposlenika(string korisnickoIme, string lozinka) {
 			DBCon baza = new DBCon();
 			SqlCommand command = new SqlCommand("SELECT ID_Djelatnika,Ime,Lozinka,ID_Poslovnice FROM Djelatnik WHERE Ime='" + korisnickoIme+"' AND Lozinka = '"+lozinka+"'");
@@ -80,6 +91,26 @@ namespace Business_Layer
 			command.Parameters.AddWithValue("@Lozinka", zaposlenik.Lozinka);
 			command.Parameters.AddWithValue("@ID_Poslovnice", zaposlenik.PoslovnicaId);
 			baza.IzvrsiUpit(command);
+		}
+		static public List<Zaposlenik> VratiSveZaposlenike() {
+			List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
+			DBCon baza = new DBCon();
+			SqlCommand command = new SqlCommand("SELECT d.Ime,d.Lozinka,(SELECT Naziv FROM poslovnica p where p.ID_Poslovnica = d.ID_Poslovnice) as naziv FROM djelatnik d");
+			DataTable dt = baza.DohvatiDT(command);
+			if (dt.Rows.Count == 0) {
+				return null;
+			}
+			else {
+				foreach (DataRow row in dt.Rows) {
+					Zaposlenik z = new Zaposlenik();
+					z.korisnickoIme = (string)row["Ime"];
+					z.lozinka= (string)row["Lozinka"];
+					z.nazivPoslovnice = ("naziv");
+					zaposlenici.Add(z);
+
+				}
+				return zaposlenici;
+			}
 		}
 	}
 }
