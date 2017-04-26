@@ -35,7 +35,7 @@ namespace PharmaCure
 			z.Lozinka = tbxLozinka.Text;
 			z.PoslovnicaId = p.PoslovnicaId;
 			
-			//Zaposlenik.ZapisiZaposlenika(z);
+			Zaposlenik.ZapisiZaposlenika(z);
  		}
 	}
 }

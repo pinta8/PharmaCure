@@ -73,5 +73,11 @@ namespace PharmaCure
             recepti.Show();
             this.Close();
         }
-    }
+
+		private void btnDodajPoslovnicu_Click(object sender, EventArgs e) {
+			FrmDodajPoslovnicu posl = new FrmDodajPoslovnicu();
+			posl.Show();
+			this.Close();
+		}
+	}
 }
