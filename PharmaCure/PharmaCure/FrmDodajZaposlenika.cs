@@ -42,7 +42,7 @@ namespace PharmaCure
 			z.PoslovnicaId = p.PoslovnicaId;
 			
 			Zaposlenik.ZapisiZaposlenika(z);
-			zaposlenici = Zaposlenik.VratiSveZaposlenike();
+			zaposlenici = Zaposlenik.VratiSveZaposlenike();//
 			dgvZaposlenici.DataSource = zaposlenici;
 		}
 

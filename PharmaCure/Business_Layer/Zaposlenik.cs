@@ -83,15 +83,18 @@ namespace Business_Layer
 				return z;
 			}		
 		}
+
 		static public void ZapisiZaposlenika(Zaposlenik zaposlenikUnos) {
 			Zaposlenik zaposlenik = zaposlenikUnos;
 			DBCon baza = new DBCon();
-			SqlCommand command=new SqlCommand("INSERT INTO Djelatnik (Ime,Lozinka,ID_Poslovnice) VALUES (@ID_Djelatnika, @Ime, @Lozinka, @ID_Poslovnice)");
+			SqlCommand command=new SqlCommand("INSERT INTO Djelatnik (Ime,Lozinka,ID_Poslovnice) VALUES (@Ime, @Lozinka, @ID_Poslovnice)");
 			command.Parameters.AddWithValue("@Ime", zaposlenik.KorisnickoIme);
 			command.Parameters.AddWithValue("@Lozinka", zaposlenik.Lozinka);
 			command.Parameters.AddWithValue("@ID_Poslovnice", zaposlenik.PoslovnicaId);
 			baza.IzvrsiUpit(command);
+			
 		}
+
 		static public List<Zaposlenik> VratiSveZaposlenike() {
 			List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
 			DBCon baza = new DBCon();
@@ -114,6 +117,7 @@ namespace Business_Layer
 				return zaposlenici;
 			}
 		}
+
 		static public void IzbrisiZaposlenikaIzBaze(Zaposlenik zaposlenikUnos) {
 			Zaposlenik zaposlenik = zaposlenikUnos;
 			DBCon baza = new DBCon();
