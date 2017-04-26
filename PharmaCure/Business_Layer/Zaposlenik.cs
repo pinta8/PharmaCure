@@ -95,7 +95,7 @@ namespace Business_Layer
 		static public List<Zaposlenik> VratiSveZaposlenike() {
 			List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
 			DBCon baza = new DBCon();
-			SqlCommand command = new SqlCommand("SELECT d.Ime,d.Lozinka,(SELECT Naziv FROM poslovnica p where p.ID_Poslovnica = d.ID_Poslovnice) as naziv FROM djelatnik d");
+			SqlCommand command = new SqlCommand("SELECT d.ID_Djelatnika,d.Ime,d.Lozinka,d.ID_Poslovnice,(SELECT Naziv FROM poslovnica p where p.ID_Poslovnica = d.ID_Poslovnice) as naziv FROM djelatnik d");
 			DataTable dt = baza.DohvatiDT(command);
 			if (dt.Rows.Count == 0) {
 				return null;
@@ -105,12 +105,20 @@ namespace Business_Layer
 					Zaposlenik z = new Zaposlenik();
 					z.korisnickoIme = (string)row["Ime"];
 					z.lozinka= (string)row["Lozinka"];
-					z.nazivPoslovnice = ("naziv");
+					z.nazivPoslovnice = (string)row["naziv"];
+					z.poslovnicaId = (int)row["ID_Poslovnice"];
+					z.zaposlenikId = (int)row["ID_Djelatnika"];
 					zaposlenici.Add(z);
 
 				}
 				return zaposlenici;
 			}
+		}
+		static public void IzbrisiZaposlenikaIzBaze(Zaposlenik zaposlenikUnos) {
+			Zaposlenik zaposlenik = zaposlenikUnos;
+			DBCon baza = new DBCon();
+			SqlCommand command = new SqlCommand("DELETE FROM Djelatnik WHERE ID_Djelatnika="+zaposlenik.zaposlenikId);
+			baza.IzvrsiUpit(command);
 		}
 	}
 }

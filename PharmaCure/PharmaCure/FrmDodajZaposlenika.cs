@@ -13,13 +13,15 @@ namespace PharmaCure
 {
     public partial class FrmDodajZaposlenika : Form
     {
+		public List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
         public FrmDodajZaposlenika()
         {
             InitializeComponent();
 			cbxPoslovnice.DataSource = Poslovnica.DohvatiPoslovniceZaComboBox();
 			cbxPoslovnice.ValueMember = "PoslovnicaId";
 			cbxPoslovnice.DisplayMember = "Naziv";
-			dgvZaposlenici.DataSource = Zaposlenik.VratiSveZaposlenike();
+			zaposlenici = Zaposlenik.VratiSveZaposlenike();
+			dgvZaposlenici.DataSource = zaposlenici;
 			dgvZaposlenici.Columns[2].Visible = false;
 			dgvZaposlenici.Columns[3].Visible = false;
 
@@ -40,6 +42,14 @@ namespace PharmaCure
 			z.PoslovnicaId = p.PoslovnicaId;
 			
 			Zaposlenik.ZapisiZaposlenika(z);
- 		}
+			zaposlenici = Zaposlenik.VratiSveZaposlenike();
+			dgvZaposlenici.DataSource = zaposlenici;
+		}
+
+		private void btnIzbrisi_Click(object sender, EventArgs e) {
+			Zaposlenik.IzbrisiZaposlenikaIzBaze(zaposlenici[dgvZaposlenici.SelectedRows[0].Index]);
+			zaposlenici = Zaposlenik.VratiSveZaposlenike();
+			dgvZaposlenici.DataSource = zaposlenici;
+		}
 	}
 }

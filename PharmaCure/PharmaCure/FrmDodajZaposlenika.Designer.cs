@@ -38,6 +38,8 @@
 			this.btnDodaj = new System.Windows.Forms.Button();
 			this.dgvZaposlenici = new System.Windows.Forms.DataGridView();
 			this.lblZaposlenici = new System.Windows.Forms.Label();
+			this.btnAzuriraj = new System.Windows.Forms.Button();
+			this.btnIzbrisi = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -135,11 +137,34 @@
 			this.lblZaposlenici.TabIndex = 9;
 			this.lblZaposlenici.Text = "Zaposlenici";
 			// 
+			// btnAzuriraj
+			// 
+			this.btnAzuriraj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.btnAzuriraj.Location = new System.Drawing.Point(104, 380);
+			this.btnAzuriraj.Name = "btnAzuriraj";
+			this.btnAzuriraj.Size = new System.Drawing.Size(82, 39);
+			this.btnAzuriraj.TabIndex = 10;
+			this.btnAzuriraj.Text = "Ažuriraj";
+			this.btnAzuriraj.UseVisualStyleBackColor = true;
+			// 
+			// btnIzbrisi
+			// 
+			this.btnIzbrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.btnIzbrisi.Location = new System.Drawing.Point(279, 380);
+			this.btnIzbrisi.Name = "btnIzbrisi";
+			this.btnIzbrisi.Size = new System.Drawing.Size(79, 39);
+			this.btnIzbrisi.TabIndex = 11;
+			this.btnIzbrisi.Text = "Izbriši";
+			this.btnIzbrisi.UseVisualStyleBackColor = true;
+			this.btnIzbrisi.Click += new System.EventHandler(this.btnIzbrisi_Click);
+			// 
 			// FrmDodajZaposlenika
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(915, 485);
+			this.Controls.Add(this.btnIzbrisi);
+			this.Controls.Add(this.btnAzuriraj);
 			this.Controls.Add(this.lblZaposlenici);
 			this.Controls.Add(this.dgvZaposlenici);
 			this.Controls.Add(this.btnDodaj);
@@ -171,5 +196,7 @@
 		private System.Windows.Forms.Button btnDodaj;
 		private System.Windows.Forms.DataGridView dgvZaposlenici;
 		private System.Windows.Forms.Label lblZaposlenici;
+		private System.Windows.Forms.Button btnAzuriraj;
+		private System.Windows.Forms.Button btnIzbrisi;
 	}
 }
