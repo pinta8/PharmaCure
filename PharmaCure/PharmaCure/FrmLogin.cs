@@ -19,9 +19,15 @@ namespace PharmaCure
         }
 
 		private void button1_Click(object sender, EventArgs e) {
-			FrmMain m = new FrmMain();
-			this.Hide();
-			m.Show();
+			Zaposlenik z = Zaposlenik.DohvatiZaposlenika(tbxKorisnickoIme.Text, tbxLozinka.Text);
+			if (z == null) {
+				MessageBox.Show("Neuspješna prijava");
+			}
+			else {
+				FrmMain m = new FrmMain();
+				this.Hide();
+				m.Show();
+			}
 		}
 
         private void button1_Click_1(object sender, EventArgs e)
