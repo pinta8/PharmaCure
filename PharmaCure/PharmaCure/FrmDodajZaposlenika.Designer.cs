@@ -101,6 +101,7 @@
 			// 
 			// cbxPoslovnice
 			// 
+			this.cbxPoslovnice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxPoslovnice.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.cbxPoslovnice.FormattingEnabled = true;
 			this.cbxPoslovnice.Location = new System.Drawing.Point(679, 245);
@@ -124,6 +125,7 @@
 			this.dgvZaposlenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvZaposlenici.Location = new System.Drawing.Point(31, 120);
 			this.dgvZaposlenici.Name = "dgvZaposlenici";
+			this.dgvZaposlenici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvZaposlenici.Size = new System.Drawing.Size(434, 226);
 			this.dgvZaposlenici.TabIndex = 8;
 			// 
@@ -146,6 +148,7 @@
 			this.btnAzuriraj.TabIndex = 10;
 			this.btnAzuriraj.Text = "Ažuriraj";
 			this.btnAzuriraj.UseVisualStyleBackColor = true;
+			this.btnAzuriraj.Click += new System.EventHandler(this.btnAzuriraj_Click);
 			// 
 			// btnIzbrisi
 			// 

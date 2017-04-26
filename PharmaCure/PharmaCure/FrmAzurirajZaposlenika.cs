@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,38 @@ using System.Windows.Forms;
 
 namespace PharmaCure {
 	public partial class FrmAzurirajZaposlenika : Form {
-		public FrmAzurirajZaposlenika() {
+		private List<Poslovnica> poslovnice;
+
+		public FrmAzurirajZaposlenika(Zaposlenik zaposlenik, List<Poslovnica> pos) {
 			InitializeComponent();
+			z = zaposlenik;
+			this.poslovnice = pos;
+			cbxPoslovnice.DataSource = poslovnice;
+			cbxPoslovnice.ValueMember = "PoslovnicaId";
+			cbxPoslovnice.DisplayMember = "Naziv";
+			PostaviVrijednosti();
+		}
+
+		private void PostaviVrijednosti() {
+			tbxKorisnickoIme.Text = z.KorisnickoIme;
+			tbxLozinka.Text = z.Lozinka;
+			for(int i=0; i<poslovnice.Count; i++) {
+				if(poslovnice[i].PoslovnicaId == z.PoslovnicaId) {
+					cbxPoslovnice.SelectedIndex = i;
+					break;
+				}
+			}
+		}
+
+		Zaposlenik z;
+
+		private void btnSpremi_Click(object sender, EventArgs e) {
+			z.KorisnickoIme = tbxKorisnickoIme.Text;
+			z.Lozinka = tbxLozinka.Text;
+			z.PoslovnicaId = ((Poslovnica)cbxPoslovnice.SelectedItem).PoslovnicaId;
+			z.NazivPoslovnice = ((Poslovnica)cbxPoslovnice.SelectedItem).Naziv;
+			Zaposlenik.AzurirajZaposlenika(z);
+			this.Close();
 		}
 	}
 }

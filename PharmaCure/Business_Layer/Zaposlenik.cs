@@ -92,7 +92,18 @@ namespace Business_Layer
 			command.Parameters.AddWithValue("@Lozinka", zaposlenik.Lozinka);
 			command.Parameters.AddWithValue("@ID_Poslovnice", zaposlenik.PoslovnicaId);
 			baza.IzvrsiUpit(command);
-			
+		}
+
+		static public void AzurirajZaposlenika(Zaposlenik zaposlenikUnos) {
+			Zaposlenik zaposlenik = zaposlenikUnos;
+			DBCon baza = new DBCon();
+			SqlCommand command = new SqlCommand("UPDATE Djelatnik set Ime=@Ime, Lozinka = @Lozinka, ID_Poslovnice = @ID_Poslovnice where ID_Djelatnika = @ID_Djelatnika");
+			command.Parameters.AddWithValue("@ID_Djelatnika", zaposlenik.zaposlenikId);
+			command.Parameters.AddWithValue("@Ime", zaposlenik.KorisnickoIme);
+			command.Parameters.AddWithValue("@Lozinka", zaposlenik.Lozinka);
+			command.Parameters.AddWithValue("@ID_Poslovnice", zaposlenik.PoslovnicaId);
+			baza.IzvrsiUpit(command);
+
 		}
 
 		static public List<Zaposlenik> VratiSveZaposlenike() {
