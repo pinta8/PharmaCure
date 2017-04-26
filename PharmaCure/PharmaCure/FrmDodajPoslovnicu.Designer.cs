@@ -26,7 +26,7 @@
 			this.tbxNaziv = new System.Windows.Forms.TextBox();
 			this.lblNaziv = new System.Windows.Forms.Label();
 			this.lblDrzava = new System.Windows.Forms.Label();
-			this.tbxDržava = new System.Windows.Forms.TextBox();
+			this.tbxDrzava = new System.Windows.Forms.TextBox();
 			this.lblGrad = new System.Windows.Forms.Label();
 			this.tbxGrad = new System.Windows.Forms.TextBox();
 			this.lblUlica = new System.Windows.Forms.Label();
@@ -64,13 +64,13 @@
 			this.lblDrzava.TabIndex = 3;
 			this.lblDrzava.Text = "Država";
 			// 
-			// tbxDržava
+			// tbxDrzava
 			// 
-			this.tbxDržava.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.tbxDržava.Location = new System.Drawing.Point(271, 78);
-			this.tbxDržava.Name = "tbxDržava";
-			this.tbxDržava.Size = new System.Drawing.Size(100, 23);
-			this.tbxDržava.TabIndex = 2;
+			this.tbxDrzava.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.tbxDrzava.Location = new System.Drawing.Point(271, 78);
+			this.tbxDrzava.Name = "tbxDrzava";
+			this.tbxDrzava.Size = new System.Drawing.Size(100, 23);
+			this.tbxDrzava.TabIndex = 2;
 			// 
 			// lblGrad
 			// 
@@ -135,6 +135,7 @@
 			this.btnDodaj.TabIndex = 10;
 			this.btnDodaj.Text = "Dodaj";
 			this.btnDodaj.UseVisualStyleBackColor = true;
+			this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
 			// 
 			// FrmDodajPoslovnicu
 			// 
@@ -149,7 +150,7 @@
 			this.Controls.Add(this.lblGrad);
 			this.Controls.Add(this.tbxGrad);
 			this.Controls.Add(this.lblDrzava);
-			this.Controls.Add(this.tbxDržava);
+			this.Controls.Add(this.tbxDrzava);
 			this.Controls.Add(this.lblNaziv);
 			this.Controls.Add(this.tbxNaziv);
 			this.Name = "FrmDodajPoslovnicu";
@@ -164,7 +165,7 @@
 		private System.Windows.Forms.TextBox tbxNaziv;
 		private System.Windows.Forms.Label lblNaziv;
 		private System.Windows.Forms.Label lblDrzava;
-		private System.Windows.Forms.TextBox tbxDržava;
+		private System.Windows.Forms.TextBox tbxDrzava;
 		private System.Windows.Forms.Label lblGrad;
 		private System.Windows.Forms.TextBox tbxGrad;
 		private System.Windows.Forms.Label lblUlica;

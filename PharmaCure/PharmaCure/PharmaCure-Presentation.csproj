@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDodajPoslovnicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajPoslovnicu.Designer.cs">
+      <DependentUpon>FrmDodajPoslovnicu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDodajZaposlenika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDodajPoslovnicu.resx">
+      <DependentUpon>FrmDodajPoslovnicu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDodajZaposlenika.resx">
       <DependentUpon>FrmDodajZaposlenika.cs</DependentUpon>
     </EmbeddedResource>
