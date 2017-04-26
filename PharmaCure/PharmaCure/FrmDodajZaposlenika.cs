@@ -16,6 +16,9 @@ namespace PharmaCure
         public FrmDodajZaposlenika()
         {
             InitializeComponent();
+			cbxPoslovnice.DataSource = Poslovnica.DohvatiPoslovniceZaComboBox();
+			cbxPoslovnice.ValueMember = "PoslovnicaId";
+			cbxPoslovnice.DisplayMember = "Naziv";
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
@@ -32,7 +35,7 @@ namespace PharmaCure
 			z.Lozinka = tbxLozinka.Text;
 			z.PoslovnicaId = p.PoslovnicaId;
 			
-			Zaposlenik.ZapisiZaposlenika(z);
+			//Zaposlenik.ZapisiZaposlenika(z);
  		}
 	}
 }
