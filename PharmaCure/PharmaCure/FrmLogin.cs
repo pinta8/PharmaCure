@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +19,9 @@ namespace PharmaCure
         }
 
 		private void button1_Click(object sender, EventArgs e) {
-            FrmMain m = new FrmMain();
-            this.Hide();
-            m.Show();
+			FrmMain m = new FrmMain();
+			this.Hide();
+			m.Show();
 		}
 
         private void button1_Click_1(object sender, EventArgs e)
