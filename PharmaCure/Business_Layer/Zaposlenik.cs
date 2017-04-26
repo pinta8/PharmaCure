@@ -70,8 +70,16 @@ namespace Business_Layer
 				z.lozinka = (string)dt.Rows[0]["Lozinka"];
 				z.poslovnicaId = (int)dt.Rows[0]["ID_Poslovnice"];
 				return z;
-			}
-			
+			}		
+		}
+		static public void ZapisiZaposlenika(Zaposlenik zaposlenikUnos) {
+			Zaposlenik zaposlenik = zaposlenikUnos;
+			DBCon baza = new DBCon();
+			SqlCommand command=new SqlCommand("INSERT INTO Djelatnik (Ime,Lozinka,ID_Poslovnice) VALUES (@Ime, @Lozinka, @ID_Poslovnice)");
+			command.Parameters.AddWithValue("@Ime", zaposlenik.KorisnickoIme);
+			command.Parameters.AddWithValue("@Lozinka", zaposlenik.Lozinka);
+			command.Parameters.AddWithValue("@ID_Poslovnice", zaposlenik.PoslovnicaId);
+			baza.IzvrsiUpit(command);
 		}
 	}
 }
