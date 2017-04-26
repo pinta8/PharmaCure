@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,5 +24,15 @@ namespace PharmaCure
             m.Show();
             this.Close();
         }
-    }
+
+		private void btnDodaj_Click(object sender, EventArgs e) {
+			Poslovnica p = (Poslovnica)cbxPoslovnice.SelectedItem;
+			Zaposlenik z = new Zaposlenik();
+			z.KorisnickoIme = tbxKorisnickoIme.Text;
+			z.Lozinka = tbxLozinka.Text;
+			z.PoslovnicaId = p.PoslovnicaId;
+			
+			Zaposlenik.ZapisiZaposlenika(z);
+ 		}
+	}
 }
