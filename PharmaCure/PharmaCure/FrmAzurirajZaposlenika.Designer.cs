@@ -41,9 +41,11 @@
 			this.btnSpremi.TabIndex = 14;
 			this.btnSpremi.Text = "Spremi promjene";
 			this.btnSpremi.UseVisualStyleBackColor = true;
+			this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
 			// 
 			// cbxPoslovnice
 			// 
+			this.cbxPoslovnice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxPoslovnice.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.cbxPoslovnice.FormattingEnabled = true;
 			this.cbxPoslovnice.Location = new System.Drawing.Point(129, 138);

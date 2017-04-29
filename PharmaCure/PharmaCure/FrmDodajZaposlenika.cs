@@ -11,13 +11,14 @@ using System.Windows.Forms;
 
 namespace PharmaCure
 {
-    public partial class FrmDodajZaposlenika : Form
-    {
-		public List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
-        public FrmDodajZaposlenika()
+    public partial class FrmDodajZaposlenika : Form {
+		private List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
+		private List<Poslovnica> poslovnice;
+
+		public FrmDodajZaposlenika()
         {
             InitializeComponent();
-			cbxPoslovnice.DataSource = Poslovnica.DohvatiPoslovniceZaComboBox();
+			cbxPoslovnice.DataSource = poslovnice = Poslovnica.DohvatiPoslovniceZaComboBox();
 			cbxPoslovnice.ValueMember = "PoslovnicaId";
 			cbxPoslovnice.DisplayMember = "Naziv";
 			zaposlenici = Zaposlenik.VratiSveZaposlenike();
@@ -42,7 +43,7 @@ namespace PharmaCure
 			z.PoslovnicaId = p.PoslovnicaId;
 			
 			Zaposlenik.ZapisiZaposlenika(z);
-			zaposlenici = Zaposlenik.VratiSveZaposlenike();//
+			zaposlenici = Zaposlenik.VratiSveZaposlenike();
 			dgvZaposlenici.DataSource = zaposlenici;
 		}
 
@@ -51,5 +52,13 @@ namespace PharmaCure
 			zaposlenici = Zaposlenik.VratiSveZaposlenike();
 			dgvZaposlenici.DataSource = zaposlenici;
 		}
+
+		private void btnAzuriraj_Click(object sender, EventArgs e) {
+			FrmAzurirajZaposlenika az = new FrmAzurirajZaposlenika(zaposlenici[dgvZaposlenici.SelectedRows[0].Index], poslovnice);
+			az.ShowDialog();
+			dgvZaposlenici.DataSource = zaposlenici;
+		}
+		
+
 	}
 }
