@@ -15,6 +15,7 @@ namespace PharmaCure
         public FrmMain()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
         private void btnIzlaz_Click_1(object sender, EventArgs e)
@@ -79,5 +80,14 @@ namespace PharmaCure
 			posl.Show();
 			this.Close();
 		}
-	}
+
+        private void FrmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData==Keys.F1)
+            {
+                FrmHelp h = new FrmHelp();
+                h.Show();
+            }
+        }
+    }
 }
