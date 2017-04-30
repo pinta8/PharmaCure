@@ -98,6 +98,7 @@ namespace Business_Layer
 			}
 			
 		}
+        //funkcija za unos novih poslovnica u bazu
 		static public void ZapisiPoslovnicu(Poslovnica poslovnicaUnos) {
 			Poslovnica p = poslovnicaUnos;
 			DBCon baza = new DBCon();

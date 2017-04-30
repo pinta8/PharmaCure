@@ -117,4 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>PharmaCure Aplikacija Help Centar
+
+
+Ovdje će biti objašnjen, i slikama prikazan radi i izgled PharmaCure aplikacije za vođenje ljekarnama.
+
+Trenutno još nisu sakrivene funkcionalnosti koje Zaposlenik nema pa svim funkcionalnostima koje smo do sada implementirali možete pristupiti sa:
+
+Korisničko ime: Pero
+
+Lozinka: Pero
+
+Trenutno imamo implementirano: Data Layer, odnosno sloj komunikacije sa bazom podataka.
+
+Od klasa imamo kreirane sve klase ali klase koje smo isprogramirali su klase Zaposlenik, Poslovnica i Lijekovi, moguće je da ćemo u njih još naknadno dodavati neke metode.
+
+Od formi imamo dodane sve forme, ali funkcionale su samo: Login, Main, Popis Lijekova, Dodaj Zaposlenika, Dodaj Poslovnicu te Help.
+
+Administrator se može ulogirati u bazu, ukoliko unese krive podatke iskoči mu obavjest da su krivi podaci. Ukoliko je prijava uspješna prikaže mu se glavna forma. Na glavnoj formi može se doći do svih ostalih formi, ali gore navedene forme imaju sadržaj.
+
+Pritiskom F1 tipke pokazuje mu se Help sa tekstom sa stranice Korisnička dokumentacija.
+
+Odlaskom na Dodaj Zaposlenika može vidjeti sve zaposlenike, te dodati novog zaposlenika u bazu.
+
+Odlaskom na Popis Lijekova Prikazuje mu se popis svih Lijekova iz baze podataka. Te lijekove može i pretražiti po imenu i kategoriji.
+
+Odlaskom na Dodaj Poslovnicu prikazuje se forma za dodavanje i prikaz svih poslovnica.</value>
+  </data>
 </root>
