@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace PharmaCure {
 	public partial class FrmAzurirajZaposlenika : Form {
 		private List<Poslovnica> poslovnice;
-
+        //postavlja se datasource comboboxu i postavljalju se postojeće vrijednosti u kontrole za unos
 		public FrmAzurirajZaposlenika(Zaposlenik zaposlenik, List<Poslovnica> pos) {
 			InitializeComponent();
 			z = zaposlenik;
@@ -35,7 +35,7 @@ namespace PharmaCure {
 		}
 
 		Zaposlenik z;
-
+        //na klik se ažurira korisnik i forma se zatvara
 		private void btnSpremi_Click(object sender, EventArgs e) {
 			z.KorisnickoIme = tbxKorisnickoIme.Text;
 			z.Lozinka = tbxLozinka.Text;

@@ -66,7 +66,7 @@ namespace Business_Layer
 				nazivPoslovnice = value;
 			}
 		}
-
+        //funkcija za dohvaćanje zaposlenika prema imenu i prezimenu
 		static public Zaposlenik DohvatiZaposlenika(string korisnickoIme, string lozinka) {
 			DBCon baza = new DBCon();
 			SqlCommand command = new SqlCommand("SELECT ID_Djelatnika,Ime,Lozinka,ID_Poslovnice FROM Djelatnik WHERE Ime='" + korisnickoIme+"' AND Lozinka = '"+lozinka+"'");
@@ -83,7 +83,7 @@ namespace Business_Layer
 				return z;
 			}		
 		}
-
+        //funkcija za zapisivanje zaposlenika u bazu
 		static public void ZapisiZaposlenika(Zaposlenik zaposlenikUnos) {
 			Zaposlenik zaposlenik = zaposlenikUnos;
 			DBCon baza = new DBCon();
@@ -93,7 +93,7 @@ namespace Business_Layer
 			command.Parameters.AddWithValue("@ID_Poslovnice", zaposlenik.PoslovnicaId);
 			baza.IzvrsiUpit(command);
 		}
-
+        //funkcija za azuriranje zaposlenika
 		static public void AzurirajZaposlenika(Zaposlenik zaposlenikUnos) {
 			Zaposlenik zaposlenik = zaposlenikUnos;
 			DBCon baza = new DBCon();
@@ -105,7 +105,7 @@ namespace Business_Layer
 			baza.IzvrsiUpit(command);
 
 		}
-
+        //funkcija koja vraća sve zaposlenike u listu
 		static public List<Zaposlenik> VratiSveZaposlenike() {
 			List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
 			DBCon baza = new DBCon();
@@ -128,7 +128,7 @@ namespace Business_Layer
 				return zaposlenici;
 			}
 		}
-
+        //funkcija koja brise odredenog zaposlenika iz baze
 		static public void IzbrisiZaposlenikaIzBaze(Zaposlenik zaposlenikUnos) {
 			Zaposlenik zaposlenik = zaposlenikUnos;
 			DBCon baza = new DBCon();
