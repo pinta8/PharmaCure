@@ -27,14 +27,14 @@ namespace PharmaCure
 			dgvZaposlenici.Columns[3].Visible = false;
 
 		}
-
+        //Gumb za povratak na Main formu
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             FrmMain m = new FrmMain();
             m.Show();
             this.Close();
         }
-
+        //Gumb za dodavanje novog Zaposlenika za neku poslovnicu
 		private void btnDodaj_Click(object sender, EventArgs e) {
 			Poslovnica p = (Poslovnica)cbxPoslovnice.SelectedItem;
 			Zaposlenik z = new Zaposlenik();
@@ -46,13 +46,13 @@ namespace PharmaCure
 			zaposlenici = Zaposlenik.VratiSveZaposlenike();
 			dgvZaposlenici.DataSource = zaposlenici;
 		}
-
+        //Gumb za brisanje Zaposlenika iz baze
 		private void btnIzbrisi_Click(object sender, EventArgs e) {
 			Zaposlenik.IzbrisiZaposlenikaIzBaze(zaposlenici[dgvZaposlenici.SelectedRows[0].Index]);
 			zaposlenici = Zaposlenik.VratiSveZaposlenike();
 			dgvZaposlenici.DataSource = zaposlenici;
 		}
-
+        //Gumb za ažuriranje Zaposlenika u bazi
 		private void btnAzuriraj_Click(object sender, EventArgs e) {
 			FrmAzurirajZaposlenika az = new FrmAzurirajZaposlenika(zaposlenici[dgvZaposlenici.SelectedRows[0].Index], poslovnice);
 			az.ShowDialog();

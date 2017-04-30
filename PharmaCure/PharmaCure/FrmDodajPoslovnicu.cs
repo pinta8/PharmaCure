@@ -15,6 +15,7 @@ namespace PharmaCure {
 			InitializeComponent();
 		}
 
+        //Upisivanje Nove Poslovnice u Bazu
 		private void btnDodaj_Click(object sender, EventArgs e) {
 			Poslovnica p = new Poslovnica();
 			p.Naziv = tbxNaziv.Text;

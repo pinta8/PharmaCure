@@ -17,7 +17,7 @@ namespace PharmaCure
         {
             InitializeComponent();
         }
-
+        //Gumb za login i provjeru korisničkog imena i lozinke
 		private void button1_Click(object sender, EventArgs e) {
 			Zaposlenik z = Zaposlenik.DohvatiZaposlenika(tbxKorisnickoIme.Text, tbxLozinka.Text);
 			if (z == null) {
@@ -29,7 +29,7 @@ namespace PharmaCure
 				m.Show();
 			}
 		}
-
+        //Gumb za izlazak iz aplikacije
         private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();

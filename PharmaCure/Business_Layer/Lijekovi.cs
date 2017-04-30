@@ -19,7 +19,7 @@ namespace Business_Layer
         public string zemljaPorijekla { get; set; }
 
 
-
+        //Funkcija za vraćanje Liste svih lijekova
         public static List<Lijekovi> DohvatiSveLijekove()
         {
             List<Lijekovi> ListaRasadnika = new List<Lijekovi>();

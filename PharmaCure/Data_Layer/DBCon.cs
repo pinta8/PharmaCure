@@ -11,6 +11,7 @@ namespace Data_Layer
 {
     public class DBCon
     {
+        //connection na bazu r17003
         public SqlConnection Connection = new SqlConnection("Data Source=31.147.204.119\\PISERVER,1433;Initial Catalog=17003_DB;User ID=17003_User;Password=dDkG8AAT");
 
         public SqlConnection GetCon()
@@ -21,7 +22,7 @@ namespace Data_Layer
             }
             return Connection;
         }
-
+        //funkcija za izvrsavanje upita
         public int IzvrsiUpit(SqlCommand Command)
         {
             int rows = -1;
@@ -58,6 +59,7 @@ namespace Data_Layer
             }
             return rows;
         }
+        //funkcija za vraćanje jedne vrijednosti iz baze
         public object DohvatiVrijednost(SqlCommand Command)
         {
             Command.Connection = GetCon();
@@ -66,7 +68,7 @@ namespace Data_Layer
             Connection.Close();
             return obj;
         }
-
+        //funkcija za vraćanje tablice iz baze
         public DataTable DohvatiDT(SqlCommand Command)
         {
             Command.Connection = GetCon();

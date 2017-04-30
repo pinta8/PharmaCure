@@ -13,23 +13,25 @@ namespace PharmaCure
 {
     public partial class FrmPopisLijekova : Form
     {
+        //Nova lista lijekova za ispisivanje
         public List<Lijekovi> l = new List<Lijekovi>();
         public FrmPopisLijekova()
         {
             InitializeComponent();
         }
-
+        //Gumb za povratak na Main Formu
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             FrmMain m = new FrmMain();
             m.Show();
             this.Close();
         }
+        //na form loadu poziva Osvježi listu popisa lijekova (ispisuje na datagridview)
         private void FrmPopisLijekova_Load(object sender, EventArgs e)
         {
             OsvjeziListu();
         }
-
+        //funkcija za dohvat nove liste iz baze i ispis iste na datagridview
         private void OsvjeziListu()
         {
             l = Lijekovi.DohvatiSveLijekove();

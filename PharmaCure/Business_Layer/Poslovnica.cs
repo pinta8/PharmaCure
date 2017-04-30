@@ -77,6 +77,7 @@ namespace Business_Layer
 				broj = value;
 			}
 		}
+        //Funkcija za vraćanje svih Poslovnica iz baze
 		static public List<Poslovnica> DohvatiPoslovniceZaComboBox() {
 			List<Poslovnica> poslovnice = new List<Poslovnica>();
 			DBCon baza = new DBCon();
