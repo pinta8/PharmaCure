@@ -146,6 +146,7 @@
             this.btnPovratak.TabIndex = 11;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
             // FrmDodajPoslovnicu
             // 

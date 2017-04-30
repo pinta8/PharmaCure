@@ -26,5 +26,11 @@ namespace PharmaCure {
 
 			Poslovnica.ZapisiPoslovnicu(p);
 		}
-	}
+        //Povratak na glavnu formu
+        private void btnPovratak_Click(object sender, EventArgs e) {
+            FrmMain m = new FrmMain();
+            m.Show();
+            this.Close();
+        }
+    }
 }
