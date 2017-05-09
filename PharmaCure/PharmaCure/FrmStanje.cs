@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PharmaCure
 {
-    public partial class FrmNabava : Form
+    public partial class FrmStanje : Form
     {
-        public FrmNabava()
+        public FrmStanje()
         {
             InitializeComponent();
         }
