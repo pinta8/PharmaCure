@@ -98,6 +98,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNabava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNabava.Designer.cs">
+      <DependentUpon>FrmNabava.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStanje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNabava.resx">
+      <DependentUpon>FrmNabava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStanje.resx">
       <DependentUpon>FrmStanje.cs</DependentUpon>

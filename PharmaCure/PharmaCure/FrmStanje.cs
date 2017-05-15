@@ -44,6 +44,10 @@ namespace PharmaCure
             PripremiKolicineManjeOdDeset();
         }
 
-        
+        private void btnNaruci_Click(object sender, EventArgs e) {
+            FrmNabava f = new FrmNabava();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }

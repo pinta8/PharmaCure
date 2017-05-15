@@ -1,0 +1,22 @@
+﻿using Business_Layer;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PharmaCure {
+    public partial class FrmNabava : Form {
+        public FrmNabava() {
+            InitializeComponent();
+            PripremiCombo();
+        }
+        public void PripremiCombo() {
+            cbxNaziv.DataSource = Lijekovi.VratiNaziveLijekova();
+        }
+    }
+}

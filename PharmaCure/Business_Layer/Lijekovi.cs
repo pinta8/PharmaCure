@@ -47,5 +47,20 @@ namespace Business_Layer
             lije.zemljaPorijekla = row["Zemlja_porijekla"].ToString();
             return lije;
         }
+        static public List<string> VratiNaziveLijekova() {
+            List<string> lijekovi = new List<string>();
+            DBCon baza = new DBCon();
+            SqlCommand command = new SqlCommand("SELECT Naziv FROM Lijekovi");
+            DataTable dt = baza.DohvatiDT(command);
+            if (dt.Rows.Count == 0) {
+                return null;
+            }
+            else {
+                foreach (DataRow row in dt.Rows) {
+                    lijekovi.Add((string)row["Naziv"]);
+                }
+                return lijekovi;
+            }
+        }
     }
 }

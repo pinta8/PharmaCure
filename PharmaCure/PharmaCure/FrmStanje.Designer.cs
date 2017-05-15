@@ -64,6 +64,7 @@
             this.btnNaruci.TabIndex = 4;
             this.btnNaruci.Text = "Napravi narudžbu";
             this.btnNaruci.UseVisualStyleBackColor = true;
+            this.btnNaruci.Click += new System.EventHandler(this.btnNaruci_Click);
             // 
             // lblLijekovi
             // 
