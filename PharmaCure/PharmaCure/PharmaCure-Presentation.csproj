@@ -98,11 +98,11 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNabava.cs">
+    <Compile Include="FrmStanje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNabava.Designer.cs">
-      <DependentUpon>FrmNabava.cs</DependentUpon>
+    <Compile Include="FrmStanje.Designer.cs">
+      <DependentUpon>FrmStanje.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPopisLijekova.cs">
       <SubType>Form</SubType>
@@ -148,8 +148,8 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNabava.resx">
-      <DependentUpon>FrmNabava.cs</DependentUpon>
+    <EmbeddedResource Include="FrmStanje.resx">
+      <DependentUpon>FrmStanje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPopisLijekova.resx">
       <DependentUpon>FrmPopisLijekova.cs</DependentUpon>

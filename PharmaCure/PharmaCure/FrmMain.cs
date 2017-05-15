@@ -49,7 +49,7 @@ namespace PharmaCure
         //Gumb za odlazak na formu Nabave
         private void btnNabava_Click(object sender, EventArgs e)
         {
-            FrmNabava nab = new FrmNabava();
+            FrmStanje nab = new FrmStanje();
             nab.Show();
             this.Close();
         }

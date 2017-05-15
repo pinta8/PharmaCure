@@ -11,6 +11,7 @@ namespace Business_Layer
 {
     public class Zaposlenik
     {
+        static public int PoslovnicaPrijavljenog;
 		int zaposlenikId;
 		string korisnickoIme;
 		string lozinka;
@@ -80,8 +81,10 @@ namespace Business_Layer
 				z.korisnickoIme = (string)dt.Rows[0]["Ime"];
 				z.lozinka = (string)dt.Rows[0]["Lozinka"];
 				z.poslovnicaId = (int)dt.Rows[0]["ID_Poslovnice"];
+                PoslovnicaPrijavljenog = z.poslovnicaId;
 				return z;
-			}		
+			}	
+            	
 		}
         //funkcija za zapisivanje zaposlenika u bazu
 		static public void ZapisiZaposlenika(Zaposlenik zaposlenikUnos) {
@@ -135,5 +138,8 @@ namespace Business_Layer
 			SqlCommand command = new SqlCommand("DELETE FROM Djelatnik WHERE ID_Djelatnika="+zaposlenik.zaposlenikId);
 			baza.IzvrsiUpit(command);
 		}
+         public int VratiIdPoslovniceZaposlenika() {
+            return PoslovnicaId;
+        }
 	}
 }

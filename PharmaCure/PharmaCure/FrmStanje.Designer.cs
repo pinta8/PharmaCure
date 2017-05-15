@@ -109,6 +109,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmStanje";
             this.Text = "FrmStanje";
+            this.Load += new System.EventHandler(this.FrmStanje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLijekovi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
