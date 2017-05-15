@@ -30,10 +30,10 @@
         {
             this.btnPovratak = new System.Windows.Forms.Button();
             this.dgvLijekovi = new System.Windows.Forms.DataGridView();
-            this.lbxMinLijekovi = new System.Windows.Forms.ListBox();
             this.btnNaruci = new System.Windows.Forms.Button();
             this.lblLijekovi = new System.Windows.Forms.Label();
             this.lblMinLijekovi = new System.Windows.Forms.Label();
+            this.tbxMinLijekovi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLijekovi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,16 +54,6 @@
             this.dgvLijekovi.Name = "dgvLijekovi";
             this.dgvLijekovi.Size = new System.Drawing.Size(580, 263);
             this.dgvLijekovi.TabIndex = 2;
-            // 
-            // lbxMinLijekovi
-            // 
-            this.lbxMinLijekovi.BackColor = System.Drawing.Color.White;
-            this.lbxMinLijekovi.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbxMinLijekovi.FormattingEnabled = true;
-            this.lbxMinLijekovi.Location = new System.Drawing.Point(632, 100);
-            this.lbxMinLijekovi.Name = "lbxMinLijekovi";
-            this.lbxMinLijekovi.Size = new System.Drawing.Size(231, 264);
-            this.lbxMinLijekovi.TabIndex = 3;
             // 
             // btnNaruci
             // 
@@ -95,15 +85,24 @@
             this.lblMinLijekovi.TabIndex = 6;
             this.lblMinLijekovi.Text = "Lijekovi koje treba naručiti";
             // 
+            // tbxMinLijekovi
+            // 
+            this.tbxMinLijekovi.Location = new System.Drawing.Point(625, 101);
+            this.tbxMinLijekovi.Multiline = true;
+            this.tbxMinLijekovi.Name = "tbxMinLijekovi";
+            this.tbxMinLijekovi.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbxMinLijekovi.Size = new System.Drawing.Size(278, 263);
+            this.tbxMinLijekovi.TabIndex = 7;
+            // 
             // FrmStanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 485);
+            this.Controls.Add(this.tbxMinLijekovi);
             this.Controls.Add(this.lblMinLijekovi);
             this.Controls.Add(this.lblLijekovi);
             this.Controls.Add(this.btnNaruci);
-            this.Controls.Add(this.lbxMinLijekovi);
             this.Controls.Add(this.dgvLijekovi);
             this.Controls.Add(this.btnPovratak);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -120,9 +119,9 @@
 
         private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.DataGridView dgvLijekovi;
-        private System.Windows.Forms.ListBox lbxMinLijekovi;
         private System.Windows.Forms.Button btnNaruci;
         private System.Windows.Forms.Label lblLijekovi;
         private System.Windows.Forms.Label lblMinLijekovi;
+        private System.Windows.Forms.TextBox tbxMinLijekovi;
     }
 }

@@ -32,8 +32,18 @@ namespace PharmaCure
             dostupnost = Dostupnost.DohvatiLijekovePoslovnice(Zaposlenik.PoslovnicaPrijavljenog);
             dgvLijekovi.DataSource = dostupnost;
         }
+        public void PripremiKolicineManjeOdDeset() {
+            dostupnost = Dostupnost.DohvatiLijekovePoslovnice(Zaposlenik.PoslovnicaPrijavljenog);
+            var min = (from d in dostupnost where d.Kolicina < 10 select d);
+            foreach(Dostupnost d in min) {
+                tbxMinLijekovi.Text += d.ToString();
+            }
+        }
         private void FrmStanje_Load(object sender, EventArgs e) {
             PripremiDgvLijek();
+            PripremiKolicineManjeOdDeset();
         }
+
+        
     }
 }

@@ -70,5 +70,8 @@ namespace Business_Layer
             }
             return listaLijekova;
         }
+        public override string ToString() {
+            return "Naziv: "+naziv +" || " +"Kolicina: " + kolicina + Environment.NewLine;
+        }
     }
 }
