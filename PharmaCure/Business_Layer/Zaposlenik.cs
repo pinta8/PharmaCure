@@ -12,6 +12,7 @@ namespace Business_Layer
     public class Zaposlenik
     {
         static public int PoslovnicaPrijavljenog;
+        static public int IdPrijavljenog;
 		int zaposlenikId;
 		string korisnickoIme;
 		string lozinka;
@@ -78,6 +79,7 @@ namespace Business_Layer
 			else {
 				Zaposlenik z = new Zaposlenik();
 				z.zaposlenikId = (int)dt.Rows[0]["ID_Djelatnika"];
+                IdPrijavljenog = z.zaposlenikId;
 				z.korisnickoIme = (string)dt.Rows[0]["Ime"];
 				z.lozinka = (string)dt.Rows[0]["Lozinka"];
 				z.poslovnicaId = (int)dt.Rows[0]["ID_Poslovnice"];
@@ -138,8 +140,6 @@ namespace Business_Layer
 			SqlCommand command = new SqlCommand("DELETE FROM Djelatnik WHERE ID_Djelatnika="+zaposlenik.zaposlenikId);
 			baza.IzvrsiUpit(command);
 		}
-         public int VratiIdPoslovniceZaposlenika() {
-            return PoslovnicaId;
-        }
+        
 	}
 }

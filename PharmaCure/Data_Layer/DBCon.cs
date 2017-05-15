@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Windows.Forms;
 
 namespace Data_Layer
 {
@@ -31,9 +31,9 @@ namespace Data_Layer
             {
                 rows = Command.ExecuteNonQuery();
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             Connection.Close();
             return rows;

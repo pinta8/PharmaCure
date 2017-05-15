@@ -88,6 +88,7 @@
             // 
             // tbxMinLijekovi
             // 
+            this.tbxMinLijekovi.ForeColor = System.Drawing.Color.DarkRed;
             this.tbxMinLijekovi.Location = new System.Drawing.Point(625, 101);
             this.tbxMinLijekovi.Multiline = true;
             this.tbxMinLijekovi.Name = "tbxMinLijekovi";
