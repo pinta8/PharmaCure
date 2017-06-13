@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Business_Layer
 {
-    class Racun
+    public class Racun
     {
+        public int djelatnik { get; set; }
+        public int klijent { get; set; }
     }
 }
+

@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Business_Layer
 {
-    public class Lijekovi
+    public class Lijek
     {
         public string Naziv { get; set; }
         public string kratkiOpis { get; set; }
@@ -20,9 +20,9 @@ namespace Business_Layer
 
 
         //Funkcija za vraćanje Liste svih lijekova
-        public static List<Lijekovi> DohvatiSveLijekove()
+        public static List<Lijek> DohvatiSveLijekove()
         {
-            List<Lijekovi> ListaRasadnika = new List<Lijekovi>();
+            List<Lijek> ListaLijekova = new List<Lijek>();
             SqlCommand Command = new SqlCommand();
             Command.CommandType = CommandType.Text;
             Command.CommandText = "SELECT * FROM Lijekovi";
@@ -31,14 +31,14 @@ namespace Business_Layer
             DataTable DT = DB.DohvatiDT(Command);
             foreach (DataRow dr in DT.Rows)
             {
-                Lijekovi r = new Lijekovi();
-                ListaRasadnika.Add(r.MakeLijek(dr));
+                Lijek r = new Lijek();
+                ListaLijekova.Add(r.MakeLijek(dr));
             }
-            return ListaRasadnika;
+            return ListaLijekova;
         }
-        public Lijekovi MakeLijek(DataRow row)
+        public Lijek MakeLijek(DataRow row)
         {
-            Lijekovi lije = new Lijekovi();
+            Lijek lije = new Lijek();
             lije.Naziv = row["Naziv"].ToString();
             lije.kratkiOpis = row["Kratki_opis"].ToString();
             lije.datumProizvodnje = DateTime.Parse(row["Datum_proizvodnje"].ToString());

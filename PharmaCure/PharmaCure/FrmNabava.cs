@@ -20,7 +20,7 @@ namespace PharmaCure {
             tbxPoslovnciaId.Enabled = false;
         }
         public void PripremiCombo() {
-            cbxNaziv.DataSource = Lijekovi.VratiNaziveLijekova();
+            cbxNaziv.DataSource = Lijek.VratiNaziveLijekova();
         }
 
         private void btnPosaljiNarudzbu_Click(object sender, EventArgs e) {

@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DB">
-      <HintPath>..\..\DB\DB\bin\Debug\DB.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +52,12 @@
     </Compile>
     <Compile Include="FrmAzurirajZaposlenika.Designer.cs">
       <DependentUpon>FrmAzurirajZaposlenika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDodajDostavu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajDostavu.Designer.cs">
+      <DependentUpon>FrmDodajDostavu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDodajPoslovnicu.cs">
       <SubType>Form</SubType>
@@ -133,6 +136,9 @@
     <EmbeddedResource Include="FrmAzurirajZaposlenika.resx">
       <DependentUpon>FrmAzurirajZaposlenika.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDodajDostavu.resx">
+      <DependentUpon>FrmDodajDostavu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDodajPoslovnicu.resx">
       <DependentUpon>FrmDodajPoslovnicu.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +202,10 @@
     <ProjectReference Include="..\Business_Layer\Business_Layer.csproj">
       <Project>{3443d1f1-6d55-44e5-a9ab-eb5848cda4bc}</Project>
       <Name>Business_Layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data_Layer\Data_Layer.csproj">
+      <Project>{40fe8682-71e1-4242-b28f-eb68e37fa1f9}</Project>
+      <Name>Data_Layer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -49,7 +49,7 @@
     <Compile Include="Dostupnost.cs" />
     <Compile Include="Kategorija.cs" />
     <Compile Include="Klijent.cs" />
-    <Compile Include="Lijekovi.cs" />
+    <Compile Include="Lijek.cs" />
     <Compile Include="LijekoviOsiguranje.cs" />
     <Compile Include="LijekoviRecept.cs" />
     <Compile Include="Narudzba.cs" />

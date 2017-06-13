@@ -12,6 +12,7 @@ namespace PharmaCure
 {
     public partial class FrmMain : Form
     {
+        public int djelatnik = 1;
         public FrmMain()
         {
             InitializeComponent();

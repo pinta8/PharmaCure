@@ -14,7 +14,7 @@ namespace PharmaCure
     public partial class FrmPopisLijekova : Form
     {
         //Nova lista lijekova za ispisivanje
-        public List<Lijekovi> l = new List<Lijekovi>();
+        public List<Lijek> l = new List<Lijek>();
         public FrmPopisLijekova()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace PharmaCure
         //funkcija za dohvat nove liste iz baze i ispis iste na datagridview
         private void OsvjeziListu()
         {
-            l = Lijekovi.DohvatiSveLijekove();
+            l = Lijek.DohvatiSveLijekove();
             dgvLijekovi.DataSource = l;
         }
     }
