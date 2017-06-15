@@ -16,12 +16,12 @@ namespace Business_Layer
         public int ID_Klijent { get; set; }
         public int Kolicina { get; set; }
 
-        public static List<LijekoviRecept> DohvatiSveLijekove()
+        public static List<LijekoviRecept> DohvatiRecepte(int pom)
         {
             List <LijekoviRecept> ListaRasadnika = new List<LijekoviRecept>();
             SqlCommand Command = new SqlCommand();
             Command.CommandType = CommandType.Text;
-            Command.CommandText = "SELECT * FROM LijekoviRecept";
+            Command.CommandText = "SELECT * FROM LijekoviRecept WHERE ID_Klijent = " + pom;
             DBCon DB = new DBCon();
             DB.GetCon();
             DataTable DT = DB.DohvatiDT(Command);
@@ -49,7 +49,7 @@ namespace Business_Layer
         public LijekoviRecept MakeLijekRecept(DataRow row)
         {
             LijekoviRecept rec = new LijekoviRecept();
-            rec.ID_Lijek = int.Parse(row["ID_Lijek"].ToString());
+            rec.ID_Lijek = int.Parse(row["ID_Lijeka"].ToString());
             rec.Naziv = row["Naziv"].ToString();
             rec.ID_Klijent = int.Parse(row["ID_Klijent"].ToString());
             rec.Kolicina = int.Parse(row["Kolicina"].ToString());

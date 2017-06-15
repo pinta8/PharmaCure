@@ -11,6 +11,7 @@ namespace Business_Layer
 {
     public class Lijek
     {
+        public int ID { get; set; }
         public string Naziv { get; set; }
         public string kratkiOpis { get; set; }
         public DateTime datumProizvodnje { get; set; }
@@ -39,6 +40,7 @@ namespace Business_Layer
         public Lijek MakeLijek(DataRow row)
         {
             Lijek lije = new Lijek();
+            lije.ID = int.Parse(row["ID_Lijek"].ToString());
             lije.Naziv = row["Naziv"].ToString();
             lije.kratkiOpis = row["Kratki_opis"].ToString();
             lije.datumProizvodnje = DateTime.Parse(row["Datum_proizvodnje"].ToString());

@@ -38,10 +38,16 @@ namespace PharmaCure
         }
         private void OsvjeziListu()
         {
-            lr = LijekoviRecept.DohvatiSveLijekove();
+            
+            lr = LijekoviRecept.DohvatiRecepte(int.Parse(txtIDKlijent.Text));
             dgvLijekoviRecept.DataSource = lr;
         }
         private void FrmRecepti_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtIDLijek_TextChanged(object sender, EventArgs e)
         {
             OsvjeziListu();
         }
