@@ -55,7 +55,6 @@ namespace PharmaCure
             if (int.Parse(txtKolicina.Text) > 0)
             {
                 int kolicina = int.Parse(txtKolicina.Text);
-                MessageBox.Show(cmbLijek.Text.ToString());
                 int id = cmbLijek.SelectedIndex;
                 int idR = 1;
                 bool dobro = true;
@@ -70,6 +69,7 @@ namespace PharmaCure
                 if (dobro)
                 {
                     ArtikliRacun.DodajArtikl(id, kolicina, idR);
+                    OsvjeziListu();
                 }
             }
         }
@@ -86,7 +86,13 @@ namespace PharmaCure
             dgvRecepti.DataSource = rec;
             l = ArtikliRacun.DohvatiSveArtikleKorisnika(korisnik);
             dgvArtikli.DataSource = l;
-
+            double cij = 0;
+            foreach (ArtikliRacun o in l)
+            {
+                double broj = double.Parse(o.participacija.ToString()) / 100;
+                cij += (o.cijena * o.kolicina) * broj;
+            }
+            txtCijena.Text = cij.ToString() + " kn";
         }
 
         private void txtKorisnik_TextChanged(object sender, EventArgs e)
@@ -96,13 +102,6 @@ namespace PharmaCure
             {
                 OsvjeziListu();
             }
-            double cij = 0;
-            foreach(ArtikliRacun o in l)
-            {
-                double broj = double.Parse(o.participacija.ToString())/100;
-                cij += (o.cijena * o.kolicina)*broj;
-            }
-            txtCijena.Text = cij.ToString() + " kn";
         }
 
         private void btnRacun_Click(object sender, EventArgs e)
@@ -117,12 +116,25 @@ namespace PharmaCure
 
         private void btnJedan_Click(object sender, EventArgs e)
         {
-
+            int idLijekR = int.Parse(dgvRecepti.CurrentRow.Cells[0].Value.ToString());
+            int kolicina = int.Parse(dgvRecepti.CurrentRow.Cells[3].Value.ToString());
+            int participacije = int.Parse(dgvRecepti.CurrentRow.Cells[4].Value.ToString());
+            int idR = 1;
+            ArtikliRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
+            OsvjeziListu();
         }
 
         private void btnSve_Click(object sender, EventArgs e)
         {
-
+            foreach(DataGridViewRow row in dgvRecepti.Rows)
+            {
+                int idLijekR = int.Parse(row.Cells[0].Value.ToString());
+                int kolicina = int.Parse(row.Cells[3].Value.ToString());
+                int participacije = int.Parse(row.Cells[4].Value.ToString());
+                int idR = 1;
+                ArtikliRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
+            }
+            OsvjeziListu();
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)

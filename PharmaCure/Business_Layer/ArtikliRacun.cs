@@ -54,7 +54,12 @@ namespace Business_Layer
             SqlCommand command = new SqlCommand("INSERT INTO Artikli_Racun ( ID_Racun, ID_Lijek, Kolicina, Participacija) VALUES ("+idR+", "+lijID+", "+kol+", 100)");
             baza.IzvrsiUpit(command);
         }
-
+        static public void DodajArtiklRecept(int lijID, int idR, int kol, int part)
+        {
+            DBCon baza = new DBCon();
+            SqlCommand command = new SqlCommand("INSERT INTO Artikli_Racun ( ID_Racun, ID_Lijek, Kolicina, Participacija) VALUES (" + idR + ", " + lijID + ", " + kol + ", "+ part +");");
+            baza.IzvrsiUpit(command);
+        }
         public ArtikliRacun MakeLijek(DataRow row)
         {
             ArtikliRacun lije = new ArtikliRacun();

@@ -15,6 +15,7 @@ namespace Business_Layer
         public string Naziv { get; set; }
         public int ID_Klijent { get; set; }
         public int Kolicina { get; set; }
+        public int Participacija { get; set; }
 
         public static List<LijekoviRecept> DohvatiRecepte(int pom)
         {
@@ -53,6 +54,7 @@ namespace Business_Layer
             rec.Naziv = row["Naziv"].ToString();
             rec.ID_Klijent = int.Parse(row["ID_Klijent"].ToString());
             rec.Kolicina = int.Parse(row["Kolicina"].ToString());
+            rec.Participacija = int.Parse(row["Participacija"].ToString());
             return rec;
         }
     }
