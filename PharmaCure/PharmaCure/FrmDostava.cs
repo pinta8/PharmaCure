@@ -17,6 +17,7 @@ namespace PharmaCure
         public List<Stanje> st = new List<Stanje>();
         public List<Lijek> li = new List<Lijek>();
         public List<LijekoviRecept> rec = new List<LijekoviRecept>();
+        public int idR = 0;
         public FrmDostava()
         {
             InitializeComponent();
@@ -36,18 +37,12 @@ namespace PharmaCure
             djela = main.djelatnik;
             st = Stanje.DohvatiStanja();
             li = Lijek.DohvatiSveLijekove();
-            foreach (Stanje s in st)
-            {
-                cmbStanje.DisplayMember = "Text";
-                cmbStanje.ValueMember = "Value";
-                cmbStanje.Items.Add(new {Text = s.naziv, Value = s.id });
-            }
-            foreach (Lijek u in li)
-            {
-                cmbLijek.DisplayMember = "Text";
-                cmbLijek.ValueMember = "Value";
-                cmbLijek.Items.Add(new { Text = u.Naziv, Value = u.ID });
-            }
+            cmbStanje.DisplayMember = "naziv";
+            cmbStanje.ValueMember = "id";
+            cmbStanje.DataSource = st;
+            cmbLijek.DisplayMember = "Naziv";
+            cmbLijek.ValueMember = "ID";
+            cmbLijek.DataSource = li;
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -55,8 +50,7 @@ namespace PharmaCure
             if (int.Parse(txtKolicina.Text) > 0)
             {
                 int kolicina = int.Parse(txtKolicina.Text);
-                int id = cmbLijek.SelectedIndex;
-                int idR = 1;
+                int id = int.Parse(cmbLijek.SelectedValue.ToString());
                 bool dobro = true;
                 foreach (ArtikliRacun al in l)
                 {
@@ -102,16 +96,24 @@ namespace PharmaCure
             {
                 OsvjeziListu();
             }
+            if (txtKorisnik.Text != "")
+            {
+                idR = Racun.NadjiRacun(int.Parse(txtKorisnik.Text), 2).IDRacun;
+            }
         }
 
         private void btnRacun_Click(object sender, EventArgs e)
         {
-            Racun noviRacun = new Racun();
-            noviRacun.vrijeme = DateTime.Now;
-            noviRacun.djelatnik = djela;
-            noviRacun.klijent = int.Parse(txtKorisnik.Text);
-            noviRacun.stanje = int.Parse(cmbStanje.SelectedValue.ToString());
-            Racun.DodajRacun(noviRacun);
+            if (txtKorisnik.Text != "")
+            {
+                Racun noviRacun = new Racun();
+                noviRacun.vrijeme = DateTime.Now;
+                noviRacun.djelatnik = djela;
+                noviRacun.klijent = int.Parse(txtKorisnik.Text);
+                noviRacun.stanje = int.Parse(cmbStanje.SelectedValue.ToString());
+                Racun.DodajRacun(noviRacun);
+            }
+            else MessageBox.Show("Morate unijeti šifru klijenta!");
         }
 
         private void btnJedan_Click(object sender, EventArgs e)
@@ -119,7 +121,6 @@ namespace PharmaCure
             int idLijekR = int.Parse(dgvRecepti.CurrentRow.Cells[0].Value.ToString());
             int kolicina = int.Parse(dgvRecepti.CurrentRow.Cells[3].Value.ToString());
             int participacije = int.Parse(dgvRecepti.CurrentRow.Cells[4].Value.ToString());
-            int idR = 1;
             ArtikliRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
             OsvjeziListu();
         }
@@ -131,7 +132,6 @@ namespace PharmaCure
                 int idLijekR = int.Parse(row.Cells[0].Value.ToString());
                 int kolicina = int.Parse(row.Cells[3].Value.ToString());
                 int participacije = int.Parse(row.Cells[4].Value.ToString());
-                int idR = 1;
                 ArtikliRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
             }
             OsvjeziListu();
