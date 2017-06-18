@@ -70,7 +70,7 @@ namespace PharmaCure
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ArtikliRacun.DostavljenRacun(int.Parse(txtKorisnik.Text));
+            ArtikliRacun.DostavljenRacun(int.Parse(txtKorisnik.Text), 2);
             MessageBox.Show("Lijekovi su uspješno dostavljeni!");
             OsvjeziListu();
         }
@@ -78,7 +78,7 @@ namespace PharmaCure
         {
             rec = LijekoviRecept.DohvatiRecepte(korisnik);
             dgvRecepti.DataSource = rec;
-            l = ArtikliRacun.DohvatiSveArtikleKorisnika(korisnik);
+            l = ArtikliRacun.DohvatiSveArtikleKorisnika(korisnik, 2);
             dgvArtikli.DataSource = l;
             double cij = 0;
             foreach (ArtikliRacun o in l)

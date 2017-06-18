@@ -13,6 +13,7 @@ namespace Business_Layer
     {
         static public int PoslovnicaPrijavljenog;
         static public int IdPrijavljenog;
+        static public int ZapID;
 		int zaposlenikId;
 		string korisnickoIme;
 		string lozinka;
@@ -84,6 +85,7 @@ namespace Business_Layer
 				z.lozinka = (string)dt.Rows[0]["Lozinka"];
 				z.poslovnicaId = (int)dt.Rows[0]["ID_Poslovnice"];
                 PoslovnicaPrijavljenog = z.poslovnicaId;
+                ZapID = z.zaposlenikId;
 				return z;
 			}	
             	

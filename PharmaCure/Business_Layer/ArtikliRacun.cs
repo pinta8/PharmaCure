@@ -19,12 +19,12 @@ namespace Business_Layer
         public int kolicina { get; set; }
         public int participacija { get; set; }
 
-        public static List<ArtikliRacun> DohvatiSveArtikleKorisnika(int pom)
+        public static List<ArtikliRacun> DohvatiSveArtikleKorisnika(int pom, int radnja)
         {
             List<ArtikliRacun> ListaArtikala = new List<ArtikliRacun>();
             SqlCommand Command = new SqlCommand();
             Command.CommandType = CommandType.Text;
-            Command.CommandText = "SELECT a.ID_Lijek, l.Naziv, l.Kratki_opis, l.Datum_isteka, l.Cijena, a.Kolicina, a.Participacija FROM Racun r JOIN Artikli_Racun a ON r.ID_Racun = a.ID_Racun JOIN Lijekovi l ON a.ID_Lijek = l.ID_Lijek WHERE r.ID_Klijent = " + pom + "AND r.ID_Stanje = 2";
+            Command.CommandText = "SELECT a.ID_Lijek, l.Naziv, l.Kratki_opis, l.Datum_isteka, l.Cijena, a.Kolicina, a.Participacija FROM Racun r JOIN Artikli_Racun a ON r.ID_Racun = a.ID_Racun JOIN Lijekovi l ON a.ID_Lijek = l.ID_Lijek WHERE r.ID_Klijent = " + pom + "AND r.ID_Stanje = " + radnja + ";";
             DBCon DB = new DBCon();
             DB.GetCon();
             DataTable DT = DB.DohvatiDT(Command);
@@ -41,10 +41,10 @@ namespace Business_Layer
             SqlCommand command = new SqlCommand("DELETE FROM Artikli_Racun WHERE ID_Lijek=" + id);
             baza.IzvrsiUpit(command);
         }
-        static public void DostavljenRacun(int klije)
+        static public void DostavljenRacun(int klije, int stanje)
         {
             DBCon baza = new DBCon();
-            SqlCommand command = new SqlCommand("UPDATE Racun set ID_Stanje = 3 WHERE ID_Klijent = " + klije + " AND ID_Stanje = 2");
+            SqlCommand command = new SqlCommand("UPDATE Racun set ID_Stanje = 3 WHERE ID_Klijent = " + klije + " AND ID_Stanje = " + stanje);
             baza.IzvrsiUpit(command);
 
         }

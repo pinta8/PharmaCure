@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business_Layer;
 
 namespace PharmaCure
 {
     public partial class FrmMain : Form
     {
-        public int djelatnik = 1;
+        public int djelatnik = Zaposlenik.ZapID;
         public FrmMain()
         {
             InitializeComponent();
