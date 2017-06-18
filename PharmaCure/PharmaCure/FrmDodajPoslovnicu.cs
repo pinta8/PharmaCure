@@ -46,6 +46,9 @@ namespace PharmaCure {
             OsvjeziPoslovnice();
         }
 
-        
+        private void btnIzbrisi_Click(object sender, EventArgs e) {
+            Poslovnica.IzbrisiPoslovnicuIzBaze(poslovnice[dgvPoslovnice.SelectedRows[0].Index]);
+            OsvjeziPoslovnice();
+        }
     }
 }

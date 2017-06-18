@@ -149,5 +149,11 @@ namespace Business_Layer
             baza.IzvrsiUpit(command);
 
         }
+        static public void IzbrisiPoslovnicuIzBaze(Poslovnica poslovnicaUnos) {
+            Poslovnica poslovnica = poslovnicaUnos;
+            DBCon baza = new DBCon();
+            SqlCommand command = new SqlCommand("DELETE FROM Poslovnica WHERE ID_Poslovnica=" + poslovnica.poslovnicaId);
+            baza.IzvrsiUpit(command);
+        }
     }
 }

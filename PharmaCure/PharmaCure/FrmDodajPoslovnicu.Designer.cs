@@ -170,6 +170,7 @@
             this.btnIzbrisi.TabIndex = 14;
             this.btnIzbrisi.Text = "Izbriši";
             this.btnIzbrisi.UseVisualStyleBackColor = true;
+            this.btnIzbrisi.Click += new System.EventHandler(this.btnIzbrisi_Click);
             // 
             // btnAzuriraj
             // 
