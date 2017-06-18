@@ -77,7 +77,7 @@ namespace Business_Layer
 				broj = value;
 			}
 		}
-        //Funkcija za vraćanje svih Poslovnica iz baze
+        //Funkcija za vraćanje svih Poslovnica iz baze za combobox
 		static public List<Poslovnica> DohvatiPoslovniceZaComboBox() {
 			List<Poslovnica> poslovnice = new List<Poslovnica>();
 			DBCon baza = new DBCon();
@@ -98,8 +98,33 @@ namespace Business_Layer
 			}
 			
 		}
+        //funkcija za vraćanje svih poslovnica iz baze
+        static public List<Poslovnica> DohvatiPoslovnice() {
+            List<Poslovnica> poslovnice = new List<Poslovnica>();
+            DBCon baza = new DBCon();
+            SqlCommand command = new SqlCommand("SELECT ID_Poslovnica,Naziv,Drzava,Grad,Ulica,Broj FROM Poslovnica");
+            DataTable dt = baza.DohvatiDT(command);
+            if (dt.Rows.Count == 0) {
+                return null;
+            }
+            else {
+                foreach (DataRow row in dt.Rows) {
+                    Poslovnica p = new Poslovnica();
+                    p.PoslovnicaId = (int)row["ID_Poslovnica"];
+                    p.Naziv = (string)row["Naziv"];
+                    p.Drzava = (string)row["Drzava"];
+                    p.Grad = (string)row["Grad"];
+                    p.Ulica = (string)row["Ulica"];
+                    p.Broj = (int)row["Broj"];
+                    poslovnice.Add(p);
+
+                }
+                return poslovnice;
+            }
+
+        }
         //funkcija za unos novih poslovnica u bazu
-		static public void ZapisiPoslovnicu(Poslovnica poslovnicaUnos) {
+        static public void ZapisiPoslovnicu(Poslovnica poslovnicaUnos) {
 			Poslovnica p = poslovnicaUnos;
 			DBCon baza = new DBCon();
 			SqlCommand command = new SqlCommand("INSERT INTO Poslovnica (Naziv,Drzava,Grad,Ulica,Broj) VALUES (@Naziv, @Drzava, @Grad, @Ulica, @Broj)");

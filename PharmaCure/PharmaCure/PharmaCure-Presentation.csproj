@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAzurirajPoslovnicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAzurirajPoslovnicu.Designer.cs">
+      <DependentUpon>FrmAzurirajPoslovnicu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAzurirajZaposlenika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAzurirajPoslovnicu.resx">
+      <DependentUpon>FrmAzurirajPoslovnicu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAzurirajZaposlenika.resx">
       <DependentUpon>FrmAzurirajZaposlenika.cs</DependentUpon>
     </EmbeddedResource>

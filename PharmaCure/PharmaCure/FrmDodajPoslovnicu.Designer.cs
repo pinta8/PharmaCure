@@ -35,12 +35,16 @@
             this.tbxBroj = new System.Windows.Forms.TextBox();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnPovratak = new System.Windows.Forms.Button();
+            this.dgvPoslovnice = new System.Windows.Forms.DataGridView();
+            this.btnIzbrisi = new System.Windows.Forms.Button();
+            this.btnAzuriraj = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPoslovnice)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxNaziv
             // 
             this.tbxNaziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxNaziv.Location = new System.Drawing.Point(134, 85);
+            this.tbxNaziv.Location = new System.Drawing.Point(767, 87);
             this.tbxNaziv.Name = "tbxNaziv";
             this.tbxNaziv.Size = new System.Drawing.Size(100, 23);
             this.tbxNaziv.TabIndex = 0;
@@ -49,7 +53,7 @@
             // 
             this.lblNaziv.AutoSize = true;
             this.lblNaziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNaziv.Location = new System.Drawing.Point(47, 88);
+            this.lblNaziv.Location = new System.Drawing.Point(680, 90);
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(44, 17);
             this.lblNaziv.TabIndex = 1;
@@ -59,7 +63,7 @@
             // 
             this.lblDrzava.AutoSize = true;
             this.lblDrzava.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDrzava.Location = new System.Drawing.Point(47, 140);
+            this.lblDrzava.Location = new System.Drawing.Point(680, 142);
             this.lblDrzava.Name = "lblDrzava";
             this.lblDrzava.Size = new System.Drawing.Size(54, 17);
             this.lblDrzava.TabIndex = 3;
@@ -68,7 +72,7 @@
             // tbxDrzava
             // 
             this.tbxDrzava.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxDrzava.Location = new System.Drawing.Point(134, 137);
+            this.tbxDrzava.Location = new System.Drawing.Point(767, 139);
             this.tbxDrzava.Name = "tbxDrzava";
             this.tbxDrzava.Size = new System.Drawing.Size(100, 23);
             this.tbxDrzava.TabIndex = 2;
@@ -77,7 +81,7 @@
             // 
             this.lblGrad.AutoSize = true;
             this.lblGrad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblGrad.Location = new System.Drawing.Point(47, 194);
+            this.lblGrad.Location = new System.Drawing.Point(680, 196);
             this.lblGrad.Name = "lblGrad";
             this.lblGrad.Size = new System.Drawing.Size(41, 17);
             this.lblGrad.TabIndex = 5;
@@ -86,7 +90,7 @@
             // tbxGrad
             // 
             this.tbxGrad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxGrad.Location = new System.Drawing.Point(134, 191);
+            this.tbxGrad.Location = new System.Drawing.Point(767, 193);
             this.tbxGrad.Name = "tbxGrad";
             this.tbxGrad.Size = new System.Drawing.Size(100, 23);
             this.tbxGrad.TabIndex = 4;
@@ -95,7 +99,7 @@
             // 
             this.lblUlica.AutoSize = true;
             this.lblUlica.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUlica.Location = new System.Drawing.Point(47, 244);
+            this.lblUlica.Location = new System.Drawing.Point(680, 246);
             this.lblUlica.Name = "lblUlica";
             this.lblUlica.Size = new System.Drawing.Size(39, 17);
             this.lblUlica.TabIndex = 7;
@@ -104,7 +108,7 @@
             // tbxUlica
             // 
             this.tbxUlica.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxUlica.Location = new System.Drawing.Point(134, 241);
+            this.tbxUlica.Location = new System.Drawing.Point(767, 243);
             this.tbxUlica.Name = "tbxUlica";
             this.tbxUlica.Size = new System.Drawing.Size(100, 23);
             this.tbxUlica.TabIndex = 6;
@@ -113,7 +117,7 @@
             // 
             this.lblBroj.AutoSize = true;
             this.lblBroj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblBroj.Location = new System.Drawing.Point(47, 297);
+            this.lblBroj.Location = new System.Drawing.Point(680, 299);
             this.lblBroj.Name = "lblBroj";
             this.lblBroj.Size = new System.Drawing.Size(31, 17);
             this.lblBroj.TabIndex = 9;
@@ -122,7 +126,7 @@
             // tbxBroj
             // 
             this.tbxBroj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxBroj.Location = new System.Drawing.Point(134, 294);
+            this.tbxBroj.Location = new System.Drawing.Point(767, 296);
             this.tbxBroj.Name = "tbxBroj";
             this.tbxBroj.Size = new System.Drawing.Size(100, 23);
             this.tbxBroj.TabIndex = 8;
@@ -130,7 +134,7 @@
             // btnDodaj
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDodaj.Location = new System.Drawing.Point(103, 339);
+            this.btnDodaj.Location = new System.Drawing.Point(743, 355);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(79, 33);
             this.btnDodaj.TabIndex = 10;
@@ -148,11 +152,43 @@
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
+            // dgvPoslovnice
+            // 
+            this.dgvPoslovnice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPoslovnice.Location = new System.Drawing.Point(34, 77);
+            this.dgvPoslovnice.Name = "dgvPoslovnice";
+            this.dgvPoslovnice.Size = new System.Drawing.Size(581, 287);
+            this.dgvPoslovnice.TabIndex = 12;
+            // 
+            // btnIzbrisi
+            // 
+            this.btnIzbrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzbrisi.Location = new System.Drawing.Point(398, 390);
+            this.btnIzbrisi.Name = "btnIzbrisi";
+            this.btnIzbrisi.Size = new System.Drawing.Size(79, 39);
+            this.btnIzbrisi.TabIndex = 14;
+            this.btnIzbrisi.Text = "Izbriši";
+            this.btnIzbrisi.UseVisualStyleBackColor = true;
+            // 
+            // btnAzuriraj
+            // 
+            this.btnAzuriraj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAzuriraj.Location = new System.Drawing.Point(142, 390);
+            this.btnAzuriraj.Name = "btnAzuriraj";
+            this.btnAzuriraj.Size = new System.Drawing.Size(82, 39);
+            this.btnAzuriraj.TabIndex = 13;
+            this.btnAzuriraj.Text = "Ažuriraj";
+            this.btnAzuriraj.UseVisualStyleBackColor = true;
+            this.btnAzuriraj.Click += new System.EventHandler(this.btnAzuriraj_Click);
+            // 
             // FrmDodajPoslovnicu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 485);
+            this.Controls.Add(this.btnIzbrisi);
+            this.Controls.Add(this.btnAzuriraj);
+            this.Controls.Add(this.dgvPoslovnice);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.lblBroj);
@@ -168,6 +204,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDodajPoslovnicu";
             this.Text = "FrmDodajPoslovnicu";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPoslovnice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +224,8 @@
 		private System.Windows.Forms.TextBox tbxBroj;
 		private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnPovratak;
+        private System.Windows.Forms.DataGridView dgvPoslovnice;
+        private System.Windows.Forms.Button btnIzbrisi;
+        private System.Windows.Forms.Button btnAzuriraj;
     }
 }

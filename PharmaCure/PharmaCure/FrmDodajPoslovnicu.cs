@@ -11,9 +11,12 @@ using System.Windows.Forms;
 
 namespace PharmaCure {
 	public partial class FrmDodajPoslovnicu : Form {
-		public FrmDodajPoslovnicu() {
+        private List<Poslovnica> poslovnice = new List<Poslovnica>();
+        public FrmDodajPoslovnicu() {
 			InitializeComponent();
-		}
+            OsvjeziPoslovnice();
+            
+        }
 
         //Upisivanje Nove Poslovnice u Bazu
 		private void btnDodaj_Click(object sender, EventArgs e) {
@@ -25,6 +28,7 @@ namespace PharmaCure {
 			p.Broj = int.Parse(tbxBroj.Text);
 
 			Poslovnica.ZapisiPoslovnicu(p);
+            OsvjeziPoslovnice();
 		}
         //Povratak na glavnu formu
         private void btnPovratak_Click(object sender, EventArgs e) {
@@ -32,5 +36,16 @@ namespace PharmaCure {
             m.Show();
             this.Close();
         }
+        public void OsvjeziPoslovnice() {
+            poslovnice = Poslovnica.DohvatiPoslovnice();
+            dgvPoslovnice.DataSource = poslovnice;
+        }
+        private void btnAzuriraj_Click(object sender, EventArgs e) {
+            //FrmAzurirajPoslovnicu az = new FrmAzurirajPoslovnicu(poslovnice[dgvPoslovnice.SelectedRows[0].Index], poslovnice);
+            //az.ShowDialog();
+            OsvjeziPoslovnice();
+        }
+
+        
     }
 }
