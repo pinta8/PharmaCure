@@ -45,6 +45,7 @@
             this.btnSpremiPromjene.TabIndex = 21;
             this.btnSpremiPromjene.Text = "Spremi promjene";
             this.btnSpremiPromjene.UseVisualStyleBackColor = true;
+            this.btnSpremiPromjene.Click += new System.EventHandler(this.btnSpremiPromjene_Click);
             // 
             // lblBroj
             // 

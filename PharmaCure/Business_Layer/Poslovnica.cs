@@ -136,5 +136,18 @@ namespace Business_Layer
 			baza.IzvrsiUpit(command);
 		
 	}
-	}
+        static public void AzurirajPoslovnicu(Poslovnica poslovnicaUnos) {
+            Poslovnica poslovnica = poslovnicaUnos;
+            DBCon baza = new DBCon();
+            SqlCommand command = new SqlCommand("UPDATE Poslovnica set Naziv=@Naziv, Drzava = @Drzava, Grad = @Grad, Ulica=@Ulica, Broj=@Broj where ID_Poslovnica = @ID_Poslovnica");
+            command.Parameters.AddWithValue("@Naziv", poslovnica.Naziv);
+            command.Parameters.AddWithValue("@Drzava", poslovnica.Drzava);
+            command.Parameters.AddWithValue("@Grad", poslovnica.Grad);
+            command.Parameters.AddWithValue("@Ulica", poslovnica.Ulica);
+            command.Parameters.AddWithValue("@Broj", poslovnica.Broj);
+            command.Parameters.AddWithValue("@ID_Poslovnica", poslovnica.PoslovnicaId);
+            baza.IzvrsiUpit(command);
+
+        }
+    }
 }

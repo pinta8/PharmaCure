@@ -41,8 +41,8 @@ namespace PharmaCure {
             dgvPoslovnice.DataSource = poslovnice;
         }
         private void btnAzuriraj_Click(object sender, EventArgs e) {
-            //FrmAzurirajPoslovnicu az = new FrmAzurirajPoslovnicu(poslovnice[dgvPoslovnice.SelectedRows[0].Index], poslovnice);
-            //az.ShowDialog();
+            FrmAzurirajPoslovnicu az = new FrmAzurirajPoslovnicu(poslovnice[dgvPoslovnice.SelectedRows[0].Index]);
+            az.ShowDialog();
             OsvjeziPoslovnice();
         }
 
