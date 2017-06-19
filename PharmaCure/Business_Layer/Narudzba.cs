@@ -14,6 +14,7 @@ namespace Business_Layer
         int djelatnikId;
         string nazivLijeka;
         int kolicina;
+        int lijekId;
 
         public int PoslovnicaId {
             get {
@@ -54,17 +55,29 @@ namespace Business_Layer
                 kolicina = value;
             }
         }
+
+        public int LijekId {
+            get {
+                return lijekId;
+            }
+
+            set {
+                lijekId = value;
+            }
+        }
+
         static public void ZapisiNarudzbu(Narudzba nar) {
        
             Narudzba narudzba = nar;
             DBCon baza = new DBCon();
             
-            SqlCommand command = new SqlCommand("INSERT INTO Narudzba (ID_Narudzbe,ID_Poslovnice,ID_Djelatnika,NazivLijeka,Kolicina) VALUES (((SELECT TOP 1 ID_Narudzbe FROM Narudzba order by 1 desc)+1),@ID_Poslovnice, @ID_Djelatnika, @NazivLijeka, @Kolicina)");
+            SqlCommand command = new SqlCommand("INSERT INTO Narudzba (ID_Narudzbe,ID_Poslovnice,ID_Djelatnika,NazivLijeka,Kolicina,ID_Lijek) VALUES (((SELECT TOP 1 ID_Narudzbe FROM Narudzba order by 1 desc)+1),@ID_Poslovnice, @ID_Djelatnika, @NazivLijeka, @Kolicina, @ID_Lijek)");
             
             command.Parameters.AddWithValue("@ID_Poslovnice", narudzba.poslovnicaId);
             command.Parameters.AddWithValue("@ID_Djelatnika", narudzba.djelatnikId);
             command.Parameters.AddWithValue("@NazivLijeka", narudzba.nazivLijeka);
             command.Parameters.AddWithValue("@Kolicina", narudzba.kolicina);
+            command.Parameters.AddWithValue("@ID_Lijek", narudzba.lijekId);
             baza.IzvrsiUpit(command);
         }
     }

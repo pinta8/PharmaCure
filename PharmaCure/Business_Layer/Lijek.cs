@@ -49,17 +49,19 @@ namespace Business_Layer
             lije.zemljaPorijekla = row["Zemlja_porijekla"].ToString();
             return lije;
         }
-        static public List<string> VratiNaziveLijekova() {
-            List<string> lijekovi = new List<string>();
+        static public List<Lijek> VratiNaziveLijekova() {
+            List<Lijek> lijekovi = new List<Lijek>();
             DBCon baza = new DBCon();
-            SqlCommand command = new SqlCommand("SELECT Naziv FROM Lijekovi");
+            SqlCommand command = new SqlCommand("SELECT Naziv,ID_Lijek FROM Lijekovi");
             DataTable dt = baza.DohvatiDT(command);
             if (dt.Rows.Count == 0) {
                 return null;
             }
             else {
                 foreach (DataRow row in dt.Rows) {
-                    lijekovi.Add((string)row["Naziv"]);
+                    Lijek l = new Lijek();
+                    lijekovi.Add(l.MakeLijek(row));
+                    
                 }
                 return lijekovi;
             }

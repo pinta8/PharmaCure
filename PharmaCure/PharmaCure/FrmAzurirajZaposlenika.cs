@@ -37,12 +37,17 @@ namespace PharmaCure {
 		Zaposlenik z;
         //na klik se ažurira korisnik i forma se zatvara
 		private void btnSpremi_Click(object sender, EventArgs e) {
-			z.KorisnickoIme = tbxKorisnickoIme.Text;
-			z.Lozinka = tbxLozinka.Text;
-			z.PoslovnicaId = ((Poslovnica)cbxPoslovnice.SelectedItem).PoslovnicaId;
-			z.NazivPoslovnice = ((Poslovnica)cbxPoslovnice.SelectedItem).Naziv;
-			Zaposlenik.AzurirajZaposlenika(z);
-			this.Close();
+            if (tbxKorisnickoIme.Text == "" || tbxLozinka.Text == "") {
+                MessageBox.Show("Unesite sve podatke!");
+            }
+            else {
+                z.KorisnickoIme = tbxKorisnickoIme.Text;
+                z.Lozinka = tbxLozinka.Text;
+                z.PoslovnicaId = ((Poslovnica)cbxPoslovnice.SelectedItem).PoslovnicaId;
+                z.NazivPoslovnice = ((Poslovnica)cbxPoslovnice.SelectedItem).Naziv;
+                Zaposlenik.AzurirajZaposlenika(z);
+                this.Close();
+            }
 		}
 	}
 }

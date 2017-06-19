@@ -20,15 +20,20 @@ namespace PharmaCure {
 
         //Upisivanje Nove Poslovnice u Bazu
 		private void btnDodaj_Click(object sender, EventArgs e) {
-			Poslovnica p = new Poslovnica();
-			p.Naziv = tbxNaziv.Text;
-			p.Drzava = tbxDrzava.Text;
-			p.Grad = tbxGrad.Text;
-			p.Ulica = tbxUlica.Text;
-			p.Broj = int.Parse(tbxBroj.Text);
+            if (tbxNaziv.Text == "" || tbxDrzava.Text == "" || tbxGrad.Text == "" || tbxUlica.Text == "" || tbxBroj.Text == "") {
+                MessageBox.Show("Niste unijeli sve podatke!");
+            }
+            else {
+                Poslovnica p = new Poslovnica();
+                p.Naziv = tbxNaziv.Text;
+                p.Drzava = tbxDrzava.Text;
+                p.Grad = tbxGrad.Text;
+                p.Ulica = tbxUlica.Text;
+                p.Broj = int.Parse(tbxBroj.Text);
 
-			Poslovnica.ZapisiPoslovnicu(p);
-            OsvjeziPoslovnice();
+                Poslovnica.ZapisiPoslovnicu(p);
+                OsvjeziPoslovnice();
+            }
 		}
         //Povratak na glavnu formu
         private void btnPovratak_Click(object sender, EventArgs e) {
@@ -41,9 +46,9 @@ namespace PharmaCure {
             dgvPoslovnice.DataSource = poslovnice;
         }
         private void btnAzuriraj_Click(object sender, EventArgs e) {
-            FrmAzurirajPoslovnicu az = new FrmAzurirajPoslovnicu(poslovnice[dgvPoslovnice.SelectedRows[0].Index]);
-            az.ShowDialog();
-            OsvjeziPoslovnice();
+           FrmAzurirajPoslovnicu az = new FrmAzurirajPoslovnicu(poslovnice[dgvPoslovnice.SelectedRows[0].Index]);
+           az.ShowDialog();
+           OsvjeziPoslovnice();  
         }
 
         private void btnIzbrisi_Click(object sender, EventArgs e) {

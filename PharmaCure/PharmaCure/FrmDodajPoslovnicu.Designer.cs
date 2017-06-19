@@ -156,6 +156,7 @@
             // 
             this.dgvPoslovnice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPoslovnice.Location = new System.Drawing.Point(34, 77);
+            this.dgvPoslovnice.MultiSelect = false;
             this.dgvPoslovnice.Name = "dgvPoslovnice";
             this.dgvPoslovnice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPoslovnice.Size = new System.Drawing.Size(581, 287);

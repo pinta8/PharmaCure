@@ -44,15 +44,20 @@ namespace PharmaCure
         }
         //Gumb za dodavanje novog Zaposlenika za neku poslovnicu
 		private void btnDodaj_Click(object sender, EventArgs e) {
-			Poslovnica p = (Poslovnica)cbxPoslovnice.SelectedItem;
-			Zaposlenik z = new Zaposlenik();
-			z.KorisnickoIme = tbxKorisnickoIme.Text;
-			z.Lozinka = tbxLozinka.Text;
-			z.PoslovnicaId = p.PoslovnicaId;
 			
-			Zaposlenik.ZapisiZaposlenika(z);
-			zaposlenici = Zaposlenik.VratiSveZaposlenike();
-			dgvZaposlenici.DataSource = zaposlenici;
+            if (tbxKorisnickoIme.Text == "" || tbxLozinka.Text == "") {
+                MessageBox.Show("Unesite sve podatke!");
+            }
+            else {
+                Poslovnica p = (Poslovnica)cbxPoslovnice.SelectedItem;
+                Zaposlenik z = new Zaposlenik();
+                z.KorisnickoIme = tbxKorisnickoIme.Text;
+                z.Lozinka = tbxLozinka.Text;
+                z.PoslovnicaId = p.PoslovnicaId;
+                Zaposlenik.ZapisiZaposlenika(z);
+                zaposlenici = Zaposlenik.VratiSveZaposlenike();
+                dgvZaposlenici.DataSource = zaposlenici;
+            }
 		}
         //Gumb za brisanje Zaposlenika iz baze
 		private void btnIzbrisi_Click(object sender, EventArgs e) {

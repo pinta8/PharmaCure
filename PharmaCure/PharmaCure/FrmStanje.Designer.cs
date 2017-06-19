@@ -51,7 +51,9 @@
             // 
             this.dgvLijekovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLijekovi.Location = new System.Drawing.Point(12, 101);
+            this.dgvLijekovi.MultiSelect = false;
             this.dgvLijekovi.Name = "dgvLijekovi";
+            this.dgvLijekovi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLijekovi.Size = new System.Drawing.Size(580, 263);
             this.dgvLijekovi.TabIndex = 2;
             // 

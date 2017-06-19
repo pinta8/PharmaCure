@@ -27,14 +27,19 @@ namespace PharmaCure {
         }
 
         private void btnSpremiPromjene_Click(object sender, EventArgs e) {
-            p.Naziv = tbxNaziv.Text;
-            p.Drzava = tbxDrzava.Text;
-            p.Grad = tbxGrad.Text;
-            p.Ulica = tbxUlica.Text;
-            p.Broj = int.Parse(tbxBroj.Text);
-            
-            Poslovnica.AzurirajPoslovnicu(p);
-            this.Close();
+            if (tbxNaziv.Text == "" || tbxDrzava.Text == "" || tbxGrad.Text == "" || tbxUlica.Text == "" || tbxBroj.Text == "") {
+                MessageBox.Show("Niste unijeli sve podatke!");
+            }
+            else {
+                p.Naziv = tbxNaziv.Text;
+                p.Drzava = tbxDrzava.Text;
+                p.Grad = tbxGrad.Text;
+                p.Ulica = tbxUlica.Text;
+                p.Broj = int.Parse(tbxBroj.Text);
+
+                Poslovnica.AzurirajPoslovnicu(p);
+                this.Close();
+            }
         }
     }
 }
