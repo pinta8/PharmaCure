@@ -35,10 +35,10 @@ namespace Business_Layer
             }
             return ListaArtikala;
         }
-        static public void IzbrisiArtikl(int id)
+        static public void IzbrisiArtikl(int id, int idR)
         {
             DBCon baza = new DBCon();
-            SqlCommand command = new SqlCommand("DELETE FROM Artikli_Racun WHERE ID_Lijek=" + id);
+            SqlCommand command = new SqlCommand("DELETE FROM Artikli_Racun WHERE ID_Lijek=" + id + "AND ID_Racun = " + idR);
             baza.IzvrsiUpit(command);
         }
         static public void DostavljenRacun(int klije, int stanje)

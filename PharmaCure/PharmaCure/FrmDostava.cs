@@ -122,6 +122,7 @@ namespace PharmaCure
             int kolicina = int.Parse(dgvRecepti.CurrentRow.Cells[3].Value.ToString());
             int participacije = int.Parse(dgvRecepti.CurrentRow.Cells[4].Value.ToString());
             ArtikliRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
+            LijekoviRecept.IzbrisiRecept(idLijekR, int.Parse(dgvRecepti.CurrentRow.Cells[2].Value.ToString()));
             OsvjeziListu();
         }
 
@@ -133,6 +134,7 @@ namespace PharmaCure
                 int kolicina = int.Parse(row.Cells[3].Value.ToString());
                 int participacije = int.Parse(row.Cells[4].Value.ToString());
                 ArtikliRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
+                LijekoviRecept.IzbrisiRecept(idLijekR, int.Parse(dgvRecepti.CurrentRow.Cells[2].Value.ToString()));
             }
             OsvjeziListu();
         }
@@ -140,7 +142,7 @@ namespace PharmaCure
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             int idA = int.Parse(dgvArtikli.CurrentRow.Cells[0].Value.ToString());
-            ArtikliRacun.IzbrisiArtikl(idA);
+            ArtikliRacun.IzbrisiArtikl(idA, idR);
             OsvjeziListu();
         }
     }

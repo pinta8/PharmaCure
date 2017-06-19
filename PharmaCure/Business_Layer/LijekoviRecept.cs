@@ -34,6 +34,13 @@ namespace Business_Layer
             return ListaRasadnika;
         }
 
+        static public void IzbrisiRecept(int id, int idK)
+        {
+            DBCon baza = new DBCon();
+            SqlCommand command = new SqlCommand("DELETE FROM LijekoviRecept WHERE ID_Lijeka=" + id + "AND ID_Klijent = " + idK);
+            baza.IzvrsiUpit(command);
+        }
+
         public int DodajRecept()
         {
             SqlCommand Command = new SqlCommand();
