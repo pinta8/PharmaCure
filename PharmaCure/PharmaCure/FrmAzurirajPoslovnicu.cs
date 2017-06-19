@@ -17,6 +17,7 @@ namespace PharmaCure {
             p = posl;
             PostaviVrijednosti();
         }
+        //postavljamo stare vrijednosti u textboxove
         private void PostaviVrijednosti() {
             tbxNaziv.Text = p.Naziv;
             tbxDrzava.Text = p.Drzava;
@@ -25,7 +26,7 @@ namespace PharmaCure {
             tbxBroj.Text = p.Broj.ToString();
             
         }
-
+        //ako je sve u redu ( nemamo praznih textboxova) ažuriramo podatke poslovnice
         private void btnSpremiPromjene_Click(object sender, EventArgs e) {
             if (tbxNaziv.Text == "" || tbxDrzava.Text == "" || tbxGrad.Text == "" || tbxUlica.Text == "" || tbxBroj.Text == "") {
                 MessageBox.Show("Niste unijeli sve podatke!");

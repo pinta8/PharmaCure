@@ -21,17 +21,19 @@ namespace PharmaCure
             
             
         }
-
+        
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             FrmMain m = new FrmMain();
             m.Show();
             this.Close();
         }
+        //postavljamo izvor podataka za datagrid
         public void PripremiDgvLijek() {
             dostupnost = Dostupnost.DohvatiLijekovePoslovnice(Zaposlenik.PoslovnicaPrijavljenog);
             dgvLijekovi.DataSource = dostupnost;
         }
+        //u poseban textbox stavljamo lijekova čija je količina manja od 10
         public void PripremiKolicineManjeOdDeset() {
             dostupnost = Dostupnost.DohvatiLijekovePoslovnice(Zaposlenik.PoslovnicaPrijavljenog);
             var min = (from d in dostupnost where d.Kolicina < 10 select d);
