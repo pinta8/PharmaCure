@@ -14,11 +14,13 @@ namespace Business_Layer
         static public int PoslovnicaPrijavljenog;
         static public int IdPrijavljenog;
         static public int ZapID;
+        static public int TipPrijavljenog;
 		int zaposlenikId;
 		string korisnickoIme;
 		string lozinka;
 		int poslovnicaId;
 		string nazivPoslovnice;
+        int tipId;
 
 		public string KorisnickoIme {
 			get {
@@ -69,10 +71,21 @@ namespace Business_Layer
 				nazivPoslovnice = value;
 			}
 		}
+
+        public int TipId {
+            get {
+                return tipId;
+            }
+
+            set {
+                tipId = value;
+            }
+        }
+
         //funkcija za dohvaćanje zaposlenika prema imenu i prezimenu
-		static public Zaposlenik DohvatiZaposlenika(string korisnickoIme, string lozinka) {
+        static public Zaposlenik DohvatiZaposlenika(string korisnickoIme, string lozinka) {
 			DBCon baza = new DBCon();
-			SqlCommand command = new SqlCommand("SELECT ID_Djelatnika,Ime,Lozinka,ID_Poslovnice FROM Djelatnik WHERE Ime='" + korisnickoIme+"' AND Lozinka = '"+lozinka+"'");
+			SqlCommand command = new SqlCommand("SELECT ID_Djelatnika,Ime,Lozinka,ID_Poslovnice,ID_Tip FROM Djelatnik WHERE Ime='" + korisnickoIme+"' AND Lozinka = '"+lozinka+"'");
 			DataTable dt = baza.DohvatiDT(command);
 			if(dt.Rows.Count == 0) {
 				return null;
@@ -84,8 +97,10 @@ namespace Business_Layer
 				z.korisnickoIme = (string)dt.Rows[0]["Ime"];
 				z.lozinka = (string)dt.Rows[0]["Lozinka"];
 				z.poslovnicaId = (int)dt.Rows[0]["ID_Poslovnice"];
+                z.tipId = (int)dt.Rows[0]["ID_Tip"];
                 PoslovnicaPrijavljenog = z.poslovnicaId;
                 ZapID = z.zaposlenikId;
+                TipPrijavljenog = z.tipId;
 				return z;
 			}	
             	
@@ -94,11 +109,12 @@ namespace Business_Layer
 		static public void ZapisiZaposlenika(Zaposlenik zaposlenikUnos) {
 			Zaposlenik zaposlenik = zaposlenikUnos;
 			DBCon baza = new DBCon();
-			SqlCommand command=new SqlCommand("INSERT INTO Djelatnik (Ime,Lozinka,ID_Poslovnice) VALUES (@Ime, @Lozinka, @ID_Poslovnice)");
+			SqlCommand command=new SqlCommand("INSERT INTO Djelatnik (Ime,Lozinka,ID_Poslovnice,ID_Tip) VALUES (@Ime, @Lozinka, @ID_Poslovnice, @Id_Tip)");
 			command.Parameters.AddWithValue("@Ime", zaposlenik.KorisnickoIme);
 			command.Parameters.AddWithValue("@Lozinka", zaposlenik.Lozinka);
 			command.Parameters.AddWithValue("@ID_Poslovnice", zaposlenik.PoslovnicaId);
-			baza.IzvrsiUpit(command);
+            command.Parameters.AddWithValue("@ID_Tip", 2);
+            baza.IzvrsiUpit(command);
 		}
         //funkcija za azuriranje zaposlenika
 		static public void AzurirajZaposlenika(Zaposlenik zaposlenikUnos) {
@@ -116,7 +132,7 @@ namespace Business_Layer
 		static public List<Zaposlenik> VratiSveZaposlenike() {
 			List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
 			DBCon baza = new DBCon();
-			SqlCommand command = new SqlCommand("SELECT d.ID_Djelatnika,d.Ime,d.Lozinka,d.ID_Poslovnice,(SELECT Naziv FROM poslovnica p where p.ID_Poslovnica = d.ID_Poslovnice) as naziv FROM djelatnik d");
+			SqlCommand command = new SqlCommand("SELECT d.ID_Djelatnika,d.Ime,d.Lozinka,d.ID_Poslovnice,ID_Tip,(SELECT Naziv FROM poslovnica p where p.ID_Poslovnica = d.ID_Poslovnice) as naziv FROM djelatnik d");
 			DataTable dt = baza.DohvatiDT(command);
 			if (dt.Rows.Count == 0) {
 				return null;
@@ -129,6 +145,7 @@ namespace Business_Layer
 					z.nazivPoslovnice = (string)row["naziv"];
 					z.poslovnicaId = (int)row["ID_Poslovnice"];
 					z.zaposlenikId = (int)row["ID_Djelatnika"];
+                    z.tipId = (int)row["ID_Tip"];
 					zaposlenici.Add(z);
 
 				}
@@ -142,6 +159,8 @@ namespace Business_Layer
 			SqlCommand command = new SqlCommand("DELETE FROM Djelatnik WHERE ID_Djelatnika="+zaposlenik.zaposlenikId);
 			baza.IzvrsiUpit(command);
 		}
+
+        
         
 	}
 }

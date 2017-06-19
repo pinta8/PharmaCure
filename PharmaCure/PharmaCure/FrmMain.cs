@@ -14,10 +14,20 @@ namespace PharmaCure
     public partial class FrmMain : Form
     {
         public int djelatnik = Zaposlenik.ZapID;
+        public int ulogaDjelatnika = Zaposlenik.TipPrijavljenog;
         public FrmMain()
         {
             InitializeComponent();
             this.KeyPreview = true;
+            if (ulogaDjelatnika == 2) {
+                btnDodajPoslovnicu.Hide();
+                btnZaposlenici.Hide();
+                lblTip.Text = "Prijavljeni ste kao ljekarnik";
+                PomakniGumbe();
+            }
+            else lblTip.Text = "Prijavljeni ste kao administrator";
+            NamjestiSlike();
+            
         }
         //Log-out (povratak na formu login)
         private void btnIzlaz_Click_1(object sender, EventArgs e)
@@ -90,6 +100,14 @@ namespace PharmaCure
                 FrmHelp h = new FrmHelp();
                 h.Show();
             }
+        }
+        private void PomakniGumbe() {
+            btnRecepti.Location = new Point(btnZaposlenici.Location.X , btnZaposlenici.Location.Y);
+            this.Size = new Size(this.Size.Width,this.Size.Height - 40);
+            lblTip.Location = new Point(btnDodajPoslovnicu.Location.X, lblTip.Location.Y-40);
+        }
+        private void NamjestiSlike() {
+           
         }
     }
 }
