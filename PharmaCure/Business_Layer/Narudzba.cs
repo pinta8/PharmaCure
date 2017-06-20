@@ -13,8 +13,7 @@ namespace Business_Layer
     {
         int poslovnicaId;
         int djelatnikId;
-        string nazivLijeka;
-        int kolicina;
+
         int lijekId;
 
         List<StavkaNarudzbe> stavke;
@@ -39,25 +38,6 @@ namespace Business_Layer
             }
         }
 
-        public string NazivLijeka {
-            get {
-                return nazivLijeka;
-            }
-
-            set {
-                nazivLijeka = value;
-            }
-        }
-
-        public int Kolicina {
-            get {
-                return kolicina;
-            }
-
-            set {
-                kolicina = value;
-            }
-        }
 
         public int LijekId {
             get {
@@ -78,17 +58,17 @@ namespace Business_Layer
                 stavke = value;
             }
         }
-
+        //zapisujemo narudžbu i stavke narudžbe u bazu
         static public void ZapisiNarudzbu(Narudzba nar) {
        
             Narudzba narudzba = nar;
             DBCon baza = new DBCon();
             
-            SqlCommand command = new SqlCommand("INSERT INTO Narudzba  (ID_Narudzbe,ID_Poslovnice,ID_Djelatnika,Kolicina) OUTPUT INSERTED.ID_Narudzbe VALUES (((SELECT TOP 1 ID_Narudzbe FROM Narudzba order by 1 desc)+1),@ID_Poslovnice, @ID_Djelatnika, @Kolicina)");
+            SqlCommand command = new SqlCommand("INSERT INTO Narudzba  (ID_Narudzbe,ID_Poslovnice,ID_Djelatnika) OUTPUT INSERTED.ID_Narudzbe VALUES (((SELECT TOP 1 ID_Narudzbe FROM Narudzba order by 1 desc)+1),@ID_Poslovnice, @ID_Djelatnika)");
             
             command.Parameters.AddWithValue("@ID_Poslovnice", narudzba.poslovnicaId);
             command.Parameters.AddWithValue("@ID_Djelatnika", narudzba.djelatnikId);
-            command.Parameters.AddWithValue("@Kolicina", narudzba.kolicina);
+           
             int nar_id = (int)baza.DohvatiVrijednost(command);
 
             SqlCommand naredba = new SqlCommand("INSERT INTO StavkeNarudzbe (ID_Lijek, ID_Narudzbe, kolicina) VALUES ");
