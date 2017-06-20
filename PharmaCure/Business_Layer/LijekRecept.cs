@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Business_Layer
 {
-    public class LijekoviRecept
+    public class LijekRecept
     {
         public int ID_Lijek { get; set; }
         public string Naziv { get; set; }
@@ -17,9 +17,9 @@ namespace Business_Layer
         public int Kolicina { get; set; }
         public int Participacija { get; set; }
 
-        public static List<LijekoviRecept> DohvatiRecepte(int pom)
+        public static List<LijekRecept> DohvatiRecepte(int pom)
         {
-            List <LijekoviRecept> ListaRasadnika = new List<LijekoviRecept>();
+            List <LijekRecept> ListaRasadnika = new List<LijekRecept>();
             SqlCommand Command = new SqlCommand();
             Command.CommandType = CommandType.Text;
             Command.CommandText = "SELECT * FROM LijekoviRecept WHERE ID_Klijent = " + pom;
@@ -28,7 +28,7 @@ namespace Business_Layer
             DataTable DT = DB.DohvatiDT(Command);
             foreach (DataRow dr in DT.Rows)
             {
-                LijekoviRecept r = new LijekoviRecept();
+                LijekRecept r = new LijekRecept();
                 ListaRasadnika.Add(r.MakeLijekRecept(dr));
             }
             return ListaRasadnika;
@@ -54,9 +54,9 @@ namespace Business_Layer
             DB.GetCon();
             return DB.IzvrsiUpit(Command);
         }
-        public LijekoviRecept MakeLijekRecept(DataRow row)
+        public LijekRecept MakeLijekRecept(DataRow row)
         {
-            LijekoviRecept rec = new LijekoviRecept();
+            LijekRecept rec = new LijekRecept();
             rec.ID_Lijek = int.Parse(row["ID_Lijeka"].ToString());
             rec.Naziv = row["Naziv"].ToString();
             rec.ID_Klijent = int.Parse(row["ID_Klijent"].ToString());

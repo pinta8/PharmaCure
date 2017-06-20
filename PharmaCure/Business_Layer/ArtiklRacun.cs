@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Business_Layer
 {
-    public class ArtikliRacun
+    public class ArtiklRacun
     {
         public int id { get; set; }
         public string Naziv { get; set; }
@@ -19,9 +19,9 @@ namespace Business_Layer
         public int kolicina { get; set; }
         public int participacija { get; set; }
 
-        public static List<ArtikliRacun> DohvatiSveArtikleKorisnika(int pom, int radnja)
+        public static List<ArtiklRacun> DohvatiSveArtikleKorisnika(int pom, int radnja)
         {
-            List<ArtikliRacun> ListaArtikala = new List<ArtikliRacun>();
+            List<ArtiklRacun> ListaArtikala = new List<ArtiklRacun>();
             SqlCommand Command = new SqlCommand();
             Command.CommandType = CommandType.Text;
             Command.CommandText = "SELECT a.ID_Lijek, l.Naziv, l.Kratki_opis, l.Datum_isteka, l.Cijena, a.Kolicina, a.Participacija FROM Racun r JOIN Artikli_Racun a ON r.ID_Racun = a.ID_Racun JOIN Lijekovi l ON a.ID_Lijek = l.ID_Lijek WHERE r.ID_Klijent = " + pom + "AND r.ID_Stanje = " + radnja + ";";
@@ -30,7 +30,7 @@ namespace Business_Layer
             DataTable DT = DB.DohvatiDT(Command);
             foreach (DataRow dr in DT.Rows)
             {
-                ArtikliRacun r = new ArtikliRacun();
+                ArtiklRacun r = new ArtiklRacun();
                 ListaArtikala.Add(r.MakeLijek(dr));
             }
             return ListaArtikala;
@@ -60,9 +60,9 @@ namespace Business_Layer
             SqlCommand command = new SqlCommand("INSERT INTO Artikli_Racun ( ID_Racun, ID_Lijek, Kolicina, Participacija) VALUES (" + idR + ", " + lijID + ", " + kol + ", "+ part +");");
             baza.IzvrsiUpit(command);
         }
-        public ArtikliRacun MakeLijek(DataRow row)
+        public ArtiklRacun MakeLijek(DataRow row)
         {
-            ArtikliRacun lije = new ArtikliRacun();
+            ArtiklRacun lije = new ArtiklRacun();
             lije.id = int.Parse(row["ID_Lijek"].ToString());
             lije.Naziv = row["Naziv"].ToString();
             lije.kratkiOpis = row["kratki_opis"].ToString();

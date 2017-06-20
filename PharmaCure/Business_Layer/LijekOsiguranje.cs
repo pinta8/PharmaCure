@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business_Layer
 {
-    class LijekoviOsiguranje
+    class LijekOsiguranje
     {
     }
 }

@@ -13,10 +13,10 @@ namespace PharmaCure
 {
     public partial class FrmDostava : Form
     {
-        public List<ArtikliRacun> l = new List<ArtikliRacun>();
+        public List<ArtiklRacun> l = new List<ArtiklRacun>();
         public List<Stanje> st = new List<Stanje>();
         public List<Lijek> li = new List<Lijek>();
-        public List<LijekoviRecept> rec = new List<LijekoviRecept>();
+        public List<LijekRecept> rec = new List<LijekRecept>();
         public int idR = 0;
         public FrmDostava()
         {
@@ -52,7 +52,7 @@ namespace PharmaCure
                 int kolicina = int.Parse(txtKolicina.Text);
                 int id = int.Parse(cmbLijek.SelectedValue.ToString());
                 bool dobro = true;
-                foreach (ArtikliRacun al in l)
+                foreach (ArtiklRacun al in l)
                 {
                     if (al.Naziv == cmbLijek.Text)
                     {
@@ -62,7 +62,7 @@ namespace PharmaCure
                 }
                 if (dobro)
                 {
-                    ArtikliRacun.DodajArtikl(id, kolicina, idR);
+                    ArtiklRacun.DodajArtikl(id, kolicina, idR);
                     OsvjeziListu();
                 }
             }
@@ -70,18 +70,18 @@ namespace PharmaCure
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ArtikliRacun.DostavljenRacun(int.Parse(txtKorisnik.Text), 2);
+            ArtiklRacun.DostavljenRacun(int.Parse(txtKorisnik.Text), 2);
             MessageBox.Show("Lijekovi su uspješno dostavljeni!");
             OsvjeziListu();
         }
         private void OsvjeziListu()
         {
-            rec = LijekoviRecept.DohvatiRecepte(korisnik);
+            rec = LijekRecept.DohvatiRecepte(korisnik);
             dgvRecepti.DataSource = rec;
-            l = ArtikliRacun.DohvatiSveArtikleKorisnika(korisnik, 2);
+            l = ArtiklRacun.DohvatiSveArtikleKorisnika(korisnik, 2);
             dgvArtikli.DataSource = l;
             double cij = 0;
-            foreach (ArtikliRacun o in l)
+            foreach (ArtiklRacun o in l)
             {
                 double broj = double.Parse(o.participacija.ToString()) / 100;
                 cij += (o.cijena * o.kolicina) * broj;
@@ -121,8 +121,8 @@ namespace PharmaCure
             int idLijekR = int.Parse(dgvRecepti.CurrentRow.Cells[0].Value.ToString());
             int kolicina = int.Parse(dgvRecepti.CurrentRow.Cells[3].Value.ToString());
             int participacije = int.Parse(dgvRecepti.CurrentRow.Cells[4].Value.ToString());
-            ArtikliRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
-            LijekoviRecept.IzbrisiRecept(idLijekR, int.Parse(dgvRecepti.CurrentRow.Cells[2].Value.ToString()));
+            ArtiklRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
+            LijekRecept.IzbrisiRecept(idLijekR, int.Parse(dgvRecepti.CurrentRow.Cells[2].Value.ToString()));
             OsvjeziListu();
         }
 
@@ -133,8 +133,8 @@ namespace PharmaCure
                 int idLijekR = int.Parse(row.Cells[0].Value.ToString());
                 int kolicina = int.Parse(row.Cells[3].Value.ToString());
                 int participacije = int.Parse(row.Cells[4].Value.ToString());
-                ArtikliRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
-                LijekoviRecept.IzbrisiRecept(idLijekR, int.Parse(dgvRecepti.CurrentRow.Cells[2].Value.ToString()));
+                ArtiklRacun.DodajArtiklRecept(idLijekR, idR, kolicina, participacije);
+                LijekRecept.IzbrisiRecept(idLijekR, int.Parse(dgvRecepti.CurrentRow.Cells[2].Value.ToString()));
             }
             OsvjeziListu();
         }
@@ -142,7 +142,7 @@ namespace PharmaCure
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             int idA = int.Parse(dgvArtikli.CurrentRow.Cells[0].Value.ToString());
-            ArtikliRacun.IzbrisiArtikl(idA, idR);
+            ArtiklRacun.IzbrisiArtikl(idA, idR);
             OsvjeziListu();
         }
     }
