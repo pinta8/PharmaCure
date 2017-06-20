@@ -26,12 +26,13 @@ namespace PharmaCure {
             InitializeComponent();
             PostaviComboBox();
         }
+        //postavljamo izvor podataka za combobox
         public void PostaviComboBox() {
             cbxPoslovnice.DataSource = poslovnice = Poslovnica.DohvatiPoslovniceZaComboBox();
             cbxPoslovnice.ValueMember = "PoslovnicaId";
             cbxPoslovnice.DisplayMember = "Naziv";
         }
-
+        //ako se radi o ažuriranju, prvo trebamo ispuniti textboxove sa podacima koje želimo promijeniti
         private void PostaviVrijednosti() {
 			tbxKorisnickoIme.Text = z.KorisnickoIme;
 			tbxLozinka.Text = z.Lozinka;
@@ -52,21 +53,22 @@ namespace PharmaCure {
             }
             if (z == null) {
                 z = new Zaposlenik();
-                z.KorisnickoIme = tbxKorisnickoIme.Text;
-                z.Lozinka = tbxLozinka.Text;
-                z.PoslovnicaId = ((Poslovnica)cbxPoslovnice.SelectedItem).PoslovnicaId;
-                z.NazivPoslovnice = ((Poslovnica)cbxPoslovnice.SelectedItem).Naziv;
+                PostaviPodatke(z);
                 Zaposlenik.ZapisiZaposlenika(z);
                 this.Close();
             }
             else {
-                z.KorisnickoIme = tbxKorisnickoIme.Text;
-                z.Lozinka = tbxLozinka.Text;
-                z.PoslovnicaId = ((Poslovnica)cbxPoslovnice.SelectedItem).PoslovnicaId;
-                z.NazivPoslovnice = ((Poslovnica)cbxPoslovnice.SelectedItem).Naziv;
+                PostaviPodatke(z);
                 Zaposlenik.AzurirajZaposlenika(z);
                 this.Close();
             }
 		}
+        //postavljamo podatke objektu klase Zaposlenik
+        public void PostaviPodatke(Zaposlenik z) {
+            z.KorisnickoIme = tbxKorisnickoIme.Text;
+            z.Lozinka = tbxLozinka.Text;
+            z.PoslovnicaId = ((Poslovnica)cbxPoslovnice.SelectedItem).PoslovnicaId;
+            z.NazivPoslovnice = ((Poslovnica)cbxPoslovnice.SelectedItem).Naziv;
+        }
 	}
 }

@@ -35,34 +35,36 @@
             this.cbxNaziv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNaziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbxNaziv.FormattingEnabled = true;
-            this.cbxNaziv.Location = new System.Drawing.Point(20, 43);
+            this.cbxNaziv.Location = new System.Drawing.Point(15, 24);
             this.cbxNaziv.Name = "cbxNaziv";
-            this.cbxNaziv.Size = new System.Drawing.Size(121, 25);
+            this.cbxNaziv.Size = new System.Drawing.Size(235, 25);
             this.cbxNaziv.TabIndex = 13;
             // 
             // tbxKolicina
             // 
             this.tbxKolicina.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxKolicina.Location = new System.Drawing.Point(20, 106);
+            this.tbxKolicina.Location = new System.Drawing.Point(15, 87);
             this.tbxKolicina.Name = "tbxKolicina";
-            this.tbxKolicina.Size = new System.Drawing.Size(121, 23);
+            this.tbxKolicina.Size = new System.Drawing.Size(131, 23);
             this.tbxKolicina.TabIndex = 12;
+            this.tbxKolicina.TextChanged += new System.EventHandler(this.tbxKolicina_TextChanged);
+            this.tbxKolicina.Leave += new System.EventHandler(this.tbxKolicina_Leave);
             // 
             // lblKolicina
             // 
             this.lblKolicina.AutoSize = true;
             this.lblKolicina.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKolicina.Location = new System.Drawing.Point(17, 90);
+            this.lblKolicina.Location = new System.Drawing.Point(12, 71);
             this.lblKolicina.Name = "lblKolicina";
             this.lblKolicina.Size = new System.Drawing.Size(59, 17);
             this.lblKolicina.TabIndex = 11;
-            this.lblKolicina.Text = "Kolicina";
+            this.lblKolicina.Text = "Količina";
             // 
             // lblNaziv
             // 
             this.lblNaziv.AutoSize = true;
             this.lblNaziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNaziv.Location = new System.Drawing.Point(17, 27);
+            this.lblNaziv.Location = new System.Drawing.Point(12, 8);
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(44, 17);
             this.lblNaziv.TabIndex = 10;
@@ -70,24 +72,27 @@
             // 
             // btnIzbaci
             // 
-            this.btnIzbaci.Location = new System.Drawing.Point(164, 72);
+            this.btnIzbaci.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzbaci.Location = new System.Drawing.Point(293, 53);
             this.btnIzbaci.Name = "btnIzbaci";
-            this.btnIzbaci.Size = new System.Drawing.Size(78, 35);
+            this.btnIzbaci.Size = new System.Drawing.Size(89, 35);
             this.btnIzbaci.TabIndex = 14;
             this.btnIzbaci.Text = "Izbaci";
             this.btnIzbaci.UseVisualStyleBackColor = true;
+            this.btnIzbaci.Click += new System.EventHandler(this.btnIzbaci_Click);
             // 
             // StavkaNarudzbeUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnIzbaci);
             this.Controls.Add(this.cbxNaziv);
             this.Controls.Add(this.tbxKolicina);
             this.Controls.Add(this.lblKolicina);
             this.Controls.Add(this.lblNaziv);
             this.Name = "StavkaNarudzbeUC";
-            this.Size = new System.Drawing.Size(255, 172);
+            this.Size = new System.Drawing.Size(424, 120);
             this.ResumeLayout(false);
             this.PerformLayout();
 

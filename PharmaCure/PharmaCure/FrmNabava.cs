@@ -19,7 +19,7 @@ namespace PharmaCure {
             lijekovi = Lijek.DohvatiSveLijekove();
         }
         
-        //1 5 7 8 1
+        //provjeravamo jel su popunjene sve količine, jesu li ID lijekova jedinstveni u kontrolama te na kraju zapisujemo narudžbu
         private void btnPosaljiNarudzbu_Click(object sender, EventArgs e) {
             stavke.Clear();
             for (int i=0;i<flpStavke.Controls.Count;i++) {
@@ -45,16 +45,36 @@ namespace PharmaCure {
             Narudzba nar = new Narudzba();
             nar.DjelatnikId = Zaposlenik.IdPrijavljenog;
             nar.PoslovnicaId = Zaposlenik.PoslovnicaPrijavljenog;
-            //Narudzba.ZapisiNarudzbu(nar);
-            //this.Close();
+            nar.Stavke = this.stavke;
+            Narudzba.ZapisiNarudzbu(nar);
+            this.Close();
             
             
         }
-
+        //dodajemo kntrolu u panel 
         private void btnDodaj_Click(object sender, EventArgs e) {
-            StavkaNarudzbeUC kontrola = new StavkaNarudzbeUC(lijekovi);
+            StavkaNarudzbeUC kontrola = new StavkaNarudzbeUC(lijekovi, this);
             
             flpStavke.Controls.Add(kontrola);
         }
+        //racunamo cijenu svih lijekova prolazeći kroz sve kontrole u panelu
+        public void IzracunajCijenu() {
+            tbxCijena.Text = "";
+            float sum = 0;
+            foreach(StavkaNarudzbeUC sn in flpStavke.Controls) {
+                if (sn.JelNapisanaKolicina()) {
+                    sum += sn.dajUkupnuCijenu();
+                }
+                else return;
+            }
+            tbxCijena.Text = sum + "";
+        }
+
+        //mičemo kontrolu sa panela
+        public void MakniKontrolu(Control c) {
+            this.flpStavke.Controls.Remove(c);
+            IzracunajCijenu();
+        }
+
     }
 }

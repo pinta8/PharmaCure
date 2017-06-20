@@ -48,7 +48,7 @@ namespace Business_Layer
                 naziv = value;
             }
         }
-
+        //pravimo objekt klase Dostupnost
         public Dostupnost NapraviLijek(DataRow row) {
             Dostupnost dostupnost = new Dostupnost();
             dostupnost.naziv = row["Naziv"].ToString();
@@ -56,6 +56,7 @@ namespace Business_Layer
             dostupnost.kolicina = int.Parse(row["Kolicina_skladiste"].ToString());
             return dostupnost;
         }
+        //dohvacamo sve dostupne lijekove odabrane poslovnice
         public static List<Dostupnost> DohvatiLijekovePoslovnice(int idPoslovnice) {
             List<Dostupnost> listaLijekova = new List<Dostupnost>();
             SqlCommand Command = new SqlCommand();
@@ -70,8 +71,9 @@ namespace Business_Layer
             }
             return listaLijekova;
         }
+        //definiramo kako ce nam se ispisivat podaci u textboxu kada pozove ToString
         public override string ToString() {
-            return "Naziv: "+naziv +" || " +"Kolicina: " + kolicina + Environment.NewLine;
+            return "Naziv: "+naziv +Environment.NewLine +"Kolicina: " + kolicina + Environment.NewLine+Environment.NewLine;
         }
     }
 }

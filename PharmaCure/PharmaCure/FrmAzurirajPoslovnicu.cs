@@ -49,7 +49,7 @@ namespace PharmaCure {
                 this.Close();
             }
         }
-
+        //postavljamo objektu klase Poslovnica podatke iz textboxova
         private void PostaviPodatke(Poslovnica p) {
             p.Naziv = tbxNaziv.Text;
             p.Drzava = tbxDrzava.Text;

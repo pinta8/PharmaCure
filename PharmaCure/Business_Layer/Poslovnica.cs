@@ -135,7 +135,8 @@ namespace Business_Layer
 			command.Parameters.AddWithValue("@Broj", p.Broj);
 			baza.IzvrsiUpit(command);
 		
-	}
+	    }
+        //funkcija za ažuriranje poslovnice
         static public void AzurirajPoslovnicu(Poslovnica poslovnicaUnos) {
             Poslovnica poslovnica = poslovnicaUnos;
             DBCon baza = new DBCon();
@@ -149,6 +150,7 @@ namespace Business_Layer
             baza.IzvrsiUpit(command);
 
         }
+        //funkcija za brisanje poslovnice
         static public void IzbrisiPoslovnicuIzBaze(Poslovnica poslovnicaUnos) {
             Poslovnica poslovnica = poslovnicaUnos;
             DBCon baza = new DBCon();
