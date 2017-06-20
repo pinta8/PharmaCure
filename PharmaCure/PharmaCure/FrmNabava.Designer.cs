@@ -23,47 +23,16 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.lblNaziv = new System.Windows.Forms.Label();
-            this.lblKolicina = new System.Windows.Forms.Label();
-            this.tbxKolicina = new System.Windows.Forms.TextBox();
             this.btnPosaljiNarudzbu = new System.Windows.Forms.Button();
-            this.cbxNaziv = new System.Windows.Forms.ComboBox();
-            this.tbxPoslovnciaId = new System.Windows.Forms.TextBox();
-            this.lblPoslovnicaId = new System.Windows.Forms.Label();
+            this.flpStavke = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblNaziv
-            // 
-            this.lblNaziv.AutoSize = true;
-            this.lblNaziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNaziv.Location = new System.Drawing.Point(139, 35);
-            this.lblNaziv.Name = "lblNaziv";
-            this.lblNaziv.Size = new System.Drawing.Size(44, 17);
-            this.lblNaziv.TabIndex = 0;
-            this.lblNaziv.Text = "Naziv";
-            // 
-            // lblKolicina
-            // 
-            this.lblKolicina.AutoSize = true;
-            this.lblKolicina.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKolicina.Location = new System.Drawing.Point(139, 155);
-            this.lblKolicina.Name = "lblKolicina";
-            this.lblKolicina.Size = new System.Drawing.Size(59, 17);
-            this.lblKolicina.TabIndex = 1;
-            this.lblKolicina.Text = "Kolicina";
-            // 
-            // tbxKolicina
-            // 
-            this.tbxKolicina.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxKolicina.Location = new System.Drawing.Point(142, 171);
-            this.tbxKolicina.Name = "tbxKolicina";
-            this.tbxKolicina.Size = new System.Drawing.Size(121, 23);
-            this.tbxKolicina.TabIndex = 4;
             // 
             // btnPosaljiNarudzbu
             // 
             this.btnPosaljiNarudzbu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPosaljiNarudzbu.Location = new System.Drawing.Point(142, 226);
+            this.btnPosaljiNarudzbu.Location = new System.Drawing.Point(510, 282);
             this.btnPosaljiNarudzbu.Name = "btnPosaljiNarudzbu";
             this.btnPosaljiNarudzbu.Size = new System.Drawing.Size(106, 54);
             this.btnPosaljiNarudzbu.TabIndex = 6;
@@ -71,46 +40,39 @@
             this.btnPosaljiNarudzbu.UseVisualStyleBackColor = true;
             this.btnPosaljiNarudzbu.Click += new System.EventHandler(this.btnPosaljiNarudzbu_Click);
             // 
-            // cbxNaziv
+            // flpStavke
             // 
-            this.cbxNaziv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxNaziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbxNaziv.FormattingEnabled = true;
-            this.cbxNaziv.Location = new System.Drawing.Point(142, 51);
-            this.cbxNaziv.Name = "cbxNaziv";
-            this.cbxNaziv.Size = new System.Drawing.Size(121, 25);
-            this.cbxNaziv.TabIndex = 7;
+            this.flpStavke.Location = new System.Drawing.Point(21, 44);
+            this.flpStavke.Name = "flpStavke";
+            this.flpStavke.Size = new System.Drawing.Size(387, 428);
+            this.flpStavke.TabIndex = 7;
             // 
-            // tbxPoslovnciaId
+            // textBox1
             // 
-            this.tbxPoslovnciaId.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxPoslovnciaId.Location = new System.Drawing.Point(142, 119);
-            this.tbxPoslovnciaId.Name = "tbxPoslovnciaId";
-            this.tbxPoslovnciaId.Size = new System.Drawing.Size(121, 23);
-            this.tbxPoslovnciaId.TabIndex = 8;
+            this.textBox1.Location = new System.Drawing.Point(494, 115);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(138, 20);
+            this.textBox1.TabIndex = 8;
             // 
-            // lblPoslovnicaId
+            // btnDodaj
             // 
-            this.lblPoslovnicaId.AutoSize = true;
-            this.lblPoslovnicaId.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPoslovnicaId.Location = new System.Drawing.Point(139, 99);
-            this.lblPoslovnicaId.Name = "lblPoslovnicaId";
-            this.lblPoslovnicaId.Size = new System.Drawing.Size(95, 17);
-            this.lblPoslovnicaId.TabIndex = 9;
-            this.lblPoslovnicaId.Text = "Poslovnica ID";
+            this.btnDodaj.Location = new System.Drawing.Point(21, 6);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(387, 32);
+            this.btnDodaj.TabIndex = 9;
+            this.btnDodaj.Text = "Dodaj lijek";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // FrmNabava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 308);
-            this.Controls.Add(this.lblPoslovnicaId);
-            this.Controls.Add(this.tbxPoslovnciaId);
-            this.Controls.Add(this.cbxNaziv);
+            this.ClientSize = new System.Drawing.Size(749, 484);
+            this.Controls.Add(this.btnDodaj);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.flpStavke);
             this.Controls.Add(this.btnPosaljiNarudzbu);
-            this.Controls.Add(this.tbxKolicina);
-            this.Controls.Add(this.lblKolicina);
-            this.Controls.Add(this.lblNaziv);
             this.Name = "FrmNabava";
             this.Text = "FrmNabava";
             this.ResumeLayout(false);
@@ -119,13 +81,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNaziv;
-        private System.Windows.Forms.Label lblKolicina;
-        private System.Windows.Forms.TextBox tbxKolicina;
         private System.Windows.Forms.Button btnPosaljiNarudzbu;
-        private System.Windows.Forms.ComboBox cbxNaziv;
-        private System.Windows.Forms.TextBox tbxPoslovnciaId;
-        private System.Windows.Forms.Label lblPoslovnicaId;
+        private System.Windows.Forms.FlowLayoutPanel flpStavke;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnDodaj;
     }
 }

@@ -60,6 +60,7 @@
     <Compile Include="Racun.cs" />
     <Compile Include="Rezervacija.cs" />
     <Compile Include="Stanje.cs" />
+    <Compile Include="StavkaNarudzbe.cs" />
     <Compile Include="Zaposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -38,25 +38,24 @@ namespace PharmaCure {
             }
             if (p == null) {
                 p = new Poslovnica();
-                p.Naziv = tbxNaziv.Text;
-                p.Drzava = tbxDrzava.Text;
-                p.Grad = tbxGrad.Text;
-                p.Ulica = tbxUlica.Text;
-                p.Broj = int.Parse(tbxBroj.Text);
+                PostaviPodatke(p);
                 Poslovnica.ZapisiPoslovnicu(p);
                 this.Close();
 
             }
             else {
-                p.Naziv = tbxNaziv.Text;
-                p.Drzava = tbxDrzava.Text;
-                p.Grad = tbxGrad.Text;
-                p.Ulica = tbxUlica.Text;
-                p.Broj = int.Parse(tbxBroj.Text);
-
+                PostaviPodatke(p);
                 Poslovnica.AzurirajPoslovnicu(p);
                 this.Close();
             }
+        }
+
+        private void PostaviPodatke(Poslovnica p) {
+            p.Naziv = tbxNaziv.Text;
+            p.Drzava = tbxDrzava.Text;
+            p.Grad = tbxGrad.Text;
+            p.Ulica = tbxUlica.Text;
+            p.Broj = int.Parse(tbxBroj.Text);
         }
     }
 }
