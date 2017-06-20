@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PharmaCure {
-	public partial class FrmDodajPoslovnicu : Form {
+	public partial class FrmPoslovnice : Form {
         private List<Poslovnica> poslovnice = new List<Poslovnica>();
-        public FrmDodajPoslovnicu() {
+        public FrmPoslovnice() {
 			InitializeComponent();
             OsvjeziPoslovnice();
             
@@ -20,21 +20,10 @@ namespace PharmaCure {
 
         //Upisivanje Nove Poslovnice u Bazu
 		private void btnDodaj_Click(object sender, EventArgs e) {
-            if (tbxNaziv.Text == "" || tbxDrzava.Text == "" || tbxGrad.Text == "" || tbxUlica.Text == "" || tbxBroj.Text == "") {
-                MessageBox.Show("Niste unijeli sve podatke!");
-            }
-            else {
-                Poslovnica p = new Poslovnica();
-                p.Naziv = tbxNaziv.Text;
-                p.Drzava = tbxDrzava.Text;
-                p.Grad = tbxGrad.Text;
-                p.Ulica = tbxUlica.Text;
-                p.Broj = int.Parse(tbxBroj.Text);
-
-                Poslovnica.ZapisiPoslovnicu(p);
-                OsvjeziPoslovnice();
-            }
-		}
+            FrmAzurirajPoslovnicu az = new FrmAzurirajPoslovnicu();
+            az.ShowDialog();
+            OsvjeziPoslovnice();
+        }
         //Povratak na glavnu formu
         private void btnPovratak_Click(object sender, EventArgs e) {
             FrmMain m = new FrmMain();

@@ -37,7 +37,7 @@ namespace PharmaCure
         //Gumb za odlazak na formu Zaposlenici
         private void btnZaposlenici_Click(object sender, EventArgs e)
         {
-            FrmDodajZaposlenika z = new FrmDodajZaposlenika();
+            FrmZaposlenici z = new FrmZaposlenici();
             z.Show();
             this.Close();
         }
@@ -85,7 +85,7 @@ namespace PharmaCure
         }
         //Gumb za odlazak na formu Dodavanje Poslovnice
         private void btnDodajPoslovnicu_Click(object sender, EventArgs e) {
-			FrmDodajPoslovnicu posl = new FrmDodajPoslovnicu();
+			FrmPoslovnice posl = new FrmPoslovnice();
 			posl.Show();
 			this.Close();
 		}

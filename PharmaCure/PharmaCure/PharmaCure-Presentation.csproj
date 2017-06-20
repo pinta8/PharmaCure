@@ -65,17 +65,17 @@
     <Compile Include="FrmDodajDostavu.Designer.cs">
       <DependentUpon>FrmDodajDostavu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDodajPoslovnicu.cs">
+    <Compile Include="FrmPoslovnice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDodajPoslovnicu.Designer.cs">
-      <DependentUpon>FrmDodajPoslovnicu.cs</DependentUpon>
+    <Compile Include="FrmPoslovnice.Designer.cs">
+      <DependentUpon>FrmPoslovnice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDodajZaposlenika.cs">
+    <Compile Include="FrmZaposlenici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDodajZaposlenika.Designer.cs">
-      <DependentUpon>FrmDodajZaposlenika.cs</DependentUpon>
+    <Compile Include="FrmZaposlenici.Designer.cs">
+      <DependentUpon>FrmZaposlenici.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDostava.cs">
       <SubType>Form</SubType>
@@ -148,11 +148,11 @@
     <EmbeddedResource Include="FrmDodajDostavu.resx">
       <DependentUpon>FrmDodajDostavu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDodajPoslovnicu.resx">
-      <DependentUpon>FrmDodajPoslovnicu.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPoslovnice.resx">
+      <DependentUpon>FrmPoslovnice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDodajZaposlenika.resx">
-      <DependentUpon>FrmDodajZaposlenika.cs</DependentUpon>
+    <EmbeddedResource Include="FrmZaposlenici.resx">
+      <DependentUpon>FrmZaposlenici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDostava.resx">
       <DependentUpon>FrmDostava.cs</DependentUpon>

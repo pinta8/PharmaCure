@@ -17,6 +17,10 @@ namespace PharmaCure {
             p = posl;
             PostaviVrijednosti();
         }
+        public FrmAzurirajPoslovnicu() {
+            InitializeComponent();
+            
+        }
         //postavljamo stare vrijednosti u textboxove
         private void PostaviVrijednosti() {
             tbxNaziv.Text = p.Naziv;
@@ -26,10 +30,22 @@ namespace PharmaCure {
             tbxBroj.Text = p.Broj.ToString();
             
         }
-        //ako je sve u redu ( nemamo praznih textboxova) ažuriramo podatke poslovnice
+        //ako je sve u redu ( nemamo praznih textboxova) ažuriramo podatke poslovnice ili dodajemo novi zapis
         private void btnSpremiPromjene_Click(object sender, EventArgs e) {
             if (tbxNaziv.Text == "" || tbxDrzava.Text == "" || tbxGrad.Text == "" || tbxUlica.Text == "" || tbxBroj.Text == "") {
                 MessageBox.Show("Niste unijeli sve podatke!");
+                return;
+            }
+            if (p == null) {
+                p = new Poslovnica();
+                p.Naziv = tbxNaziv.Text;
+                p.Drzava = tbxDrzava.Text;
+                p.Grad = tbxGrad.Text;
+                p.Ulica = tbxUlica.Text;
+                p.Broj = int.Parse(tbxBroj.Text);
+                Poslovnica.ZapisiPoslovnicu(p);
+                this.Close();
+
             }
             else {
                 p.Naziv = tbxNaziv.Text;
