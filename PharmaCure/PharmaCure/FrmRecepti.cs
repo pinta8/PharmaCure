@@ -30,7 +30,9 @@ namespace PharmaCure
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            
+            FrmOsiguraneLijek o = new FrmOsiguraneLijek();
+            o.Show();
+            this.Close();
         }
         private void OsvjeziListu()
         {
