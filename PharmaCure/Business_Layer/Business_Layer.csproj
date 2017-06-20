@@ -46,13 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Akcija.cs" />
-    <Compile Include="ArtikliRacun.cs" />
+    <Compile Include="ArtiklRacun.cs" />
     <Compile Include="Dostupnost.cs" />
     <Compile Include="Kategorija.cs" />
     <Compile Include="Klijent.cs" />
     <Compile Include="Lijek.cs" />
-    <Compile Include="LijekoviOsiguranje.cs" />
-    <Compile Include="LijekoviRecept.cs" />
+    <Compile Include="LijekOsiguranje.cs" />
+    <Compile Include="LijekRecept.cs" />
     <Compile Include="Narudzba.cs" />
     <Compile Include="Osiguranje.cs" />
     <Compile Include="PopisOsiguranihLijekova.cs" />

@@ -3,10 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data_Layer;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Business_Layer
 {
-    class LijekOsiguranje
+    public class LijekOsiguranje
     {
+        public int idOsiguranje { get; set; }
+        public string naziv { get; set; }
+        public int participacija { get; set; }
+        public static List<LijekOsiguranje> DohvatiOsiguranjaLijeka(int idL)
+        {
+            List<LijekOsiguranje> ListaArtikala = new List<LijekOsiguranje>();
+            SqlCommand Command = new SqlCommand();
+            Command.CommandType = CommandType.Text;
+            Command.CommandText = "SELECT p.ID_Lijek, l.Naziv, l.Participacija FROM PopisOsiguranihLijekova p LEFT JOIN LijekoviOsiguranje l ON p.ID_Osiguranje = l.ID_Osiguranje WHERE p.ID_Lijek = " + idL + ";";
+            DBCon DB = new DBCon();
+            DB.GetCon();
+            DataTable DT = DB.DohvatiDT(Command);
+            foreach (DataRow dr in DT.Rows)
+            {
+                LijekOsiguranje r = new LijekOsiguranje();
+                ListaArtikala.Add(r.MakeLijek(dr));
+            }
+            return ListaArtikala;
+        }
+
+        public LijekOsiguranje MakeLijek(DataRow row)
+        {
+            LijekOsiguranje lije = new LijekOsiguranje();
+            lije.idOsiguranje = int.Parse(row["ID_Lijek"].ToString());
+            lije.naziv = row["Naziv"].ToString();
+            lije.participacija = int.Parse(row["Participacija"].ToString());
+            return lije;
+        }
     }
 }

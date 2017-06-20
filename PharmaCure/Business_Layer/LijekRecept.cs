@@ -45,11 +45,12 @@ namespace Business_Layer
         {
             SqlCommand Command = new SqlCommand();
             Command.CommandType = CommandType.Text;
-            Command.CommandText = "INSERT INTO LijekoviRecept (ID_Lijeka, Naziv, ID_Klijent, Kolicina) values (@ID_Lijek, @naziv, @ID_Klijent, @kolicina)";
+            Command.CommandText = "INSERT INTO LijekoviRecept (ID_Lijeka, Naziv, ID_Klijent, Kolicina, Participacija) values (@ID_Lijek, @naziv, @ID_Klijent, @kolicina, @participacija)";
             Command.Parameters.AddWithValue("@ID_Lijek", ID_Lijek);
             Command.Parameters.AddWithValue("@naziv", Naziv);
             Command.Parameters.AddWithValue("@ID_Klijent", ID_Klijent);
             Command.Parameters.AddWithValue("@kolicina", Kolicina);
+            Command.Parameters.AddWithValue("@participacija", Participacija);
             DBCon DB = new DBCon();
             DB.GetCon();
             return DB.IzvrsiUpit(Command);

@@ -13,7 +13,9 @@ namespace PharmaCure
 {
     public partial class FrmRecepti : Form
     {
-        public List<LijekoviRecept> lr = new List<LijekoviRecept>();
+        public List<LijekRecept> lr = new List<LijekRecept>();
+        public List<Lijek> ll = new List<Lijek>();
+        public List<LijekOsiguranje> lo = new List<LijekOsiguranje>();
         public FrmRecepti()
         {
             InitializeComponent();
@@ -28,19 +30,15 @@ namespace PharmaCure
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            LijekoviRecept lijeR = new LijekoviRecept();
-            lijeR.ID_Lijek = int.Parse(txtIDLijek.Text);
-            lijeR.Naziv = txtNaziv.Text;
-            lijeR.ID_Klijent = int.Parse(txtIDKlijent.Text);
-            lijeR.Kolicina = int.Parse(txtKolicina.Text);
-            lijeR.DodajRecept();
-            OsvjeziListu();
+            
         }
         private void OsvjeziListu()
         {
             
-            lr = LijekoviRecept.DohvatiRecepte(int.Parse(txtIDKlijent.Text));
+            lr = LijekRecept.DohvatiRecepte(int.Parse(txtIDKlijent.Text));
             dgvLijekoviRecept.DataSource = lr;
+            ll = Lijek.DohvatiSveLijekove();
+            dgvLijekoviPravo.DataSource = ll;
         }
         private void FrmRecepti_Load(object sender, EventArgs e)
         {
@@ -49,6 +47,26 @@ namespace PharmaCure
 
         private void txtIDLijek_TextChanged(object sender, EventArgs e)
         {
+            OsvjeziListu();
+        }
+
+        private void dgvLijekoviPravo_SelectionChanged(object sender, EventArgs e)
+        {
+            lo = LijekOsiguranje.DohvatiOsiguranjaLijeka(int.Parse(dgvLijekoviPravo.CurrentRow.Cells[0].Value.ToString()));
+            cmbOsiguranje.DisplayMember = "naziv";
+            cmbOsiguranje.ValueMember = "participacija";
+            cmbOsiguranje.DataSource = lo;
+        }
+
+        private void btnPropisi_Click(object sender, EventArgs e)
+        {
+            LijekRecept lijeR = new LijekRecept();
+            lijeR.ID_Lijek = int.Parse(dgvLijekoviPravo.CurrentRow.Cells[0].Value.ToString());
+            lijeR.Naziv = dgvLijekoviPravo.CurrentRow.Cells[1].Value.ToString();
+            lijeR.ID_Klijent = int.Parse(txtIDKlijent.Text);
+            lijeR.Kolicina = int.Parse(txtKolicina.Text);
+            lijeR.Participacija = int.Parse(cmbOsiguranje.SelectedValue.ToString());
+            lijeR.DodajRecept();
             OsvjeziListu();
         }
     }

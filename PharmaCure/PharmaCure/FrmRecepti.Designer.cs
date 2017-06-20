@@ -30,22 +30,22 @@
         {
             this.btnPovratak = new System.Windows.Forms.Button();
             this.dgvLijekoviRecept = new System.Windows.Forms.DataGridView();
-            this.txtNaziv = new System.Windows.Forms.TextBox();
-            this.txtIDKlijent = new System.Windows.Forms.TextBox();
             this.txtKolicina = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDodaj = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtIDLijek = new System.Windows.Forms.TextBox();
+            this.txtIDKlijent = new System.Windows.Forms.TextBox();
+            this.dgvLijekoviPravo = new System.Windows.Forms.DataGridView();
+            this.btnPropisi = new System.Windows.Forms.Button();
+            this.cmbOsiguranje = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLijekoviRecept)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLijekoviPravo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPovratak
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(17, 16);
-            this.btnPovratak.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPovratak.Location = new System.Drawing.Point(17, 26);
+            this.btnPovratak.Margin = new System.Windows.Forms.Padding(4);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(100, 28);
             this.btnPovratak.TabIndex = 0;
@@ -56,50 +56,24 @@
             // dgvLijekoviRecept
             // 
             this.dgvLijekoviRecept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLijekoviRecept.Location = new System.Drawing.Point(496, 16);
-            this.dgvLijekoviRecept.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLijekoviRecept.Location = new System.Drawing.Point(629, 88);
+            this.dgvLijekoviRecept.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLijekoviRecept.Name = "dgvLijekoviRecept";
-            this.dgvLijekoviRecept.Size = new System.Drawing.Size(708, 566);
+            this.dgvLijekoviRecept.Size = new System.Drawing.Size(578, 485);
             this.dgvLijekoviRecept.TabIndex = 1;
-            // 
-            // txtNaziv
-            // 
-            this.txtNaziv.Location = new System.Drawing.Point(155, 312);
-            this.txtNaziv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(285, 22);
-            this.txtNaziv.TabIndex = 2;
-            // 
-            // txtIDKlijent
-            // 
-            this.txtIDKlijent.Location = new System.Drawing.Point(155, 220);
-            this.txtIDKlijent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtIDKlijent.Name = "txtIDKlijent";
-            this.txtIDKlijent.Size = new System.Drawing.Size(285, 22);
-            this.txtIDKlijent.TabIndex = 3;
             // 
             // txtKolicina
             // 
-            this.txtKolicina.Location = new System.Drawing.Point(153, 396);
-            this.txtKolicina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtKolicina.Location = new System.Drawing.Point(900, 584);
+            this.txtKolicina.Margin = new System.Windows.Forms.Padding(4);
             this.txtKolicina.Name = "txtKolicina";
-            this.txtKolicina.Size = new System.Drawing.Size(285, 22);
+            this.txtKolicina.Size = new System.Drawing.Size(91, 22);
             this.txtKolicina.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 315);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Naziv:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(138, 22);
+            this.label2.Location = new System.Drawing.Point(150, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 17);
@@ -109,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 400);
+            this.label3.Location = new System.Drawing.Point(831, 587);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 17);
@@ -118,8 +92,8 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(284, 496);
-            this.btnDodaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDodaj.Location = new System.Drawing.Point(1051, 26);
+            this.btnDodaj.Margin = new System.Windows.Forms.Padding(4);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(156, 28);
             this.btnDodaj.TabIndex = 10;
@@ -127,47 +101,66 @@
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // label4
+            // txtIDKlijent
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 223);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 17);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "ID Lijek:";
+            this.txtIDKlijent.Location = new System.Drawing.Point(153, 29);
+            this.txtIDKlijent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIDKlijent.Name = "txtIDKlijent";
+            this.txtIDKlijent.Size = new System.Drawing.Size(137, 22);
+            this.txtIDKlijent.TabIndex = 11;
+            this.txtIDKlijent.TextChanged += new System.EventHandler(this.txtIDLijek_TextChanged);
             // 
-            // txtIDLijek
+            // dgvLijekoviPravo
             // 
-            this.txtIDLijek.Location = new System.Drawing.Point(221, 19);
-            this.txtIDLijek.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtIDLijek.Name = "txtIDLijek";
-            this.txtIDLijek.Size = new System.Drawing.Size(251, 22);
-            this.txtIDLijek.TabIndex = 11;
-            this.txtIDLijek.TextChanged += new System.EventHandler(this.txtIDLijek_TextChanged);
+            this.dgvLijekoviPravo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLijekoviPravo.Location = new System.Drawing.Point(20, 88);
+            this.dgvLijekoviPravo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLijekoviPravo.Name = "dgvLijekoviPravo";
+            this.dgvLijekoviPravo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLijekoviPravo.Size = new System.Drawing.Size(575, 485);
+            this.dgvLijekoviPravo.TabIndex = 12;
+            this.dgvLijekoviPravo.SelectionChanged += new System.EventHandler(this.dgvLijekoviPravo_SelectionChanged);
+            // 
+            // btnPropisi
+            // 
+            this.btnPropisi.Location = new System.Drawing.Point(1051, 581);
+            this.btnPropisi.Name = "btnPropisi";
+            this.btnPropisi.Size = new System.Drawing.Size(156, 28);
+            this.btnPropisi.TabIndex = 13;
+            this.btnPropisi.Text = "Propiši";
+            this.btnPropisi.UseVisualStyleBackColor = true;
+            this.btnPropisi.Click += new System.EventHandler(this.btnPropisi_Click);
+            // 
+            // cmbOsiguranje
+            // 
+            this.cmbOsiguranje.FormattingEnabled = true;
+            this.cmbOsiguranje.Location = new System.Drawing.Point(20, 583);
+            this.cmbOsiguranje.Name = "cmbOsiguranje";
+            this.cmbOsiguranje.Size = new System.Drawing.Size(575, 24);
+            this.cmbOsiguranje.TabIndex = 14;
             // 
             // FrmRecepti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 597);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtIDLijek);
+            this.ClientSize = new System.Drawing.Size(1220, 624);
+            this.Controls.Add(this.cmbOsiguranje);
+            this.Controls.Add(this.btnPropisi);
+            this.Controls.Add(this.dgvLijekoviPravo);
+            this.Controls.Add(this.txtIDKlijent);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtKolicina);
-            this.Controls.Add(this.txtIDKlijent);
-            this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.dgvLijekoviRecept);
             this.Controls.Add(this.btnPovratak);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRecepti";
             this.Text = "FrmRecepti";
             this.Load += new System.EventHandler(this.FrmRecepti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLijekoviRecept)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLijekoviPravo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,14 +170,13 @@
 
         private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.DataGridView dgvLijekoviRecept;
-        private System.Windows.Forms.TextBox txtNaziv;
-        private System.Windows.Forms.TextBox txtIDKlijent;
         private System.Windows.Forms.TextBox txtKolicina;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDodaj;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtIDLijek;
+        private System.Windows.Forms.TextBox txtIDKlijent;
+        private System.Windows.Forms.DataGridView dgvLijekoviPravo;
+        private System.Windows.Forms.Button btnPropisi;
+        private System.Windows.Forms.ComboBox cmbOsiguranje;
     }
 }
