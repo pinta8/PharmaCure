@@ -70,5 +70,10 @@ namespace PharmaCure {
             z.PoslovnicaId = ((Poslovnica)cbxPoslovnice.SelectedItem).PoslovnicaId;
             z.NazivPoslovnice = ((Poslovnica)cbxPoslovnice.SelectedItem).Naziv;
         }
-	}
+
+        private void btnPovratak_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }

@@ -53,10 +53,10 @@
             // 
             // btnSve
             // 
-            this.btnSve.Location = new System.Drawing.Point(879, 341);
-            this.btnSve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSve.Location = new System.Drawing.Point(659, 277);
+            this.btnSve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSve.Name = "btnSve";
-            this.btnSve.Size = new System.Drawing.Size(47, 38);
+            this.btnSve.Size = new System.Drawing.Size(35, 31);
             this.btnSve.TabIndex = 37;
             this.btnSve.Text = "<<";
             this.btnSve.UseVisualStyleBackColor = true;
@@ -64,10 +64,10 @@
             // 
             // btnJedan
             // 
-            this.btnJedan.Location = new System.Drawing.Point(879, 281);
-            this.btnJedan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnJedan.Location = new System.Drawing.Point(659, 228);
+            this.btnJedan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnJedan.Name = "btnJedan";
-            this.btnJedan.Size = new System.Drawing.Size(47, 38);
+            this.btnJedan.Size = new System.Drawing.Size(35, 31);
             this.btnJedan.TabIndex = 36;
             this.btnJedan.Text = "<";
             this.btnJedan.UseVisualStyleBackColor = true;
@@ -75,10 +75,11 @@
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(375, 595);
-            this.btnObrisi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnObrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnObrisi.Location = new System.Drawing.Point(281, 483);
+            this.btnObrisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(84, 32);
+            this.btnObrisi.Size = new System.Drawing.Size(63, 26);
             this.btnObrisi.TabIndex = 35;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
@@ -87,46 +88,51 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(963, 9);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label4.Location = new System.Drawing.Point(698, 5);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
+            this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 34;
             this.label4.Text = "Količlina:";
             // 
             // txtKolicina
             // 
-            this.txtKolicina.Location = new System.Drawing.Point(966, 33);
-            this.txtKolicina.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtKolicina.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtKolicina.Location = new System.Drawing.Point(700, 25);
+            this.txtKolicina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtKolicina.Name = "txtKolicina";
-            this.txtKolicina.Size = new System.Drawing.Size(61, 22);
+            this.txtKolicina.Size = new System.Drawing.Size(47, 23);
             this.txtKolicina.TabIndex = 33;
             // 
             // cmbStanje
             // 
+            this.cmbStanje.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbStanje.FormattingEnabled = true;
-            this.cmbStanje.Location = new System.Drawing.Point(19, 600);
-            this.cmbStanje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbStanje.Location = new System.Drawing.Point(14, 488);
+            this.cmbStanje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbStanje.Name = "cmbStanje";
-            this.cmbStanje.Size = new System.Drawing.Size(144, 24);
+            this.cmbStanje.Size = new System.Drawing.Size(109, 25);
             this.cmbStanje.TabIndex = 32;
             // 
             // dgvRecepti
             // 
             this.dgvRecepti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRecepti.Location = new System.Drawing.Point(933, 84);
-            this.dgvRecepti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvRecepti.Location = new System.Drawing.Point(700, 68);
+            this.dgvRecepti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvRecepti.Name = "dgvRecepti";
             this.dgvRecepti.RowTemplate.Height = 24;
             this.dgvRecepti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecepti.Size = new System.Drawing.Size(588, 501);
+            this.dgvRecepti.Size = new System.Drawing.Size(441, 407);
             this.dgvRecepti.TabIndex = 31;
             // 
             // btnRacun
             // 
-            this.btnRacun.Location = new System.Drawing.Point(186, 595);
-            this.btnRacun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRacun.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnRacun.Location = new System.Drawing.Point(140, 483);
+            this.btnRacun.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRacun.Name = "btnRacun";
-            this.btnRacun.Size = new System.Drawing.Size(168, 33);
+            this.btnRacun.Size = new System.Drawing.Size(126, 27);
             this.btnRacun.TabIndex = 30;
             this.btnRacun.Text = "Dodaj Račun";
             this.btnRacun.UseVisualStyleBackColor = true;
@@ -135,63 +141,73 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1327, 599);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label3.Location = new System.Drawing.Point(959, 484);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 17);
+            this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 29;
             this.label3.Text = "Cijena:";
             // 
             // txtCijena
             // 
             this.txtCijena.Enabled = false;
-            this.txtCijena.Location = new System.Drawing.Point(1394, 595);
-            this.txtCijena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCijena.Location = new System.Drawing.Point(1046, 483);
+            this.txtCijena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCijena.Name = "txtCijena";
-            this.txtCijena.Size = new System.Drawing.Size(125, 22);
+            this.txtCijena.Size = new System.Drawing.Size(95, 20);
             this.txtCijena.TabIndex = 28;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(159, 12);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label1.Location = new System.Drawing.Point(116, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 26;
             this.label1.Text = "Korisnik ID:";
             // 
             // txtKorisnik
             // 
-            this.txtKorisnik.Location = new System.Drawing.Point(159, 36);
-            this.txtKorisnik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtKorisnik.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtKorisnik.Location = new System.Drawing.Point(119, 25);
+            this.txtKorisnik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtKorisnik.Name = "txtKorisnik";
-            this.txtKorisnik.Size = new System.Drawing.Size(165, 22);
+            this.txtKorisnik.Size = new System.Drawing.Size(125, 23);
             this.txtKorisnik.TabIndex = 25;
             this.txtKorisnik.TextChanged += new System.EventHandler(this.txtKorisnik_TextChanged);
             // 
             // cmbLijek
             // 
+            this.cmbLijek.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbLijek.FormattingEnabled = true;
-            this.cmbLijek.Location = new System.Drawing.Point(1049, 33);
-            this.cmbLijek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbLijek.Location = new System.Drawing.Point(787, 23);
+            this.cmbLijek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbLijek.Name = "cmbLijek";
-            this.cmbLijek.Size = new System.Drawing.Size(209, 24);
+            this.cmbLijek.Size = new System.Drawing.Size(158, 25);
             this.cmbLijek.TabIndex = 24;
+            this.cmbLijek.SelectedIndexChanged += new System.EventHandler(this.cmbLijek_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1046, 9);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label2.Location = new System.Drawing.Point(784, 3);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 17);
+            this.label2.Size = new System.Drawing.Size(39, 17);
             this.label2.TabIndex = 27;
             this.label2.Text = "Lijek:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1421, 31);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.button2.Location = new System.Drawing.Point(1066, 23);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 23;
             this.button2.Text = "Prodaj";
             this.button2.UseVisualStyleBackColor = true;
@@ -199,10 +215,10 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(1283, 31);
-            this.btnDodaj.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnDodaj.Location = new System.Drawing.Point(962, 23);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(100, 28);
+            this.btnDodaj.Size = new System.Drawing.Size(75, 23);
             this.btnDodaj.TabIndex = 22;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -211,19 +227,18 @@
             // dgvArtikli
             // 
             this.dgvArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArtikli.Location = new System.Drawing.Point(19, 84);
-            this.dgvArtikli.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvArtikli.Location = new System.Drawing.Point(14, 68);
             this.dgvArtikli.Name = "dgvArtikli";
             this.dgvArtikli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArtikli.Size = new System.Drawing.Size(853, 501);
+            this.dgvArtikli.Size = new System.Drawing.Size(640, 407);
             this.dgvArtikli.TabIndex = 21;
             // 
             // btnPovratak
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(19, 33);
-            this.btnPovratak.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnPovratak.Location = new System.Drawing.Point(14, 23);
             this.btnPovratak.Name = "btnPovratak";
-            this.btnPovratak.Size = new System.Drawing.Size(100, 28);
+            this.btnPovratak.Size = new System.Drawing.Size(75, 23);
             this.btnPovratak.TabIndex = 20;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
@@ -231,9 +246,9 @@
             // 
             // FrmProdaja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 636);
+            this.ClientSize = new System.Drawing.Size(1155, 517);
             this.Controls.Add(this.btnSve);
             this.Controls.Add(this.btnJedan);
             this.Controls.Add(this.btnObrisi);
@@ -253,7 +268,6 @@
             this.Controls.Add(this.dgvArtikli);
             this.Controls.Add(this.btnPovratak);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmProdaja";
             this.Text = "FrmProdaja";
             this.Load += new System.EventHandler(this.FrmProdaja_Load);

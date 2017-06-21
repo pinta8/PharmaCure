@@ -90,8 +90,6 @@ namespace PharmaCure {
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
-            FrmMain m = new FrmMain();
-            m.Show();
             this.Close();
         }
     }

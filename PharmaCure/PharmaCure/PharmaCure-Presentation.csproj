@@ -59,12 +59,6 @@
     <Compile Include="FrmAzurirajZaposlenika.Designer.cs">
       <DependentUpon>FrmAzurirajZaposlenika.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDodajDostavu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDodajDostavu.Designer.cs">
-      <DependentUpon>FrmDodajDostavu.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmKlijenti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,9 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAzurirajZaposlenika.resx">
       <DependentUpon>FrmAzurirajZaposlenika.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDodajDostavu.resx">
-      <DependentUpon>FrmDodajDostavu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKlijenti.resx">
       <DependentUpon>FrmKlijenti.cs</DependentUpon>

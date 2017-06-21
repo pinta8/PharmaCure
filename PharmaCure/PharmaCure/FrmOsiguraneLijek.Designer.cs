@@ -40,6 +40,7 @@
             // 
             // btnPovratak
             // 
+            this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnPovratak.Location = new System.Drawing.Point(18, 11);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 23);
@@ -50,10 +51,11 @@
             // 
             // cmbOsiguranje
             // 
+            this.cmbOsiguranje.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbOsiguranje.FormattingEnabled = true;
             this.cmbOsiguranje.Location = new System.Drawing.Point(18, 385);
             this.cmbOsiguranje.Name = "cmbOsiguranje";
-            this.cmbOsiguranje.Size = new System.Drawing.Size(410, 21);
+            this.cmbOsiguranje.Size = new System.Drawing.Size(410, 25);
             this.cmbOsiguranje.TabIndex = 2;
             // 
             // dgvLijekovi
@@ -67,6 +69,7 @@
             // 
             // btnDodaj
             // 
+            this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnDodaj.Location = new System.Drawing.Point(692, 385);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(164, 23);
@@ -85,6 +88,7 @@
             // 
             // btnBrisi
             // 
+            this.btnBrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnBrisi.Location = new System.Drawing.Point(459, 384);
             this.btnBrisi.Name = "btnBrisi";
             this.btnBrisi.Size = new System.Drawing.Size(164, 23);

@@ -39,6 +39,7 @@
             // 
             // btnPovratak
             // 
+            this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnPovratak.Location = new System.Drawing.Point(13, 13);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 23);
@@ -90,6 +91,7 @@
             // 
             // tbxMinLijekovi
             // 
+            this.tbxMinLijekovi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbxMinLijekovi.ForeColor = System.Drawing.Color.DarkRed;
             this.tbxMinLijekovi.Location = new System.Drawing.Point(625, 101);
             this.tbxMinLijekovi.Multiline = true;

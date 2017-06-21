@@ -145,5 +145,10 @@ namespace PharmaCure
             ArtiklRacun.IzbrisiArtikl(idA, idR);
             OsvjeziListu();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

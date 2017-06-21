@@ -34,12 +34,13 @@
             this.tbxDrzava = new System.Windows.Forms.TextBox();
             this.lblNaziv = new System.Windows.Forms.Label();
             this.tbxNaziv = new System.Windows.Forms.TextBox();
+            this.btnPovratak = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSpremiPromjene
             // 
             this.btnSpremiPromjene.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSpremiPromjene.Location = new System.Drawing.Point(96, 290);
+            this.btnSpremiPromjene.Location = new System.Drawing.Point(45, 290);
             this.btnSpremiPromjene.Name = "btnSpremiPromjene";
             this.btnSpremiPromjene.Size = new System.Drawing.Size(86, 53);
             this.btnSpremiPromjene.TabIndex = 21;
@@ -60,7 +61,7 @@
             // tbxBroj
             // 
             this.tbxBroj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxBroj.Location = new System.Drawing.Point(129, 242);
+            this.tbxBroj.Location = new System.Drawing.Point(164, 242);
             this.tbxBroj.Name = "tbxBroj";
             this.tbxBroj.Size = new System.Drawing.Size(100, 23);
             this.tbxBroj.TabIndex = 19;
@@ -78,7 +79,7 @@
             // tbxUlica
             // 
             this.tbxUlica.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxUlica.Location = new System.Drawing.Point(129, 189);
+            this.tbxUlica.Location = new System.Drawing.Point(164, 189);
             this.tbxUlica.Name = "tbxUlica";
             this.tbxUlica.Size = new System.Drawing.Size(100, 23);
             this.tbxUlica.TabIndex = 17;
@@ -96,7 +97,7 @@
             // tbxGrad
             // 
             this.tbxGrad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxGrad.Location = new System.Drawing.Point(129, 139);
+            this.tbxGrad.Location = new System.Drawing.Point(164, 139);
             this.tbxGrad.Name = "tbxGrad";
             this.tbxGrad.Size = new System.Drawing.Size(100, 23);
             this.tbxGrad.TabIndex = 15;
@@ -114,7 +115,7 @@
             // tbxDrzava
             // 
             this.tbxDrzava.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxDrzava.Location = new System.Drawing.Point(129, 85);
+            this.tbxDrzava.Location = new System.Drawing.Point(164, 85);
             this.tbxDrzava.Name = "tbxDrzava";
             this.tbxDrzava.Size = new System.Drawing.Size(100, 23);
             this.tbxDrzava.TabIndex = 13;
@@ -132,16 +133,28 @@
             // tbxNaziv
             // 
             this.tbxNaziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbxNaziv.Location = new System.Drawing.Point(129, 33);
+            this.tbxNaziv.Location = new System.Drawing.Point(164, 33);
             this.tbxNaziv.Name = "tbxNaziv";
             this.tbxNaziv.Size = new System.Drawing.Size(100, 23);
             this.tbxNaziv.TabIndex = 11;
+            // 
+            // btnPovratak
+            // 
+            this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPovratak.Location = new System.Drawing.Point(178, 290);
+            this.btnPovratak.Name = "btnPovratak";
+            this.btnPovratak.Size = new System.Drawing.Size(86, 53);
+            this.btnPovratak.TabIndex = 22;
+            this.btnPovratak.Text = "Povratak";
+            this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
             // FrmAzurirajPoslovnicu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 355);
+            this.ClientSize = new System.Drawing.Size(313, 355);
+            this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnSpremiPromjene);
             this.Controls.Add(this.lblBroj);
             this.Controls.Add(this.tbxBroj);
@@ -153,6 +166,7 @@
             this.Controls.Add(this.tbxDrzava);
             this.Controls.Add(this.lblNaziv);
             this.Controls.Add(this.tbxNaziv);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAzurirajPoslovnicu";
             this.Text = "FrmAzurirajPoslovnicu";
             this.ResumeLayout(false);
@@ -173,5 +187,6 @@
         private System.Windows.Forms.TextBox tbxDrzava;
         private System.Windows.Forms.Label lblNaziv;
         private System.Windows.Forms.TextBox tbxNaziv;
+        private System.Windows.Forms.Button btnPovratak;
     }
 }

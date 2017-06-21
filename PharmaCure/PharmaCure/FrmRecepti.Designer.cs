@@ -44,10 +44,10 @@
             // 
             // btnPovratak
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(17, 26);
-            this.btnPovratak.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnPovratak.Location = new System.Drawing.Point(13, 21);
             this.btnPovratak.Name = "btnPovratak";
-            this.btnPovratak.Size = new System.Drawing.Size(100, 28);
+            this.btnPovratak.Size = new System.Drawing.Size(75, 23);
             this.btnPovratak.TabIndex = 0;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
@@ -56,46 +56,45 @@
             // dgvLijekoviRecept
             // 
             this.dgvLijekoviRecept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLijekoviRecept.Location = new System.Drawing.Point(629, 88);
-            this.dgvLijekoviRecept.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLijekoviRecept.Location = new System.Drawing.Point(472, 72);
             this.dgvLijekoviRecept.Name = "dgvLijekoviRecept";
-            this.dgvLijekoviRecept.Size = new System.Drawing.Size(578, 485);
+            this.dgvLijekoviRecept.Size = new System.Drawing.Size(434, 394);
             this.dgvLijekoviRecept.TabIndex = 1;
             // 
             // txtKolicina
             // 
-            this.txtKolicina.Location = new System.Drawing.Point(900, 584);
-            this.txtKolicina.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKolicina.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtKolicina.Location = new System.Drawing.Point(675, 474);
             this.txtKolicina.Name = "txtKolicina";
-            this.txtKolicina.Size = new System.Drawing.Size(91, 22);
+            this.txtKolicina.Size = new System.Drawing.Size(69, 23);
             this.txtKolicina.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label2.Location = new System.Drawing.Point(112, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
+            this.label2.Size = new System.Drawing.Size(76, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "ID Klijenta:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(831, 587);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label3.Location = new System.Drawing.Point(623, 477);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Kolicina:";
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(1051, 26);
-            this.btnDodaj.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnDodaj.Location = new System.Drawing.Point(788, 21);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(156, 28);
+            this.btnDodaj.Size = new System.Drawing.Size(117, 23);
             this.btnDodaj.TabIndex = 10;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -103,29 +102,30 @@
             // 
             // txtIDKlijent
             // 
-            this.txtIDKlijent.Location = new System.Drawing.Point(153, 29);
-            this.txtIDKlijent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIDKlijent.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtIDKlijent.Location = new System.Drawing.Point(115, 24);
             this.txtIDKlijent.Name = "txtIDKlijent";
-            this.txtIDKlijent.Size = new System.Drawing.Size(137, 22);
+            this.txtIDKlijent.Size = new System.Drawing.Size(104, 23);
             this.txtIDKlijent.TabIndex = 11;
             this.txtIDKlijent.TextChanged += new System.EventHandler(this.txtIDLijek_TextChanged);
             // 
             // dgvLijekoviPravo
             // 
             this.dgvLijekoviPravo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLijekoviPravo.Location = new System.Drawing.Point(20, 88);
-            this.dgvLijekoviPravo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLijekoviPravo.Location = new System.Drawing.Point(15, 72);
             this.dgvLijekoviPravo.Name = "dgvLijekoviPravo";
             this.dgvLijekoviPravo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLijekoviPravo.Size = new System.Drawing.Size(575, 485);
+            this.dgvLijekoviPravo.Size = new System.Drawing.Size(431, 394);
             this.dgvLijekoviPravo.TabIndex = 12;
             this.dgvLijekoviPravo.SelectionChanged += new System.EventHandler(this.dgvLijekoviPravo_SelectionChanged);
             // 
             // btnPropisi
             // 
-            this.btnPropisi.Location = new System.Drawing.Point(1051, 581);
+            this.btnPropisi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnPropisi.Location = new System.Drawing.Point(788, 472);
+            this.btnPropisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPropisi.Name = "btnPropisi";
-            this.btnPropisi.Size = new System.Drawing.Size(156, 28);
+            this.btnPropisi.Size = new System.Drawing.Size(117, 23);
             this.btnPropisi.TabIndex = 13;
             this.btnPropisi.Text = "Propiši";
             this.btnPropisi.UseVisualStyleBackColor = true;
@@ -133,17 +133,19 @@
             // 
             // cmbOsiguranje
             // 
+            this.cmbOsiguranje.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbOsiguranje.FormattingEnabled = true;
-            this.cmbOsiguranje.Location = new System.Drawing.Point(20, 583);
+            this.cmbOsiguranje.Location = new System.Drawing.Point(15, 474);
+            this.cmbOsiguranje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbOsiguranje.Name = "cmbOsiguranje";
-            this.cmbOsiguranje.Size = new System.Drawing.Size(575, 24);
+            this.cmbOsiguranje.Size = new System.Drawing.Size(432, 25);
             this.cmbOsiguranje.TabIndex = 14;
             // 
             // FrmRecepti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 624);
+            this.ClientSize = new System.Drawing.Size(915, 507);
             this.Controls.Add(this.cmbOsiguranje);
             this.Controls.Add(this.btnPropisi);
             this.Controls.Add(this.dgvLijekoviPravo);
@@ -155,7 +157,6 @@
             this.Controls.Add(this.dgvLijekoviRecept);
             this.Controls.Add(this.btnPovratak);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRecepti";
             this.Text = "FrmRecepti";
             this.Load += new System.EventHandler(this.FrmRecepti_Load);

@@ -34,5 +34,10 @@ namespace PharmaCure
         {
             Application.Exit();
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

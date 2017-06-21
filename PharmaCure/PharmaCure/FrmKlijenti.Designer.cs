@@ -43,6 +43,7 @@
             // 
             // btnPovratak
             // 
+            this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnPovratak.Location = new System.Drawing.Point(12, 12);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 23);
@@ -62,54 +63,61 @@
             // lblIme
             // 
             this.lblIme.AutoSize = true;
+            this.lblIme.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.lblIme.Location = new System.Drawing.Point(13, 68);
             this.lblIme.Name = "lblIme";
-            this.lblIme.Size = new System.Drawing.Size(27, 13);
+            this.lblIme.Size = new System.Drawing.Size(36, 17);
             this.lblIme.TabIndex = 4;
             this.lblIme.Text = "Ime:";
             // 
             // lblPrezime
             // 
             this.lblPrezime.AutoSize = true;
+            this.lblPrezime.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.lblPrezime.Location = new System.Drawing.Point(12, 143);
             this.lblPrezime.Name = "lblPrezime";
-            this.lblPrezime.Size = new System.Drawing.Size(47, 13);
+            this.lblPrezime.Size = new System.Drawing.Size(62, 17);
             this.lblPrezime.TabIndex = 5;
             this.lblPrezime.Text = "Prezime:";
             // 
             // lblOsiguranje
             // 
             this.lblOsiguranje.AutoSize = true;
+            this.lblOsiguranje.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.lblOsiguranje.Location = new System.Drawing.Point(12, 218);
             this.lblOsiguranje.Name = "lblOsiguranje";
-            this.lblOsiguranje.Size = new System.Drawing.Size(60, 13);
+            this.lblOsiguranje.Size = new System.Drawing.Size(80, 17);
             this.lblOsiguranje.TabIndex = 6;
             this.lblOsiguranje.Text = "Osiguranje:";
             // 
             // txtIme
             // 
+            this.txtIme.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtIme.Location = new System.Drawing.Point(12, 84);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(264, 20);
+            this.txtIme.Size = new System.Drawing.Size(264, 23);
             this.txtIme.TabIndex = 7;
             // 
             // txtPrezime
             // 
+            this.txtPrezime.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtPrezime.Location = new System.Drawing.Point(12, 159);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(264, 20);
+            this.txtPrezime.Size = new System.Drawing.Size(264, 23);
             this.txtPrezime.TabIndex = 8;
             // 
             // cmbOsiguranje
             // 
+            this.cmbOsiguranje.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbOsiguranje.FormattingEnabled = true;
             this.cmbOsiguranje.Location = new System.Drawing.Point(12, 234);
             this.cmbOsiguranje.Name = "cmbOsiguranje";
-            this.cmbOsiguranje.Size = new System.Drawing.Size(264, 21);
+            this.cmbOsiguranje.Size = new System.Drawing.Size(264, 25);
             this.cmbOsiguranje.TabIndex = 9;
             // 
             // btnSpremi
             // 
+            this.btnSpremi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnSpremi.Location = new System.Drawing.Point(12, 289);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(105, 23);
@@ -120,6 +128,7 @@
             // 
             // btnObrisi
             // 
+            this.btnObrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnObrisi.Location = new System.Drawing.Point(171, 289);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(105, 23);

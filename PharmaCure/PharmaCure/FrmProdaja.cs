@@ -146,5 +146,15 @@ namespace PharmaCure
                 idR = Racun.NadjiRacun(int.Parse(txtKorisnik.Text), 4).IDRacun;
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbLijek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
