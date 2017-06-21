@@ -14,6 +14,7 @@ namespace PharmaCure {
     public partial class FrmNabava : Form {
         public List<Lijek> lijekovi;
         public List<StavkaNarudzbe> stavke = new List<StavkaNarudzbe>();
+        Narudzba nar;
         public FrmNabava() {
             InitializeComponent();
             lijekovi = Lijek.DohvatiSveLijekove();
@@ -42,11 +43,12 @@ namespace PharmaCure {
                 }
             }
             
-            Narudzba nar = new Narudzba();
+            nar = new Narudzba();
             nar.DjelatnikId = Zaposlenik.IdPrijavljenog;
             nar.PoslovnicaId = Zaposlenik.PoslovnicaPrijavljenog;
             nar.Stavke = this.stavke;
             Narudzba.ZapisiNarudzbu(nar);
+            MessageBox.Show("Uspješna narudžba");
             this.Close();
             
             
