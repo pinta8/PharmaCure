@@ -31,13 +31,13 @@ namespace Business_Layer
             }
             return ListaKlijenata;
         }
-        static public void IzbrisiArtikl(int id)
+        static public void IzbrisiKlijenta(int id)
         {
             DBCon baza = new DBCon();
             SqlCommand command = new SqlCommand("DELETE FROM Klijent WHERE ID_Klijent = " + id);
             baza.IzvrsiUpit(command);
         }
-        static public void DodajArtikl(string ime, string prezime, int osiguranje)
+        static public void DodajKlijenta(string ime, string prezime, int osiguranje)
         {
             DBCon baza = new DBCon();
             SqlCommand command = new SqlCommand("INSERT INTO Klijent ( Ime, Prezime, ID_Osiguranje) VALUES (" + ime + ", " + prezime + ", " + osiguranje + ")");

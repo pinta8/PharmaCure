@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.btnPovratak = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvKlijenti = new System.Windows.Forms.DataGridView();
             this.lblIme = new System.Windows.Forms.Label();
             this.lblPrezime = new System.Windows.Forms.Label();
             this.lblOsiguranje = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtIme = new System.Windows.Forms.TextBox();
+            this.txtPrezime = new System.Windows.Forms.TextBox();
+            this.cmbOsiguranje = new System.Windows.Forms.ComboBox();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKlijenti)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPovratak
@@ -51,13 +51,13 @@
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
-            // dataGridView1
+            // dgvKlijenti
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(443, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(485, 532);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvKlijenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKlijenti.Location = new System.Drawing.Point(443, 12);
+            this.dgvKlijenti.Name = "dgvKlijenti";
+            this.dgvKlijenti.Size = new System.Drawing.Size(485, 532);
+            this.dgvKlijenti.TabIndex = 3;
             // 
             // lblIme
             // 
@@ -86,27 +86,27 @@
             this.lblOsiguranje.TabIndex = 6;
             this.lblOsiguranje.Text = "Osiguranje:";
             // 
-            // textBox1
+            // txtIme
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtIme.Location = new System.Drawing.Point(12, 84);
+            this.txtIme.Name = "txtIme";
+            this.txtIme.Size = new System.Drawing.Size(264, 20);
+            this.txtIme.TabIndex = 7;
             // 
-            // textBox2
+            // txtPrezime
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(264, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtPrezime.Location = new System.Drawing.Point(12, 159);
+            this.txtPrezime.Name = "txtPrezime";
+            this.txtPrezime.Size = new System.Drawing.Size(264, 20);
+            this.txtPrezime.TabIndex = 8;
             // 
-            // comboBox1
+            // cmbOsiguranje
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 234);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(264, 21);
-            this.comboBox1.TabIndex = 9;
+            this.cmbOsiguranje.FormattingEnabled = true;
+            this.cmbOsiguranje.Location = new System.Drawing.Point(12, 234);
+            this.cmbOsiguranje.Name = "cmbOsiguranje";
+            this.cmbOsiguranje.Size = new System.Drawing.Size(264, 21);
+            this.cmbOsiguranje.TabIndex = 9;
             // 
             // btnSpremi
             // 
@@ -116,6 +116,7 @@
             this.btnSpremi.TabIndex = 10;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // btnObrisi
             // 
@@ -125,6 +126,7 @@
             this.btnObrisi.TabIndex = 11;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // FrmKlijenti
             // 
@@ -133,19 +135,19 @@
             this.ClientSize = new System.Drawing.Size(940, 556);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnSpremi);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbOsiguranje);
+            this.Controls.Add(this.txtPrezime);
+            this.Controls.Add(this.txtIme);
             this.Controls.Add(this.lblOsiguranje);
             this.Controls.Add(this.lblPrezime);
             this.Controls.Add(this.lblIme);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvKlijenti);
             this.Controls.Add(this.btnPovratak);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmKlijenti";
             this.Text = "FrmKlijenti";
             this.Load += new System.EventHandler(this.FrmKlijenti_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKlijenti)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,13 +156,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnPovratak;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvKlijenti;
         private System.Windows.Forms.Label lblIme;
         private System.Windows.Forms.Label lblPrezime;
         private System.Windows.Forms.Label lblOsiguranje;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtIme;
+        private System.Windows.Forms.TextBox txtPrezime;
+        private System.Windows.Forms.ComboBox cmbOsiguranje;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnObrisi;
     }
