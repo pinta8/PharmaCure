@@ -35,6 +35,7 @@ namespace PharmaCure
         }
         //u poseban textbox stavljamo lijekova čija je količina manja od 10
         public void PripremiKolicineManjeOdDeset() {
+            tbxMinLijekovi.Text = "";
             dostupnost = Dostupnost.DohvatiLijekovePoslovnice(Zaposlenik.PoslovnicaPrijavljenog);
             var min = (from d in dostupnost where d.Kolicina < 10 select d);
             foreach(Dostupnost d in min) {
@@ -49,7 +50,8 @@ namespace PharmaCure
         private void btnNaruci_Click(object sender, EventArgs e) {
             FrmNabava f = new FrmNabava();
             f.ShowDialog();
-          
+            PripremiDgvLijek();
+            PripremiKolicineManjeOdDeset();
         }
     }
 }

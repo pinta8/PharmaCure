@@ -54,7 +54,7 @@
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodaj.Image = ((System.Drawing.Image)(resources.GetObject("btnDodaj.Image")));
-            this.btnDodaj.Location = new System.Drawing.Point(212, 381);
+            this.btnDodaj.Location = new System.Drawing.Point(374, 377);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(90, 36);
             this.btnDodaj.TabIndex = 7;
@@ -70,7 +70,7 @@
             this.dgvZaposlenici.MultiSelect = false;
             this.dgvZaposlenici.Name = "dgvZaposlenici";
             this.dgvZaposlenici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvZaposlenici.Size = new System.Drawing.Size(434, 226);
+            this.dgvZaposlenici.Size = new System.Drawing.Size(794, 226);
             this.dgvZaposlenici.TabIndex = 8;
             // 
             // lblZaposlenici
@@ -89,7 +89,7 @@
             // 
             this.btnAzuriraj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAzuriraj.Image = ((System.Drawing.Image)(resources.GetObject("btnAzuriraj.Image")));
-            this.btnAzuriraj.Location = new System.Drawing.Point(76, 380);
+            this.btnAzuriraj.Location = new System.Drawing.Point(238, 376);
             this.btnAzuriraj.Name = "btnAzuriraj";
             this.btnAzuriraj.Size = new System.Drawing.Size(82, 39);
             this.btnAzuriraj.TabIndex = 10;
@@ -101,7 +101,7 @@
             // 
             this.btnIzbrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzbrisi.Image = ((System.Drawing.Image)(resources.GetObject("btnIzbrisi.Image")));
-            this.btnIzbrisi.Location = new System.Drawing.Point(371, 380);
+            this.btnIzbrisi.Location = new System.Drawing.Point(533, 376);
             this.btnIzbrisi.Name = "btnIzbrisi";
             this.btnIzbrisi.Size = new System.Drawing.Size(79, 39);
             this.btnIzbrisi.TabIndex = 11;
