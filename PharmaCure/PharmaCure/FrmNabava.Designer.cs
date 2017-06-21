@@ -28,12 +28,13 @@
             this.tbxCijena = new System.Windows.Forms.TextBox();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPovratak = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPosaljiNarudzbu
             // 
             this.btnPosaljiNarudzbu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPosaljiNarudzbu.Location = new System.Drawing.Point(548, 282);
+            this.btnPosaljiNarudzbu.Location = new System.Drawing.Point(539, 334);
             this.btnPosaljiNarudzbu.Name = "btnPosaljiNarudzbu";
             this.btnPosaljiNarudzbu.Size = new System.Drawing.Size(106, 54);
             this.btnPosaljiNarudzbu.TabIndex = 6;
@@ -45,14 +46,15 @@
             // 
             this.flpStavke.AutoScroll = true;
             this.flpStavke.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flpStavke.Location = new System.Drawing.Point(21, 44);
+            this.flpStavke.Location = new System.Drawing.Point(12, 96);
             this.flpStavke.Name = "flpStavke";
             this.flpStavke.Size = new System.Drawing.Size(441, 428);
             this.flpStavke.TabIndex = 7;
+            this.flpStavke.Paint += new System.Windows.Forms.PaintEventHandler(this.flpStavke_Paint);
             // 
             // tbxCijena
             // 
-            this.tbxCijena.Location = new System.Drawing.Point(530, 179);
+            this.tbxCijena.Location = new System.Drawing.Point(521, 231);
             this.tbxCijena.Name = "tbxCijena";
             this.tbxCijena.ReadOnly = true;
             this.tbxCijena.Size = new System.Drawing.Size(138, 20);
@@ -61,7 +63,7 @@
             // btnDodaj
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDodaj.Location = new System.Drawing.Point(21, 6);
+            this.btnDodaj.Location = new System.Drawing.Point(12, 58);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(441, 32);
             this.btnDodaj.TabIndex = 9;
@@ -73,24 +75,37 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(530, 143);
+            this.label1.Location = new System.Drawing.Point(521, 195);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Ukupna cijena narudžbe (kn) :";
             // 
+            // btnPovratak
+            // 
+            this.btnPovratak.Location = new System.Drawing.Point(12, 12);
+            this.btnPovratak.Name = "btnPovratak";
+            this.btnPovratak.Size = new System.Drawing.Size(75, 23);
+            this.btnPovratak.TabIndex = 11;
+            this.btnPovratak.Text = "Povratak";
+            this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
+            // 
             // FrmNabava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 484);
+            this.ClientSize = new System.Drawing.Size(802, 535);
+            this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.tbxCijena);
             this.Controls.Add(this.flpStavke);
             this.Controls.Add(this.btnPosaljiNarudzbu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmNabava";
             this.Text = "FrmNabava";
+            this.Load += new System.EventHandler(this.FrmNabava_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +117,6 @@
         private System.Windows.Forms.TextBox tbxCijena;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPovratak;
     }
 }

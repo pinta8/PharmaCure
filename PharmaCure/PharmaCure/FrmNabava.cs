@@ -78,5 +78,21 @@ namespace PharmaCure {
             IzracunajCijenu();
         }
 
+        private void FrmNabava_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flpStavke_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnPovratak_Click(object sender, EventArgs e)
+        {
+            FrmMain m = new FrmMain();
+            m.Show();
+            this.Close();
+        }
     }
 }

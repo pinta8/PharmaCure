@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Business_Layer
 {
-    class Osiguranje
+    public class Osiguranje
     {
+        public int idOsiguranje { get; set; }
+        public string naziv { get; set; }
+        
     }
 }
