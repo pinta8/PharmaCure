@@ -19,7 +19,7 @@ namespace Business_Layer
 
         public static List<LijekRecept> DohvatiRecepte(int pom)
         {
-            List <LijekRecept> ListaRasadnika = new List<LijekRecept>();
+            List <LijekRecept> ListaLijekova = new List<LijekRecept>();
             SqlCommand Command = new SqlCommand();
             Command.CommandType = CommandType.Text;
             Command.CommandText = "SELECT * FROM LijekoviRecept WHERE ID_Klijent = " + pom;
@@ -29,9 +29,9 @@ namespace Business_Layer
             foreach (DataRow dr in DT.Rows)
             {
                 LijekRecept r = new LijekRecept();
-                ListaRasadnika.Add(r.MakeLijekRecept(dr));
+                ListaLijekova.Add(r.MakeLijekRecept(dr));
             }
-            return ListaRasadnika;
+            return ListaLijekova;
         }
 
         static public void IzbrisiRecept(int id, int idK)
