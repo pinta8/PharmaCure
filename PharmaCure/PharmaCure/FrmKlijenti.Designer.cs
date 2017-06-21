@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKlijenti));
             this.btnPovratak = new System.Windows.Forms.Button();
             this.dgvKlijenti = new System.Windows.Forms.DataGridView();
             this.lblIme = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             // 
             // btnPovratak
             // 
+            this.btnPovratak.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPovratak.BackgroundImage")));
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnPovratak.Location = new System.Drawing.Point(12, 12);
             this.btnPovratak.Name = "btnPovratak";
@@ -54,15 +56,18 @@
             // 
             // dgvKlijenti
             // 
+            this.dgvKlijenti.BackgroundColor = System.Drawing.Color.White;
             this.dgvKlijenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKlijenti.Location = new System.Drawing.Point(443, 12);
             this.dgvKlijenti.Name = "dgvKlijenti";
             this.dgvKlijenti.Size = new System.Drawing.Size(485, 532);
             this.dgvKlijenti.TabIndex = 3;
+            this.dgvKlijenti.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKlijenti_CellContentClick);
             // 
             // lblIme
             // 
             this.lblIme.AutoSize = true;
+            this.lblIme.BackColor = System.Drawing.Color.Transparent;
             this.lblIme.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.lblIme.Location = new System.Drawing.Point(13, 68);
             this.lblIme.Name = "lblIme";
@@ -73,6 +78,7 @@
             // lblPrezime
             // 
             this.lblPrezime.AutoSize = true;
+            this.lblPrezime.BackColor = System.Drawing.Color.Transparent;
             this.lblPrezime.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.lblPrezime.Location = new System.Drawing.Point(12, 143);
             this.lblPrezime.Name = "lblPrezime";
@@ -83,6 +89,7 @@
             // lblOsiguranje
             // 
             this.lblOsiguranje.AutoSize = true;
+            this.lblOsiguranje.BackColor = System.Drawing.Color.Transparent;
             this.lblOsiguranje.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.lblOsiguranje.Location = new System.Drawing.Point(12, 218);
             this.lblOsiguranje.Name = "lblOsiguranje";
@@ -117,6 +124,7 @@
             // 
             // btnSpremi
             // 
+            this.btnSpremi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSpremi.BackgroundImage")));
             this.btnSpremi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnSpremi.Location = new System.Drawing.Point(12, 289);
             this.btnSpremi.Name = "btnSpremi";
@@ -128,6 +136,7 @@
             // 
             // btnObrisi
             // 
+            this.btnObrisi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnObrisi.BackgroundImage")));
             this.btnObrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnObrisi.Location = new System.Drawing.Point(171, 289);
             this.btnObrisi.Name = "btnObrisi";
@@ -141,6 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(940, 556);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnSpremi);

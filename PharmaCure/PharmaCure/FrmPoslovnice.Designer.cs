@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPoslovnice));
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnPovratak = new System.Windows.Forms.Button();
             this.dgvPoslovnice = new System.Windows.Forms.DataGridView();
@@ -33,8 +34,9 @@
             // 
             // btnDodaj
             // 
+            this.btnDodaj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodaj.BackgroundImage")));
             this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDodaj.Location = new System.Drawing.Point(363, 390);
+            this.btnDodaj.Location = new System.Drawing.Point(335, 348);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(79, 39);
             this.btnDodaj.TabIndex = 10;
@@ -44,6 +46,7 @@
             // 
             // btnPovratak
             // 
+            this.btnPovratak.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPovratak.BackgroundImage")));
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnPovratak.Location = new System.Drawing.Point(13, 13);
             this.btnPovratak.Name = "btnPovratak";
@@ -55,8 +58,9 @@
             // 
             // dgvPoslovnice
             // 
+            this.dgvPoslovnice.BackgroundColor = System.Drawing.Color.White;
             this.dgvPoslovnice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPoslovnice.Location = new System.Drawing.Point(66, 72);
+            this.dgvPoslovnice.Location = new System.Drawing.Point(13, 55);
             this.dgvPoslovnice.MultiSelect = false;
             this.dgvPoslovnice.Name = "dgvPoslovnice";
             this.dgvPoslovnice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -65,8 +69,9 @@
             // 
             // btnIzbrisi
             // 
+            this.btnIzbrisi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIzbrisi.BackgroundImage")));
             this.btnIzbrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIzbrisi.Location = new System.Drawing.Point(564, 390);
+            this.btnIzbrisi.Location = new System.Drawing.Point(536, 348);
             this.btnIzbrisi.Name = "btnIzbrisi";
             this.btnIzbrisi.Size = new System.Drawing.Size(79, 39);
             this.btnIzbrisi.TabIndex = 14;
@@ -76,8 +81,9 @@
             // 
             // btnAzuriraj
             // 
+            this.btnAzuriraj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAzuriraj.BackgroundImage")));
             this.btnAzuriraj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAzuriraj.Location = new System.Drawing.Point(172, 390);
+            this.btnAzuriraj.Location = new System.Drawing.Point(144, 348);
             this.btnAzuriraj.Name = "btnAzuriraj";
             this.btnAzuriraj.Size = new System.Drawing.Size(82, 39);
             this.btnAzuriraj.TabIndex = 13;
@@ -89,7 +95,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 485);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(759, 402);
             this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.btnAzuriraj);
             this.Controls.Add(this.dgvPoslovnice);
@@ -98,6 +105,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPoslovnice";
             this.Text = "FrmDodajPoslovnicu";
+            this.Load += new System.EventHandler(this.FrmPoslovnice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoslovnice)).EndInit();
             this.ResumeLayout(false);
 

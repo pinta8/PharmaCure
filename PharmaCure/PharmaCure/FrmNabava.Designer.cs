@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNabava));
             this.btnPosaljiNarudzbu = new System.Windows.Forms.Button();
             this.flpStavke = new System.Windows.Forms.FlowLayoutPanel();
             this.tbxCijena = new System.Windows.Forms.TextBox();
@@ -33,6 +34,7 @@
             // 
             // btnPosaljiNarudzbu
             // 
+            this.btnPosaljiNarudzbu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPosaljiNarudzbu.BackgroundImage")));
             this.btnPosaljiNarudzbu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPosaljiNarudzbu.Location = new System.Drawing.Point(539, 334);
             this.btnPosaljiNarudzbu.Name = "btnPosaljiNarudzbu";
@@ -62,6 +64,8 @@
             // 
             // btnDodaj
             // 
+            this.btnDodaj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodaj.BackgroundImage")));
+            this.btnDodaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodaj.Location = new System.Drawing.Point(12, 58);
             this.btnDodaj.Name = "btnDodaj";
@@ -74,15 +78,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(521, 195);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Ukupna cijena narudžbe (kn) :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnPovratak
             // 
+            this.btnPovratak.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPovratak.BackgroundImage")));
             this.btnPovratak.Location = new System.Drawing.Point(12, 12);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 23);
@@ -95,6 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(802, 535);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.label1);

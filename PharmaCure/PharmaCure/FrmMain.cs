@@ -20,7 +20,7 @@ namespace PharmaCure
             InitializeComponent();
             this.KeyPreview = true;
             if (ulogaDjelatnika == 2) {
-                //PomakniGumbe();
+                PomakniGumbe();
             }
             else lblTip.Text = "Prijavljeni ste kao administrator";
            
@@ -99,18 +99,13 @@ namespace PharmaCure
             }
         }
         //U slučaju da je prijavljen ljekarnik, treba napraviti drugačiji raspored gumba
-        //private void PomakniGumbe() {
-        //    btnDodajPoslovnicu.Hide();
-        //    btnZaposlenici.Hide();
-        //    lblTip.Text = "Prijavljeni ste kao ljekarnik";
-        //    btnRecepti.Location = new Point(btnZaposlenici.Location.X , btnZaposlenici.Location.Y);
-        //    this.Size = new Size(this.Size.Width,this.Size.Height - 40);
-        //    lblTip.Location = new Point(btnDodajPoslovnicu.Location.X, lblTip.Location.Y-40);
-        //}
-
-        private void lblTip_Click(object sender, EventArgs e)
+        private void PomakniGumbe()
         {
-
+            btnDodajPoslovnicu.Hide();
+            btnZaposlenici.Hide();
+            btnKlijent.Hide();
+            btnRecepti.Hide();
+            lblTip.Text = "Prijavljeni ste kao ljekarnik";
         }
 
         private void btnKlijent_Click(object sender, EventArgs e)

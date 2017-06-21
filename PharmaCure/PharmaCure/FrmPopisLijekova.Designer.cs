@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPopisLijekova));
             this.btnPovratak = new System.Windows.Forms.Button();
             this.dgvLijekovi = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLijekovi)).BeginInit();
@@ -35,6 +36,7 @@
             // 
             // btnPovratak
             // 
+            this.btnPovratak.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPovratak.BackgroundImage")));
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnPovratak.Location = new System.Drawing.Point(13, 13);
             this.btnPovratak.Name = "btnPovratak";
@@ -46,17 +48,20 @@
             // 
             // dgvLijekovi
             // 
+            this.dgvLijekovi.BackgroundColor = System.Drawing.Color.White;
             this.dgvLijekovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLijekovi.Location = new System.Drawing.Point(39, 87);
+            this.dgvLijekovi.Location = new System.Drawing.Point(13, 42);
             this.dgvLijekovi.Name = "dgvLijekovi";
-            this.dgvLijekovi.Size = new System.Drawing.Size(827, 359);
+            this.dgvLijekovi.Size = new System.Drawing.Size(890, 348);
             this.dgvLijekovi.TabIndex = 2;
+            this.dgvLijekovi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLijekovi_CellContentClick);
             // 
             // FrmPopisLijekova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 485);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(915, 405);
             this.Controls.Add(this.dgvLijekovi);
             this.Controls.Add(this.btnPovratak);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDostava));
             this.btnPovratak = new System.Windows.Forms.Button();
             this.dgvArtikli = new System.Windows.Forms.DataGridView();
             this.btnDodaj = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@
             // 
             // btnPovratak
             // 
+            this.btnPovratak.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPovratak.BackgroundImage")));
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnPovratak.Location = new System.Drawing.Point(13, 24);
             this.btnPovratak.Name = "btnPovratak";
@@ -64,6 +66,7 @@
             // 
             // dgvArtikli
             // 
+            this.dgvArtikli.BackgroundColor = System.Drawing.Color.White;
             this.dgvArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArtikli.Location = new System.Drawing.Point(13, 66);
             this.dgvArtikli.Name = "dgvArtikli";
@@ -73,6 +76,7 @@
             // 
             // btnDodaj
             // 
+            this.btnDodaj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodaj.BackgroundImage")));
             this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnDodaj.Location = new System.Drawing.Point(958, 24);
             this.btnDodaj.Name = "btnDodaj";
@@ -84,6 +88,7 @@
             // 
             // button2
             // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.button2.Location = new System.Drawing.Point(1044, 23);
             this.button2.Name = "button2";
@@ -98,7 +103,7 @@
             this.cmbLijek.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbLijek.FormattingEnabled = true;
             this.cmbLijek.Location = new System.Drawing.Point(786, 25);
-            this.cmbLijek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbLijek.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLijek.Name = "cmbLijek";
             this.cmbLijek.Size = new System.Drawing.Size(158, 25);
             this.cmbLijek.TabIndex = 6;
@@ -107,7 +112,7 @@
             // 
             this.txtKorisnik.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtKorisnik.Location = new System.Drawing.Point(118, 27);
-            this.txtKorisnik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKorisnik.Margin = new System.Windows.Forms.Padding(2);
             this.txtKorisnik.Name = "txtKorisnik";
             this.txtKorisnik.Size = new System.Drawing.Size(125, 23);
             this.txtKorisnik.TabIndex = 7;
@@ -116,6 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label1.Location = new System.Drawing.Point(118, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -127,6 +133,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label2.Location = new System.Drawing.Point(783, 5);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -140,7 +147,7 @@
             this.txtCijena.Enabled = false;
             this.txtCijena.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtCijena.Location = new System.Drawing.Point(1044, 481);
-            this.txtCijena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCijena.Margin = new System.Windows.Forms.Padding(2);
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.ReadOnly = true;
             this.txtCijena.Size = new System.Drawing.Size(95, 23);
@@ -149,6 +156,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label3.Location = new System.Drawing.Point(969, 482);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -160,9 +168,10 @@
             // 
             // btnRacun
             // 
+            this.btnRacun.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRacun.BackgroundImage")));
             this.btnRacun.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnRacun.Location = new System.Drawing.Point(138, 481);
-            this.btnRacun.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRacun.Margin = new System.Windows.Forms.Padding(2);
             this.btnRacun.Name = "btnRacun";
             this.btnRacun.Size = new System.Drawing.Size(126, 27);
             this.btnRacun.TabIndex = 12;
@@ -172,9 +181,10 @@
             // 
             // dgvRecepti
             // 
+            this.dgvRecepti.BackgroundColor = System.Drawing.Color.White;
             this.dgvRecepti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecepti.Location = new System.Drawing.Point(698, 66);
-            this.dgvRecepti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRecepti.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRecepti.Name = "dgvRecepti";
             this.dgvRecepti.RowTemplate.Height = 24;
             this.dgvRecepti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -186,7 +196,7 @@
             this.cmbStanje.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbStanje.FormattingEnabled = true;
             this.cmbStanje.Location = new System.Drawing.Point(13, 485);
-            this.cmbStanje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbStanje.Margin = new System.Windows.Forms.Padding(2);
             this.cmbStanje.Name = "cmbStanje";
             this.cmbStanje.Size = new System.Drawing.Size(109, 25);
             this.cmbStanje.TabIndex = 14;
@@ -195,7 +205,7 @@
             // 
             this.txtKolicina.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtKolicina.Location = new System.Drawing.Point(698, 26);
-            this.txtKolicina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKolicina.Margin = new System.Windows.Forms.Padding(2);
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(47, 23);
             this.txtKolicina.TabIndex = 15;
@@ -203,6 +213,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label4.Location = new System.Drawing.Point(695, 5);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -213,9 +224,10 @@
             // 
             // btnObrisi
             // 
+            this.btnObrisi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnObrisi.BackgroundImage")));
             this.btnObrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnObrisi.Location = new System.Drawing.Point(280, 481);
-            this.btnObrisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnObrisi.Margin = new System.Windows.Forms.Padding(2);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(63, 26);
             this.btnObrisi.TabIndex = 17;
@@ -225,8 +237,9 @@
             // 
             // btnJedan
             // 
+            this.btnJedan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnJedan.BackgroundImage")));
             this.btnJedan.Location = new System.Drawing.Point(658, 226);
-            this.btnJedan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJedan.Margin = new System.Windows.Forms.Padding(2);
             this.btnJedan.Name = "btnJedan";
             this.btnJedan.Size = new System.Drawing.Size(35, 31);
             this.btnJedan.TabIndex = 18;
@@ -236,8 +249,9 @@
             // 
             // btnSve
             // 
+            this.btnSve.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSve.BackgroundImage")));
             this.btnSve.Location = new System.Drawing.Point(658, 275);
-            this.btnSve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSve.Margin = new System.Windows.Forms.Padding(2);
             this.btnSve.Name = "btnSve";
             this.btnSve.Size = new System.Drawing.Size(35, 31);
             this.btnSve.TabIndex = 19;
@@ -249,6 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1155, 517);
             this.Controls.Add(this.btnSve);
             this.Controls.Add(this.btnJedan);

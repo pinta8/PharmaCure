@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOsiguraneLijek));
             this.btnPovratak = new System.Windows.Forms.Button();
             this.cmbOsiguranje = new System.Windows.Forms.ComboBox();
             this.dgvLijekovi = new System.Windows.Forms.DataGridView();
@@ -41,6 +42,7 @@
             // btnPovratak
             // 
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnPovratak.Image = ((System.Drawing.Image)(resources.GetObject("btnPovratak.Image")));
             this.btnPovratak.Location = new System.Drawing.Point(18, 11);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 23);
@@ -60,6 +62,7 @@
             // 
             // dgvLijekovi
             // 
+            this.dgvLijekovi.BackgroundColor = System.Drawing.Color.White;
             this.dgvLijekovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLijekovi.Location = new System.Drawing.Point(18, 40);
             this.dgvLijekovi.Name = "dgvLijekovi";
@@ -70,6 +73,7 @@
             // btnDodaj
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnDodaj.Image = ((System.Drawing.Image)(resources.GetObject("btnDodaj.Image")));
             this.btnDodaj.Location = new System.Drawing.Point(692, 385);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(164, 23);
@@ -80,6 +84,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(446, 40);
             this.dataGridView1.Name = "dataGridView1";
@@ -89,6 +94,7 @@
             // btnBrisi
             // 
             this.btnBrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnBrisi.Image = ((System.Drawing.Image)(resources.GetObject("btnBrisi.Image")));
             this.btnBrisi.Location = new System.Drawing.Point(459, 384);
             this.btnBrisi.Name = "btnBrisi";
             this.btnBrisi.Size = new System.Drawing.Size(164, 23);
@@ -101,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(868, 414);
             this.Controls.Add(this.btnBrisi);
             this.Controls.Add(this.dataGridView1);

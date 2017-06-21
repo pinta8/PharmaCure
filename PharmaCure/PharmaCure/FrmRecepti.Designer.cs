@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecepti));
             this.btnPovratak = new System.Windows.Forms.Button();
             this.dgvLijekoviRecept = new System.Windows.Forms.DataGridView();
             this.txtKolicina = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             // btnPovratak
             // 
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnPovratak.Image = ((System.Drawing.Image)(resources.GetObject("btnPovratak.Image")));
             this.btnPovratak.Location = new System.Drawing.Point(13, 21);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 23);
@@ -55,6 +57,7 @@
             // 
             // dgvLijekoviRecept
             // 
+            this.dgvLijekoviRecept.BackgroundColor = System.Drawing.Color.White;
             this.dgvLijekoviRecept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLijekoviRecept.Location = new System.Drawing.Point(472, 72);
             this.dgvLijekoviRecept.Name = "dgvLijekoviRecept";
@@ -72,7 +75,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(112, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 17);
@@ -82,8 +87,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.label3.Location = new System.Drawing.Point(623, 477);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(596, 477);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 7;
@@ -92,6 +99,7 @@
             // btnDodaj
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnDodaj.Image = ((System.Drawing.Image)(resources.GetObject("btnDodaj.Image")));
             this.btnDodaj.Location = new System.Drawing.Point(788, 21);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(117, 23);
@@ -111,6 +119,7 @@
             // 
             // dgvLijekoviPravo
             // 
+            this.dgvLijekoviPravo.BackgroundColor = System.Drawing.Color.White;
             this.dgvLijekoviPravo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLijekoviPravo.Location = new System.Drawing.Point(15, 72);
             this.dgvLijekoviPravo.Name = "dgvLijekoviPravo";
@@ -122,8 +131,9 @@
             // btnPropisi
             // 
             this.btnPropisi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnPropisi.Image = ((System.Drawing.Image)(resources.GetObject("btnPropisi.Image")));
             this.btnPropisi.Location = new System.Drawing.Point(788, 472);
-            this.btnPropisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPropisi.Margin = new System.Windows.Forms.Padding(2);
             this.btnPropisi.Name = "btnPropisi";
             this.btnPropisi.Size = new System.Drawing.Size(117, 23);
             this.btnPropisi.TabIndex = 13;
@@ -136,7 +146,7 @@
             this.cmbOsiguranje.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbOsiguranje.FormattingEnabled = true;
             this.cmbOsiguranje.Location = new System.Drawing.Point(15, 474);
-            this.cmbOsiguranje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbOsiguranje.Margin = new System.Windows.Forms.Padding(2);
             this.cmbOsiguranje.Name = "cmbOsiguranje";
             this.cmbOsiguranje.Size = new System.Drawing.Size(432, 25);
             this.cmbOsiguranje.TabIndex = 14;
@@ -145,6 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(915, 507);
             this.Controls.Add(this.cmbOsiguranje);
             this.Controls.Add(this.btnPropisi);

@@ -23,6 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAzurirajZaposlenika));
             this.btnSpremi = new System.Windows.Forms.Button();
             this.cbxPoslovnice = new System.Windows.Forms.ComboBox();
             this.tbxLozinka = new System.Windows.Forms.TextBox();
@@ -35,6 +36,7 @@
             // 
             // btnSpremi
             // 
+            this.btnSpremi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSpremi.BackgroundImage")));
             this.btnSpremi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSpremi.Location = new System.Drawing.Point(13, 192);
             this.btnSpremi.Name = "btnSpremi";
@@ -73,6 +75,7 @@
             // lblPoslovnica
             // 
             this.lblPoslovnica.AutoSize = true;
+            this.lblPoslovnica.BackColor = System.Drawing.Color.Transparent;
             this.lblPoslovnica.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPoslovnica.Location = new System.Drawing.Point(10, 144);
             this.lblPoslovnica.Name = "lblPoslovnica";
@@ -83,6 +86,7 @@
             // lblLozinka
             // 
             this.lblLozinka.AutoSize = true;
+            this.lblLozinka.BackColor = System.Drawing.Color.Transparent;
             this.lblLozinka.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblLozinka.Location = new System.Drawing.Point(10, 88);
             this.lblLozinka.Name = "lblLozinka";
@@ -93,6 +97,7 @@
             // lblKorisnickoIme
             // 
             this.lblKorisnickoIme.AutoSize = true;
+            this.lblKorisnickoIme.BackColor = System.Drawing.Color.Transparent;
             this.lblKorisnickoIme.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblKorisnickoIme.Location = new System.Drawing.Point(10, 35);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
@@ -102,6 +107,7 @@
             // 
             // btnPovratak
             // 
+            this.btnPovratak.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPovratak.BackgroundImage")));
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPovratak.Location = new System.Drawing.Point(186, 192);
             this.btnPovratak.Name = "btnPovratak";
@@ -115,6 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnSpremi);

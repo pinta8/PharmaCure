@@ -45,6 +45,8 @@
             // 
             // btnIzlaz
             // 
+            this.btnIzlaz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIzlaz.BackgroundImage")));
+            this.btnIzlaz.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnIzlaz.Location = new System.Drawing.Point(570, 487);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(75, 23);
@@ -57,12 +59,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(654, 522);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.richTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmHelp";
             this.Text = "FrmHelp";
+            this.Load += new System.EventHandler(this.FrmHelp_Load);
             this.ResumeLayout(false);
 
         }

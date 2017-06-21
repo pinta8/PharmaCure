@@ -21,5 +21,10 @@ namespace PharmaCure
         {
             this.Close();
         }
+
+        private void FrmHelp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

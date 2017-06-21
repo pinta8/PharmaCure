@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStanje));
             this.btnPovratak = new System.Windows.Forms.Button();
             this.dgvLijekovi = new System.Windows.Forms.DataGridView();
             this.btnNaruci = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             // btnPovratak
             // 
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnPovratak.Image = ((System.Drawing.Image)(resources.GetObject("btnPovratak.Image")));
             this.btnPovratak.Location = new System.Drawing.Point(13, 13);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 23);
@@ -50,6 +52,7 @@
             // 
             // dgvLijekovi
             // 
+            this.dgvLijekovi.BackgroundColor = System.Drawing.Color.White;
             this.dgvLijekovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLijekovi.Location = new System.Drawing.Point(12, 101);
             this.dgvLijekovi.MultiSelect = false;
@@ -61,6 +64,7 @@
             // btnNaruci
             // 
             this.btnNaruci.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNaruci.Image = ((System.Drawing.Image)(resources.GetObject("btnNaruci.Image")));
             this.btnNaruci.Location = new System.Drawing.Point(235, 391);
             this.btnNaruci.Name = "btnNaruci";
             this.btnNaruci.Size = new System.Drawing.Size(109, 42);
@@ -72,6 +76,7 @@
             // lblLijekovi
             // 
             this.lblLijekovi.AutoSize = true;
+            this.lblLijekovi.BackColor = System.Drawing.Color.Transparent;
             this.lblLijekovi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblLijekovi.Location = new System.Drawing.Point(13, 82);
             this.lblLijekovi.Name = "lblLijekovi";
@@ -82,6 +87,7 @@
             // lblMinLijekovi
             // 
             this.lblMinLijekovi.AutoSize = true;
+            this.lblMinLijekovi.BackColor = System.Drawing.Color.Transparent;
             this.lblMinLijekovi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblMinLijekovi.Location = new System.Drawing.Point(632, 81);
             this.lblMinLijekovi.Name = "lblMinLijekovi";
@@ -104,6 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(915, 485);
             this.Controls.Add(this.tbxMinLijekovi);
             this.Controls.Add(this.lblMinLijekovi);

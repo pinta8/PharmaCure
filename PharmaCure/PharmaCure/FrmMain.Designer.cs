@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnZaposlenici = new System.Windows.Forms.Button();
             this.btnNabava = new System.Windows.Forms.Button();
             this.btnPopisL = new System.Windows.Forms.Button();
@@ -44,8 +45,8 @@
             // btnZaposlenici
             // 
             this.btnZaposlenici.BackColor = System.Drawing.SystemColors.Control;
-            this.btnZaposlenici.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnZaposlenici.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnZaposlenici.Image = ((System.Drawing.Image)(resources.GetObject("btnZaposlenici.Image")));
             this.btnZaposlenici.Location = new System.Drawing.Point(240, 356);
             this.btnZaposlenici.Name = "btnZaposlenici";
             this.btnZaposlenici.Size = new System.Drawing.Size(108, 95);
@@ -57,6 +58,7 @@
             // btnNabava
             // 
             this.btnNabava.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNabava.Image = ((System.Drawing.Image)(resources.GetObject("btnNabava.Image")));
             this.btnNabava.Location = new System.Drawing.Point(48, 221);
             this.btnNabava.Name = "btnNabava";
             this.btnNabava.Size = new System.Drawing.Size(108, 95);
@@ -68,6 +70,7 @@
             // btnPopisL
             // 
             this.btnPopisL.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPopisL.Image = ((System.Drawing.Image)(resources.GetObject("btnPopisL.Image")));
             this.btnPopisL.Location = new System.Drawing.Point(48, 86);
             this.btnPopisL.Name = "btnPopisL";
             this.btnPopisL.Size = new System.Drawing.Size(108, 95);
@@ -79,6 +82,7 @@
             // btnDostava
             // 
             this.btnDostava.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDostava.Image = ((System.Drawing.Image)(resources.GetObject("btnDostava.Image")));
             this.btnDostava.Location = new System.Drawing.Point(240, 221);
             this.btnDostava.Name = "btnDostava";
             this.btnDostava.Size = new System.Drawing.Size(108, 95);
@@ -90,6 +94,7 @@
             // btnKolicina
             // 
             this.btnKolicina.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKolicina.Image = ((System.Drawing.Image)(resources.GetObject("btnKolicina.Image")));
             this.btnKolicina.Location = new System.Drawing.Point(432, 86);
             this.btnKolicina.Name = "btnKolicina";
             this.btnKolicina.Size = new System.Drawing.Size(108, 95);
@@ -101,6 +106,7 @@
             // btnIzlaz
             // 
             this.btnIzlaz.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzlaz.Image = ((System.Drawing.Image)(resources.GetObject("btnIzlaz.Image")));
             this.btnIzlaz.Location = new System.Drawing.Point(48, 20);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(108, 33);
@@ -112,6 +118,7 @@
             // btnProdaja
             // 
             this.btnProdaja.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnProdaja.Image = ((System.Drawing.Image)(resources.GetObject("btnProdaja.Image")));
             this.btnProdaja.Location = new System.Drawing.Point(240, 86);
             this.btnProdaja.Name = "btnProdaja";
             this.btnProdaja.Size = new System.Drawing.Size(108, 95);
@@ -123,6 +130,7 @@
             // btnRecepti
             // 
             this.btnRecepti.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRecepti.Image = ((System.Drawing.Image)(resources.GetObject("btnRecepti.Image")));
             this.btnRecepti.Location = new System.Drawing.Point(432, 356);
             this.btnRecepti.Name = "btnRecepti";
             this.btnRecepti.Size = new System.Drawing.Size(108, 95);
@@ -134,6 +142,7 @@
             // btnDodajPoslovnicu
             // 
             this.btnDodajPoslovnicu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDodajPoslovnicu.Image = ((System.Drawing.Image)(resources.GetObject("btnDodajPoslovnicu.Image")));
             this.btnDodajPoslovnicu.Location = new System.Drawing.Point(48, 356);
             this.btnDodajPoslovnicu.Name = "btnDodajPoslovnicu";
             this.btnDodajPoslovnicu.Size = new System.Drawing.Size(108, 95);
@@ -145,6 +154,7 @@
             // lblTip
             // 
             this.lblTip.AutoSize = true;
+            this.lblTip.BackColor = System.Drawing.Color.Transparent;
             this.lblTip.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTip.ForeColor = System.Drawing.Color.Black;
             this.lblTip.Location = new System.Drawing.Point(333, 28);
@@ -152,11 +162,11 @@
             this.lblTip.Size = new System.Drawing.Size(49, 16);
             this.lblTip.TabIndex = 10;
             this.lblTip.Text = "label1";
-            this.lblTip.Click += new System.EventHandler(this.lblTip_Click);
             // 
             // btnKlijent
             // 
             this.btnKlijent.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKlijent.Image = ((System.Drawing.Image)(resources.GetObject("btnKlijent.Image")));
             this.btnKlijent.Location = new System.Drawing.Point(432, 221);
             this.btnKlijent.Name = "btnKlijent";
             this.btnKlijent.Size = new System.Drawing.Size(108, 95);
@@ -169,6 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(588, 491);
             this.Controls.Add(this.btnKlijent);
             this.Controls.Add(this.lblTip);

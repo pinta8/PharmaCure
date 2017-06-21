@@ -37,5 +37,10 @@ namespace PharmaCure
             l = Lijek.DohvatiSveLijekove();
             dgvLijekovi.DataSource = l;
         }
+
+        private void dgvLijekovi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

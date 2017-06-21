@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAzurirajPoslovnicu));
             this.btnSpremiPromjene = new System.Windows.Forms.Button();
             this.lblBroj = new System.Windows.Forms.Label();
             this.tbxBroj = new System.Windows.Forms.TextBox();
@@ -39,6 +40,7 @@
             // 
             // btnSpremiPromjene
             // 
+            this.btnSpremiPromjene.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSpremiPromjene.BackgroundImage")));
             this.btnSpremiPromjene.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSpremiPromjene.Location = new System.Drawing.Point(45, 290);
             this.btnSpremiPromjene.Name = "btnSpremiPromjene";
@@ -51,6 +53,7 @@
             // lblBroj
             // 
             this.lblBroj.AutoSize = true;
+            this.lblBroj.BackColor = System.Drawing.Color.Transparent;
             this.lblBroj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblBroj.Location = new System.Drawing.Point(42, 245);
             this.lblBroj.Name = "lblBroj";
@@ -69,6 +72,7 @@
             // lblUlica
             // 
             this.lblUlica.AutoSize = true;
+            this.lblUlica.BackColor = System.Drawing.Color.Transparent;
             this.lblUlica.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblUlica.Location = new System.Drawing.Point(42, 192);
             this.lblUlica.Name = "lblUlica";
@@ -87,6 +91,7 @@
             // lblGrad
             // 
             this.lblGrad.AutoSize = true;
+            this.lblGrad.BackColor = System.Drawing.Color.Transparent;
             this.lblGrad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblGrad.Location = new System.Drawing.Point(42, 142);
             this.lblGrad.Name = "lblGrad";
@@ -105,6 +110,7 @@
             // lblDrzava
             // 
             this.lblDrzava.AutoSize = true;
+            this.lblDrzava.BackColor = System.Drawing.Color.Transparent;
             this.lblDrzava.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDrzava.Location = new System.Drawing.Point(42, 88);
             this.lblDrzava.Name = "lblDrzava";
@@ -123,6 +129,7 @@
             // lblNaziv
             // 
             this.lblNaziv.AutoSize = true;
+            this.lblNaziv.BackColor = System.Drawing.Color.Transparent;
             this.lblNaziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblNaziv.Location = new System.Drawing.Point(42, 36);
             this.lblNaziv.Name = "lblNaziv";
@@ -140,6 +147,7 @@
             // 
             // btnPovratak
             // 
+            this.btnPovratak.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPovratak.BackgroundImage")));
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPovratak.Location = new System.Drawing.Point(178, 290);
             this.btnPovratak.Name = "btnPovratak";
@@ -153,6 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(313, 355);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnSpremiPromjene);

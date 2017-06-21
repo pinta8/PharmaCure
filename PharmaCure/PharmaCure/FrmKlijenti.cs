@@ -49,5 +49,10 @@ namespace PharmaCure
         {
             Klijent.IzbrisiKlijenta(int.Parse(dgvKlijenti.CurrentRow.Cells[0].Value.ToString()));
         }
+
+        private void dgvKlijenti_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
