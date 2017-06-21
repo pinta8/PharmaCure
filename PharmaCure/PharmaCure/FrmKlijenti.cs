@@ -14,6 +14,7 @@ namespace PharmaCure
     public partial class FrmKlijenti : Form
     {
         public List<Klijent> kl = new List<Klijent>();
+        public List<Osiguranje> os = new List<Osiguranje>();
         public FrmKlijenti()
         {
             InitializeComponent();
@@ -29,6 +30,10 @@ namespace PharmaCure
         {
             kl = Klijent.DohvatiSveKlijente();
             dgvKlijenti.DataSource = kl;
+            os = Osiguranje.DohvatiOsiguranja();
+            cmbOsiguranje.DisplayMember = "naziv";
+            cmbOsiguranje.ValueMember = "idOsiguranje";
+            cmbOsiguranje.DataSource = os;
         }
         private void FrmKlijenti_Load(object sender, EventArgs e)
         {
