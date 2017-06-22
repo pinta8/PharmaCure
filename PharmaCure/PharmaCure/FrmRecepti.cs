@@ -71,5 +71,20 @@ namespace PharmaCure
             lijeR.DodajRecept();
             OsvjeziListu();
         }
+
+        private void lblArtikli_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvLijekoviPravo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

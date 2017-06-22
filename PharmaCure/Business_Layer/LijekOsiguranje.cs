@@ -47,20 +47,6 @@ namespace Business_Layer
             }
             return ListaArtikala;
         }
-
-        static public void DodajOsiguranje(int lijID, int idO)
-        {
-            DBCon baza = new DBCon();
-            SqlCommand command = new SqlCommand("INSERT INTO PopisOsiguranihLijekova (ID_Lijek, ID_Osiguranje) VALUES (" + lijID + ", " + idO + ");");
-            baza.IzvrsiUpit(command);
-        }
-        static public void BrisiOsiguranje(int lijID, int idO)
-        {
-            DBCon baza = new DBCon();
-            SqlCommand command = new SqlCommand("DELETE FROM PopisOsiguranihLijekova  WHERE ID_Lijek = " + lijID + " AND ID_Osiguranje = " + idO + ";");
-            baza.IzvrsiUpit(command);
-        }
-
         public LijekOsiguranje MakeLijek(DataRow row)
         {
             LijekOsiguranje lije = new LijekOsiguranje();

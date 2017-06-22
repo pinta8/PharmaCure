@@ -15,6 +15,7 @@ namespace PharmaCure
     {
         public List<Lijek> ll = new List<Lijek>();
         public List<LijekOsiguranje> lo = new List<LijekOsiguranje>();
+        public List<PopisOsiguranihLijekova> pol = new List<PopisOsiguranihLijekova>();
         public FrmOsiguraneLijek()
         {
             InitializeComponent();
@@ -35,6 +36,8 @@ namespace PharmaCure
         {
             ll = Lijek.DohvatiSveLijekove();
             dgvLijekovi.DataSource = ll;
+            pol = PopisOsiguranihLijekova.DohvatiSvaOsiguranja();
+            dgvSviLijekoviRecept.DataSource = pol;
         }
 
         private void dgvLijekovi_SelectionChanged(object sender, EventArgs e)
@@ -43,17 +46,23 @@ namespace PharmaCure
             cmbOsiguranje.DisplayMember = "naziv";
             cmbOsiguranje.ValueMember = "idOsiguranje";
             cmbOsiguranje.DataSource = lo;
-            OsvjeziListu();
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            LijekOsiguranje.DodajOsiguranje(int.Parse(dgvLijekovi.CurrentRow.Cells[0].Value.ToString()), int.Parse(cmbOsiguranje.SelectedValue.ToString()));
+            PopisOsiguranihLijekova.DodajOsiguranje(int.Parse(dgvLijekovi.CurrentRow.Cells[0].Value.ToString()), int.Parse(cmbOsiguranje.SelectedValue.ToString()));
+            OsvjeziListu();
         }
 
         private void btnBrisi_Click(object sender, EventArgs e)
         {
-            LijekOsiguranje.BrisiOsiguranje(int.Parse(dgvLijekovi.CurrentRow.Cells[0].Value.ToString()), int.Parse(cmbOsiguranje.SelectedValue.ToString()));
+            PopisOsiguranihLijekova.BrisiOsiguranje(int.Parse(dgvLijekovi.CurrentRow.Cells[0].Value.ToString()), int.Parse(cmbOsiguranje.SelectedValue.ToString()));
+            OsvjeziListu();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
