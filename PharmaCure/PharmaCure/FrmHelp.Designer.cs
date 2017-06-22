@@ -36,20 +36,23 @@
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
+            this.richTextBox1.Location = new System.Drawing.Point(16, 15);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(633, 469);
+            this.richTextBox1.Size = new System.Drawing.Size(843, 576);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // btnIzlaz
             // 
             this.btnIzlaz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIzlaz.BackgroundImage")));
             this.btnIzlaz.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.btnIzlaz.Location = new System.Drawing.Point(570, 487);
+            this.btnIzlaz.Location = new System.Drawing.Point(760, 599);
+            this.btnIzlaz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIzlaz.Name = "btnIzlaz";
-            this.btnIzlaz.Size = new System.Drawing.Size(75, 23);
+            this.btnIzlaz.Size = new System.Drawing.Size(100, 28);
             this.btnIzlaz.TabIndex = 1;
             this.btnIzlaz.Text = "Izlaz";
             this.btnIzlaz.UseVisualStyleBackColor = true;
@@ -57,14 +60,15 @@
             // 
             // FrmHelp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(654, 522);
+            this.ClientSize = new System.Drawing.Size(872, 642);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.richTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmHelp";
             this.Text = "FrmHelp";
             this.Load += new System.EventHandler(this.FrmHelp_Load);

@@ -120,30 +120,79 @@
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>PharmaCure Aplikacija Help Centar
 
+Detaljan opis sa slikama možete pronaći ovdje:
+https://github.com/foivz/r17003/wiki/Korisni%C4%8Dka-dokumentacija
+-------------------------------------------------------------------------------------
 
-Ovdje će biti objašnjen, i slikama prikazan radi i izgled PharmaCure aplikacije za vođenje ljekarnama.
+Korisničko ime Administrator: pero
 
-Trenutno još nisu sakrivene funkcionalnosti koje Zaposlenik nema pa svim funkcionalnostima koje smo do sada implementirali možete pristupiti sa:
+Lozinka: pero123
+-------------------------------------------------------------------------------------
 
-Korisničko ime: Pero
+Korisničko ime Zaposlenik: LjekarnaAna
 
-Lozinka: Pero
+Lozinka: 123456Ana
+--------------------------------------------------------------------------------------
 
-Trenutno imamo implementirano: Data Layer, odnosno sloj komunikacije sa bazom podataka.
+Prilikom pokretanja aplikacije pokreće se početna (Login) forma koja od nas traži unošenje Korisničkog Imena i Lozinke.
+Ukoliko se upiše pogrešno korisničko ime ili lozinka, pojavi se poruka o grešci. Ukoliko je unos dobar, otvara se nova, Glavna forma, 
+forma za prijavu se zatvara, ali joj možemo ponovo pristupiti ukoliko se odjavimo preko tipke odjava. Osim tipke odjava tu se nalaze 
+i tipke za pristup ostalim formama ovisno o funkcionalnostima. U slici ispod vidjet ćete glavnu formu a nakon toga ćemo redom preći 
+po funkcionalnostima, odnosno button-ima.
 
-Od klasa imamo kreirane sve klase ali klase koje smo isprogramirali su klase Zaposlenik, Poslovnica i Lijekovi, moguće je da ćemo u njih još naknadno dodavati neke metode.
+Pritiskom na prvi gumb (Popis Lijekova), otvara se Popis Lijekova, sa svim lijekovima u našoj bazi podataka. Pritiskom na tipku Povratak 
+vraćamo se na glavni prozor. Pritiskom na tipku Prodaja Lijekova, otvara se istoimeni prozor. Prvo što ovdje moramo napraviti je unijeti 
+ID Korisnika. Nakon toga nam se ispisuju svi artikli koje on ima u košarici za prodaju, ukoliko ima takvih, ukoliko ne Košarica se ispiše prazna. 
+Ovdje također možemo i dodati novi račun (koji može biti košarica za dostavu i košarica za prodaju). Lijek možemo dodati na dva načina, 
+kao lijek s recepta ili bilo koji lijek iz baze s punom cijenom. Lijek s recepta dodajemo jedan po jedan ili sve sa popisa s desne strane, dok za 
+bilokoji lijek upisujemo količinu, odaberemo lijek iz padajućeg izbornika te stisnemo tipku dodaj. Svaki puta kada se stanje u košarici promijeni 
+računa se cijena, koja je prikazana u donjem desnom kutu. U cijenu je automatski uračunat i popust koji imaju lijekovi uzeti preko recepta. 
+Pritiskom na tipku Povratak vraćamo se na glavni prozor.
 
-Od formi imamo dodane sve forme, ali funkcionale su samo: Login, Main, Popis Lijekova, Dodaj Zaposlenika, Dodaj Poslovnicu te Help.
+Slijedeći gumb nas vodi nas na praznu formu za pregled količine lijekova (Danijel Pintarić). Pritiskom na tipku Povratak vraćamo se na glavni prozor.
 
-Administrator se može ulogirati u bazu, ukoliko unese krive podatke iskoči mu obavjest da su krivi podaci. Ukoliko je prijava uspješna prikaže mu se glavna forma. Na glavnoj formi može se doći do svih ostalih formi, ali gore navedene forme imaju sadržaj.
+Pritiskom na gumb Nabava Lijekova otvara se forma koja prikazuje sve dostupne lijekove poslovnice korisnika koji je prijavljen u aplikaciju 
+te lijekove koje treba naručiti, odnosno onih kojih ima manje od 10. 
 
-Pritiskom F1 tipke pokazuje mu se Help sa tekstom sa stranice Korisnička dokumentacija.
+Pritiskom na gumb Napravi narudžbu se otvara forma gdje se dodaju lijekovi u 'košaricu' odnosno narudžbu. Pritiskom na gumb Dodaj lijek se 
+dodaje novi lijek u košaricu te je potrebno upisati željenu količinu za svaki koji se dodaje inače će se prikazati poruka greške. Svakim upisom nove 
+količine se automatski ažurira ukupna cijena narudžbe te se prikazuje na ekranu. Na kraju je potrebno pritisnuti gumb Pošalji narudžbu te se automatski 
+ažuriraju količine naručenih lijekova za poslovnicu.
 
-Odlaskom na Dodaj Zaposlenika može vidjeti sve zaposlenike, te dodati novog zaposlenika u bazu.
+Pritiskom tipke Dostava Lijekova otvara se prozor, na oku sličan prozoru za prodaju lijekova. Razlika se nalazi u tipu košarice, odnosno razlika je u tome 
+što se na ovom prozoru radi sa košaricom za dostavu. Sami rad je sličan kao i rad sa Prodajom (pročitati iznad). Pritiskom na tipku Povratak vraćamo se na 
+glavni prozor.
 
-Odlaskom na Popis Lijekova Prikazuje mu se popis svih Lijekova iz baze podataka. Te lijekove može i pretražiti po imenu i kategoriji.
+Pritiskom na tipku Dodaj Klijenta otvara se prozor koji na sebi ima s lijeve strane polja teksta za dodavanje klijenta i tipke za spremanje i brisanje. s Desne 
+strane prozora nalazi se popis svih klijenata. Pritiskom na tipku povratak vraćamo se na glavni prozor.
 
-Odlaskom na Dodaj Poslovnicu prikazuje se forma za dodavanje i prikaz svih poslovnica.</value>
+Pritiskom na tipku dodaj poslovnicu otvara se novi prozor. Na prozoru vidimo pregled svih poslovnica, moguće je dodavanje novih te brisanje i ažuriranje 
+postojećih.
+
+Pritiskom na gumb Dodaj otvara se forma za unos podataka o novoj poslovnici. Potrebno je popuniti polja naziv, država, grad, ulica i broj i pritisnuti 
+gumb Spremi promjene. U slučaju ne ispravnog unosa prikazuje se poruka greške. U slučaju odustajanja od unosa, pritisak na gumb Povratak vraća na 
+pregled poslovnica.
+
+Odabirom poslovnice iz tablice i pritiskom na gumb Ažuriraj otvara se forma za ažuriranje. Na formi su prikazani podaci poslovnice koja se treba ažurirati. 
+Pritiskom na gumb Spremi promjene se zatvara forma, a promjena je odmah vidljiva u prikazu svih poslovnica.
+
+Odlaskom na prozor Dodavanja zaposlenika vidimo sličan raspored. Pritiskom na gumb Dodaj Zaposlenika otvara se pregled svih zaposlenika. Osim 
+pregleda zaposlenika moguće je dodati novog te ažurirati ili izbrisati odabranog zaposlenika iz tablice.
+
+Odlaskom na dodavanje otvara se forma sa slike ispod. Unose se sljedeći podaci: korisničko ime,lozinka i odabire se naziv poslovnice iz padajućeg
+izbornika. Mora se unijeti svaki podatak i pritisnuti gumb Spremi promjene, inače se pojavljuje poruka greške. Pritisak na gumb Povratak zatvara unos 
+zaposlenika i vraća prethodni prikaz svih zaposlenika. 
+
+Odabirom željenog zaposlenika u tablici i pritiskom na gumb Ažuriraj otvara se forma za ažuriranje. Na formi su prikazani podaci zaposlenika koji se 
+treba ažurirati. Pritiskom na gumb Spremi promjene se zatvara forma, a promjena je odmah vidljiva u prikazu svih zaposlenika.
+
+Odlaskom na Dodavanje Recepta sa Glavnog prozora otvara se novi prozor. Prvo mora unijeti ID Korisnika. Nakon toga s lijeve strane ima popis lijekova 
+koje može propisati tom klijentu. Ispod u padajućem izborniku vidi sva osiguranja koja su omogućena klijentu za odabrani lijek. Pritiskom na tipku 
+Povratak Vraća se na Glavni Prozor.
+
+Pritiskom na tipku Dodaj odlazimo na prozor dodavanja osiguranja određenom lijeku. S lijeve strane vidimo sve Lijekove, a s desne Popis svih lijekova i 
+osiguranja za te lijekove. Ispod u Padajućem izborniku odabiremo osiguranja koja odabrani lijek lijevo nema. Pritiskom na tipku Dodaj dodajemo odabrane 
+vrijednosti, dok s tipkom Obrisi Brisemo lijekove i osiguranja iz desne tablice.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnIzlaz.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
