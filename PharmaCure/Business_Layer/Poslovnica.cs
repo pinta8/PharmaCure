@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business_Layer
 {
+    //Klasa napravljena od strane Marina Bulić
     public class Poslovnica
     {
 		int poslovnicaId;

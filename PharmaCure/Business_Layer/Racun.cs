@@ -9,6 +9,7 @@ using System.Data;
 
 namespace Business_Layer
 {
+    //Klasa napravljena od strane Krešimir Zelenika
     public class Racun
     {
         public int IDRacun { get; set; }
@@ -17,6 +18,7 @@ namespace Business_Layer
         public int klijent { get; set; }
         public int stanje { get; set; }
 
+        //Metoda koja vraća listu računa, za parametre prima id klijenta i id stanja
         static public Racun NadjiRacun(int klijent, int stanje)
         {
             Racun r = new Racun();
@@ -33,6 +35,8 @@ namespace Business_Layer
             }
             return r;
         }
+
+        //metoda za dodavanje novog računa, za parametar prima objekt Racun
         static public void DodajRacun(Racun noviRacun)
         {
             Racun rac = noviRacun;
@@ -44,6 +48,8 @@ namespace Business_Layer
             command.Parameters.AddWithValue("@stanje", rac.stanje);
             baza.IzvrsiUpit(command);
         }
+
+        //datarow objekt sa podacima za Racun
         public Racun MakeRacun(DataRow row)
         {
             Racun racu = new Racun();

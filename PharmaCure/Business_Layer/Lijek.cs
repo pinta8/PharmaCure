@@ -9,6 +9,7 @@ using System.Data;
 
 namespace Business_Layer
 {
+    //Klasa napravljena od strane Marina Bulić i Krešimir Zelenika
     public class Lijek
     {
         public int ID { get; set; }
@@ -37,6 +38,8 @@ namespace Business_Layer
             }
             return ListaLijekova;
         }
+
+        //Datarow objekt sa podacima za Lijek
         public Lijek MakeLijek(DataRow row)
         {
             Lijek lije = new Lijek();
@@ -49,6 +52,8 @@ namespace Business_Layer
             lije.zemljaPorijekla = row["Zemlja_porijekla"].ToString();
             return lije;
         }
+
+        //Metoda koja vraća nazive i ID za sve Lijekove
         static public List<Lijek> VratiNaziveLijekova() {
             List<Lijek> lijekovi = new List<Lijek>();
             DBCon baza = new DBCon();

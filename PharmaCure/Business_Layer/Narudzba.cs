@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace Business_Layer
 {
+    //Klasa napravljena od strane Marina Bulić
     public class Narudzba
     {
         int poslovnicaId;

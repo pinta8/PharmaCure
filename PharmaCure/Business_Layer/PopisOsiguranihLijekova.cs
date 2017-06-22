@@ -9,11 +9,13 @@ using System.Data;
 
 namespace Business_Layer
 {
+    //Klasa napravljena od strane Krešimir Zelenika
     public class PopisOsiguranihLijekova
     {
         public string lijek { get; set; }
         public string osiguranje { get; set; }
 
+        //Metoda koja vraća listu svih lijekova i osiguranja
         public static List<PopisOsiguranihLijekova> DohvatiSvaOsiguranja()
         {
             List<PopisOsiguranihLijekova> ListaOsiguranja = new List<PopisOsiguranihLijekova>();
@@ -31,6 +33,7 @@ namespace Business_Layer
             return ListaOsiguranja;
         }
 
+        //Metoda za dodavanje osiguranja, za parametar prima id lijeka i id osiguranja
         static public void DodajOsiguranje(int lijID, int idO)
         {
             DBCon baza = new DBCon();
@@ -38,6 +41,7 @@ namespace Business_Layer
             baza.IzvrsiUpit(command);
         }
 
+        //metoda za brisanje osiguranja, za parametre prima id lijeka i id osiguranja
         static public void BrisiOsiguranje(int lijID, int idO)
         {
             DBCon baza = new DBCon();
@@ -45,6 +49,7 @@ namespace Business_Layer
             baza.IzvrsiUpit(command);
         }
 
+        //datarow objekt sa podacima za PopisOsiguranihLijekova
         public PopisOsiguranihLijekova MakeOsiguranje(DataRow row)
         {
             PopisOsiguranihLijekova lije = new PopisOsiguranihLijekova();

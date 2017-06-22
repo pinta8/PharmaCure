@@ -9,11 +9,13 @@ using System.Data;
 
 namespace Business_Layer
 {
+    //Klasa napravljena od strane Krešimir Zelenika
     public class Stanje
     {
         public int id { get; set; }
         public string naziv { get; set; }
-
+        
+        //funkcija koja vraća listu stanja
         public static List<Stanje> DohvatiStanja()
         {
             List<Stanje> ListaStanja = new List<Stanje>();
@@ -30,6 +32,7 @@ namespace Business_Layer
             }
             return ListaStanja;
         }
+        //datarow objekt s podacima za Stanje
         public Stanje MakeStanje(DataRow row)
         {
             Stanje lije = new Stanje();

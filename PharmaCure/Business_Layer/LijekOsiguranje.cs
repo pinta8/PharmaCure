@@ -9,11 +9,14 @@ using System.Data;
 
 namespace Business_Layer
 {
+    //Klasa napravljena od strane Krešimir Zelenika
     public class LijekOsiguranje
     {
         public int idOsiguranje { get; set; }
         public string naziv { get; set; }
         public int participacija { get; set; }
+
+        //Metoda koja vraća listu svih osiguranja Lijeka
         public static List<LijekOsiguranje> DohvatiOsiguranjaLijeka(int idL)
         {
             List<LijekOsiguranje> ListaArtikala = new List<LijekOsiguranje>();
@@ -31,6 +34,7 @@ namespace Business_Layer
             return ListaArtikala;
         }
 
+        //Metoda koja vraća sva Osiguranja Koja neki lijek nema, prima parametar id Lijek
         public static List<LijekOsiguranje> DohvatiOsiguranja(int idL)
         {
             List<LijekOsiguranje> ListaArtikala = new List<LijekOsiguranje>();
@@ -47,6 +51,8 @@ namespace Business_Layer
             }
             return ListaArtikala;
         }
+
+        //Datarow objekt s podacima za LijekOsiguranje
         public LijekOsiguranje MakeLijek(DataRow row)
         {
             LijekOsiguranje lije = new LijekOsiguranje();

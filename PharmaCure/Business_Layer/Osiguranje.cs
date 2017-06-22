@@ -9,11 +9,13 @@ using System.Data;
 
 namespace Business_Layer
 {
+    //Klasa napravljena od strane Krešimir Zelenika
     public class Osiguranje
     {
         public int idOsiguranje { get; set; }
         public string naziv { get; set; }
 
+        //Metoda koja vraća listu Osiguranja
         public static List<Osiguranje> DohvatiOsiguranja()
         {
             List<Osiguranje> ListaOsiguranja = new List<Osiguranje>();
@@ -31,6 +33,7 @@ namespace Business_Layer
             return ListaOsiguranja;
         }
 
+        //DataRow Objekt sa podacima za Osiguranje
         public Osiguranje MakeOsiguranje(DataRow row)
         {
             Osiguranje lije = new Osiguranje();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//klasa napravljena od strane Marina Bulić
 namespace Business_Layer {
     public class StavkaNarudzbe {
         int idLijeka;

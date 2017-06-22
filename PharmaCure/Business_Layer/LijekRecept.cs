@@ -9,6 +9,7 @@ using System.Data;
 
 namespace Business_Layer
 {
+    //klasa napravljena od strane Krešimir Zelenika
     public class LijekRecept
     {
         public int ID_Lijek { get; set; }
@@ -17,6 +18,7 @@ namespace Business_Layer
         public int Kolicina { get; set; }
         public int Participacija { get; set; }
 
+        //Metoda koja vraća listu svih recepata a za parametar prima id klijenta
         public static List<LijekRecept> DohvatiRecepte(int pom)
         {
             List <LijekRecept> ListaLijekova = new List<LijekRecept>();
@@ -33,7 +35,7 @@ namespace Business_Layer
             }
             return ListaLijekova;
         }
-
+        //metoda koja sluzi za brisanje recepta, prima parametre id lijeka i id klijenta
         static public void IzbrisiRecept(int id, int idK)
         {
             DBCon baza = new DBCon();
@@ -41,6 +43,7 @@ namespace Business_Layer
             baza.IzvrsiUpit(command);
         }
 
+        //metoda za unos recepata
         public int DodajRecept()
         {
             SqlCommand Command = new SqlCommand();
@@ -55,6 +58,8 @@ namespace Business_Layer
             DB.GetCon();
             return DB.IzvrsiUpit(Command);
         }
+
+        //datarow objekt sa podacima za LijekRecept
         public LijekRecept MakeLijekRecept(DataRow row)
         {
             LijekRecept rec = new LijekRecept();

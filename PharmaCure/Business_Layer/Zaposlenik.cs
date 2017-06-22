@@ -7,6 +7,7 @@ using Data_Layer;
 using System.Data.SqlClient;
 using System.Data;
 
+//Klasa napravljena od strane Marina Bulić
 namespace Business_Layer
 {
     public class Zaposlenik
