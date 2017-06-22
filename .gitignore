@@ -232,7 +232,8 @@ FakesAssemblies/
 _Pvt_Extensions
 
 # LightSwitch generated files
-
+GeneratedArtifacts/
+ModelManifest.xml
 
 # Paket dependency manager
 .paket/paket.exe
