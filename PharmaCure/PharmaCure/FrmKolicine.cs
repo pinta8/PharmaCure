@@ -12,6 +12,8 @@ namespace PharmaCure
 {
     public partial class FrmKolicine : Form
     {
+        public int Lijek_id { get; set; }
+        public int Poslovnica_id { get; set; }
         public FrmKolicine()
         {
             InitializeComponent();
@@ -24,13 +26,6 @@ namespace PharmaCure
             this.Close();
         }
 
-        private void poslovnicaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.poslovnicaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this._17003_DBDataSet);
-        }
-
         private void FrmKolicine_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the '_17003_DBDataSet.Lijekovi' table. You can move, or remove it, as needed.
@@ -39,6 +34,35 @@ namespace PharmaCure
             this.dostupnostTableAdapter.Fill(this._17003_DBDataSet.Dostupnost);
             // TODO: This line of code loads data into the '_17003_DBDataSet.Poslovnica' table. You can move, or remove it, as needed.
             this.poslovnicaTableAdapter.Fill(this._17003_DBDataSet.Poslovnica);
+        }
+
+        private void lijekoviComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lijekoviComboBox.SelectedItem!=null) { 
+                Lijek_id = int.Parse(lijekoviComboBox.SelectedValue.ToString());
+                Poslovnica_id = int.Parse(poslovniceComboBox.SelectedValue.ToString());
+                this.dostupnostTableAdapter.FillById(this._17003_DBDataSet.Dostupnost, Lijek_id, Poslovnica_id);
+            }
+        }
+
+        private void poslovniceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (poslovniceComboBox.SelectedItem != null)
+            {
+                Lijek_id = int.Parse(lijekoviComboBox.SelectedValue.ToString());
+                Poslovnica_id = int.Parse(poslovniceComboBox.SelectedValue.ToString());
+                this.dostupnostTableAdapter.FillById(this._17003_DBDataSet.Dostupnost, Lijek_id, Poslovnica_id);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void izlaz_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

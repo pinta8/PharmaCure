@@ -10241,11 +10241,19 @@ SELECT ID_Djelatnika, Ime, Lozinka, ID_Poslovnice, ID_Tip FROM Djelatnik WHERE (
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Lijekovi_ID, Poslovnica_ID, Kolicina_skladiste FROM dbo.Dostupnost";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Lijekovi_ID, Poslovnica_ID, Kolicina_skladiste\r\nFROM            Dos" +
+                "tupnost\r\nWHERE        (Lijekovi_ID = @lijek_id) AND (Poslovnica_ID = @poslovnica" +
+                "_id)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lijek_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Lijekovi_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@poslovnica_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Poslovnica_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10267,6 +10275,34 @@ SELECT ID_Djelatnika, Ime, Lozinka, ID_Poslovnice, ID_Tip FROM Djelatnik WHERE (
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual _17003_DBDataSet.DostupnostDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            _17003_DBDataSet.DostupnostDataTable dataTable = new _17003_DBDataSet.DostupnostDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillById(_17003_DBDataSet.DostupnostDataTable dataTable, int lijek_id, int poslovnica_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(lijek_id));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(poslovnica_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual _17003_DBDataSet.DostupnostDataTable GetDataBy(int lijek_id, int poslovnica_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(lijek_id));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(poslovnica_id));
             _17003_DBDataSet.DostupnostDataTable dataTable = new _17003_DBDataSet.DostupnostDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
