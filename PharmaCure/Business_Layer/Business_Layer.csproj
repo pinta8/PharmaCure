@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Data_Layer">
-      <HintPath>..\Data_Layer\obj\Debug\Data_Layer.dll</HintPath>
+    <Reference Include="DB">
+      <HintPath>..\..\DB\DB\bin\Debug\DB.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,6 +64,12 @@
     <Compile Include="StavkaNarudzbe.cs" />
     <Compile Include="Zaposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data_Layer\Data_Layer.csproj">
+      <Project>{40fe8682-71e1-4242-b28f-eb68e37fa1f9}</Project>
+      <Name>Data_Layer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

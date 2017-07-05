@@ -23,5 +23,22 @@ namespace PharmaCure
             m.Show();
             this.Close();
         }
+
+        private void poslovnicaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.poslovnicaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this._17003_DBDataSet);
+        }
+
+        private void FrmKolicine_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_17003_DBDataSet.Lijekovi' table. You can move, or remove it, as needed.
+            this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
+            // TODO: This line of code loads data into the '_17003_DBDataSet.Dostupnost' table. You can move, or remove it, as needed.
+            this.dostupnostTableAdapter.Fill(this._17003_DBDataSet.Dostupnost);
+            // TODO: This line of code loads data into the '_17003_DBDataSet.Poslovnica' table. You can move, or remove it, as needed.
+            this.poslovnicaTableAdapter.Fill(this._17003_DBDataSet.Poslovnica);
+        }
     }
 }

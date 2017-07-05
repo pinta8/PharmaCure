@@ -63,7 +63,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -183,6 +183,11 @@
     <Compile Include="StavkaNarudzbeUC.Designer.cs">
       <DependentUpon>StavkaNarudzbeUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="_17003_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_17003_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAzurirajPoslovnicu.resx">
       <DependentUpon>FrmAzurirajPoslovnicu.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +259,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_17003_DBDataSet.xsc">
+      <DependentUpon>_17003_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_17003_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_17003_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_17003_DBDataSet.xss">
+      <DependentUpon>_17003_DBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
