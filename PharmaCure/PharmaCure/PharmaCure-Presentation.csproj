@@ -116,6 +116,12 @@
     <Compile Include="FrmPoslovnice.Designer.cs">
       <DependentUpon>FrmPoslovnice.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezervacije.Designer.cs">
+      <DependentUpon>FrmRezervacije.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmZaposlenici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     <EmbeddedResource Include="FrmPoslovnice.resx">
       <DependentUpon>FrmPoslovnice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervacije.resx">
+      <DependentUpon>FrmRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmZaposlenici.resx">
       <DependentUpon>FrmZaposlenici.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +302,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Slike\medical-cross-background-11.jpg" />
     <Content Include="Slike\pharmacy-311773_960_720.png" />
   </ItemGroup>
   <ItemGroup>

@@ -33,9 +33,10 @@
             System.Windows.Forms.Label lijekovi_IDLabel;
             System.Windows.Forms.Label poslovnica_IDLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKolicine));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dostupnostBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.PregledLijekovaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
+            this.dostupnostBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPovratak = new System.Windows.Forms.Button();
             this.poslovnicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poslovnicaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PoslovnicaTableAdapter();
@@ -50,22 +51,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PregledLijekovaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PregledLijekovaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter();
             kolicina_skladisteLabel = new System.Windows.Forms.Label();
             lijekovi_IDLabel = new System.Windows.Forms.Label();
             poslovnica_IDLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dostupnostBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dostupnostBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekoviBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // kolicina_skladisteLabel
             // 
             kolicina_skladisteLabel.AutoSize = true;
-            kolicina_skladisteLabel.Location = new System.Drawing.Point(78, 186);
+            kolicina_skladisteLabel.Location = new System.Drawing.Point(105, 288);
             kolicina_skladisteLabel.Name = "kolicina_skladisteLabel";
             kolicina_skladisteLabel.Size = new System.Drawing.Size(91, 13);
             kolicina_skladisteLabel.TabIndex = 2;
@@ -74,7 +74,7 @@
             // lijekovi_IDLabel
             // 
             lijekovi_IDLabel.AutoSize = true;
-            lijekovi_IDLabel.Location = new System.Drawing.Point(108, 88);
+            lijekovi_IDLabel.Location = new System.Drawing.Point(404, 21);
             lijekovi_IDLabel.Name = "lijekovi_IDLabel";
             lijekovi_IDLabel.Size = new System.Drawing.Size(61, 13);
             lijekovi_IDLabel.TabIndex = 4;
@@ -83,21 +83,26 @@
             // poslovnica_IDLabel
             // 
             poslovnica_IDLabel.AutoSize = true;
-            poslovnica_IDLabel.Location = new System.Drawing.Point(94, 43);
+            poslovnica_IDLabel.Location = new System.Drawing.Point(167, 20);
             poslovnica_IDLabel.Name = "poslovnica_IDLabel";
             poslovnica_IDLabel.Size = new System.Drawing.Size(88, 13);
             poslovnica_IDLabel.TabIndex = 5;
             poslovnica_IDLabel.Text = "Naziv poslovnice";
             // 
-            // dostupnostBindingSource
+            // PregledLijekovaBindingSource
             // 
-            this.dostupnostBindingSource.DataMember = "Dostupnost";
-            this.dostupnostBindingSource.DataSource = this._17003_DBDataSet;
+            this.PregledLijekovaBindingSource.DataMember = "PregledLijekova";
+            this.PregledLijekovaBindingSource.DataSource = this._17003_DBDataSet;
             // 
             // _17003_DBDataSet
             // 
             this._17003_DBDataSet.DataSetName = "_17003_DBDataSet";
             this._17003_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dostupnostBindingSource
+            // 
+            this.dostupnostBindingSource.DataMember = "Dostupnost";
+            this.dostupnostBindingSource.DataSource = this._17003_DBDataSet;
             // 
             // btnPovratak
             // 
@@ -155,7 +160,7 @@
             // kolicina_skladisteTextBox
             // 
             this.kolicina_skladisteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dostupnostBindingSource, "Kolicina_skladiste", true));
-            this.kolicina_skladisteTextBox.Location = new System.Drawing.Point(190, 179);
+            this.kolicina_skladisteTextBox.Location = new System.Drawing.Point(217, 281);
             this.kolicina_skladisteTextBox.Name = "kolicina_skladisteTextBox";
             this.kolicina_skladisteTextBox.Size = new System.Drawing.Size(100, 20);
             this.kolicina_skladisteTextBox.TabIndex = 3;
@@ -170,7 +175,7 @@
             this.lijekoviComboBox.DataSource = this.lijekoviBindingSource;
             this.lijekoviComboBox.DisplayMember = "Naziv";
             this.lijekoviComboBox.FormattingEnabled = true;
-            this.lijekoviComboBox.Location = new System.Drawing.Point(200, 79);
+            this.lijekoviComboBox.Location = new System.Drawing.Point(496, 12);
             this.lijekoviComboBox.Name = "lijekoviComboBox";
             this.lijekoviComboBox.Size = new System.Drawing.Size(121, 21);
             this.lijekoviComboBox.TabIndex = 6;
@@ -182,7 +187,7 @@
             this.poslovniceComboBox.DataSource = this.poslovnicaBindingSource;
             this.poslovniceComboBox.DisplayMember = "Naziv";
             this.poslovniceComboBox.FormattingEnabled = true;
-            this.poslovniceComboBox.Location = new System.Drawing.Point(202, 33);
+            this.poslovniceComboBox.Location = new System.Drawing.Point(275, 10);
             this.poslovniceComboBox.Name = "poslovniceComboBox";
             this.poslovniceComboBox.Size = new System.Drawing.Size(121, 21);
             this.poslovniceComboBox.TabIndex = 7;
@@ -193,7 +198,7 @@
             // 
             this.izlaz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("izlaz.BackgroundImage")));
             this.izlaz.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.izlaz.Location = new System.Drawing.Point(246, 209);
+            this.izlaz.Location = new System.Drawing.Point(273, 311);
             this.izlaz.Name = "izlaz";
             this.izlaz.Size = new System.Drawing.Size(75, 23);
             this.izlaz.TabIndex = 8;
@@ -214,7 +219,7 @@
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.button2.Location = new System.Drawing.Point(81, 209);
+            this.button2.Location = new System.Drawing.Point(108, 311);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
@@ -224,19 +229,14 @@
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.PregledLijekovaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.PregledLijekovaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PharmaCure.Izvjestaj_KolicinaLijekova.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(444, 43);
+            this.reportViewer1.Location = new System.Drawing.Point(13, 54);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(422, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(604, 218);
             this.reportViewer1.TabIndex = 13;
-            // 
-            // PregledLijekovaBindingSource
-            // 
-            this.PregledLijekovaBindingSource.DataMember = "PregledLijekova";
-            this.PregledLijekovaBindingSource.DataSource = this._17003_DBDataSet;
             // 
             // PregledLijekovaTableAdapter
             // 
@@ -247,7 +247,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(889, 485);
+            this.ClientSize = new System.Drawing.Size(889, 392);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -263,11 +263,11 @@
             this.Name = "FrmKolicine";
             this.Text = "FrmKolicine";
             this.Load += new System.EventHandler(this.FrmKolicine_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dostupnostBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dostupnostBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekoviBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

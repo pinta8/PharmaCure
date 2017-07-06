@@ -59,5 +59,15 @@ namespace PharmaCure.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medical_cross_background_11 {
+            get {
+                object obj = ResourceManager.GetObject("medical-cross-background-11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
