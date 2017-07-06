@@ -62,6 +62,8 @@ namespace PharmaCure {
         
         private TipDjelatnikaDataTable tableTipDjelatnika;
         
+        private PregledLijekovaDataTable tablePregledLijekova;
+        
         private global::System.Data.DataRelation relationFK_Akcija_Lijekovi1;
         
         private global::System.Data.DataRelation relationFK_Artikli_Racun_Lijekovi;
@@ -186,6 +188,9 @@ namespace PharmaCure {
                 }
                 if ((ds.Tables["TipDjelatnika"] != null)) {
                     base.Tables.Add(new TipDjelatnikaDataTable(ds.Tables["TipDjelatnika"]));
+                }
+                if ((ds.Tables["PregledLijekova"] != null)) {
+                    base.Tables.Add(new PregledLijekovaDataTable(ds.Tables["PregledLijekova"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -397,6 +402,16 @@ namespace PharmaCure {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PregledLijekovaDataTable PregledLijekova {
+            get {
+                return this.tablePregledLijekova;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -518,6 +533,9 @@ namespace PharmaCure {
                 }
                 if ((ds.Tables["TipDjelatnika"] != null)) {
                     base.Tables.Add(new TipDjelatnikaDataTable(ds.Tables["TipDjelatnika"]));
+                }
+                if ((ds.Tables["PregledLijekova"] != null)) {
+                    base.Tables.Add(new PregledLijekovaDataTable(ds.Tables["PregledLijekova"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -666,6 +684,12 @@ namespace PharmaCure {
                     this.tableTipDjelatnika.InitVars();
                 }
             }
+            this.tablePregledLijekova = ((PregledLijekovaDataTable)(base.Tables["PregledLijekova"]));
+            if ((initTable == true)) {
+                if ((this.tablePregledLijekova != null)) {
+                    this.tablePregledLijekova.InitVars();
+                }
+            }
             this.relationFK_Akcija_Lijekovi1 = this.Relations["FK_Akcija_Lijekovi1"];
             this.relationFK_Artikli_Racun_Lijekovi = this.Relations["FK_Artikli_Racun_Lijekovi"];
             this.relationFK_Artikli_Racun_Racun = this.Relations["FK_Artikli_Racun_Racun"];
@@ -734,6 +758,8 @@ namespace PharmaCure {
             base.Tables.Add(this.tableStavkeNarudzbe);
             this.tableTipDjelatnika = new TipDjelatnikaDataTable();
             base.Tables.Add(this.tableTipDjelatnika);
+            this.tablePregledLijekova = new PregledLijekovaDataTable();
+            base.Tables.Add(this.tablePregledLijekova);
             this.relationFK_Akcija_Lijekovi1 = new global::System.Data.DataRelation("FK_Akcija_Lijekovi1", new global::System.Data.DataColumn[] {
                         this.tableLijekovi.ID_LijekColumn}, new global::System.Data.DataColumn[] {
                         this.tableAkcija.ID_LijekaColumn}, false);
@@ -932,6 +958,12 @@ namespace PharmaCure {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializePregledLijekova() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1041,6 +1073,9 @@ namespace PharmaCure {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TipDjelatnikaRowChangeEventHandler(object sender, TipDjelatnikaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void PregledLijekovaRowChangeEventHandler(object sender, PregledLijekovaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -6844,6 +6879,285 @@ namespace PharmaCure {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PregledLijekovaDataTable : global::System.Data.TypedTableBase<PregledLijekovaRow> {
+            
+            private global::System.Data.DataColumn columnNaziv;
+            
+            private global::System.Data.DataColumn columnNazivLijeka;
+            
+            private global::System.Data.DataColumn columnKolicina_skladiste;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledLijekovaDataTable() {
+                this.TableName = "PregledLijekova";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PregledLijekovaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PregledLijekovaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NazivColumn {
+                get {
+                    return this.columnNaziv;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NazivLijekaColumn {
+                get {
+                    return this.columnNazivLijeka;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Kolicina_skladisteColumn {
+                get {
+                    return this.columnKolicina_skladiste;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledLijekovaRow this[int index] {
+                get {
+                    return ((PregledLijekovaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PregledLijekovaRowChangeEventHandler PregledLijekovaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PregledLijekovaRowChangeEventHandler PregledLijekovaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PregledLijekovaRowChangeEventHandler PregledLijekovaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PregledLijekovaRowChangeEventHandler PregledLijekovaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPregledLijekovaRow(PregledLijekovaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledLijekovaRow AddPregledLijekovaRow(string Naziv, string NazivLijeka, int Kolicina_skladiste) {
+                PregledLijekovaRow rowPregledLijekovaRow = ((PregledLijekovaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Naziv,
+                        NazivLijeka,
+                        Kolicina_skladiste};
+                rowPregledLijekovaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPregledLijekovaRow);
+                return rowPregledLijekovaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PregledLijekovaDataTable cln = ((PregledLijekovaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PregledLijekovaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnNaziv = base.Columns["Naziv"];
+                this.columnNazivLijeka = base.Columns["NazivLijeka"];
+                this.columnKolicina_skladiste = base.Columns["Kolicina_skladiste"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnNaziv = new global::System.Data.DataColumn("Naziv", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNaziv);
+                this.columnNazivLijeka = new global::System.Data.DataColumn("NazivLijeka", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNazivLijeka);
+                this.columnKolicina_skladiste = new global::System.Data.DataColumn("Kolicina_skladiste", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKolicina_skladiste);
+                this.columnNaziv.AllowDBNull = false;
+                this.columnNaziv.MaxLength = 50;
+                this.columnNazivLijeka.AllowDBNull = false;
+                this.columnNazivLijeka.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledLijekovaRow NewPregledLijekovaRow() {
+                return ((PregledLijekovaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PregledLijekovaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PregledLijekovaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PregledLijekovaRowChanged != null)) {
+                    this.PregledLijekovaRowChanged(this, new PregledLijekovaRowChangeEvent(((PregledLijekovaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PregledLijekovaRowChanging != null)) {
+                    this.PregledLijekovaRowChanging(this, new PregledLijekovaRowChangeEvent(((PregledLijekovaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PregledLijekovaRowDeleted != null)) {
+                    this.PregledLijekovaRowDeleted(this, new PregledLijekovaRowChangeEvent(((PregledLijekovaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PregledLijekovaRowDeleting != null)) {
+                    this.PregledLijekovaRowDeleting(this, new PregledLijekovaRowChangeEvent(((PregledLijekovaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovePregledLijekovaRow(PregledLijekovaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                _17003_DBDataSet ds = new _17003_DBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PregledLijekovaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AkcijaRow : global::System.Data.DataRow {
@@ -8462,6 +8776,71 @@ namespace PharmaCure {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PregledLijekovaRow : global::System.Data.DataRow {
+            
+            private PregledLijekovaDataTable tablePregledLijekova;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PregledLijekovaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePregledLijekova = ((PregledLijekovaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Naziv {
+                get {
+                    return ((string)(this[this.tablePregledLijekova.NazivColumn]));
+                }
+                set {
+                    this[this.tablePregledLijekova.NazivColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NazivLijeka {
+                get {
+                    return ((string)(this[this.tablePregledLijekova.NazivLijekaColumn]));
+                }
+                set {
+                    this[this.tablePregledLijekova.NazivLijekaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Kolicina_skladiste {
+                get {
+                    try {
+                        return ((int)(this[this.tablePregledLijekova.Kolicina_skladisteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Kolicina_skladiste\' in table \'PregledLijekova\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePregledLijekova.Kolicina_skladisteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKolicina_skladisteNull() {
+                return this.IsNull(this.tablePregledLijekova.Kolicina_skladisteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKolicina_skladisteNull() {
+                this[this.tablePregledLijekova.Kolicina_skladisteColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -9093,6 +9472,40 @@ namespace PharmaCure {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TipDjelatnikaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class PregledLijekovaRowChangeEvent : global::System.EventArgs {
+            
+            private PregledLijekovaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledLijekovaRowChangeEvent(PregledLijekovaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledLijekovaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -15339,6 +15752,175 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class PregledLijekovaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public PregledLijekovaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "PregledLijekova";
+            tableMapping.ColumnMappings.Add("Naziv", "Naziv");
+            tableMapping.ColumnMappings.Add("NazivLijeka", "NazivLijeka");
+            tableMapping.ColumnMappings.Add("Kolicina_skladiste", "Kolicina_skladiste");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::PharmaCure.Properties.Settings.Default._17003_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Naziv, NazivLijeka, Kolicina_skladiste FROM dbo.PregledLijekova";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(_17003_DBDataSet.PregledLijekovaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual _17003_DBDataSet.PregledLijekovaDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            _17003_DBDataSet.PregledLijekovaDataTable dataTable = new _17003_DBDataSet.PregledLijekovaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15854,15 +16436,6 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._poslovnicaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Poslovnica.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._poslovnicaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._osiguranjeTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Osiguranje.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -15872,12 +16445,12 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._stanjaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._poslovnicaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Poslovnica.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._stanjaTableAdapter.Update(updatedRows));
+                    result = (result + this._poslovnicaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -15887,6 +16460,15 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._djelatnikTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._stanjaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._stanjaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -15908,6 +16490,33 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._narudzbaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._narudzbaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._lijekoviTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Lijekovi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._lijekoviTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._lijekoviOsiguranjeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.LijekoviOsiguranje.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._lijekoviOsiguranjeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._rezervacijaTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Rezervacija.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -15923,78 +16532,6 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._racunTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._narudzbaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._narudzbaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._lijekoviOsiguranjeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.LijekoviOsiguranje.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._lijekoviOsiguranjeTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._lijekoviTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Lijekovi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._lijekoviTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._lijekoviReceptTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.LijekoviRecept.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._lijekoviReceptTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._popisTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Popis.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._popisTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._popisOsiguranihLijekovaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PopisOsiguranihLijekova.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._popisOsiguranihLijekovaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._dostupnostTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Dostupnost.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._dostupnostTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._artikli_RacunTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Artikli_Racun.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._artikli_RacunTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16016,6 +16553,51 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._popisTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Popis.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._popisTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._lijekoviReceptTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.LijekoviRecept.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._lijekoviReceptTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._dostupnostTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Dostupnost.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._dostupnostTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._artikli_RacunTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Artikli_Racun.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._artikli_RacunTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._popisOsiguranihLijekovaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PopisOsiguranihLijekova.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._popisOsiguranihLijekovaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -16034,14 +16616,6 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._poslovnicaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Poslovnica.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._poslovnicaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._osiguranjeTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Osiguranje.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -16050,11 +16624,11 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._stanjaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._poslovnicaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Poslovnica.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._stanjaTableAdapter.Update(addedRows));
+                    result = (result + this._poslovnicaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16063,6 +16637,14 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._djelatnikTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._stanjaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._stanjaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16082,6 +16664,30 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._narudzbaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._narudzbaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._lijekoviTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Lijekovi.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._lijekoviTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._lijekoviOsiguranjeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.LijekoviOsiguranje.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._lijekoviOsiguranjeTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._rezervacijaTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Rezervacija.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -16095,70 +16701,6 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._racunTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._narudzbaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._narudzbaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._lijekoviOsiguranjeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.LijekoviOsiguranje.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._lijekoviOsiguranjeTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._lijekoviTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Lijekovi.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._lijekoviTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._lijekoviReceptTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.LijekoviRecept.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._lijekoviReceptTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._popisTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Popis.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._popisTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._popisOsiguranihLijekovaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PopisOsiguranihLijekova.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._popisOsiguranihLijekovaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._dostupnostTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Dostupnost.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._dostupnostTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._artikli_RacunTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Artikli_Racun.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._artikli_RacunTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16178,6 +16720,46 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._popisTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Popis.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._popisTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._lijekoviReceptTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.LijekoviRecept.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._lijekoviReceptTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._dostupnostTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Dostupnost.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._dostupnostTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._artikli_RacunTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Artikli_Racun.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._artikli_RacunTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._popisOsiguranihLijekovaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PopisOsiguranihLijekova.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._popisOsiguranihLijekovaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -16188,19 +16770,11 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(_17003_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._akcijaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Akcija.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._popisOsiguranihLijekovaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PopisOsiguranihLijekova.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._akcijaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._stavkeNarudzbeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.StavkeNarudzbe.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._stavkeNarudzbeTableAdapter.Update(deletedRows));
+                    result = (result + this._popisOsiguranihLijekovaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16220,11 +16794,11 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._popisOsiguranihLijekovaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PopisOsiguranihLijekova.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._lijekoviReceptTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.LijekoviRecept.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._popisOsiguranihLijekovaTableAdapter.Update(deletedRows));
+                    result = (result + this._lijekoviReceptTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16236,35 +16810,19 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._lijekoviReceptTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.LijekoviRecept.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._akcijaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Akcija.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._lijekoviReceptTableAdapter.Update(deletedRows));
+                    result = (result + this._akcijaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._lijekoviTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Lijekovi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._stavkeNarudzbeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.StavkeNarudzbe.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._lijekoviTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._lijekoviOsiguranjeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.LijekoviOsiguranje.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._lijekoviOsiguranjeTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._narudzbaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._narudzbaTableAdapter.Update(deletedRows));
+                    result = (result + this._stavkeNarudzbeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16284,6 +16842,30 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._lijekoviOsiguranjeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.LijekoviOsiguranje.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._lijekoviOsiguranjeTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._lijekoviTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Lijekovi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._lijekoviTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._narudzbaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._narudzbaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._klijentTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Klijent.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -16300,14 +16882,6 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._djelatnikTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Djelatnik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._djelatnikTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._stanjaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -16316,11 +16890,11 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._osiguranjeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Osiguranje.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._djelatnikTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Djelatnik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._osiguranjeTableAdapter.Update(deletedRows));
+                    result = (result + this._djelatnikTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16329,6 +16903,14 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._poslovnicaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._osiguranjeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Osiguranje.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._osiguranjeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

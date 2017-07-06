@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoogleChartSharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PharmaCure
 {
@@ -18,14 +20,12 @@ namespace PharmaCure
         {
             InitializeComponent();
         }
-
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             FrmMain m = new FrmMain();
             m.Show();
             this.Close();
         }
-
         private void FrmKolicine_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the '_17003_DBDataSet.Lijekovi' table. You can move, or remove it, as needed.
@@ -34,6 +34,7 @@ namespace PharmaCure
             this.dostupnostTableAdapter.Fill(this._17003_DBDataSet.Dostupnost);
             // TODO: This line of code loads data into the '_17003_DBDataSet.Poslovnica' table. You can move, or remove it, as needed.
             this.poslovnicaTableAdapter.Fill(this._17003_DBDataSet.Poslovnica);
+            this.reportViewer1.RefreshReport();
         }
 
         private void lijekoviComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,9 +43,9 @@ namespace PharmaCure
                 Lijek_id = int.Parse(lijekoviComboBox.SelectedValue.ToString());
                 Poslovnica_id = int.Parse(poslovniceComboBox.SelectedValue.ToString());
                 this.dostupnostTableAdapter.FillById(this._17003_DBDataSet.Dostupnost, Lijek_id, Poslovnica_id);
+                
             }
         }
-
         private void poslovniceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (poslovniceComboBox.SelectedItem != null)
@@ -59,10 +60,19 @@ namespace PharmaCure
         {
             this.Close();
         }
-
         private void izlaz_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
