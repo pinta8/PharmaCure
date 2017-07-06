@@ -6891,6 +6891,10 @@ namespace PharmaCure {
             
             private global::System.Data.DataColumn columnKolicina_skladiste;
             
+            private global::System.Data.DataColumn columnID_Poslovnica;
+            
+            private global::System.Data.DataColumn columnID_Lijek;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PregledLijekovaDataTable() {
@@ -6950,6 +6954,22 @@ namespace PharmaCure {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_PoslovnicaColumn {
+                get {
+                    return this.columnID_Poslovnica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_LijekColumn {
+                get {
+                    return this.columnID_Lijek;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6985,15 +7005,25 @@ namespace PharmaCure {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PregledLijekovaRow AddPregledLijekovaRow(string Naziv, string NazivLijeka, int Kolicina_skladiste) {
+            public PregledLijekovaRow AddPregledLijekovaRow(string Naziv, string NazivLijeka, int Kolicina_skladiste, int ID_Poslovnica, int ID_Lijek) {
                 PregledLijekovaRow rowPregledLijekovaRow = ((PregledLijekovaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Naziv,
                         NazivLijeka,
-                        Kolicina_skladiste};
+                        Kolicina_skladiste,
+                        ID_Poslovnica,
+                        ID_Lijek};
                 rowPregledLijekovaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPregledLijekovaRow);
                 return rowPregledLijekovaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledLijekovaRow FindByID_LijekID_Poslovnica(int ID_Lijek, int ID_Poslovnica) {
+                return ((PregledLijekovaRow)(this.Rows.Find(new object[] {
+                            ID_Lijek,
+                            ID_Poslovnica})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7016,6 +7046,8 @@ namespace PharmaCure {
                 this.columnNaziv = base.Columns["Naziv"];
                 this.columnNazivLijeka = base.Columns["NazivLijeka"];
                 this.columnKolicina_skladiste = base.Columns["Kolicina_skladiste"];
+                this.columnID_Poslovnica = base.Columns["ID_Poslovnica"];
+                this.columnID_Lijek = base.Columns["ID_Lijek"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7027,10 +7059,19 @@ namespace PharmaCure {
                 base.Columns.Add(this.columnNazivLijeka);
                 this.columnKolicina_skladiste = new global::System.Data.DataColumn("Kolicina_skladiste", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKolicina_skladiste);
+                this.columnID_Poslovnica = new global::System.Data.DataColumn("ID_Poslovnica", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Poslovnica);
+                this.columnID_Lijek = new global::System.Data.DataColumn("ID_Lijek", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Lijek);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_Lijek,
+                                this.columnID_Poslovnica}, true));
                 this.columnNaziv.AllowDBNull = false;
                 this.columnNaziv.MaxLength = 50;
                 this.columnNazivLijeka.AllowDBNull = false;
                 this.columnNazivLijeka.MaxLength = 50;
+                this.columnID_Poslovnica.AllowDBNull = false;
+                this.columnID_Lijek.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8824,6 +8865,28 @@ namespace PharmaCure {
                 }
                 set {
                     this[this.tablePregledLijekova.Kolicina_skladisteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID_Poslovnica {
+                get {
+                    return ((int)(this[this.tablePregledLijekova.ID_PoslovnicaColumn]));
+                }
+                set {
+                    this[this.tablePregledLijekova.ID_PoslovnicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID_Lijek {
+                get {
+                    return ((int)(this[this.tablePregledLijekova.ID_LijekColumn]));
+                }
+                set {
+                    this[this.tablePregledLijekova.ID_LijekColumn] = value;
                 }
             }
             
@@ -15875,6 +15938,8 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
             tableMapping.ColumnMappings.Add("Naziv", "Naziv");
             tableMapping.ColumnMappings.Add("NazivLijeka", "NazivLijeka");
             tableMapping.ColumnMappings.Add("Kolicina_skladiste", "Kolicina_skladiste");
+            tableMapping.ColumnMappings.Add("ID_Poslovnica", "ID_Poslovnica");
+            tableMapping.ColumnMappings.Add("ID_Lijek", "ID_Lijek");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -15888,11 +15953,20 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Naziv, NazivLijeka, Kolicina_skladiste FROM dbo.PregledLijekova";
+            this._commandCollection[0].CommandText = "SELECT Naziv, NazivLijeka, Kolicina_skladiste, ID_Lijek, ID_Poslovnica FROM Pregl" +
+                "edLijekova";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Naziv, NazivLijeka, Kolicina_skladiste, ID_Lijek, ID_Poslovnica\r\nFR" +
+                "OM            PregledLijekova\r\nWHERE        (ID_Lijek = @id_lijek) AND (ID_Poslo" +
+                "vnica = @id_poslovnica)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_lijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_poslovnica", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Poslovnica", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15914,6 +15988,34 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual _17003_DBDataSet.PregledLijekovaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            _17003_DBDataSet.PregledLijekovaDataTable dataTable = new _17003_DBDataSet.PregledLijekovaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillById(_17003_DBDataSet.PregledLijekovaDataTable dataTable, int id_lijek, int id_poslovnica) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_lijek));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id_poslovnica));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual _17003_DBDataSet.PregledLijekovaDataTable GetDataBy(int id_lijek, int id_poslovnica) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_lijek));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id_poslovnica));
             _17003_DBDataSet.PregledLijekovaDataTable dataTable = new _17003_DBDataSet.PregledLijekovaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

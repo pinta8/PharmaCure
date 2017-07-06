@@ -28,6 +28,8 @@ namespace PharmaCure
         }
         private void FrmKolicine_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the '_17003_DBDataSet.PregledLijekova' table. You can move, or remove it, as needed.
+            this.PregledLijekovaTableAdapter.Fill(this._17003_DBDataSet.PregledLijekova);
             // TODO: This line of code loads data into the '_17003_DBDataSet.Lijekovi' table. You can move, or remove it, as needed.
             this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
             // TODO: This line of code loads data into the '_17003_DBDataSet.Dostupnost' table. You can move, or remove it, as needed.
@@ -43,7 +45,8 @@ namespace PharmaCure
                 Lijek_id = int.Parse(lijekoviComboBox.SelectedValue.ToString());
                 Poslovnica_id = int.Parse(poslovniceComboBox.SelectedValue.ToString());
                 this.dostupnostTableAdapter.FillById(this._17003_DBDataSet.Dostupnost, Lijek_id, Poslovnica_id);
-                
+                this.PregledLijekovaTableAdapter.FillById(this._17003_DBDataSet.PregledLijekova, Lijek_id, Poslovnica_id);
+                this.reportViewer1.RefreshReport();
             }
         }
         private void poslovniceComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,6 +56,8 @@ namespace PharmaCure
                 Lijek_id = int.Parse(lijekoviComboBox.SelectedValue.ToString());
                 Poslovnica_id = int.Parse(poslovniceComboBox.SelectedValue.ToString());
                 this.dostupnostTableAdapter.FillById(this._17003_DBDataSet.Dostupnost, Lijek_id, Poslovnica_id);
+                this.PregledLijekovaTableAdapter.FillById(this._17003_DBDataSet.PregledLijekova, Lijek_id, Poslovnica_id);
+                this.reportViewer1.RefreshReport();
             }
         }
 
@@ -64,12 +69,6 @@ namespace PharmaCure
         {
             Application.Exit();
         }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             

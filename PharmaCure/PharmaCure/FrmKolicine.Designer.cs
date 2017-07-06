@@ -33,31 +33,33 @@
             System.Windows.Forms.Label lijekovi_IDLabel;
             System.Windows.Forms.Label poslovnica_IDLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKolicine));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.btnPovratak = new System.Windows.Forms.Button();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dostupnostBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
+            this.btnPovratak = new System.Windows.Forms.Button();
             this.poslovnicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poslovnicaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PoslovnicaTableAdapter();
             this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
             this.dostupnostTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.DostupnostTableAdapter();
             this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.LijekoviTableAdapter();
-            this.dostupnostBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kolicina_skladisteTextBox = new System.Windows.Forms.TextBox();
             this.lijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lijekoviComboBox = new System.Windows.Forms.ComboBox();
             this.poslovniceComboBox = new System.Windows.Forms.ComboBox();
             this.izlaz = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.PregledLijekovaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PregledLijekovaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter();
             kolicina_skladisteLabel = new System.Windows.Forms.Label();
             lijekovi_IDLabel = new System.Windows.Forms.Label();
             poslovnica_IDLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dostupnostBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dostupnostBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekoviBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // kolicina_skladisteLabel
@@ -87,6 +89,16 @@
             poslovnica_IDLabel.TabIndex = 5;
             poslovnica_IDLabel.Text = "Naziv poslovnice";
             // 
+            // dostupnostBindingSource
+            // 
+            this.dostupnostBindingSource.DataMember = "Dostupnost";
+            this.dostupnostBindingSource.DataSource = this._17003_DBDataSet;
+            // 
+            // _17003_DBDataSet
+            // 
+            this._17003_DBDataSet.DataSetName = "_17003_DBDataSet";
+            this._17003_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnPovratak
             // 
             this.btnPovratak.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPovratak.BackgroundImage")));
@@ -98,11 +110,6 @@
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
-            // 
-            // _17003_DBDataSet
-            // 
-            this._17003_DBDataSet.DataSetName = "_17003_DBDataSet";
-            this._17003_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // poslovnicaBindingSource
             // 
@@ -144,11 +151,6 @@
             // lijekoviTableAdapter
             // 
             this.lijekoviTableAdapter.ClearBeforeFill = true;
-            // 
-            // dostupnostBindingSource
-            // 
-            this.dostupnostBindingSource.DataMember = "Dostupnost";
-            this.dostupnostBindingSource.DataSource = this._17003_DBDataSet;
             // 
             // kolicina_skladisteTextBox
             // 
@@ -199,15 +201,6 @@
             this.izlaz.UseVisualStyleBackColor = true;
             this.izlaz.Click += new System.EventHandler(this.izlaz_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(202, 136);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(889, 361);
@@ -231,14 +224,23 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.dostupnostBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.PregledLijekovaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PharmaCure.Izvjestaj_KolicinaLijekova.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(444, 43);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(422, 246);
             this.reportViewer1.TabIndex = 13;
+            // 
+            // PregledLijekovaBindingSource
+            // 
+            this.PregledLijekovaBindingSource.DataMember = "PregledLijekova";
+            this.PregledLijekovaBindingSource.DataSource = this._17003_DBDataSet;
+            // 
+            // PregledLijekovaTableAdapter
+            // 
+            this.PregledLijekovaTableAdapter.ClearBeforeFill = true;
             // 
             // FrmKolicine
             // 
@@ -249,7 +251,6 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.izlaz);
             this.Controls.Add(this.poslovniceComboBox);
             this.Controls.Add(this.lijekoviComboBox);
@@ -262,10 +263,11 @@
             this.Name = "FrmKolicine";
             this.Text = "FrmKolicine";
             this.Load += new System.EventHandler(this.FrmKolicine_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dostupnostBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dostupnostBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekoviBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,9 +288,10 @@
         private System.Windows.Forms.ComboBox lijekoviComboBox;
         private System.Windows.Forms.ComboBox poslovniceComboBox;
         private System.Windows.Forms.Button izlaz;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource PregledLijekovaBindingSource;
+        private _17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter PregledLijekovaTableAdapter;
     }
 }
