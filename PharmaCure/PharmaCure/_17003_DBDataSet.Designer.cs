@@ -64,6 +64,8 @@ namespace PharmaCure {
         
         private PregledLijekovaDataTable tablePregledLijekova;
         
+        private PregledRezervacijaDataTable tablePregledRezervacija;
+        
         private global::System.Data.DataRelation relationFK_Akcija_Lijekovi1;
         
         private global::System.Data.DataRelation relationFK_Artikli_Racun_Lijekovi;
@@ -90,8 +92,6 @@ namespace PharmaCure {
         
         private global::System.Data.DataRelation relationFK_Popis_Lijekovi;
         
-        private global::System.Data.DataRelation relationFK_Popis_Rezervacija;
-        
         private global::System.Data.DataRelation relationFK_PopisOsiguranihLijekova_Lijekovi;
         
         private global::System.Data.DataRelation relationFK_PopisOsiguranihLijekova_LijekoviOsiguranje;
@@ -103,6 +103,10 @@ namespace PharmaCure {
         private global::System.Data.DataRelation relationFK_StavkeNarudzbe_Lijekovi;
         
         private global::System.Data.DataRelation relationFK_StavkeNarudzbe_Narudzba;
+        
+        private global::System.Data.DataRelation relationFK__Rezervaci__klije__18EBB532;
+        
+        private global::System.Data.DataRelation relationFK__Rezervaci__lijek__19DFD96B;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -191,6 +195,9 @@ namespace PharmaCure {
                 }
                 if ((ds.Tables["PregledLijekova"] != null)) {
                     base.Tables.Add(new PregledLijekovaDataTable(ds.Tables["PregledLijekova"]));
+                }
+                if ((ds.Tables["PregledRezervacija"] != null)) {
+                    base.Tables.Add(new PregledRezervacijaDataTable(ds.Tables["PregledRezervacija"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -412,6 +419,16 @@ namespace PharmaCure {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PregledRezervacijaDataTable PregledRezervacija {
+            get {
+                return this.tablePregledRezervacija;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -536,6 +553,9 @@ namespace PharmaCure {
                 }
                 if ((ds.Tables["PregledLijekova"] != null)) {
                     base.Tables.Add(new PregledLijekovaDataTable(ds.Tables["PregledLijekova"]));
+                }
+                if ((ds.Tables["PregledRezervacija"] != null)) {
+                    base.Tables.Add(new PregledRezervacijaDataTable(ds.Tables["PregledRezervacija"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -690,6 +710,12 @@ namespace PharmaCure {
                     this.tablePregledLijekova.InitVars();
                 }
             }
+            this.tablePregledRezervacija = ((PregledRezervacijaDataTable)(base.Tables["PregledRezervacija"]));
+            if ((initTable == true)) {
+                if ((this.tablePregledRezervacija != null)) {
+                    this.tablePregledRezervacija.InitVars();
+                }
+            }
             this.relationFK_Akcija_Lijekovi1 = this.Relations["FK_Akcija_Lijekovi1"];
             this.relationFK_Artikli_Racun_Lijekovi = this.Relations["FK_Artikli_Racun_Lijekovi"];
             this.relationFK_Artikli_Racun_Racun = this.Relations["FK_Artikli_Racun_Racun"];
@@ -703,13 +729,14 @@ namespace PharmaCure {
             this.relationFK_Narudzba_Djelatnik = this.Relations["FK_Narudzba_Djelatnik"];
             this.relationFK_Popis_Klijent = this.Relations["FK_Popis_Klijent"];
             this.relationFK_Popis_Lijekovi = this.Relations["FK_Popis_Lijekovi"];
-            this.relationFK_Popis_Rezervacija = this.Relations["FK_Popis_Rezervacija"];
             this.relationFK_PopisOsiguranihLijekova_Lijekovi = this.Relations["FK_PopisOsiguranihLijekova_Lijekovi"];
             this.relationFK_PopisOsiguranihLijekova_LijekoviOsiguranje = this.Relations["FK_PopisOsiguranihLijekova_LijekoviOsiguranje"];
             this.relationFK_Racun_Klijent = this.Relations["FK_Racun_Klijent"];
             this.relationFK_Racun_Stanja = this.Relations["FK_Racun_Stanja"];
             this.relationFK_StavkeNarudzbe_Lijekovi = this.Relations["FK_StavkeNarudzbe_Lijekovi"];
             this.relationFK_StavkeNarudzbe_Narudzba = this.Relations["FK_StavkeNarudzbe_Narudzba"];
+            this.relationFK__Rezervaci__klije__18EBB532 = this.Relations["FK__Rezervaci__klije__18EBB532"];
+            this.relationFK__Rezervaci__lijek__19DFD96B = this.Relations["FK__Rezervaci__lijek__19DFD96B"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -760,6 +787,8 @@ namespace PharmaCure {
             base.Tables.Add(this.tableTipDjelatnika);
             this.tablePregledLijekova = new PregledLijekovaDataTable();
             base.Tables.Add(this.tablePregledLijekova);
+            this.tablePregledRezervacija = new PregledRezervacijaDataTable();
+            base.Tables.Add(this.tablePregledRezervacija);
             this.relationFK_Akcija_Lijekovi1 = new global::System.Data.DataRelation("FK_Akcija_Lijekovi1", new global::System.Data.DataColumn[] {
                         this.tableLijekovi.ID_LijekColumn}, new global::System.Data.DataColumn[] {
                         this.tableAkcija.ID_LijekaColumn}, false);
@@ -812,10 +841,6 @@ namespace PharmaCure {
                         this.tableLijekovi.ID_LijekColumn}, new global::System.Data.DataColumn[] {
                         this.tablePopis.ID_LijekaColumn}, false);
             this.Relations.Add(this.relationFK_Popis_Lijekovi);
-            this.relationFK_Popis_Rezervacija = new global::System.Data.DataRelation("FK_Popis_Rezervacija", new global::System.Data.DataColumn[] {
-                        this.tableRezervacija.ID_rezervacijeColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePopis.ID_RezervacijaColumn}, false);
-            this.Relations.Add(this.relationFK_Popis_Rezervacija);
             this.relationFK_PopisOsiguranihLijekova_Lijekovi = new global::System.Data.DataRelation("FK_PopisOsiguranihLijekova_Lijekovi", new global::System.Data.DataColumn[] {
                         this.tableLijekovi.ID_LijekColumn}, new global::System.Data.DataColumn[] {
                         this.tablePopisOsiguranihLijekova.ID_LijekColumn}, false);
@@ -840,6 +865,14 @@ namespace PharmaCure {
                         this.tableNarudzba.ID_NarudzbeColumn}, new global::System.Data.DataColumn[] {
                         this.tableStavkeNarudzbe.ID_NarudzbeColumn}, false);
             this.Relations.Add(this.relationFK_StavkeNarudzbe_Narudzba);
+            this.relationFK__Rezervaci__klije__18EBB532 = new global::System.Data.DataRelation("FK__Rezervaci__klije__18EBB532", new global::System.Data.DataColumn[] {
+                        this.tableLijekovi.ID_LijekColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRezervacija.Klijent_IDColumn}, false);
+            this.Relations.Add(this.relationFK__Rezervaci__klije__18EBB532);
+            this.relationFK__Rezervaci__lijek__19DFD96B = new global::System.Data.DataRelation("FK__Rezervaci__lijek__19DFD96B", new global::System.Data.DataColumn[] {
+                        this.tableKlijent.ID_KlijentColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRezervacija.lijek_idColumn}, false);
+            this.Relations.Add(this.relationFK__Rezervaci__lijek__19DFD96B);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -964,6 +997,12 @@ namespace PharmaCure {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializePregledRezervacija() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1076,6 +1115,9 @@ namespace PharmaCure {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void PregledLijekovaRowChangeEventHandler(object sender, PregledLijekovaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void PregledRezervacijaRowChangeEventHandler(object sender, PregledRezervacijaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4493,8 +4535,6 @@ namespace PharmaCure {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class PopisDataTable : global::System.Data.TypedTableBase<PopisRow> {
             
-            private global::System.Data.DataColumn columnID_Rezervacija;
-            
             private global::System.Data.DataColumn columnID_Klijenta;
             
             private global::System.Data.DataColumn columnID_Lijeka;
@@ -4530,14 +4570,6 @@ namespace PharmaCure {
             protected PopisDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_RezervacijaColumn {
-                get {
-                    return this.columnID_Rezervacija;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4593,20 +4625,16 @@ namespace PharmaCure {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PopisRow AddPopisRow(RezervacijaRow parentRezervacijaRowByFK_Popis_Rezervacija, KlijentRow parentKlijentRowByFK_Popis_Klijent, LijekoviRow parentLijekoviRowByFK_Popis_Lijekovi) {
+            public PopisRow AddPopisRow(KlijentRow parentKlijentRowByFK_Popis_Klijent, LijekoviRow parentLijekoviRowByFK_Popis_Lijekovi) {
                 PopisRow rowPopisRow = ((PopisRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null,
                         null};
-                if ((parentRezervacijaRowByFK_Popis_Rezervacija != null)) {
-                    columnValuesArray[0] = parentRezervacijaRowByFK_Popis_Rezervacija[0];
-                }
                 if ((parentKlijentRowByFK_Popis_Klijent != null)) {
-                    columnValuesArray[1] = parentKlijentRowByFK_Popis_Klijent[0];
+                    columnValuesArray[0] = parentKlijentRowByFK_Popis_Klijent[0];
                 }
                 if ((parentLijekoviRowByFK_Popis_Lijekovi != null)) {
-                    columnValuesArray[2] = parentLijekoviRowByFK_Popis_Lijekovi[0];
+                    columnValuesArray[1] = parentLijekoviRowByFK_Popis_Lijekovi[0];
                 }
                 rowPopisRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPopisRow);
@@ -4630,7 +4658,6 @@ namespace PharmaCure {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnID_Rezervacija = base.Columns["ID_Rezervacija"];
                 this.columnID_Klijenta = base.Columns["ID_Klijenta"];
                 this.columnID_Lijeka = base.Columns["ID_Lijeka"];
             }
@@ -4638,13 +4665,10 @@ namespace PharmaCure {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnID_Rezervacija = new global::System.Data.DataColumn("ID_Rezervacija", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_Rezervacija);
                 this.columnID_Klijenta = new global::System.Data.DataColumn("ID_Klijenta", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Klijenta);
                 this.columnID_Lijeka = new global::System.Data.DataColumn("ID_Lijeka", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Lijeka);
-                this.columnID_Rezervacija.AllowDBNull = false;
                 this.columnID_Klijenta.AllowDBNull = false;
                 this.columnID_Lijeka.AllowDBNull = false;
             }
@@ -5720,13 +5744,13 @@ namespace PharmaCure {
             
             private global::System.Data.DataColumn columnID_rezervacije;
             
-            private global::System.Data.DataColumn columnNaziv;
-            
             private global::System.Data.DataColumn columnDatum;
             
             private global::System.Data.DataColumn columnKolicina;
             
             private global::System.Data.DataColumn columnKlijent_ID;
+            
+            private global::System.Data.DataColumn columnlijek_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5771,14 +5795,6 @@ namespace PharmaCure {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NazivColumn {
-                get {
-                    return this.columnNaziv;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn DatumColumn {
                 get {
                     return this.columnDatum;
@@ -5798,6 +5814,14 @@ namespace PharmaCure {
             public global::System.Data.DataColumn Klijent_IDColumn {
                 get {
                     return this.columnKlijent_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn lijek_idColumn {
+                get {
+                    return this.columnlijek_id;
                 }
             }
             
@@ -5838,14 +5862,20 @@ namespace PharmaCure {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RezervacijaRow AddRezervacijaRow(int ID_rezervacije, string Naziv, string Datum, int Kolicina, int Klijent_ID) {
+            public RezervacijaRow AddRezervacijaRow(int ID_rezervacije, string Datum, int Kolicina, LijekoviRow parentLijekoviRowByFK__Rezervaci__klije__18EBB532, KlijentRow parentKlijentRowByFK__Rezervaci__lijek__19DFD96B) {
                 RezervacijaRow rowRezervacijaRow = ((RezervacijaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_rezervacije,
-                        Naziv,
                         Datum,
                         Kolicina,
-                        Klijent_ID};
+                        null,
+                        null};
+                if ((parentLijekoviRowByFK__Rezervaci__klije__18EBB532 != null)) {
+                    columnValuesArray[3] = parentLijekoviRowByFK__Rezervaci__klije__18EBB532[0];
+                }
+                if ((parentKlijentRowByFK__Rezervaci__lijek__19DFD96B != null)) {
+                    columnValuesArray[4] = parentKlijentRowByFK__Rezervaci__lijek__19DFD96B[0];
+                }
                 rowRezervacijaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRezervacijaRow);
                 return rowRezervacijaRow;
@@ -5876,10 +5906,10 @@ namespace PharmaCure {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID_rezervacije = base.Columns["ID_rezervacije"];
-                this.columnNaziv = base.Columns["Naziv"];
                 this.columnDatum = base.Columns["Datum"];
                 this.columnKolicina = base.Columns["Kolicina"];
                 this.columnKlijent_ID = base.Columns["Klijent_ID"];
+                this.columnlijek_id = base.Columns["lijek_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5887,20 +5917,18 @@ namespace PharmaCure {
             private void InitClass() {
                 this.columnID_rezervacije = new global::System.Data.DataColumn("ID_rezervacije", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_rezervacije);
-                this.columnNaziv = new global::System.Data.DataColumn("Naziv", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNaziv);
                 this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatum);
                 this.columnKolicina = new global::System.Data.DataColumn("Kolicina", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKolicina);
                 this.columnKlijent_ID = new global::System.Data.DataColumn("Klijent_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKlijent_ID);
+                this.columnlijek_id = new global::System.Data.DataColumn("lijek_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlijek_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_rezervacije}, true));
                 this.columnID_rezervacije.AllowDBNull = false;
                 this.columnID_rezervacije.Unique = true;
-                this.columnNaziv.AllowDBNull = false;
-                this.columnNaziv.MaxLength = 50;
                 this.columnDatum.AllowDBNull = false;
                 this.columnDatum.MaxLength = 50;
                 this.columnKolicina.AllowDBNull = false;
@@ -7199,6 +7227,352 @@ namespace PharmaCure {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PregledRezervacijaDataTable : global::System.Data.TypedTableBase<PregledRezervacijaRow> {
+            
+            private global::System.Data.DataColumn columnId;
+            
+            private global::System.Data.DataColumn columnNaziv;
+            
+            private global::System.Data.DataColumn columnPrezime;
+            
+            private global::System.Data.DataColumn columndatum;
+            
+            private global::System.Data.DataColumn columnKolicina;
+            
+            private global::System.Data.DataColumn columnklijent_id;
+            
+            private global::System.Data.DataColumn columnlijek_id;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledRezervacijaDataTable() {
+                this.TableName = "PregledRezervacija";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PregledRezervacijaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PregledRezervacijaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NazivColumn {
+                get {
+                    return this.columnNaziv;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrezimeColumn {
+                get {
+                    return this.columnPrezime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn datumColumn {
+                get {
+                    return this.columndatum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KolicinaColumn {
+                get {
+                    return this.columnKolicina;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn klijent_idColumn {
+                get {
+                    return this.columnklijent_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn lijek_idColumn {
+                get {
+                    return this.columnlijek_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledRezervacijaRow this[int index] {
+                get {
+                    return ((PregledRezervacijaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PregledRezervacijaRowChangeEventHandler PregledRezervacijaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PregledRezervacijaRowChangeEventHandler PregledRezervacijaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PregledRezervacijaRowChangeEventHandler PregledRezervacijaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PregledRezervacijaRowChangeEventHandler PregledRezervacijaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPregledRezervacijaRow(PregledRezervacijaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledRezervacijaRow AddPregledRezervacijaRow(int Id, string Naziv, string Prezime, System.DateTime datum, int Kolicina, int klijent_id, int lijek_id) {
+                PregledRezervacijaRow rowPregledRezervacijaRow = ((PregledRezervacijaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Id,
+                        Naziv,
+                        Prezime,
+                        datum,
+                        Kolicina,
+                        klijent_id,
+                        lijek_id};
+                rowPregledRezervacijaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPregledRezervacijaRow);
+                return rowPregledRezervacijaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledRezervacijaRow FindById(int Id) {
+                return ((PregledRezervacijaRow)(this.Rows.Find(new object[] {
+                            Id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PregledRezervacijaDataTable cln = ((PregledRezervacijaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PregledRezervacijaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnId = base.Columns["Id"];
+                this.columnNaziv = base.Columns["Naziv"];
+                this.columnPrezime = base.Columns["Prezime"];
+                this.columndatum = base.Columns["datum"];
+                this.columnKolicina = base.Columns["Kolicina"];
+                this.columnklijent_id = base.Columns["klijent_id"];
+                this.columnlijek_id = base.Columns["lijek_id"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
+                this.columnNaziv = new global::System.Data.DataColumn("Naziv", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNaziv);
+                this.columnPrezime = new global::System.Data.DataColumn("Prezime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrezime);
+                this.columndatum = new global::System.Data.DataColumn("datum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndatum);
+                this.columnKolicina = new global::System.Data.DataColumn("Kolicina", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKolicina);
+                this.columnklijent_id = new global::System.Data.DataColumn("klijent_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnklijent_id);
+                this.columnlijek_id = new global::System.Data.DataColumn("lijek_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlijek_id);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnId}, true));
+                this.columnId.AllowDBNull = false;
+                this.columnId.Unique = true;
+                this.columnNaziv.AllowDBNull = false;
+                this.columnNaziv.MaxLength = 50;
+                this.columnPrezime.AllowDBNull = false;
+                this.columnPrezime.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledRezervacijaRow NewPregledRezervacijaRow() {
+                return ((PregledRezervacijaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PregledRezervacijaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PregledRezervacijaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PregledRezervacijaRowChanged != null)) {
+                    this.PregledRezervacijaRowChanged(this, new PregledRezervacijaRowChangeEvent(((PregledRezervacijaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PregledRezervacijaRowChanging != null)) {
+                    this.PregledRezervacijaRowChanging(this, new PregledRezervacijaRowChangeEvent(((PregledRezervacijaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PregledRezervacijaRowDeleted != null)) {
+                    this.PregledRezervacijaRowDeleted(this, new PregledRezervacijaRowChangeEvent(((PregledRezervacijaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PregledRezervacijaRowDeleting != null)) {
+                    this.PregledRezervacijaRowDeleting(this, new PregledRezervacijaRowChangeEvent(((PregledRezervacijaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovePregledRezervacijaRow(PregledRezervacijaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                _17003_DBDataSet ds = new _17003_DBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PregledRezervacijaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AkcijaRow : global::System.Data.DataRow {
@@ -7755,6 +8129,17 @@ namespace PharmaCure {
                     return ((RacunRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Racun_Klijent"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RezervacijaRow[] GetRezervacijaRows() {
+                if ((this.Table.ChildRelations["FK__Rezervaci__lijek__19DFD96B"] == null)) {
+                    return new RezervacijaRow[0];
+                }
+                else {
+                    return ((RezervacijaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Rezervaci__lijek__19DFD96B"])));
+                }
+            }
         }
         
         /// <summary>
@@ -7944,6 +8329,17 @@ namespace PharmaCure {
                 }
                 else {
                     return ((StavkeNarudzbeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_StavkeNarudzbe_Lijekovi"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RezervacijaRow[] GetRezervacijaRows() {
+                if ((this.Table.ChildRelations["FK__Rezervaci__klije__18EBB532"] == null)) {
+                    return new RezervacijaRow[0];
+                }
+                else {
+                    return ((RezervacijaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Rezervaci__klije__18EBB532"])));
                 }
             }
         }
@@ -8239,17 +8635,6 @@ namespace PharmaCure {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID_Rezervacija {
-                get {
-                    return ((int)(this[this.tablePopis.ID_RezervacijaColumn]));
-                }
-                set {
-                    this[this.tablePopis.ID_RezervacijaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ID_Klijenta {
                 get {
                     return ((int)(this[this.tablePopis.ID_KlijentaColumn]));
@@ -8289,17 +8674,6 @@ namespace PharmaCure {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Popis_Lijekovi"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RezervacijaRow RezervacijaRow {
-                get {
-                    return ((RezervacijaRow)(this.GetParentRow(this.Table.ParentRelations["FK_Popis_Rezervacija"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Popis_Rezervacija"]);
                 }
             }
         }
@@ -8596,17 +8970,6 @@ namespace PharmaCure {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Naziv {
-                get {
-                    return ((string)(this[this.tableRezervacija.NazivColumn]));
-                }
-                set {
-                    this[this.tableRezervacija.NazivColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Datum {
                 get {
                     return ((string)(this[this.tableRezervacija.DatumColumn]));
@@ -8640,13 +9003,52 @@ namespace PharmaCure {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PopisRow[] GetPopisRows() {
-                if ((this.Table.ChildRelations["FK_Popis_Rezervacija"] == null)) {
-                    return new PopisRow[0];
+            public int lijek_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableRezervacija.lijek_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lijek_id\' in table \'Rezervacija\' is DBNull.", e);
+                    }
                 }
-                else {
-                    return ((PopisRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Popis_Rezervacija"])));
+                set {
+                    this[this.tableRezervacija.lijek_idColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public LijekoviRow LijekoviRow {
+                get {
+                    return ((LijekoviRow)(this.GetParentRow(this.Table.ParentRelations["FK__Rezervaci__klije__18EBB532"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Rezervaci__klije__18EBB532"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public KlijentRow KlijentRow {
+                get {
+                    return ((KlijentRow)(this.GetParentRow(this.Table.ParentRelations["FK__Rezervaci__lijek__19DFD96B"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Rezervaci__lijek__19DFD96B"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Islijek_idNull() {
+                return this.IsNull(this.tableRezervacija.lijek_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setlijek_idNull() {
+                this[this.tableRezervacija.lijek_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8900,6 +9302,166 @@ namespace PharmaCure {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetKolicina_skladisteNull() {
                 this[this.tablePregledLijekova.Kolicina_skladisteColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PregledRezervacijaRow : global::System.Data.DataRow {
+            
+            private PregledRezervacijaDataTable tablePregledRezervacija;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PregledRezervacijaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePregledRezervacija = ((PregledRezervacijaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
+                get {
+                    return ((int)(this[this.tablePregledRezervacija.IdColumn]));
+                }
+                set {
+                    this[this.tablePregledRezervacija.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Naziv {
+                get {
+                    return ((string)(this[this.tablePregledRezervacija.NazivColumn]));
+                }
+                set {
+                    this[this.tablePregledRezervacija.NazivColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Prezime {
+                get {
+                    return ((string)(this[this.tablePregledRezervacija.PrezimeColumn]));
+                }
+                set {
+                    this[this.tablePregledRezervacija.PrezimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime datum {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePregledRezervacija.datumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'datum\' in table \'PregledRezervacija\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePregledRezervacija.datumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Kolicina {
+                get {
+                    try {
+                        return ((int)(this[this.tablePregledRezervacija.KolicinaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Kolicina\' in table \'PregledRezervacija\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePregledRezervacija.KolicinaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int klijent_id {
+                get {
+                    try {
+                        return ((int)(this[this.tablePregledRezervacija.klijent_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'klijent_id\' in table \'PregledRezervacija\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePregledRezervacija.klijent_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int lijek_id {
+                get {
+                    try {
+                        return ((int)(this[this.tablePregledRezervacija.lijek_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lijek_id\' in table \'PregledRezervacija\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePregledRezervacija.lijek_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdatumNull() {
+                return this.IsNull(this.tablePregledRezervacija.datumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdatumNull() {
+                this[this.tablePregledRezervacija.datumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKolicinaNull() {
+                return this.IsNull(this.tablePregledRezervacija.KolicinaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKolicinaNull() {
+                this[this.tablePregledRezervacija.KolicinaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isklijent_idNull() {
+                return this.IsNull(this.tablePregledRezervacija.klijent_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setklijent_idNull() {
+                this[this.tablePregledRezervacija.klijent_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Islijek_idNull() {
+                return this.IsNull(this.tablePregledRezervacija.lijek_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setlijek_idNull() {
+                this[this.tablePregledRezervacija.lijek_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9569,6 +10131,40 @@ namespace PharmaCure {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PregledLijekovaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class PregledRezervacijaRowChangeEvent : global::System.EventArgs {
+            
+            private PregledRezervacijaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledRezervacijaRowChangeEvent(PregledRezervacijaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PregledRezervacijaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -13422,16 +14018,14 @@ SELECT ID_Narudzbe, ID_Poslovnice, ID_Djelatnika FROM Narudzba WHERE (ID_Narudzb
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Popis";
-            tableMapping.ColumnMappings.Add("ID_Rezervacija", "ID_Rezervacija");
             tableMapping.ColumnMappings.Add("ID_Klijenta", "ID_Klijenta");
             tableMapping.ColumnMappings.Add("ID_Lijeka", "ID_Lijeka");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Popis] ([ID_Rezervacija], [ID_Klijenta], [ID_Lijeka]) VALUES (" +
-                "@ID_Rezervacija, @ID_Klijenta, @ID_Lijeka)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Popis] ([ID_Klijenta], [ID_Lijeka]) VALUES (@ID_Klijenta, @ID_Lijeka" +
+                ")";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Rezervacija", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Rezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Klijenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klijenta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Lijeka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijeka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -13449,7 +14043,7 @@ SELECT ID_Narudzbe, ID_Poslovnice, ID_Djelatnika FROM Narudzba WHERE (ID_Narudzb
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Rezervacija, ID_Klijenta, ID_Lijeka FROM dbo.Popis";
+            this._commandCollection[0].CommandText = "SELECT ID_Klijenta, ID_Lijeka FROM Popis";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13510,10 +14104,9 @@ SELECT ID_Narudzbe, ID_Poslovnice, ID_Djelatnika FROM Narudzba WHERE (ID_Narudzb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Rezervacija, int ID_Klijenta, int ID_Lijeka) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Rezervacija));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ID_Klijenta));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ID_Lijeka));
+        public virtual int Insert(int ID_Klijenta, int ID_Lijeka) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Klijenta));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ID_Lijeka));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14621,47 +15214,54 @@ SELECT ID_Racun, Vrijeme, Djelatnik, ID_Klijent, ID_Stanje FROM Racun WHERE (ID_
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Rezervacija";
             tableMapping.ColumnMappings.Add("ID_rezervacije", "ID_rezervacije");
-            tableMapping.ColumnMappings.Add("Naziv", "Naziv");
             tableMapping.ColumnMappings.Add("Datum", "Datum");
             tableMapping.ColumnMappings.Add("Kolicina", "Kolicina");
             tableMapping.ColumnMappings.Add("Klijent_ID", "Klijent_ID");
+            tableMapping.ColumnMappings.Add("lijek_id", "lijek_id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Rezervacija] WHERE (([ID_rezervacije] = @Original_ID_rezervaci" +
-                "je) AND ([Naziv] = @Original_Naziv) AND ([Datum] = @Original_Datum) AND ([Kolici" +
-                "na] = @Original_Kolicina) AND ([Klijent_ID] = @Original_Klijent_ID))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Rezervacija] WHERE (([id_rezervacije] = @Original_id_rezervacije) AND ((@IsNull_datum = 1 AND [datum] IS NULL) OR ([datum] = @Original_datum)) AND ((@IsNull_kolicina = 1 AND [kolicina] IS NULL) OR ([kolicina] = @Original_kolicina)) AND ((@IsNull_klijent_id = 1 AND [klijent_id] IS NULL) OR ([klijent_id] = @Original_klijent_id)) AND ((@IsNull_lijek_id = 1 AND [lijek_id] IS NULL) OR ([lijek_id] = @Original_lijek_id)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_rezervacije", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_rezervacije", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Naziv", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kolicina", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Klijent_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klijent_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_rezervacije", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_rezervacije", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_datum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_klijent_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "klijent_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_klijent_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "klijent_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lijek_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lijek_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lijek_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lijek_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Rezervacija] ([ID_rezervacije], [Naziv], [Datum], [Kolicina], [Klijent_ID]) VALUES (@ID_rezervacije, @Naziv, @Datum, @Kolicina, @Klijent_ID);
-SELECT ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID FROM Rezervacija WHERE (ID_rezervacije = @ID_rezervacije)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Rezervacija] ([datum], [kolicina], [klijent_id], [lijek_id]) VALUES " +
+                "(@datum, @kolicina, @klijent_id, @lijek_id);\r\nSELECT id_rezervacije, datum, koli" +
+                "cina, klijent_id, lijek_id FROM Rezervacija WHERE (id_rezervacije = SCOPE_IDENTI" +
+                "TY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_rezervacije", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_rezervacije", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Klijent_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klijent_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@klijent_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "klijent_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lijek_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lijek_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Rezervacija] SET [ID_rezervacije] = @ID_rezervacije, [Naziv] = @Naziv, [Datum] = @Datum, [Kolicina] = @Kolicina, [Klijent_ID] = @Klijent_ID WHERE (([ID_rezervacije] = @Original_ID_rezervacije) AND ([Naziv] = @Original_Naziv) AND ([Datum] = @Original_Datum) AND ([Kolicina] = @Original_Kolicina) AND ([Klijent_ID] = @Original_Klijent_ID));
-SELECT ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID FROM Rezervacija WHERE (ID_rezervacije = @ID_rezervacije)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Rezervacija] SET [datum] = @datum, [kolicina] = @kolicina, [klijent_id] = @klijent_id, [lijek_id] = @lijek_id WHERE (([id_rezervacije] = @Original_id_rezervacije) AND ((@IsNull_datum = 1 AND [datum] IS NULL) OR ([datum] = @Original_datum)) AND ((@IsNull_kolicina = 1 AND [kolicina] IS NULL) OR ([kolicina] = @Original_kolicina)) AND ((@IsNull_klijent_id = 1 AND [klijent_id] IS NULL) OR ([klijent_id] = @Original_klijent_id)) AND ((@IsNull_lijek_id = 1 AND [lijek_id] IS NULL) OR ([lijek_id] = @Original_lijek_id)));
+SELECT id_rezervacije, datum, kolicina, klijent_id, lijek_id FROM Rezervacija WHERE (id_rezervacije = @id_rezervacije)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_rezervacije", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_rezervacije", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Klijent_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klijent_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_rezervacije", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_rezervacije", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Naziv", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kolicina", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Klijent_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klijent_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@klijent_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "klijent_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lijek_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lijek_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_rezervacije", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_rezervacije", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_datum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_klijent_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "klijent_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_klijent_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "klijent_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lijek_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lijek_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lijek_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lijek_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_rezervacije", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_rezervacije", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14674,11 +15274,30 @@ SELECT ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID FROM Rezervacija WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID FROM dbo.Rezervacija";
+            this._commandCollection[0].CommandText = "SELECT id_rezervacije, datum, kolicina, klijent_id, lijek_id FROM Rezervacija";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        id_rezervacije, datum, kolicina, klijent_id, lijek_id\r\nFROM        " +
+                "    Rezervacija\r\nWHERE        (lijek_id = @idLijek) AND (klijent_id = @idKlijent" +
+                ")";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "lijek_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKlijent", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "klijent_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"INSERT INTO Rezervacija
+                         (datum, kolicina, klijent_id, lijek_id)
+VALUES        (@datum,@kolicina,@klijent_id,@lijek_id); 
+SELECT id_rezervacije, datum, kolicina, klijent_id, lijek_id FROM Rezervacija WHERE (id_rezervacije = SCOPE_IDENTITY())";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datum", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kolicina", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@klijent_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "klijent_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lijek_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "lijek_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14700,6 +15319,54 @@ SELECT ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID FROM Rezervacija WHERE
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual _17003_DBDataSet.RezervacijaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            _17003_DBDataSet.RezervacijaDataTable dataTable = new _17003_DBDataSet.RezervacijaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillById(_17003_DBDataSet.RezervacijaDataTable dataTable, global::System.Nullable<int> idLijek, global::System.Nullable<int> idKlijent) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idLijek.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idLijek.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((idKlijent.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(idKlijent.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual _17003_DBDataSet.RezervacijaDataTable GetDataBy1(global::System.Nullable<int> idLijek, global::System.Nullable<int> idKlijent) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idLijek.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idLijek.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((idKlijent.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(idKlijent.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             _17003_DBDataSet.RezervacijaDataTable dataTable = new _17003_DBDataSet.RezervacijaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -14738,22 +15405,40 @@ SELECT ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID FROM Rezervacija WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_rezervacije, string Original_Naziv, string Original_Datum, int Original_Kolicina, int Original_Klijent_ID) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_rezervacije));
-            if ((Original_Naziv == null)) {
-                throw new global::System.ArgumentNullException("Original_Naziv");
+        public virtual int Delete(int Original_id_rezervacije, global::System.Nullable<global::System.DateTime> Original_datum, global::System.Nullable<int> Original_kolicina, global::System.Nullable<int> Original_klijent_id, global::System.Nullable<int> Original_lijek_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_rezervacije));
+            if ((Original_datum.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_datum.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Naziv));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_Datum == null)) {
-                throw new global::System.ArgumentNullException("Original_Datum");
+            if ((Original_kolicina.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_kolicina.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Datum));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Kolicina));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Klijent_ID));
+            if ((Original_klijent_id.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_klijent_id.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_lijek_id.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_lijek_id.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14774,22 +15459,31 @@ SELECT ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID FROM Rezervacija WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_rezervacije, string Naziv, string Datum, int Kolicina, int Klijent_ID) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_rezervacije));
-            if ((Naziv == null)) {
-                throw new global::System.ArgumentNullException("Naziv");
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> datum, global::System.Nullable<int> kolicina, global::System.Nullable<int> klijent_id, global::System.Nullable<int> lijek_id) {
+            if ((datum.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(datum.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Naziv));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((Datum == null)) {
-                throw new global::System.ArgumentNullException("Datum");
+            if ((kolicina.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(kolicina.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Datum));
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Kolicina));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Klijent_ID));
+            if ((klijent_id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(klijent_id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((lijek_id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(lijek_id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14810,37 +15504,65 @@ SELECT ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID FROM Rezervacija WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_rezervacije, string Naziv, string Datum, int Kolicina, int Klijent_ID, int Original_ID_rezervacije, string Original_Naziv, string Original_Datum, int Original_Kolicina, int Original_Klijent_ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_rezervacije));
-            if ((Naziv == null)) {
-                throw new global::System.ArgumentNullException("Naziv");
+        public virtual int Update(global::System.Nullable<global::System.DateTime> datum, global::System.Nullable<int> kolicina, global::System.Nullable<int> klijent_id, global::System.Nullable<int> lijek_id, int Original_id_rezervacije, global::System.Nullable<global::System.DateTime> Original_datum, global::System.Nullable<int> Original_kolicina, global::System.Nullable<int> Original_klijent_id, global::System.Nullable<int> Original_lijek_id, int id_rezervacije) {
+            if ((datum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(datum.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Naziv));
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((Datum == null)) {
-                throw new global::System.ArgumentNullException("Datum");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Datum));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Kolicina));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Klijent_ID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_rezervacije));
-            if ((Original_Naziv == null)) {
-                throw new global::System.ArgumentNullException("Original_Naziv");
+            if ((kolicina.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(kolicina.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Naziv));
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Original_Datum == null)) {
-                throw new global::System.ArgumentNullException("Original_Datum");
+            if ((klijent_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(klijent_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Datum));
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Kolicina));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Klijent_ID));
+            if ((lijek_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(lijek_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id_rezervacije));
+            if ((Original_datum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_datum.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_kolicina.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_kolicina.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_klijent_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_klijent_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_lijek_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_lijek_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(id_rezervacije));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14860,9 +15582,48 @@ SELECT ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID FROM Rezervacija WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Naziv, string Datum, int Kolicina, int Klijent_ID, int Original_ID_rezervacije, string Original_Naziv, string Original_Datum, int Original_Kolicina, int Original_Klijent_ID) {
-            return this.Update(Original_ID_rezervacije, Naziv, Datum, Kolicina, Klijent_ID, Original_ID_rezervacije, Original_Naziv, Original_Datum, Original_Kolicina, Original_Klijent_ID);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(global::System.Nullable<global::System.DateTime> datum, global::System.Nullable<int> kolicina, global::System.Nullable<int> klijent_id, global::System.Nullable<int> lijek_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((datum.HasValue == true)) {
+                command.Parameters[0].Value = ((System.DateTime)(datum.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((kolicina.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(kolicina.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((klijent_id.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(klijent_id.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((lijek_id.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(lijek_id.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -16023,6 +16784,222 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class PregledRezervacijaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public PregledRezervacijaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "PregledRezervacija";
+            tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("Naziv", "Naziv");
+            tableMapping.ColumnMappings.Add("Prezime", "Prezime");
+            tableMapping.ColumnMappings.Add("datum", "datum");
+            tableMapping.ColumnMappings.Add("Kolicina", "Kolicina");
+            tableMapping.ColumnMappings.Add("klijent_id", "klijent_id");
+            tableMapping.ColumnMappings.Add("lijek_id", "lijek_id");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::PharmaCure.Properties.Settings.Default._17003_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Id, Naziv, Prezime, datum, Kolicina, klijent_id, lijek_id FROM PregledReze" +
+                "rvacija";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Id, Naziv, Prezime, datum, Kolicina, klijent_id, lijek_id\r\nFROM    " +
+                "        PregledRezervacija\r\nWHERE        (klijent_id = @idKlijent)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKlijent", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "klijent_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(_17003_DBDataSet.PregledRezervacijaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual _17003_DBDataSet.PregledRezervacijaDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            _17003_DBDataSet.PregledRezervacijaDataTable dataTable = new _17003_DBDataSet.PregledRezervacijaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillById(_17003_DBDataSet.PregledRezervacijaDataTable dataTable, global::System.Nullable<int> idKlijent) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idKlijent.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idKlijent.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual _17003_DBDataSet.PregledRezervacijaDataTable GetDataBy(global::System.Nullable<int> idKlijent) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idKlijent.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idKlijent.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            _17003_DBDataSet.PregledRezervacijaDataTable dataTable = new _17003_DBDataSet.PregledRezervacijaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16529,21 +17506,21 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(_17003_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tipDjelatnikaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TipDjelatnika.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tipDjelatnikaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._osiguranjeTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Osiguranje.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._osiguranjeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tipDjelatnikaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TipDjelatnika.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tipDjelatnikaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16565,15 +17542,6 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._stanjaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._stanjaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._kategorijaTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Kategorija.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -16592,12 +17560,12 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._narudzbaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._stanjaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._narudzbaTableAdapter.Update(updatedRows));
+                    result = (result + this._stanjaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16619,12 +17587,12 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._rezervacijaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Rezervacija.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._narudzbaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._rezervacijaTableAdapter.Update(updatedRows));
+                    result = (result + this._narudzbaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16643,6 +17611,15 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._stavkeNarudzbeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rezervacijaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Rezervacija.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rezervacijaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16710,19 +17687,19 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(_17003_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tipDjelatnikaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TipDjelatnika.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tipDjelatnikaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._osiguranjeTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Osiguranje.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._osiguranjeTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tipDjelatnikaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TipDjelatnika.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tipDjelatnikaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16742,14 +17719,6 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._stanjaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._stanjaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._kategorijaTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Kategorija.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -16766,11 +17735,11 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._narudzbaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._stanjaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._narudzbaTableAdapter.Update(addedRows));
+                    result = (result + this._stanjaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16790,11 +17759,11 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rezervacijaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Rezervacija.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._narudzbaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._rezervacijaTableAdapter.Update(addedRows));
+                    result = (result + this._narudzbaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16811,6 +17780,14 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._stavkeNarudzbeTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rezervacijaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Rezervacija.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rezervacijaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16920,6 +17897,14 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._rezervacijaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Rezervacija.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rezervacijaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._stavkeNarudzbeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.StavkeNarudzbe.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -16936,11 +17921,11 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._rezervacijaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Rezervacija.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._narudzbaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._rezervacijaTableAdapter.Update(deletedRows));
+                    result = (result + this._narudzbaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16960,11 +17945,11 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._narudzbaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Narudzba.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._stanjaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._narudzbaTableAdapter.Update(deletedRows));
+                    result = (result + this._stanjaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16984,14 +17969,6 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._stanjaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Stanja.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._stanjaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._djelatnikTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Djelatnik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -17008,19 +17985,19 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._osiguranjeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Osiguranje.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._osiguranjeTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tipDjelatnikaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TipDjelatnika.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tipDjelatnikaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._osiguranjeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Osiguranje.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._osiguranjeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

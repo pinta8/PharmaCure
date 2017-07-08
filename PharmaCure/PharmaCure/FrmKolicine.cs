@@ -41,7 +41,7 @@ namespace PharmaCure
 
         private void lijekoviComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lijekoviComboBox.SelectedItem!=null) { 
+            if (lijekoviComboBox.SelectedItem !=null) { 
                 Lijek_id = int.Parse(lijekoviComboBox.SelectedValue.ToString());
                 Poslovnica_id = int.Parse(poslovniceComboBox.SelectedValue.ToString());
                 this.dostupnostTableAdapter.FillById(this._17003_DBDataSet.Dostupnost, Lijek_id, Poslovnica_id);
@@ -71,7 +71,20 @@ namespace PharmaCure
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            double[] xData = new double[] { 1, 2, 3, 4, 5 };
+            double[] yData = new double[] { 6, 7, 3, 4, 5 };
+            //Vertical bar chart
+            //create another area and add it to the chart
+            ChartArea area2 = new ChartArea("Second");
+            chart1.ChartAreas.Add(area2);
+            //Create the series using just the y data
+            Series barSeries2 = new Series();
+            barSeries2.Points.DataBindY(yData);
+            //Set the chart type, column; vertical bars
+            barSeries2.ChartType = SeriesChartType.Column;
+            barSeries2.ChartArea = "Second";
+            //Add the series to the chart
+            chart1.Series.Add(barSeries2);
         }
     }
 }

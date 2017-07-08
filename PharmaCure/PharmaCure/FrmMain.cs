@@ -76,11 +76,11 @@ namespace PharmaCure
             prodaja.Show();
             this.Close();
         }
-        //Gumb za odlazak na formu za dodavanje Recepta
+        //Gumb za odlazak na formu za dodavanje rezervacija
         private void btnRecepti_Click(object sender, EventArgs e)
         {
-            FrmRecepti recepti = new FrmRecepti();
-            recepti.Show();
+            FrmRezervacije frmRezervacije = new FrmRezervacije();
+            frmRezervacije.ShowDialog();
             this.Close();
         }
         //Gumb za odlazak na formu Dodavanje Poslovnice
@@ -104,7 +104,7 @@ namespace PharmaCure
             btnDodajPoslovnicu.Hide();
             btnZaposlenici.Hide();
             btnKlijent.Hide();
-            btnRecepti.Hide();
+            btnRezervacije.Hide();
             lblTip.Text = "Prijavljeni ste kao ljekarnik";
         }
 

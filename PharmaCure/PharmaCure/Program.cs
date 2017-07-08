@@ -16,7 +16,7 @@ namespace PharmaCure
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmKolicine());
+            Application.Run(new FrmLogin());
         }
     }
 }

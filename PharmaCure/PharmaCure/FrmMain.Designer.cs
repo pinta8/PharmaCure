@@ -36,7 +36,7 @@
             this.btnKolicina = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.btnProdaja = new System.Windows.Forms.Button();
-            this.btnRecepti = new System.Windows.Forms.Button();
+            this.btnRezervacije = new System.Windows.Forms.Button();
             this.btnDodajPoslovnicu = new System.Windows.Forms.Button();
             this.lblTip = new System.Windows.Forms.Label();
             this.btnKlijent = new System.Windows.Forms.Button();
@@ -127,17 +127,17 @@
             this.btnProdaja.UseVisualStyleBackColor = true;
             this.btnProdaja.Click += new System.EventHandler(this.btnProdaja_Click);
             // 
-            // btnRecepti
+            // btnRezervacije
             // 
-            this.btnRecepti.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRecepti.Image = ((System.Drawing.Image)(resources.GetObject("btnRecepti.Image")));
-            this.btnRecepti.Location = new System.Drawing.Point(432, 356);
-            this.btnRecepti.Name = "btnRecepti";
-            this.btnRecepti.Size = new System.Drawing.Size(108, 95);
-            this.btnRecepti.TabIndex = 8;
-            this.btnRecepti.Text = "Dodaj Recept";
-            this.btnRecepti.UseVisualStyleBackColor = true;
-            this.btnRecepti.Click += new System.EventHandler(this.btnRecepti_Click);
+            this.btnRezervacije.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRezervacije.Image = ((System.Drawing.Image)(resources.GetObject("btnRezervacije.Image")));
+            this.btnRezervacije.Location = new System.Drawing.Point(432, 356);
+            this.btnRezervacije.Name = "btnRezervacije";
+            this.btnRezervacije.Size = new System.Drawing.Size(108, 95);
+            this.btnRezervacije.TabIndex = 8;
+            this.btnRezervacije.Text = "Dodaj rezervaciju";
+            this.btnRezervacije.UseVisualStyleBackColor = true;
+            this.btnRezervacije.Click += new System.EventHandler(this.btnRecepti_Click);
             // 
             // btnDodajPoslovnicu
             // 
@@ -184,7 +184,7 @@
             this.Controls.Add(this.btnKlijent);
             this.Controls.Add(this.lblTip);
             this.Controls.Add(this.btnDodajPoslovnicu);
-            this.Controls.Add(this.btnRecepti);
+            this.Controls.Add(this.btnRezervacije);
             this.Controls.Add(this.btnProdaja);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.btnKolicina);
@@ -210,7 +210,7 @@
         private System.Windows.Forms.Button btnKolicina;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Button btnProdaja;
-        private System.Windows.Forms.Button btnRecepti;
+        private System.Windows.Forms.Button btnRezervacije;
 		private System.Windows.Forms.Button btnDodajPoslovnicu;
         private System.Windows.Forms.Label lblTip;
         private System.Windows.Forms.Button btnKlijent;
