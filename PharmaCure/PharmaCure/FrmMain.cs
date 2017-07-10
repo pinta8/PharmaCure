@@ -94,8 +94,9 @@ namespace PharmaCure
         {
             if (e.KeyData==Keys.F1)
             {
-                FrmHelp h = new FrmHelp();
-                h.Show();
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisnička-dokumentacija");
+                //FrmHelp h = new FrmHelp();
+                //h.Show();
             }
         }
         //U slučaju da je prijavljen ljekarnik, treba napraviti drugačiji raspored gumba
