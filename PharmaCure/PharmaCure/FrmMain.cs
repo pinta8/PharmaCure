@@ -80,7 +80,7 @@ namespace PharmaCure
         private void btnRecepti_Click(object sender, EventArgs e)
         {
             FrmRezervacija frmRezervacije = new FrmRezervacija();
-            frmRezervacije.ShowDialog();
+            frmRezervacije.Show();
             this.Close();
         }
         //Gumb za odlazak na formu Dodavanje Poslovnice

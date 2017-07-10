@@ -135,7 +135,7 @@
             this.btnRezervacije.Name = "btnRezervacije";
             this.btnRezervacije.Size = new System.Drawing.Size(108, 95);
             this.btnRezervacije.TabIndex = 8;
-            this.btnRezervacije.Text = "Rezerviraj lijek";
+            this.btnRezervacije.Text = "Rezervacija lijeka";
             this.btnRezervacije.UseVisualStyleBackColor = true;
             this.btnRezervacije.Click += new System.EventHandler(this.btnRecepti_Click);
             // 

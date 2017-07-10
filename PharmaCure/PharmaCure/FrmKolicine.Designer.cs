@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label kolicina_skladisteLabel;
             System.Windows.Forms.Label lijekovi_IDLabel;
             System.Windows.Forms.Label poslovnica_IDLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKolicine));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.PregledLijekovaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
             this.dostupnostBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,7 +45,6 @@
             this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
             this.dostupnostTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.DostupnostTableAdapter();
             this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.LijekoviTableAdapter();
-            this.kolicina_skladisteTextBox = new System.Windows.Forms.TextBox();
             this.lijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lijekoviComboBox = new System.Windows.Forms.ComboBox();
             this.poslovniceComboBox = new System.Windows.Forms.ComboBox();
@@ -55,7 +53,6 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.PregledLijekovaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            kolicina_skladisteLabel = new System.Windows.Forms.Label();
             lijekovi_IDLabel = new System.Windows.Forms.Label();
             poslovnica_IDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).BeginInit();
@@ -65,15 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lijekoviBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // kolicina_skladisteLabel
-            // 
-            kolicina_skladisteLabel.AutoSize = true;
-            kolicina_skladisteLabel.Location = new System.Drawing.Point(105, 288);
-            kolicina_skladisteLabel.Name = "kolicina_skladisteLabel";
-            kolicina_skladisteLabel.Size = new System.Drawing.Size(91, 13);
-            kolicina_skladisteLabel.TabIndex = 2;
-            kolicina_skladisteLabel.Text = "Kolicina skladiste:";
             // 
             // lijekovi_IDLabel
             // 
@@ -161,14 +149,6 @@
             // 
             this.lijekoviTableAdapter.ClearBeforeFill = true;
             // 
-            // kolicina_skladisteTextBox
-            // 
-            this.kolicina_skladisteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dostupnostBindingSource, "Kolicina_skladiste", true));
-            this.kolicina_skladisteTextBox.Location = new System.Drawing.Point(217, 281);
-            this.kolicina_skladisteTextBox.Name = "kolicina_skladisteTextBox";
-            this.kolicina_skladisteTextBox.Size = new System.Drawing.Size(100, 20);
-            this.kolicina_skladisteTextBox.TabIndex = 3;
-            // 
             // lijekoviBindingSource
             // 
             this.lijekoviBindingSource.DataMember = "Lijekovi";
@@ -224,9 +204,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.PregledLijekovaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.PregledLijekovaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PharmaCure.Izvjestaj_KolicinaLijekova.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(13, 54);
             this.reportViewer1.Name = "reportViewer1";
@@ -239,16 +219,16 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(655, 34);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
@@ -267,8 +247,6 @@
             this.Controls.Add(this.lijekoviComboBox);
             this.Controls.Add(poslovnica_IDLabel);
             this.Controls.Add(lijekovi_IDLabel);
-            this.Controls.Add(kolicina_skladisteLabel);
-            this.Controls.Add(this.kolicina_skladisteTextBox);
             this.Controls.Add(this.btnPovratak);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmKolicine";
@@ -294,7 +272,6 @@
         private _17003_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private _17003_DBDataSetTableAdapters.DostupnostTableAdapter dostupnostTableAdapter;
         private System.Windows.Forms.BindingSource dostupnostBindingSource;
-        private System.Windows.Forms.TextBox kolicina_skladisteTextBox;
         private _17003_DBDataSetTableAdapters.LijekoviTableAdapter lijekoviTableAdapter;
         private System.Windows.Forms.BindingSource lijekoviBindingSource;
         private System.Windows.Forms.ComboBox lijekoviComboBox;

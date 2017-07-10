@@ -38,7 +38,6 @@ namespace PharmaCure
             this.poslovnicaTableAdapter.Fill(this._17003_DBDataSet.Poslovnica);
             this.reportViewer1.RefreshReport();
         }
-
         private void lijekoviComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lijekoviComboBox.SelectedItem !=null) { 
@@ -59,11 +58,6 @@ namespace PharmaCure
                 this.PregledLijekovaTableAdapter.FillById(this._17003_DBDataSet.PregledLijekova, Lijek_id, Poslovnica_id);
                 this.reportViewer1.RefreshReport();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         private void izlaz_Click(object sender, EventArgs e)
         {
