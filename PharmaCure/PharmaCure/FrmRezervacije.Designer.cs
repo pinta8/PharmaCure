@@ -57,6 +57,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnObrisiRezervaciju = new System.Windows.Forms.Button();
             lblKolicina = new System.Windows.Forms.Label();
             prezimeLabel = new System.Windows.Forms.Label();
             nazivLabel = new System.Windows.Forms.Label();
@@ -120,7 +121,7 @@
             // 
             // dodajRezervaciju
             // 
-            this.dodajRezervaciju.Location = new System.Drawing.Point(542, 39);
+            this.dodajRezervaciju.Location = new System.Drawing.Point(384, 42);
             this.dodajRezervaciju.Name = "dodajRezervaciju";
             this.dodajRezervaciju.Size = new System.Drawing.Size(146, 23);
             this.dodajRezervaciju.TabIndex = 6;
@@ -255,6 +256,7 @@
             this.pregledRezervacijaDataGridView.DataSource = this.pregledRezervacijaBindingSource;
             this.pregledRezervacijaDataGridView.Location = new System.Drawing.Point(90, 85);
             this.pregledRezervacijaDataGridView.Name = "pregledRezervacijaDataGridView";
+            this.pregledRezervacijaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pregledRezervacijaDataGridView.Size = new System.Drawing.Size(547, 220);
             this.pregledRezervacijaDataGridView.TabIndex = 12;
             // 
@@ -288,12 +290,23 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Kolicina";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
+            // btnObrisiRezervaciju
+            // 
+            this.btnObrisiRezervaciju.Location = new System.Drawing.Point(558, 42);
+            this.btnObrisiRezervaciju.Name = "btnObrisiRezervaciju";
+            this.btnObrisiRezervaciju.Size = new System.Drawing.Size(146, 23);
+            this.btnObrisiRezervaciju.TabIndex = 13;
+            this.btnObrisiRezervaciju.Text = "Obrisi rezervaciju";
+            this.btnObrisiRezervaciju.UseVisualStyleBackColor = true;
+            this.btnObrisiRezervaciju.Click += new System.EventHandler(this.btnObrisiRezervaciju_Click);
+            // 
             // FrmRezervacije
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
             this.ClientSize = new System.Drawing.Size(757, 423);
+            this.Controls.Add(this.btnObrisiRezervaciju);
             this.Controls.Add(this.pregledRezervacijaDataGridView);
             this.Controls.Add(this.txtKolicina);
             this.Controls.Add(nazivLabel);
@@ -349,5 +362,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Button btnObrisiRezervaciju;
     }
 }

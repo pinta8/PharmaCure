@@ -61,6 +61,7 @@ namespace PharmaCure
             Lijek_id = int.Parse(nazivComboBox.SelectedValue.ToString());
             this.rezervacijaTableAdapter.InsertQuery(Datum, Kolicina, Klijent_id, Lijek_id);
             this.pregledRezervacijaTableAdapter.Fill(this._17003_DBDataSet.PregledRezervacija);
+            MessageBox.Show("Uspješno ste dodali rezervaciju!");
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
@@ -68,6 +69,18 @@ namespace PharmaCure
             FrmMain frmMain = new FrmMain();
             frmMain.Show();
             this.Close();
+        }
+
+        private void btnObrisiRezervaciju_Click(object sender, EventArgs e)
+        {
+            if (pregledRezervacijaDataGridView.SelectedRows.Count != 0)
+            {
+                pregledRezervacijaDataGridView.Rows.RemoveAt(pregledRezervacijaDataGridView.CurrentRow.Index);
+                this.pregledRezervacijaBindingSource.EndEdit();
+                this.pregledRezervacijaBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this._17003_DBDataSet);
+                this.pregledRezervacijaTableAdapter.Fill(this._17003_DBDataSet.PregledRezervacija);
+            }
         }
     }
 }
