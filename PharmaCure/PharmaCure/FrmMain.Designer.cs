@@ -99,7 +99,7 @@
             this.btnKolicina.Name = "btnKolicina";
             this.btnKolicina.Size = new System.Drawing.Size(108, 95);
             this.btnKolicina.TabIndex = 5;
-            this.btnKolicina.Text = "Pregled Količine Lijekova";
+            this.btnKolicina.Text = "Pregled količine lijekova";
             this.btnKolicina.UseVisualStyleBackColor = true;
             this.btnKolicina.Click += new System.EventHandler(this.btnKolicina_Click);
             // 
@@ -135,7 +135,7 @@
             this.btnRezervacije.Name = "btnRezervacije";
             this.btnRezervacije.Size = new System.Drawing.Size(108, 95);
             this.btnRezervacije.TabIndex = 8;
-            this.btnRezervacije.Text = "Dodaj rezervaciju";
+            this.btnRezervacije.Text = "Rezerviraj lijek";
             this.btnRezervacije.UseVisualStyleBackColor = true;
             this.btnRezervacije.Click += new System.EventHandler(this.btnRecepti_Click);
             // 

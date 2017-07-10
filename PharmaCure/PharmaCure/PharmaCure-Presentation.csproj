@@ -116,11 +116,11 @@
     <Compile Include="FrmPoslovnice.Designer.cs">
       <DependentUpon>FrmPoslovnice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRezervacije.cs">
+    <Compile Include="FrmRezervacija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRezervacije.Designer.cs">
-      <DependentUpon>FrmRezervacije.cs</DependentUpon>
+    <Compile Include="FrmRezervacija.Designer.cs">
+      <DependentUpon>FrmRezervacija.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmZaposlenici.cs">
       <SubType>Form</SubType>
@@ -216,8 +216,8 @@
     <EmbeddedResource Include="FrmPoslovnice.resx">
       <DependentUpon>FrmPoslovnice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRezervacije.resx">
-      <DependentUpon>FrmRezervacije.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRezervacija.resx">
+      <DependentUpon>FrmRezervacija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmZaposlenici.resx">
       <DependentUpon>FrmZaposlenici.cs</DependentUpon>

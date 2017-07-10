@@ -79,7 +79,7 @@ namespace PharmaCure
         //Gumb za odlazak na formu za dodavanje rezervacija
         private void btnRecepti_Click(object sender, EventArgs e)
         {
-            FrmRezervacije frmRezervacije = new FrmRezervacije();
+            FrmRezervacija frmRezervacije = new FrmRezervacija();
             frmRezervacije.ShowDialog();
             this.Close();
         }
