@@ -50,8 +50,6 @@ namespace PharmaCure {
             Narudzba.ZapisiNarudzbu(nar);
             MessageBox.Show("Uspješna narudžba");
             this.Close();
-            
-            
         }
         //dodajemo kntrolu u panel 
         private void btnDodaj_Click(object sender, EventArgs e) {
@@ -82,12 +80,10 @@ namespace PharmaCure {
         {
 
         }
-
         private void flpStavke_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -96,6 +92,13 @@ namespace PharmaCure {
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+        private void FrmNabava_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisni%C4%8Dka-dokumentacija#24-nabava-lijekova");
+            }
         }
     }
 }

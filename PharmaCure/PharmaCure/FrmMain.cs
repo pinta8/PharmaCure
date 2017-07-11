@@ -111,7 +111,7 @@ namespace PharmaCure
 
         private void btnKlijent_Click(object sender, EventArgs e)
         {
-            FrmKlijenti kli = new FrmKlijenti();
+            FrmKlijent kli = new FrmKlijent();
             kli.Show();
             this.Close();
         }

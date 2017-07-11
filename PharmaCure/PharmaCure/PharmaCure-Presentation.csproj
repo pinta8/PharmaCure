@@ -98,17 +98,17 @@
     <Compile Include="FrmAzurirajZaposlenika.Designer.cs">
       <DependentUpon>FrmAzurirajZaposlenika.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmKlijenti.cs">
+    <Compile Include="FrmKlijent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmKlijenti.Designer.cs">
-      <DependentUpon>FrmKlijenti.cs</DependentUpon>
+    <Compile Include="FrmKlijent.Designer.cs">
+      <DependentUpon>FrmKlijent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmOsiguraneLijek.cs">
+    <Compile Include="FrmOsiguranjeLijek.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOsiguraneLijek.Designer.cs">
-      <DependentUpon>FrmOsiguraneLijek.cs</DependentUpon>
+    <Compile Include="FrmOsiguranjeLijek.Designer.cs">
+      <DependentUpon>FrmOsiguranjeLijek.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPoslovnice.cs">
       <SubType>Form</SubType>
@@ -207,11 +207,11 @@
     <EmbeddedResource Include="FrmAzurirajZaposlenika.resx">
       <DependentUpon>FrmAzurirajZaposlenika.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmKlijenti.resx">
-      <DependentUpon>FrmKlijenti.cs</DependentUpon>
+    <EmbeddedResource Include="FrmKlijent.resx">
+      <DependentUpon>FrmKlijent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOsiguraneLijek.resx">
-      <DependentUpon>FrmOsiguraneLijek.cs</DependentUpon>
+    <EmbeddedResource Include="FrmOsiguranjeLijek.resx">
+      <DependentUpon>FrmOsiguranjeLijek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPoslovnice.resx">
       <DependentUpon>FrmPoslovnice.cs</DependentUpon>

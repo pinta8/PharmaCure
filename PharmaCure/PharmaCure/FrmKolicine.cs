@@ -19,6 +19,7 @@ namespace PharmaCure
         public FrmKolicine()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         private void btnPovratak_Click(object sender, EventArgs e)
         {
@@ -26,15 +27,18 @@ namespace PharmaCure
             m.Show();
             this.Close();
         }
+        private void FrmKolicine_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisni%C4%8Dka-dokumentacija#23-koli%C4%8Dina-lijekova-po-poslovnicama");
+            }
+        }
         private void FrmKolicine_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_17003_DBDataSet.PregledLijekova' table. You can move, or remove it, as needed.
             this.PregledLijekovaTableAdapter.Fill(this._17003_DBDataSet.PregledLijekova);
-            // TODO: This line of code loads data into the '_17003_DBDataSet.Lijekovi' table. You can move, or remove it, as needed.
             this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
-            // TODO: This line of code loads data into the '_17003_DBDataSet.Dostupnost' table. You can move, or remove it, as needed.
             this.dostupnostTableAdapter.Fill(this._17003_DBDataSet.Dostupnost);
-            // TODO: This line of code loads data into the '_17003_DBDataSet.Poslovnica' table. You can move, or remove it, as needed.
             this.poslovnicaTableAdapter.Fill(this._17003_DBDataSet.Poslovnica);
             this.reportViewer1.RefreshReport();
         }
@@ -80,5 +84,7 @@ namespace PharmaCure
             //Add the series to the chart
             chart1.Series.Add(barSeries2);
         }
+
+        
     }
 }

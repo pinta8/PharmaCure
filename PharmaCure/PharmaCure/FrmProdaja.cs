@@ -23,8 +23,8 @@ namespace PharmaCure
         public FrmProdaja()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
-
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             int idA = int.Parse(dgvArtikli.CurrentRow.Cells[0].Value.ToString());
@@ -144,6 +144,14 @@ namespace PharmaCure
             if (txtKorisnik.Text != "")
             {
                 idR = Racun.NadjiRacun(int.Parse(txtKorisnik.Text), 4).IDRacun;
+            }
+        }
+
+        private void FrmProdaja_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisni%C4%8Dka-dokumentacija#22-prodaja-lijekova");
             }
         }
     }

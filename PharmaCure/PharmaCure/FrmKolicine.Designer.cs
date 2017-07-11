@@ -252,6 +252,7 @@
             this.Name = "FrmKolicine";
             this.Text = "FrmKolicine";
             this.Load += new System.EventHandler(this.FrmKolicine_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmKolicine_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dostupnostBindingSource)).EndInit();

@@ -115,6 +115,7 @@
             this.Name = "FrmNabava";
             this.Text = "FrmNabava";
             this.Load += new System.EventHandler(this.FrmNabava_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmNabava_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

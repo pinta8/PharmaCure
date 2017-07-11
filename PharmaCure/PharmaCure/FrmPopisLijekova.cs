@@ -37,10 +37,17 @@ namespace PharmaCure
             l = Lijek.DohvatiSveLijekove();
             dgvLijekovi.DataSource = l;
         }
-
         private void dgvLijekovi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void FrmPopisLijekova_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisni%C4%8Dka-dokumentacija#21-popis-lijekova");
+            }
         }
     }
 }

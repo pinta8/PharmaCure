@@ -67,7 +67,6 @@ namespace PharmaCure
                 }
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             ArtiklRacun.DostavljenRacun(int.Parse(txtKorisnik.Text), 2);
@@ -88,7 +87,6 @@ namespace PharmaCure
             }
             txtCijena.Text = cij.ToString() + " kn";
         }
-
         private void txtKorisnik_TextChanged(object sender, EventArgs e)
         {
             bool dane = Int32.TryParse((txtKorisnik.Text), out korisnik);
@@ -101,7 +99,6 @@ namespace PharmaCure
                 idR = Racun.NadjiRacun(int.Parse(txtKorisnik.Text), 2).IDRacun;
             }
         }
-
         private void btnRacun_Click(object sender, EventArgs e)
         {
             if (txtKorisnik.Text != "")
@@ -115,7 +112,6 @@ namespace PharmaCure
             }
             else MessageBox.Show("Morate unijeti šifru klijenta!");
         }
-
         private void btnJedan_Click(object sender, EventArgs e)
         {
             int idLijekR = int.Parse(dgvRecepti.CurrentRow.Cells[0].Value.ToString());
@@ -125,7 +121,6 @@ namespace PharmaCure
             LijekRecept.IzbrisiRecept(idLijekR, int.Parse(dgvRecepti.CurrentRow.Cells[2].Value.ToString()));
             OsvjeziListu();
         }
-
         private void btnSve_Click(object sender, EventArgs e)
         {
             foreach(DataGridViewRow row in dgvRecepti.Rows)
@@ -138,12 +133,18 @@ namespace PharmaCure
             }
             OsvjeziListu();
         }
-
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             int idA = int.Parse(dgvArtikli.CurrentRow.Cells[0].Value.ToString());
             ArtiklRacun.IzbrisiArtikl(idA, idR);
             OsvjeziListu();
+        }
+        private void FrmDostava_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisni%C4%8Dka-dokumentacija#26-dostava-lijekova");
+            }
         }
     }
 }
