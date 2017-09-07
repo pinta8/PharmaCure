@@ -33,6 +33,13 @@ namespace PharmaCure
             {
                 System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisni%C4%8Dka-dokumentacija#23-koli%C4%8Dina-lijekova-po-poslovnicama");
             }
+        }private void prikaziSve_Click(object sender, EventArgs e)
+        {
+            this.PregledLijekovaTableAdapter.Fill(this._17003_DBDataSet.PregledLijekova);
+            this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
+            this.dostupnostTableAdapter.Fill(this._17003_DBDataSet.Dostupnost);
+            this.poslovnicaTableAdapter.Fill(this._17003_DBDataSet.Poslovnica);
+            this.reportViewer1.RefreshReport();
         }
         private void FrmKolicine_Load(object sender, EventArgs e)
         {
@@ -40,7 +47,11 @@ namespace PharmaCure
             this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
             this.dostupnostTableAdapter.Fill(this._17003_DBDataSet.Dostupnost);
             this.poslovnicaTableAdapter.Fill(this._17003_DBDataSet.Poslovnica);
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
+        }
+        private void btnIzlaz_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
         private void lijekoviComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -63,10 +74,6 @@ namespace PharmaCure
                 this.reportViewer1.RefreshReport();
             }
         }
-        private void izlaz_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
         private void button2_Click(object sender, EventArgs e)
         {
             double[] xData = new double[] { 1, 2, 3, 4, 5 };
@@ -85,6 +92,6 @@ namespace PharmaCure
             chart1.Series.Add(barSeries2);
         }
 
-        
+       
     }
 }

@@ -16,6 +16,7 @@ namespace PharmaCure
         public FrmLogin()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         //Gumb za login i provjeru korisničkog imena i lozinke
 		private void button1_Click(object sender, EventArgs e) {
@@ -36,12 +37,10 @@ namespace PharmaCure
         {
             Application.Exit();
         }
-
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 
         }
-
         private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)

@@ -48,11 +48,12 @@
             this.lijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lijekoviComboBox = new System.Windows.Forms.ComboBox();
             this.poslovniceComboBox = new System.Windows.Forms.ComboBox();
-            this.izlaz = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.PregledLijekovaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.prikaziSve = new System.Windows.Forms.Button();
+            this.btnIzlaz = new System.Windows.Forms.Button();
             lijekovi_IDLabel = new System.Windows.Forms.Label();
             poslovnica_IDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).BeginInit();
@@ -102,7 +103,7 @@
             // 
             this.btnPovratak.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPovratak.BackgroundImage")));
             this.btnPovratak.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.btnPovratak.Location = new System.Drawing.Point(13, 13);
+            this.btnPovratak.Location = new System.Drawing.Point(12, 9);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 23);
             this.btnPovratak.TabIndex = 1;
@@ -180,23 +181,11 @@
             this.poslovniceComboBox.ValueMember = "ID_Poslovnica";
             this.poslovniceComboBox.SelectedIndexChanged += new System.EventHandler(this.poslovniceComboBox_SelectedIndexChanged);
             // 
-            // izlaz
-            // 
-            this.izlaz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("izlaz.BackgroundImage")));
-            this.izlaz.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.izlaz.Location = new System.Drawing.Point(273, 311);
-            this.izlaz.Name = "izlaz";
-            this.izlaz.Size = new System.Drawing.Size(75, 23);
-            this.izlaz.TabIndex = 8;
-            this.izlaz.Text = "Izlaz";
-            this.izlaz.UseVisualStyleBackColor = true;
-            this.izlaz.Click += new System.EventHandler(this.izlaz_Click);
-            // 
             // button2
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.button2.Location = new System.Drawing.Point(108, 311);
+            this.button2.Location = new System.Drawing.Point(206, 333);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
@@ -210,7 +199,7 @@
             reportDataSource1.Value = this.PregledLijekovaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PharmaCure.Izvjestaj_KolicinaLijekova.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(2, 58);
+            this.reportViewer1.Location = new System.Drawing.Point(20, 85);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(647, 233);
             this.reportViewer1.TabIndex = 13;
@@ -225,7 +214,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(655, 34);
+            this.chart1.Location = new System.Drawing.Point(673, 56);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -235,16 +224,37 @@
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
             // 
+            // prikaziSve
+            // 
+            this.prikaziSve.Location = new System.Drawing.Point(334, 56);
+            this.prikaziSve.Name = "prikaziSve";
+            this.prikaziSve.Size = new System.Drawing.Size(152, 23);
+            this.prikaziSve.TabIndex = 15;
+            this.prikaziSve.Text = "Prikazi sve rezervacije";
+            this.prikaziSve.UseVisualStyleBackColor = true;
+            this.prikaziSve.Click += new System.EventHandler(this.prikaziSve_Click);
+            // 
+            // btnIzlaz
+            // 
+            this.btnIzlaz.Location = new System.Drawing.Point(862, 5);
+            this.btnIzlaz.Name = "btnIzlaz";
+            this.btnIzlaz.Size = new System.Drawing.Size(75, 23);
+            this.btnIzlaz.TabIndex = 16;
+            this.btnIzlaz.Text = "Izlaz";
+            this.btnIzlaz.UseVisualStyleBackColor = true;
+            this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
+            // 
             // FrmKolicine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(985, 392);
+            this.ClientSize = new System.Drawing.Size(975, 424);
+            this.Controls.Add(this.btnIzlaz);
+            this.Controls.Add(this.prikaziSve);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.izlaz);
             this.Controls.Add(this.poslovniceComboBox);
             this.Controls.Add(this.lijekoviComboBox);
             this.Controls.Add(poslovnica_IDLabel);
@@ -279,11 +289,12 @@
         private System.Windows.Forms.BindingSource lijekoviBindingSource;
         private System.Windows.Forms.ComboBox lijekoviComboBox;
         private System.Windows.Forms.ComboBox poslovniceComboBox;
-        private System.Windows.Forms.Button izlaz;
         private System.Windows.Forms.Button button2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource PregledLijekovaBindingSource;
         private _17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter PregledLijekovaTableAdapter;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button prikaziSve;
+        private System.Windows.Forms.Button btnIzlaz;
     }
 }
