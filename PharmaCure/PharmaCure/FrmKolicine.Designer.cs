@@ -66,7 +66,8 @@
             // lijekovi_IDLabel
             // 
             lijekovi_IDLabel.AutoSize = true;
-            lijekovi_IDLabel.Location = new System.Drawing.Point(404, 21);
+            lijekovi_IDLabel.BackColor = System.Drawing.Color.Transparent;
+            lijekovi_IDLabel.Location = new System.Drawing.Point(402, 15);
             lijekovi_IDLabel.Name = "lijekovi_IDLabel";
             lijekovi_IDLabel.Size = new System.Drawing.Size(61, 13);
             lijekovi_IDLabel.TabIndex = 4;
@@ -75,7 +76,8 @@
             // poslovnica_IDLabel
             // 
             poslovnica_IDLabel.AutoSize = true;
-            poslovnica_IDLabel.Location = new System.Drawing.Point(167, 20);
+            poslovnica_IDLabel.BackColor = System.Drawing.Color.Transparent;
+            poslovnica_IDLabel.Location = new System.Drawing.Point(181, 15);
             poslovnica_IDLabel.Name = "poslovnica_IDLabel";
             poslovnica_IDLabel.Size = new System.Drawing.Size(88, 13);
             poslovnica_IDLabel.TabIndex = 5;
@@ -159,7 +161,7 @@
             this.lijekoviComboBox.DataSource = this.lijekoviBindingSource;
             this.lijekoviComboBox.DisplayMember = "Naziv";
             this.lijekoviComboBox.FormattingEnabled = true;
-            this.lijekoviComboBox.Location = new System.Drawing.Point(496, 12);
+            this.lijekoviComboBox.Location = new System.Drawing.Point(469, 9);
             this.lijekoviComboBox.Name = "lijekoviComboBox";
             this.lijekoviComboBox.Size = new System.Drawing.Size(121, 21);
             this.lijekoviComboBox.TabIndex = 6;
@@ -208,9 +210,9 @@
             reportDataSource1.Value = this.PregledLijekovaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PharmaCure.Izvjestaj_KolicinaLijekova.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(13, 54);
+            this.reportViewer1.Location = new System.Drawing.Point(2, 58);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(604, 218);
+            this.reportViewer1.Size = new System.Drawing.Size(647, 233);
             this.reportViewer1.TabIndex = 13;
             // 
             // PregledLijekovaTableAdapter
