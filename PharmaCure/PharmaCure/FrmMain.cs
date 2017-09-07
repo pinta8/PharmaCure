@@ -22,17 +22,14 @@ namespace PharmaCure
             if (ulogaDjelatnika == 2) {
                 PomakniGumbe();
             }
-            else lblTip.Text = "Prijavljeni ste kao administrator";
-           
-            
+            else lblTip.Text = "Prijavljeni ste kao administrator";            
         }
         //Log-out (povratak na formu login)
         private void btnIzlaz_Click_1(object sender, EventArgs e)
         {
             FrmLogin l = new FrmLogin();
             l.Show();
-            this.Close();
-            
+            this.Close(); 
         }
         //Gumb za odlazak na formu Zaposlenici
         private void btnZaposlenici_Click(object sender, EventArgs e)

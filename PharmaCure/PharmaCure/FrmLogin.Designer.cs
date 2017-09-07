@@ -47,7 +47,7 @@
             this.btnPrijaviSe.Location = new System.Drawing.Point(94, 191);
             this.btnPrijaviSe.Name = "btnPrijaviSe";
             this.btnPrijaviSe.Size = new System.Drawing.Size(85, 42);
-            this.btnPrijaviSe.TabIndex = 0;
+            this.btnPrijaviSe.TabIndex = 3;
             this.btnPrijaviSe.Text = "Prijavi se";
             this.btnPrijaviSe.UseVisualStyleBackColor = true;
             this.btnPrijaviSe.Click += new System.EventHandler(this.button1_Click);
@@ -80,7 +80,7 @@
             this.tbxKorisnickoIme.Location = new System.Drawing.Point(94, 72);
             this.tbxKorisnickoIme.Name = "tbxKorisnickoIme";
             this.tbxKorisnickoIme.Size = new System.Drawing.Size(207, 23);
-            this.tbxKorisnickoIme.TabIndex = 3;
+            this.tbxKorisnickoIme.TabIndex = 1;
             // 
             // tbxLozinka
             // 
@@ -89,7 +89,7 @@
             this.tbxLozinka.Name = "tbxLozinka";
             this.tbxLozinka.PasswordChar = '*';
             this.tbxLozinka.Size = new System.Drawing.Size(207, 23);
-            this.tbxLozinka.TabIndex = 4;
+            this.tbxLozinka.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -109,8 +109,8 @@
             this.button1.Location = new System.Drawing.Point(216, 191);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 42);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Odustani";
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Izlaz";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -131,6 +131,7 @@
             this.Name = "FrmLogin";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

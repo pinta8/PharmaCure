@@ -14,10 +14,8 @@ namespace PharmaCure {
         private List<Poslovnica> poslovnice = new List<Poslovnica>();
         public FrmPoslovnice() {
 			InitializeComponent();
-            OsvjeziPoslovnice();
-            
+            OsvjeziPoslovnice();    
         }
-
         //Upisivanje Nove Poslovnice u Bazu
 		private void btnDodaj_Click(object sender, EventArgs e) {
             FrmAzurirajPoslovnicu az = new FrmAzurirajPoslovnicu();
@@ -39,12 +37,10 @@ namespace PharmaCure {
            az.ShowDialog();
            OsvjeziPoslovnice();  
         }
-
         private void btnIzbrisi_Click(object sender, EventArgs e) {
             Poslovnica.IzbrisiPoslovnicuIzBaze(poslovnice[dgvPoslovnice.SelectedRows[0].Index]);
             OsvjeziPoslovnice();
         }
-
         private void FrmPoslovnice_Load(object sender, EventArgs e)
         {
 
