@@ -16,16 +16,11 @@ namespace PharmaCure
     {
         public int Lijek_id { get; set; }
         public int Poslovnica_id { get; set; }
+        
         public FrmKolicine()
         {
             InitializeComponent();
             this.KeyPreview = true;
-        }
-        private void btnPovratak_Click(object sender, EventArgs e)
-        {
-            FrmMain m = new FrmMain();
-            m.Show();
-            this.Close();
         }
         private void FrmKolicine_KeyDown(object sender, KeyEventArgs e)
         {
@@ -47,25 +42,52 @@ namespace PharmaCure
             this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
             this.dostupnostTableAdapter.Fill(this._17003_DBDataSet.Dostupnost);
             this.poslovnicaTableAdapter.Fill(this._17003_DBDataSet.Poslovnica);
+            poslovniceComboBox.Text = "";
+            lijekoviComboBox.Text = "";
             //this.reportViewer1.RefreshReport();
         }
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-        private void lijekoviComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnPovratak_Click_1(object sender, EventArgs e)
         {
-            if (lijekoviComboBox.SelectedItem !=null) { 
-                Lijek_id = int.Parse(lijekoviComboBox.SelectedValue.ToString());
-                Poslovnica_id = int.Parse(poslovniceComboBox.SelectedValue.ToString());
-                this.dostupnostTableAdapter.FillById(this._17003_DBDataSet.Dostupnost, Lijek_id, Poslovnica_id);
-                this.PregledLijekovaTableAdapter.FillById(this._17003_DBDataSet.PregledLijekova, Lijek_id, Poslovnica_id);
-                this.reportViewer1.RefreshReport();
-            }
+            FrmMain m = new FrmMain();
+            m.Show();
+            this.Close();
         }
         private void poslovniceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (poslovniceComboBox.SelectedItem != null)
+            {
+
+                Lijek_id = int.Parse(lijekoviComboBox.SelectedValue.ToString());
+                Poslovnica_id = int.Parse(poslovniceComboBox.SelectedValue.ToString());
+                this.dostupnostTableAdapter.FillById(this._17003_DBDataSet.Dostupnost, Lijek_id, Poslovnica_id);
+                this.PregledLijekovaTableAdapter.selectPremaPoslovnici(this._17003_DBDataSet.PregledLijekova, Poslovnica_id);
+                Series podaciGraf = new Series();
+                grafStatistika.DataSource = PregledLijekovaBindingSource;
+                //podaciGraf.XValueMember = "NazivLijeka";
+                //podaciGraf.YValueMembers = "Kolicina_skladiste";
+                grafStatistika.DataBind();
+                //ChartArea ChartArea2 = new ChartArea("ChartArea2");
+                //grafStatistika.ChartAreas.Add(ChartArea2);
+                //Create the series using just the y data
+                //Series barSeries2 = new Series();
+                //barSeries2.Points.DataBindY(yData);
+                //barSeries2.ChartType = SeriesChartType.Column;
+                //barSeries2.ChartArea = "Second";
+                //Add the series to the chart
+                //podaciGraf.ChartType = SeriesChartType.Column;
+                //podaciGraf.ChartArea = "ChartArea1";
+                //grafStatistika.Series.Add(podaciGraf);
+                //this.PregledLijekovaTableAdapter.FillById(this._17003_DBDataSet.PregledLijekova, Lijek_id, Poslovnica_id);
+                this.reportViewer1.RefreshReport();
+            }
+        }
+        private void lijekoviComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lijekoviComboBox.SelectedItem != null)
             {
                 Lijek_id = int.Parse(lijekoviComboBox.SelectedValue.ToString());
                 Poslovnica_id = int.Parse(poslovniceComboBox.SelectedValue.ToString());
@@ -74,6 +96,7 @@ namespace PharmaCure
                 this.reportViewer1.RefreshReport();
             }
         }
+        
         private void button2_Click(object sender, EventArgs e)
         {
             double[] xData = new double[] { 1, 2, 3, 4, 5 };
@@ -81,7 +104,7 @@ namespace PharmaCure
             //Vertical bar chart
             //create another area and add it to the chart
             ChartArea area2 = new ChartArea("Second");
-            chart1.ChartAreas.Add(area2);
+            grafStatistika.ChartAreas.Add(area2);
             //Create the series using just the y data
             Series barSeries2 = new Series();
             barSeries2.Points.DataBindY(yData);
@@ -89,9 +112,12 @@ namespace PharmaCure
             barSeries2.ChartType = SeriesChartType.Column;
             barSeries2.ChartArea = "Second";
             //Add the series to the chart
-            chart1.Series.Add(barSeries2);
+            grafStatistika.Series.Add(barSeries2);
         }
 
-       
+        private void btnCrtaj_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
