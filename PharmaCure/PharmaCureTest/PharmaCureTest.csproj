@@ -53,8 +53,13 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodedUITest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PharmaCure\PharmaCure-Presentation.csproj">
+      <Project>{f564b954-4a20-43a1-8eb2-f19c812fddb2}</Project>
+      <Name>PharmaCure-Presentation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -16,7 +16,6 @@ namespace PharmaCure
     {
         public int Lijek_id { get; set; }
         public int Poslovnica_id { get; set; }
-        
         public FrmKolicine()
         {
             InitializeComponent();
@@ -44,7 +43,6 @@ namespace PharmaCure
             this.poslovnicaTableAdapter.Fill(this._17003_DBDataSet.Poslovnica);
             poslovniceComboBox.Text = "";
             lijekoviComboBox.Text = "";
-            //this.reportViewer1.RefreshReport();
         }
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
@@ -67,21 +65,7 @@ namespace PharmaCure
                 this.PregledLijekovaTableAdapter.selectPremaPoslovnici(this._17003_DBDataSet.PregledLijekova, Poslovnica_id);
                 Series podaciGraf = new Series();
                 grafStatistika.DataSource = PregledLijekovaBindingSource;
-                //podaciGraf.XValueMember = "NazivLijeka";
-                //podaciGraf.YValueMembers = "Kolicina_skladiste";
                 grafStatistika.DataBind();
-                //ChartArea ChartArea2 = new ChartArea("ChartArea2");
-                //grafStatistika.ChartAreas.Add(ChartArea2);
-                //Create the series using just the y data
-                //Series barSeries2 = new Series();
-                //barSeries2.Points.DataBindY(yData);
-                //barSeries2.ChartType = SeriesChartType.Column;
-                //barSeries2.ChartArea = "Second";
-                //Add the series to the chart
-                //podaciGraf.ChartType = SeriesChartType.Column;
-                //podaciGraf.ChartArea = "ChartArea1";
-                //grafStatistika.Series.Add(podaciGraf);
-                //this.PregledLijekovaTableAdapter.FillById(this._17003_DBDataSet.PregledLijekova, Lijek_id, Poslovnica_id);
                 this.reportViewer1.RefreshReport();
             }
         }
@@ -95,29 +79,6 @@ namespace PharmaCure
                 this.PregledLijekovaTableAdapter.FillById(this._17003_DBDataSet.PregledLijekova, Lijek_id, Poslovnica_id);
                 this.reportViewer1.RefreshReport();
             }
-        }
-        
-        private void button2_Click(object sender, EventArgs e)
-        {
-            double[] xData = new double[] { 1, 2, 3, 4, 5 };
-            double[] yData = new double[] { 6, 7, 3, 4, 5 };
-            //Vertical bar chart
-            //create another area and add it to the chart
-            ChartArea area2 = new ChartArea("Second");
-            grafStatistika.ChartAreas.Add(area2);
-            //Create the series using just the y data
-            Series barSeries2 = new Series();
-            barSeries2.Points.DataBindY(yData);
-            //Set the chart type, column; vertical bars
-            barSeries2.ChartType = SeriesChartType.Column;
-            barSeries2.ChartArea = "Second";
-            //Add the series to the chart
-            grafStatistika.Series.Add(barSeries2);
-        }
-
-        private void btnCrtaj_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
