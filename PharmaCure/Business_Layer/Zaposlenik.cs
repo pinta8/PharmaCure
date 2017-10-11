@@ -83,7 +83,15 @@ namespace Business_Layer
         static public Zaposlenik DohvatiZaposlenika(string korisnickoIme, string lozinka) {
 			DBCon baza = new DBCon();
 			SqlCommand command = new SqlCommand("SELECT ID_Djelatnika,Ime,Lozinka,ID_Poslovnice,ID_Tip FROM Djelatnik WHERE Ime='" + korisnickoIme+"' AND Lozinka = '"+lozinka+"'");
-			DataTable dt = baza.DohvatiDT(command);
+            try
+            {
+                DataTable dt = baza.DohvatiDT(command);
+                return null;
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+
+                DataTable dt = baza.DohvatiDT(command);
 			if(dt.Rows.Count == 0) {
 				return null;
 			}
@@ -100,6 +108,9 @@ namespace Business_Layer
                 TipPrijavljenog = z.tipId;
 				return z;
 			}	
+
+            }
+			
             	
 		}
         //funkcija za zapisivanje zaposlenika u bazu

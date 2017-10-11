@@ -51,7 +51,7 @@
             this.btnZaposlenici.Name = "btnZaposlenici";
             this.btnZaposlenici.Size = new System.Drawing.Size(108, 95);
             this.btnZaposlenici.TabIndex = 8;
-            this.btnZaposlenici.Text = "Dodaj Zaposlenika";
+            this.btnZaposlenici.Text = "Dodavanje djelatnika";
             this.btnZaposlenici.UseVisualStyleBackColor = false;
             this.btnZaposlenici.Click += new System.EventHandler(this.btnZaposlenici_Click);
             // 
@@ -63,7 +63,7 @@
             this.btnNabava.Name = "btnNabava";
             this.btnNabava.Size = new System.Drawing.Size(108, 95);
             this.btnNabava.TabIndex = 4;
-            this.btnNabava.Text = "Nabava Lijekova";
+            this.btnNabava.Text = "Nabava lijekova";
             this.btnNabava.UseVisualStyleBackColor = true;
             this.btnNabava.Click += new System.EventHandler(this.btnNabava_Click);
             // 
@@ -75,7 +75,7 @@
             this.btnPopisL.Name = "btnPopisL";
             this.btnPopisL.Size = new System.Drawing.Size(108, 95);
             this.btnPopisL.TabIndex = 1;
-            this.btnPopisL.Text = "Popis Lijekova";
+            this.btnPopisL.Text = "Popis lijekova";
             this.btnPopisL.UseVisualStyleBackColor = true;
             this.btnPopisL.Click += new System.EventHandler(this.btnPopisL_Click);
             // 
@@ -87,7 +87,7 @@
             this.btnDostava.Name = "btnDostava";
             this.btnDostava.Size = new System.Drawing.Size(108, 95);
             this.btnDostava.TabIndex = 5;
-            this.btnDostava.Text = "Dostava Lijekova";
+            this.btnDostava.Text = "Dostava lijekova";
             this.btnDostava.UseVisualStyleBackColor = true;
             this.btnDostava.Click += new System.EventHandler(this.btnDostava_Click);
             // 
@@ -123,7 +123,7 @@
             this.btnProdaja.Name = "btnProdaja";
             this.btnProdaja.Size = new System.Drawing.Size(108, 95);
             this.btnProdaja.TabIndex = 2;
-            this.btnProdaja.Text = "Prodaja Lijekova";
+            this.btnProdaja.Text = "Prodaja lijekova";
             this.btnProdaja.UseVisualStyleBackColor = true;
             this.btnProdaja.Click += new System.EventHandler(this.btnProdaja_Click);
             // 
@@ -147,7 +147,7 @@
             this.btnDodajPoslovnicu.Name = "btnDodajPoslovnicu";
             this.btnDodajPoslovnicu.Size = new System.Drawing.Size(108, 95);
             this.btnDodajPoslovnicu.TabIndex = 7;
-            this.btnDodajPoslovnicu.Text = "Dodaj Poslovnicu";
+            this.btnDodajPoslovnicu.Text = "Dodavanje poslovnice";
             this.btnDodajPoslovnicu.UseVisualStyleBackColor = true;
             this.btnDodajPoslovnicu.Click += new System.EventHandler(this.btnDodajPoslovnicu_Click);
             // 
@@ -171,7 +171,7 @@
             this.btnKlijent.Name = "btnKlijent";
             this.btnKlijent.Size = new System.Drawing.Size(108, 95);
             this.btnKlijent.TabIndex = 6;
-            this.btnKlijent.Text = "Dodaj Klijenta";
+            this.btnKlijent.Text = "Dodavanje klijenta";
             this.btnKlijent.UseVisualStyleBackColor = true;
             this.btnKlijent.Click += new System.EventHandler(this.btnKlijent_Click);
             // 
