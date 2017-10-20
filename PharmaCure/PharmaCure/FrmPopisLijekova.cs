@@ -36,6 +36,10 @@ namespace PharmaCure
         //na form loadu poziva Osvježi listu popisa lijekova (ispisuje na datagridview)
         private void FrmPopisLijekova_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the '_17003_DBDataSet.Kategorija' table. You can move, or remove it, as needed.
+            this.kategorijaTableAdapter.Fill(this._17003_DBDataSet.Kategorija);
+            // TODO: This line of code loads data into the '_17003_DBDataSet.Kategorija' table. You can move, or remove it, as needed.
+            this.kategorijaTableAdapter.Fill(this._17003_DBDataSet.Kategorija);
             //this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
             OsvjeziListu();
         }
@@ -55,10 +59,21 @@ namespace PharmaCure
                 puni_opisTextBox.Width = size.Width;
             }
         }
-
         private void btnUnesi_Click(object sender, EventArgs e)
         {
-
+            string nazivLijeka = nazivTextBox.Text;
+            string kratkiOpis = kratki_opisTextBox.Text;
+            string opis = puni_opisTextBox.Text;
+            DateTime datumProizvodnje = datum_proizvodnjeDateTimePicker.Value;
+            DateTime datumIsteka = datum_istekaDateTimePicker.Value;
+            int cijena = int.Parse(cijenaTextBox.Text);
+            string zemljaPorijekla = zemlja_porijeklaTextBox.Text;
+            int kategorijaID = int.Parse(nazivComboBox.SelectedValue.ToString());
+            int lijekID = int.Parse(this.lijekoviTableAdapter.VratiZadnjiID().ToString())+1;
+            MessageBox.Show(kategorijaID.ToString());
+            this.lijekoviTableAdapter.InsertQuery(lijekID,  nazivLijeka, kratkiOpis, opis, datumProizvodnje.ToString(), datumIsteka.ToString(), cijena, zemljaPorijekla, kategorijaID);
+            MessageBox.Show("Uspješno ste dodali lijek u listu!");
+            OsvjeziListu();
         }
     }
 }
