@@ -26,6 +26,10 @@ namespace PharmaCure
             m.Show();
             this.Close();
         }
+        private void btnIzlaz_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         private void FrmPopisLijekova_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)
@@ -36,12 +40,18 @@ namespace PharmaCure
         //na form loadu poziva Osvježi listu popisa lijekova (ispisuje na datagridview)
         private void FrmPopisLijekova_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_17003_DBDataSet.Kategorija' table. You can move, or remove it, as needed.
-            this.kategorijaTableAdapter.Fill(this._17003_DBDataSet.Kategorija);
-            // TODO: This line of code loads data into the '_17003_DBDataSet.Kategorija' table. You can move, or remove it, as needed.
+            int sirinaUnosa = puni_opisTextBox.Width;
             this.kategorijaTableAdapter.Fill(this._17003_DBDataSet.Kategorija);
             //this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
-            OsvjeziListu();
+
+            //nazivTextBox.ResetText();
+            //kratki_opisTextBox.ResetText();
+            //puni_opisTextBox.ResetText();
+            //puni_opisTextBox.Width = sirinaUnosa;
+            //cijenaTextBox.ResetText();
+            //zemlja_porijeklaTextBox.ResetText();
+            nazivComboBox.SelectedIndex = -1;
+            OsvjeziListu();      
         }
         //funkcija za dohvat nove liste iz baze i ispis iste na datagridview
         private void OsvjeziListu()
@@ -61,6 +71,7 @@ namespace PharmaCure
         }
         private void btnUnesi_Click(object sender, EventArgs e)
         {
+            int lijekID = int.Parse(this.lijekoviTableAdapter.VratiZadnjiID().ToString())+1;
             string nazivLijeka = nazivTextBox.Text;
             string kratkiOpis = kratki_opisTextBox.Text;
             string opis = puni_opisTextBox.Text;
@@ -69,11 +80,30 @@ namespace PharmaCure
             int cijena = int.Parse(cijenaTextBox.Text);
             string zemljaPorijekla = zemlja_porijeklaTextBox.Text;
             int kategorijaID = int.Parse(nazivComboBox.SelectedValue.ToString());
-            int lijekID = int.Parse(this.lijekoviTableAdapter.VratiZadnjiID().ToString())+1;
-            MessageBox.Show(kategorijaID.ToString());
             this.lijekoviTableAdapter.InsertQuery(lijekID,  nazivLijeka, kratkiOpis, opis, datumProizvodnje.ToString(), datumIsteka.ToString(), cijena, zemljaPorijekla, kategorijaID);
-            MessageBox.Show("Uspješno ste dodali lijek u listu!");
+            MessageBox.Show("Lijek je uspješno dodan u bazu podataka!");
             OsvjeziListu();
+        }
+
+        private void btnBrisi_Click(object sender, EventArgs e)
+        {
+            int lijekID = int.Parse(dgvLijekovi.CurrentRow.Cells[0].Value.ToString());
+            this.lijekoviTableAdapter.DeleteQuery(lijekID);
+            MessageBox.Show("Lijek je uspješno izbrisan iz baze podataka!");
+            OsvjeziListu();
+        }
+
+        private void btnPromijeni_Click(object sender, EventArgs e)
+        {
+            int lijekID = int.Parse(dgvLijekovi.CurrentRow.Cells[0].Value.ToString());
+            string nazivLijeka = dgvLijekovi.CurrentRow.Cells[1].Value.ToString();
+            string kratkiOpis = dgvLijekovi.CurrentRow.Cells[2].Value.ToString();
+            DateTime datumProizvodnje = DateTime.Parse(dgvLijekovi.CurrentRow.Cells[3].Value.ToString());
+            DateTime datumIsteka = DateTime.Parse(dgvLijekovi.CurrentRow.Cells[4].Value.ToString());
+            int cijena = int.Parse(dgvLijekovi.CurrentRow.Cells[5].Value.ToString());
+            string zemljaPorijekla = dgvLijekovi.CurrentRow.Cells[6].Value.ToString();
+            this.lijekoviTableAdapter.UpdateQuery(nazivLijeka, kratkiOpis, datumProizvodnje.ToString(), datumIsteka.ToString(), cijena, zemljaPorijekla, lijekID, lijekID);
+            MessageBox.Show("Uspješno su promijenjeni podaci!");
         }
     }
 }

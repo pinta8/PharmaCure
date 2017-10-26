@@ -12590,7 +12590,7 @@ SELECT ID_Lijek, Naziv, Kratki_opis, Puni_opis, Datum_proizvodnje, Datum_isteka,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Lijek, Naziv, Kratki_opis, Puni_opis, Datum_proizvodnje, Datum_isteka, " +
@@ -12625,37 +12625,23 @@ SELECT ID_Lijek, Naziv, Kratki_opis, Puni_opis, Datum_proizvodnje, Datum_isteka,
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kategorija_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Kategorija_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"INSERT INTO Lijekovi
-                         (Naziv, Kratki_opis, Puni_opis, Datum_proizvodnje, Datum_isteka, Cijena, Zemlja_porijekla, Kategorija_ID)
-VALUES        (@Naziv,@Kratki_opis,@Puni_opis,@Datum_proizvodnje,@Datum_isteka,@Cijena,@Zemlja_porijekla,@Kategorija_ID); 
+            this._commandCollection[4].CommandText = @"UPDATE       Lijekovi
+SET                Naziv = @Naziv, Kratki_opis = @Kratki_opis, Datum_proizvodnje = @Datum_proizvodnje, Datum_isteka = @Datum_isteka, Cijena = @Cijena, Zemlja_porijekla = @Zemlja_porijekla
+WHERE        (ID_Lijek = @idLijek); 
 SELECT ID_Lijek, Naziv, Kratki_opis, Puni_opis, Datum_proizvodnje, Datum_isteka, Cijena, Zemlja_porijekla, Kategorija_ID FROM Lijekovi WHERE (ID_Lijek = @ID_Lijek)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kratki_opis", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Kratki_opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Puni_opis", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Puni_opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_proizvodnje", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_proizvodnje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_isteka", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_isteka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cijena", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Cijena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zemlja_porijekla", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Zemlja_porijekla", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kategorija_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Kategorija_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Lijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Lijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"INSERT INTO [dbo].[Lijekovi] ( [Naziv], [Kratki_opis], [Puni_opis], [Datum_proizvodnje], [Datum_isteka], [Cijena], [Zemlja_porijekla], [Kategorija_ID]) VALUES (@ID_Lijek, @Naziv, @Kratki_opis, @Puni_opis, @Datum_proizvodnje, @Datum_isteka, @Cijena, @Zemlja_porijekla, @Kategorija_ID);
-SELECT ID_Lijek, Naziv, Kratki_opis, Puni_opis, Datum_proizvodnje, Datum_isteka, Cijena, Zemlja_porijekla, Kategorija_ID FROM Lijekovi ";
+            this._commandCollection[5].CommandText = "SELECT        MAX(ID_Lijek) AS Expr1\r\nFROM            Lijekovi";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Lijek", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Kratki_opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kratki_opis", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Puni_opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Puni_opis", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_proizvodnje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_proizvodnje", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Datum_isteka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum_isteka", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Cijena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cijena", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Zemlja_porijekla", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zemlja_porijekla", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Kategorija_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        MAX(ID_Lijek) AS Expr1\r\nFROM            Lijekovi";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13015,8 +13001,8 @@ SELECT ID_Lijek, Naziv, Kratki_opis, Puni_opis, Datum_proizvodnje, Datum_isteka,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery1(string Naziv, string Kratki_opis, string Puni_opis, string Datum_proizvodnje, string Datum_isteka, int Cijena, string Zemlja_porijekla, int Kategorija_ID, int ID_Lijek) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string Naziv, string Kratki_opis, string Datum_proizvodnje, string Datum_isteka, int Cijena, string Zemlja_porijekla, int idLijek, int ID_Lijek) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((Naziv == null)) {
                 throw new global::System.ArgumentNullException("Naziv");
@@ -13030,94 +13016,27 @@ SELECT ID_Lijek, Naziv, Kratki_opis, Puni_opis, Datum_proizvodnje, Datum_isteka,
             else {
                 command.Parameters[1].Value = ((string)(Kratki_opis));
             }
-            if ((Puni_opis == null)) {
-                throw new global::System.ArgumentNullException("Puni_opis");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Puni_opis));
-            }
             if ((Datum_proizvodnje == null)) {
                 throw new global::System.ArgumentNullException("Datum_proizvodnje");
             }
             else {
-                command.Parameters[3].Value = ((string)(Datum_proizvodnje));
+                command.Parameters[2].Value = ((string)(Datum_proizvodnje));
             }
             if ((Datum_isteka == null)) {
                 throw new global::System.ArgumentNullException("Datum_isteka");
             }
             else {
-                command.Parameters[4].Value = ((string)(Datum_isteka));
+                command.Parameters[3].Value = ((string)(Datum_isteka));
             }
-            command.Parameters[5].Value = ((int)(Cijena));
+            command.Parameters[4].Value = ((int)(Cijena));
             if ((Zemlja_porijekla == null)) {
                 throw new global::System.ArgumentNullException("Zemlja_porijekla");
             }
             else {
-                command.Parameters[6].Value = ((string)(Zemlja_porijekla));
+                command.Parameters[5].Value = ((string)(Zemlja_porijekla));
             }
-            command.Parameters[7].Value = ((int)(Kategorija_ID));
-            command.Parameters[8].Value = ((int)(ID_Lijek));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery2(string ID_Lijek, string Naziv, string Kratki_opis, string Puni_opis, string Datum_proizvodnje, int Datum_isteka, string Cijena, int Zemlja_porijekla) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
-            if ((ID_Lijek == null)) {
-                throw new global::System.ArgumentNullException("ID_Lijek");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(ID_Lijek));
-            }
-            if ((Naziv == null)) {
-                throw new global::System.ArgumentNullException("Naziv");
-            }
-            else {
-                command.Parameters[1].Value = ((string)(Naziv));
-            }
-            if ((Kratki_opis == null)) {
-                throw new global::System.ArgumentNullException("Kratki_opis");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Kratki_opis));
-            }
-            if ((Puni_opis == null)) {
-                throw new global::System.ArgumentNullException("Puni_opis");
-            }
-            else {
-                command.Parameters[3].Value = ((string)(Puni_opis));
-            }
-            if ((Datum_proizvodnje == null)) {
-                throw new global::System.ArgumentNullException("Datum_proizvodnje");
-            }
-            else {
-                command.Parameters[4].Value = ((string)(Datum_proizvodnje));
-            }
-            command.Parameters[5].Value = ((int)(Datum_isteka));
-            if ((Cijena == null)) {
-                throw new global::System.ArgumentNullException("Cijena");
-            }
-            else {
-                command.Parameters[6].Value = ((string)(Cijena));
-            }
-            command.Parameters[7].Value = ((int)(Zemlja_porijekla));
+            command.Parameters[6].Value = ((int)(idLijek));
+            command.Parameters[7].Value = ((int)(ID_Lijek));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -13139,7 +13058,7 @@ SELECT ID_Lijek, Naziv, Kratki_opis, Puni_opis, Datum_proizvodnje, Datum_isteka,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object VratiZadnjiID() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
