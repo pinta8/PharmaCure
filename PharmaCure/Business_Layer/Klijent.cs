@@ -13,8 +13,7 @@ namespace Business_Layer
     public class Klijent
     {
         public int idKlijent { get; set; }
-        public string Ime { get; set; }
-        public string Prezime { get; set; }
+        public string ImePrezime { get; set; }
         public int osiguranje { get; set; }
         
         //Metoda Koja vraća listu svih Klijenata
@@ -47,7 +46,7 @@ namespace Business_Layer
         static public void DodajKlijenta(string ime, string prezime, int osiguranje)
         {
             DBCon baza = new DBCon();
-            SqlCommand command = new SqlCommand("INSERT INTO Klijent ( Ime, Prezime, ID_Osiguranje) VALUES (" + ime + ", " + prezime + ", " + osiguranje + ")");
+            SqlCommand command = new SqlCommand("INSERT INTO Klijent ( ImePrezime, ID_Osiguranje) VALUES (" + ime + ", " + prezime + ", " + osiguranje + ")");
             baza.IzvrsiUpit(command);
         }
 
@@ -56,8 +55,8 @@ namespace Business_Layer
         {
             Klijent klije = new Klijent();
             klije.idKlijent = int.Parse(row["ID_Klijent"].ToString());
-            klije.Ime = row["Ime"].ToString();
-            klije.Prezime = row["Prezime"].ToString();
+            klije.ImePrezime = row["ImePrezime"].ToString();
+            //klije.Prezime = row["Prezime"].ToString();
             klije.osiguranje = int.Parse(row["ID_Osiguranje"].ToString());
             return klije;
         }
