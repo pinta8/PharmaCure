@@ -105,7 +105,7 @@
             this.cmbLijek.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbLijek.FormattingEnabled = true;
             this.cmbLijek.Location = new System.Drawing.Point(786, 25);
-            this.cmbLijek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbLijek.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLijek.Name = "cmbLijek";
             this.cmbLijek.Size = new System.Drawing.Size(158, 25);
             this.cmbLijek.TabIndex = 6;
@@ -114,7 +114,7 @@
             // 
             this.txtKorisnik.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtKorisnik.Location = new System.Drawing.Point(118, 27);
-            this.txtKorisnik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKorisnik.Margin = new System.Windows.Forms.Padding(2);
             this.txtKorisnik.Name = "txtKorisnik";
             this.txtKorisnik.Size = new System.Drawing.Size(125, 23);
             this.txtKorisnik.TabIndex = 7;
@@ -149,7 +149,7 @@
             this.txtCijena.Enabled = false;
             this.txtCijena.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtCijena.Location = new System.Drawing.Point(1044, 498);
-            this.txtCijena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCijena.Margin = new System.Windows.Forms.Padding(2);
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.ReadOnly = true;
             this.txtCijena.Size = new System.Drawing.Size(95, 23);
@@ -172,7 +172,7 @@
             this.btnRacun.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRacun.BackgroundImage")));
             this.btnRacun.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnRacun.Location = new System.Drawing.Point(138, 498);
-            this.btnRacun.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRacun.Margin = new System.Windows.Forms.Padding(2);
             this.btnRacun.Name = "btnRacun";
             this.btnRacun.Size = new System.Drawing.Size(126, 27);
             this.btnRacun.TabIndex = 12;
@@ -185,7 +185,7 @@
             this.dgvRecepti.BackgroundColor = System.Drawing.Color.White;
             this.dgvRecepti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecepti.Location = new System.Drawing.Point(698, 83);
-            this.dgvRecepti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRecepti.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRecepti.Name = "dgvRecepti";
             this.dgvRecepti.RowTemplate.Height = 24;
             this.dgvRecepti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -197,7 +197,7 @@
             this.cmbStanje.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbStanje.FormattingEnabled = true;
             this.cmbStanje.Location = new System.Drawing.Point(13, 502);
-            this.cmbStanje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbStanje.Margin = new System.Windows.Forms.Padding(2);
             this.cmbStanje.Name = "cmbStanje";
             this.cmbStanje.Size = new System.Drawing.Size(109, 25);
             this.cmbStanje.TabIndex = 14;
@@ -206,7 +206,7 @@
             // 
             this.txtKolicina.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtKolicina.Location = new System.Drawing.Point(698, 26);
-            this.txtKolicina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKolicina.Margin = new System.Windows.Forms.Padding(2);
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(47, 23);
             this.txtKolicina.TabIndex = 15;
@@ -228,7 +228,7 @@
             this.btnObrisi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnObrisi.BackgroundImage")));
             this.btnObrisi.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnObrisi.Location = new System.Drawing.Point(280, 498);
-            this.btnObrisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnObrisi.Margin = new System.Windows.Forms.Padding(2);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(63, 26);
             this.btnObrisi.TabIndex = 17;
@@ -240,7 +240,7 @@
             // 
             this.btnJedan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnJedan.BackgroundImage")));
             this.btnJedan.Location = new System.Drawing.Point(658, 243);
-            this.btnJedan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJedan.Margin = new System.Windows.Forms.Padding(2);
             this.btnJedan.Name = "btnJedan";
             this.btnJedan.Size = new System.Drawing.Size(35, 31);
             this.btnJedan.TabIndex = 18;
@@ -252,7 +252,7 @@
             // 
             this.btnSve.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSve.BackgroundImage")));
             this.btnSve.Location = new System.Drawing.Point(658, 292);
-            this.btnSve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSve.Margin = new System.Windows.Forms.Padding(2);
             this.btnSve.Name = "btnSve";
             this.btnSve.Size = new System.Drawing.Size(35, 31);
             this.btnSve.TabIndex = 19;
@@ -291,7 +291,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1034, 533);
+            this.ClientSize = new System.Drawing.Size(1155, 533);
             this.Controls.Add(this.lblRecepti);
             this.Controls.Add(this.lblArtikli);
             this.Controls.Add(this.btnSve);

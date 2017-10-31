@@ -62,15 +62,15 @@
             this.pregledRezervacija_LijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pregledRezervacija_LijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacija_LijekoviTableAdapter();
             this.pregledRezervacija_LijekoviDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Lijeka = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pregledRezervacijaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnObrisiLijek = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Lijeka = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lblKolicina = new System.Windows.Forms.Label();
             prezimeLabel = new System.Windows.Forms.Label();
             nazivLabel = new System.Windows.Forms.Label();
@@ -330,11 +330,36 @@
             this.ID_Lijeka,
             this.dataGridViewTextBoxColumn9});
             this.pregledRezervacija_LijekoviDataGridView.DataSource = this.pregledRezervacija_LijekoviBindingSource;
-            this.pregledRezervacija_LijekoviDataGridView.Location = new System.Drawing.Point(480, 133);
+            this.pregledRezervacija_LijekoviDataGridView.Location = new System.Drawing.Point(480, 182);
             this.pregledRezervacija_LijekoviDataGridView.Name = "pregledRezervacija_LijekoviDataGridView";
             this.pregledRezervacija_LijekoviDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pregledRezervacija_LijekoviDataGridView.Size = new System.Drawing.Size(415, 220);
+            this.pregledRezervacija_LijekoviDataGridView.Size = new System.Drawing.Size(424, 220);
             this.pregledRezervacija_LijekoviDataGridView.TabIndex = 18;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "ID__Rezervacija";
+            this.dataGridViewTextBoxColumn7.HeaderText = "idRezervacija";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Naziv";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Naziv";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // ID_Lijeka
+            // 
+            this.ID_Lijeka.DataPropertyName = "ID_Lijeka";
+            this.ID_Lijeka.HeaderText = "ID_Lijeka";
+            this.ID_Lijeka.Name = "ID_Lijeka";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Kolicina";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Kolicina";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 70;
             // 
             // pregledRezervacijaDataGridView
             // 
@@ -345,7 +370,7 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn10});
             this.pregledRezervacijaDataGridView.DataSource = this.pregledRezervacijaBindingSource;
-            this.pregledRezervacijaDataGridView.Location = new System.Drawing.Point(27, 133);
+            this.pregledRezervacijaDataGridView.Location = new System.Drawing.Point(27, 182);
             this.pregledRezervacijaDataGridView.Name = "pregledRezervacijaDataGridView";
             this.pregledRezervacijaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pregledRezervacijaDataGridView.Size = new System.Drawing.Size(346, 220);
@@ -380,37 +405,12 @@
             this.btnObrisiLijek.UseVisualStyleBackColor = true;
             this.btnObrisiLijek.Click += new System.EventHandler(this.btnObrisiLijek_Click);
             // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "ID__Rezervacija";
-            this.dataGridViewTextBoxColumn7.HeaderText = "idRezervacija";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Naziv";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Naziv";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // ID_Lijeka
-            // 
-            this.ID_Lijeka.DataPropertyName = "ID_Lijeka";
-            this.ID_Lijeka.HeaderText = "ID_Lijeka";
-            this.ID_Lijeka.Name = "ID_Lijeka";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Kolicina";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Kolicina";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 70;
-            // 
             // FrmRezervacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
-            this.ClientSize = new System.Drawing.Size(907, 361);
+            this.ClientSize = new System.Drawing.Size(935, 431);
             this.Controls.Add(this.btnObrisiLijek);
             this.Controls.Add(this.pregledRezervacijaDataGridView);
             this.Controls.Add(this.pregledRezervacija_LijekoviDataGridView);
