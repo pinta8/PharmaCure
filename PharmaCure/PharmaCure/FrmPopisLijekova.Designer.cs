@@ -59,6 +59,7 @@
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.btnPromijeni = new System.Windows.Forms.Button();
             this.btnBrisi = new System.Windows.Forms.Button();
+            this.btnNoviLijek = new System.Windows.Forms.Button();
             nazivLabel = new System.Windows.Forms.Label();
             kratki_opisLabel = new System.Windows.Forms.Label();
             puni_opisLabel = new System.Windows.Forms.Label();
@@ -344,12 +345,23 @@
             this.btnBrisi.UseVisualStyleBackColor = true;
             this.btnBrisi.Click += new System.EventHandler(this.btnBrisi_Click);
             // 
+            // btnNoviLijek
+            // 
+            this.btnNoviLijek.Location = new System.Drawing.Point(65, 285);
+            this.btnNoviLijek.Name = "btnNoviLijek";
+            this.btnNoviLijek.Size = new System.Drawing.Size(169, 34);
+            this.btnNoviLijek.TabIndex = 53;
+            this.btnNoviLijek.Text = "Unesi ";
+            this.btnNoviLijek.UseVisualStyleBackColor = true;
+            this.btnNoviLijek.Click += new System.EventHandler(this.btnNoviLijek_Click);
+            // 
             // FrmPopisLijekova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(883, 657);
+            this.Controls.Add(this.btnNoviLijek);
             this.Controls.Add(this.btnBrisi);
             this.Controls.Add(this.btnPromijeni);
             this.Controls.Add(this.btnIzlaz);
@@ -373,7 +385,6 @@
             this.Controls.Add(this.lblArtikli);
             this.Controls.Add(this.dgvLijekovi);
             this.Controls.Add(this.btnPovratak);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(150, 150);
             this.Name = "FrmPopisLijekova";
             this.Text = "FrmPopisLijekova";
@@ -411,5 +422,6 @@
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Button btnPromijeni;
         private System.Windows.Forms.Button btnBrisi;
+        private System.Windows.Forms.Button btnNoviLijek;
     }
 }

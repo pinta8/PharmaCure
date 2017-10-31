@@ -43,13 +43,6 @@ namespace PharmaCure
             int sirinaUnosa = puni_opisTextBox.Width;
             this.kategorijaTableAdapter.Fill(this._17003_DBDataSet.Kategorija);
             //this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
-
-            //nazivTextBox.ResetText();
-            //kratki_opisTextBox.ResetText();
-            //puni_opisTextBox.ResetText();
-            //puni_opisTextBox.Width = sirinaUnosa;
-            //cijenaTextBox.ResetText();
-            //zemlja_porijeklaTextBox.ResetText();
             nazivComboBox.SelectedIndex = -1;
             OsvjeziListu();      
         }
@@ -104,6 +97,13 @@ namespace PharmaCure
             string zemljaPorijekla = dgvLijekovi.CurrentRow.Cells[6].Value.ToString();
             this.lijekoviTableAdapter.UpdateQuery(nazivLijeka, kratkiOpis, datumProizvodnje.ToString(), datumIsteka.ToString(), cijena, zemljaPorijekla, lijekID, lijekID);
             MessageBox.Show("Uspješno su promijenjeni podaci!");
+        }
+
+        private void btnNoviLijek_Click(object sender, EventArgs e)
+        {
+            FrmNoviLijek frmNoviLijek = new FrmNoviLijek();
+            frmNoviLijek.Show();
+            this.Close();
         }
     }
 }
