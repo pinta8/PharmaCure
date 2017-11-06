@@ -56,7 +56,6 @@ namespace Business_Layer
             Klijent klije = new Klijent();
             klije.idKlijent = int.Parse(row["ID_Klijent"].ToString());
             klije.ImePrezime = row["ImePrezime"].ToString();
-            //klije.Prezime = row["Prezime"].ToString();
             klije.osiguranje = int.Parse(row["ID_Osiguranje"].ToString());
             return klije;
         }
