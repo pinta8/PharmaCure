@@ -33,16 +33,16 @@
             this.btnPovratak = new System.Windows.Forms.Button();
             this.dgvLijekovi = new System.Windows.Forms.DataGridView();
             this.lblArtikli = new System.Windows.Forms.Label();
+            this.btnIzlaz = new System.Windows.Forms.Button();
+            this.btnPromijeni = new System.Windows.Forms.Button();
+            this.btnBrisi = new System.Windows.Forms.Button();
+            this.btnNoviLijek = new System.Windows.Forms.Button();
             this.lijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
             this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.LijekoviTableAdapter();
             this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
             this.kategorijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kategorijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.KategorijaTableAdapter();
-            this.btnIzlaz = new System.Windows.Forms.Button();
-            this.btnPromijeni = new System.Windows.Forms.Button();
-            this.btnBrisi = new System.Windows.Forms.Button();
-            this.btnNoviLijek = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLijekovi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekoviBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).BeginInit();
@@ -65,10 +65,10 @@
             // 
             this.dgvLijekovi.BackgroundColor = System.Drawing.Color.White;
             this.dgvLijekovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLijekovi.Location = new System.Drawing.Point(12, 115);
+            this.dgvLijekovi.Location = new System.Drawing.Point(5, 163);
             this.dgvLijekovi.Name = "dgvLijekovi";
             this.dgvLijekovi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLijekovi.Size = new System.Drawing.Size(777, 255);
+            this.dgvLijekovi.Size = new System.Drawing.Size(842, 225);
             this.dgvLijekovi.TabIndex = 2;
             // 
             // lblArtikli
@@ -77,12 +77,52 @@
             this.lblArtikli.BackColor = System.Drawing.Color.Transparent;
             this.lblArtikli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArtikli.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblArtikli.Location = new System.Drawing.Point(11, 96);
+            this.lblArtikli.Location = new System.Drawing.Point(47, 144);
             this.lblArtikli.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArtikli.Name = "lblArtikli";
             this.lblArtikli.Size = new System.Drawing.Size(57, 16);
             this.lblArtikli.TabIndex = 39;
             this.lblArtikli.Text = "Lijekovi:";
+            // 
+            // btnIzlaz
+            // 
+            this.btnIzlaz.Location = new System.Drawing.Point(796, 8);
+            this.btnIzlaz.Name = "btnIzlaz";
+            this.btnIzlaz.Size = new System.Drawing.Size(75, 23);
+            this.btnIzlaz.TabIndex = 50;
+            this.btnIzlaz.Text = "Izlaz";
+            this.btnIzlaz.UseVisualStyleBackColor = true;
+            this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
+            // 
+            // btnPromijeni
+            // 
+            this.btnPromijeni.Location = new System.Drawing.Point(331, 49);
+            this.btnPromijeni.Name = "btnPromijeni";
+            this.btnPromijeni.Size = new System.Drawing.Size(117, 33);
+            this.btnPromijeni.TabIndex = 51;
+            this.btnPromijeni.Text = "Promijeni";
+            this.btnPromijeni.UseVisualStyleBackColor = true;
+            this.btnPromijeni.Click += new System.EventHandler(this.btnPromijeni_Click);
+            // 
+            // btnBrisi
+            // 
+            this.btnBrisi.Location = new System.Drawing.Point(554, 49);
+            this.btnBrisi.Name = "btnBrisi";
+            this.btnBrisi.Size = new System.Drawing.Size(117, 33);
+            this.btnBrisi.TabIndex = 52;
+            this.btnBrisi.Text = "Brisi";
+            this.btnBrisi.UseVisualStyleBackColor = true;
+            this.btnBrisi.Click += new System.EventHandler(this.btnBrisi_Click);
+            // 
+            // btnNoviLijek
+            // 
+            this.btnNoviLijek.Location = new System.Drawing.Point(111, 48);
+            this.btnNoviLijek.Name = "btnNoviLijek";
+            this.btnNoviLijek.Size = new System.Drawing.Size(117, 34);
+            this.btnNoviLijek.TabIndex = 53;
+            this.btnNoviLijek.Text = "Unesi novi lijek";
+            this.btnNoviLijek.UseVisualStyleBackColor = true;
+            this.btnNoviLijek.Click += new System.EventHandler(this.btnNoviLijek_Click);
             // 
             // lijekoviBindingSource
             // 
@@ -131,52 +171,12 @@
             // 
             this.kategorijaTableAdapter.ClearBeforeFill = true;
             // 
-            // btnIzlaz
-            // 
-            this.btnIzlaz.Location = new System.Drawing.Point(796, 8);
-            this.btnIzlaz.Name = "btnIzlaz";
-            this.btnIzlaz.Size = new System.Drawing.Size(75, 23);
-            this.btnIzlaz.TabIndex = 50;
-            this.btnIzlaz.Text = "Izlaz";
-            this.btnIzlaz.UseVisualStyleBackColor = true;
-            this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
-            // 
-            // btnPromijeni
-            // 
-            this.btnPromijeni.Location = new System.Drawing.Point(302, 38);
-            this.btnPromijeni.Name = "btnPromijeni";
-            this.btnPromijeni.Size = new System.Drawing.Size(117, 33);
-            this.btnPromijeni.TabIndex = 51;
-            this.btnPromijeni.Text = "Promijeni";
-            this.btnPromijeni.UseVisualStyleBackColor = true;
-            this.btnPromijeni.Click += new System.EventHandler(this.btnPromijeni_Click);
-            // 
-            // btnBrisi
-            // 
-            this.btnBrisi.Location = new System.Drawing.Point(519, 38);
-            this.btnBrisi.Name = "btnBrisi";
-            this.btnBrisi.Size = new System.Drawing.Size(117, 33);
-            this.btnBrisi.TabIndex = 52;
-            this.btnBrisi.Text = "Brisi";
-            this.btnBrisi.UseVisualStyleBackColor = true;
-            this.btnBrisi.Click += new System.EventHandler(this.btnBrisi_Click);
-            // 
-            // btnNoviLijek
-            // 
-            this.btnNoviLijek.Location = new System.Drawing.Point(72, 37);
-            this.btnNoviLijek.Name = "btnNoviLijek";
-            this.btnNoviLijek.Size = new System.Drawing.Size(117, 34);
-            this.btnNoviLijek.TabIndex = 53;
-            this.btnNoviLijek.Text = "Unesi novi lijek";
-            this.btnNoviLijek.UseVisualStyleBackColor = true;
-            this.btnNoviLijek.Click += new System.EventHandler(this.btnNoviLijek_Click);
-            // 
             // FrmPopisLijekova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(883, 390);
+            this.ClientSize = new System.Drawing.Size(880, 400);
             this.ControlBox = false;
             this.Controls.Add(this.btnNoviLijek);
             this.Controls.Add(this.btnBrisi);

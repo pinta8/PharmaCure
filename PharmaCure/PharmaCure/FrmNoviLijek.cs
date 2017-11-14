@@ -22,11 +22,21 @@ namespace PharmaCure
             this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
             nazivComboBox.SelectedIndex = -1;
         }
+        private void puni_opisTextBox_TextChanged(object sender, EventArgs e)
+        {
+            double sirinaUnosa = puni_opisTextBox.Width;
+            Size size = TextRenderer.MeasureText(puni_opisTextBox.Text, puni_opisTextBox.Font);
+            double trenutacnaSirinaUnosa = size.Width;
+            if (trenutacnaSirinaUnosa > sirinaUnosa)
+            {
+                puni_opisTextBox.Width = size.Width;
+            }
+        }
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             
             int lijekID = int.Parse(this.lijekoviTableAdapter.VratiZadnjiID().ToString()) + 1;
-           if(nazivTextBox.Text!="" && kratki_opisTextBox.Text!="" && puni_opisTextBox.Text!="" && cijenaTextBox.Text!="" && zemlja_porijeklaTextBox.Text != "")
+           if(nazivTextBox.Text!="" && kratki_opisTextBox.Text!="" && puni_opisTextBox.Text!="" && cijenaTextBox.Text!="" && zemlja_porijeklaTextBox.Text != "" && nazivComboBox.Text!="")
             {
                 string nazivLijeka = nazivTextBox.Text;
                 string kratkiOpis = kratki_opisTextBox.Text;
@@ -40,7 +50,7 @@ namespace PharmaCure
                 
                 catch (System.FormatException)
                 {
-                    MessageBox.Show("U polje cijena valja upisati brojke!");
+                    MessageBox.Show("U polje cijena potrebno je upisati brojke!");
                 }
                     string zemljaPorijekla = zemlja_porijeklaTextBox.Text;
                     int kategorijaID = int.Parse(nazivComboBox.SelectedValue.ToString());
@@ -48,19 +58,19 @@ namespace PharmaCure
                     {
                         this.lijekoviTableAdapter.InsertQuery(lijekID, nazivLijeka, kratkiOpis, opis, datumProizvodnje.ToString(), datumIsteka.ToString(), Cijena, zemljaPorijekla, kategorijaID);
                         MessageBox.Show("Lijek je uspješno dodan u bazu podataka!");
-                    }
+                    FrmPopisLijekova frmPopisLijekova = new FrmPopisLijekova();
+                    frmPopisLijekova.Show();
+                    this.Close();
+                }
                     else
                     {
-                        MessageBox.Show("Cijena lijeka mora biti veća od 0!");
+                        MessageBox.Show("Cijena lijeka mora biti pozitivan broj!");
                     }
             }
             else
             {
                 MessageBox.Show("Molimo provjerite da li ste unijeli sve podatke!");
             }
-            FrmPopisLijekova frmPopisLijekova = new FrmPopisLijekova();
-            frmPopisLijekova.Show();
-            this.Close();
         }
         private void btnOdustani_Click(object sender, EventArgs e)
         {

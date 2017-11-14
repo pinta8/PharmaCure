@@ -150,21 +150,21 @@
             this.cijenaTextBox.Location = new System.Drawing.Point(281, 175);
             this.cijenaTextBox.Name = "cijenaTextBox";
             this.cijenaTextBox.Size = new System.Drawing.Size(111, 20);
-            this.cijenaTextBox.TabIndex = 58;
+            this.cijenaTextBox.TabIndex = 6;
             // 
             // zemlja_porijeklaTextBox
             // 
             this.zemlja_porijeklaTextBox.Location = new System.Drawing.Point(281, 208);
             this.zemlja_porijeklaTextBox.Name = "zemlja_porijeklaTextBox";
             this.zemlja_porijeklaTextBox.Size = new System.Drawing.Size(111, 20);
-            this.zemlja_porijeklaTextBox.TabIndex = 59;
+            this.zemlja_porijeklaTextBox.TabIndex = 7;
             // 
             // btnDodaj
             // 
             this.btnDodaj.Location = new System.Drawing.Point(171, 286);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(117, 32);
-            this.btnDodaj.TabIndex = 61;
+            this.btnDodaj.TabIndex = 9;
             this.btnDodaj.Text = "Dodaj lijek";
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
@@ -177,7 +177,7 @@
             this.nazivComboBox.Location = new System.Drawing.Point(281, 244);
             this.nazivComboBox.Name = "nazivComboBox";
             this.nazivComboBox.Size = new System.Drawing.Size(111, 21);
-            this.nazivComboBox.TabIndex = 62;
+            this.nazivComboBox.TabIndex = 8;
             this.nazivComboBox.ValueMember = "ID_kategorija";
             // 
             // kategorijaBindingSource
@@ -195,42 +195,43 @@
             this.datum_istekaDateTimePicker.Location = new System.Drawing.Point(281, 137);
             this.datum_istekaDateTimePicker.Name = "datum_istekaDateTimePicker";
             this.datum_istekaDateTimePicker.Size = new System.Drawing.Size(111, 20);
-            this.datum_istekaDateTimePicker.TabIndex = 72;
+            this.datum_istekaDateTimePicker.TabIndex = 5;
             // 
             // datum_proizvodnjeDateTimePicker
             // 
             this.datum_proizvodnjeDateTimePicker.Location = new System.Drawing.Point(281, 104);
             this.datum_proizvodnjeDateTimePicker.Name = "datum_proizvodnjeDateTimePicker";
             this.datum_proizvodnjeDateTimePicker.Size = new System.Drawing.Size(111, 20);
-            this.datum_proizvodnjeDateTimePicker.TabIndex = 71;
+            this.datum_proizvodnjeDateTimePicker.TabIndex = 4;
             // 
             // puni_opisTextBox
             // 
             this.puni_opisTextBox.Location = new System.Drawing.Point(281, 72);
             this.puni_opisTextBox.Name = "puni_opisTextBox";
             this.puni_opisTextBox.Size = new System.Drawing.Size(111, 20);
-            this.puni_opisTextBox.TabIndex = 69;
+            this.puni_opisTextBox.TabIndex = 3;
+            this.puni_opisTextBox.TextChanged += new System.EventHandler(this.puni_opisTextBox_TextChanged);
             // 
             // kratki_opisTextBox
             // 
             this.kratki_opisTextBox.Location = new System.Drawing.Point(281, 39);
             this.kratki_opisTextBox.Name = "kratki_opisTextBox";
             this.kratki_opisTextBox.Size = new System.Drawing.Size(111, 20);
-            this.kratki_opisTextBox.TabIndex = 67;
+            this.kratki_opisTextBox.TabIndex = 2;
             // 
             // nazivTextBox
             // 
             this.nazivTextBox.Location = new System.Drawing.Point(281, 6);
             this.nazivTextBox.Name = "nazivTextBox";
             this.nazivTextBox.Size = new System.Drawing.Size(111, 20);
-            this.nazivTextBox.TabIndex = 65;
+            this.nazivTextBox.TabIndex = 1;
             // 
             // btnOdustani
             // 
             this.btnOdustani.Location = new System.Drawing.Point(328, 286);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(111, 32);
-            this.btnOdustani.TabIndex = 73;
+            this.btnOdustani.TabIndex = 10;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
