@@ -152,7 +152,7 @@
             this.lijekoviComboBox.Location = new System.Drawing.Point(469, 9);
             this.lijekoviComboBox.Name = "lijekoviComboBox";
             this.lijekoviComboBox.Size = new System.Drawing.Size(121, 21);
-            this.lijekoviComboBox.TabIndex = 6;
+            this.lijekoviComboBox.TabIndex = 2;
             this.lijekoviComboBox.ValueMember = "ID_Lijek";
             this.lijekoviComboBox.SelectedIndexChanged += new System.EventHandler(this.lijekoviComboBox_SelectedIndexChanged);
             // 
@@ -164,7 +164,7 @@
             this.poslovniceComboBox.Location = new System.Drawing.Point(275, 10);
             this.poslovniceComboBox.Name = "poslovniceComboBox";
             this.poslovniceComboBox.Size = new System.Drawing.Size(121, 21);
-            this.poslovniceComboBox.TabIndex = 7;
+            this.poslovniceComboBox.TabIndex = 1;
             this.poslovniceComboBox.ValueMember = "ID_Poslovnica";
             this.poslovniceComboBox.SelectedIndexChanged += new System.EventHandler(this.poslovniceComboBox_SelectedIndexChanged);
             // 
@@ -218,7 +218,7 @@
             this.btnIzlaz.Location = new System.Drawing.Point(862, 5);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(75, 23);
-            this.btnIzlaz.TabIndex = 16;
+            this.btnIzlaz.TabIndex = 4;
             this.btnIzlaz.Text = "Izlaz";
             this.btnIzlaz.UseVisualStyleBackColor = true;
             this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
@@ -228,7 +228,7 @@
             this.btnPovratak.Location = new System.Drawing.Point(30, 7);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 23);
-            this.btnPovratak.TabIndex = 18;
+            this.btnPovratak.TabIndex = 3;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click_1);

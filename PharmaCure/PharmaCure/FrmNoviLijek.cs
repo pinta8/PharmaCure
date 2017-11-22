@@ -12,64 +12,76 @@ namespace PharmaCure
     public partial class FrmNoviLijek : Form
     {
         public int Cijena { get; set; }
+        public int NacinRada { get; set; }
+        public Business_Layer.Lijek OdabraniLijek { get; set; }
+        public string NazivKategorije { get; set; }
         public FrmNoviLijek()
         {
             InitializeComponent();
         }
         private void FrmNoviLijek_Load(object sender, EventArgs e)
         {
-            this.kategorijaTableAdapter.Fill(this._17003_DBDataSet.Kategorija);      
+            this.kategorijaTableAdapter.Fill(this._17003_DBDataSet.Kategorija);
             this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
+            FrmPopisLijekova frmPopisLijekova = new FrmPopisLijekova();
             nazivComboBox.SelectedIndex = -1;
-        }
-        private void puni_opisTextBox_TextChanged(object sender, EventArgs e)
-        {
-            double sirinaUnosa = puni_opisTextBox.Width;
-            Size size = TextRenderer.MeasureText(puni_opisTextBox.Text, puni_opisTextBox.Font);
-            double trenutacnaSirinaUnosa = size.Width;
-            if (trenutacnaSirinaUnosa > sirinaUnosa)
+            if (NacinRada != 0)
             {
-                puni_opisTextBox.Width = size.Width;
+                btnDodaj.Text = "Spremi";
+                nazivTextBox.Text = OdabraniLijek.Naziv;
+                kratki_opisTextBox.Text = OdabraniLijek.kratkiOpis;
+                //datum_proizvodnjeDateTimePicker.Text = OdabraniLijek.datumProizvodnje.ToString();
+                //datum_istekaDateTimePicker.Text = OdabraniLijek.datumIsteka.ToString();
+                cijenaTextBox.Text = OdabraniLijek.cijena.ToString();
+                zemlja_porijeklaTextBox.Text = OdabraniLijek.zemljaPorijekla;
+                nazivComboBox.Text = NazivKategorije;
             }
         }
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            
-            int lijekID = int.Parse(this.lijekoviTableAdapter.VratiZadnjiID().ToString()) + 1;
-           if(nazivTextBox.Text!="" && kratki_opisTextBox.Text!="" && puni_opisTextBox.Text!="" && cijenaTextBox.Text!="" && zemlja_porijeklaTextBox.Text != "" && nazivComboBox.Text!="")
+            if (NacinRada == 0)
             {
-                string nazivLijeka = nazivTextBox.Text;
-                string kratkiOpis = kratki_opisTextBox.Text;
-                string opis = puni_opisTextBox.Text;
-                DateTime datumProizvodnje = datum_proizvodnjeDateTimePicker.Value;
-                DateTime datumIsteka = datum_istekaDateTimePicker.Value;
-                try
+                int lijekID = int.Parse(this.lijekoviTableAdapter.VratiZadnjiID().ToString()) + 1;
+                if (nazivTextBox.Text != "" && kratki_opisTextBox.Text != "" && cijenaTextBox.Text != "" && zemlja_porijeklaTextBox.Text != "" && nazivComboBox.Text != "")
                 {
-                     Cijena = int.Parse(cijenaTextBox.Text);
-                }
-                
-                catch (System.FormatException)
-                {
-                    MessageBox.Show("U polje cijena potrebno je upisati brojke!");
-                }
+                    string nazivLijeka = nazivTextBox.Text;
+                    string kratkiOpis = kratki_opisTextBox.Text;
+                    DateTime datumProizvodnje = datum_proizvodnjeDateTimePicker.Value;
+                    DateTime datumIsteka = datum_istekaDateTimePicker.Value;
+                    try
+                    {
+                        Cijena = int.Parse(cijenaTextBox.Text);
+                    }
+
+                    catch (System.FormatException)
+                    {
+                        MessageBox.Show("U polje cijena potrebno je upisati brojke!");
+                    }
                     string zemljaPorijekla = zemlja_porijeklaTextBox.Text;
                     int kategorijaID = int.Parse(nazivComboBox.SelectedValue.ToString());
                     if (Cijena > 0)
                     {
-                        this.lijekoviTableAdapter.InsertQuery(lijekID, nazivLijeka, kratkiOpis, opis, datumProizvodnje.ToString(), datumIsteka.ToString(), Cijena, zemljaPorijekla, kategorijaID);
-                        MessageBox.Show("Lijek je uspješno dodan u bazu podataka!");
-                    FrmPopisLijekova frmPopisLijekova = new FrmPopisLijekova();
-                    frmPopisLijekova.Show();
-                    this.Close();
-                }
+                        this.lijekoviTableAdapter.InsertQuery(lijekID, nazivLijeka, kratkiOpis, datumProizvodnje.ToString(), datumIsteka.ToString(), Cijena, zemljaPorijekla, kategorijaID);
+                        FrmPopisLijekova frmPopisLijekova = new FrmPopisLijekova();
+                        frmPopisLijekova.Show();
+                        this.Close();
+                    }
                     else
                     {
                         MessageBox.Show("Cijena lijeka mora biti pozitivan broj!");
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Provjerite da li ste unijeli sve podatke!");
+                }
             }
             else
             {
-                MessageBox.Show("Molimo provjerite da li ste unijeli sve podatke!");
+                this.lijekoviTableAdapter.UpdateQuery(nazivTextBox.Text, kratki_opisTextBox.Text, datum_proizvodnjeDateTimePicker.Value.ToString(), datum_istekaDateTimePicker.Value.ToString(), int.Parse(cijenaTextBox.Text), zemlja_porijeklaTextBox.Text, OdabraniLijek.ID, OdabraniLijek.ID);
+                FrmPopisLijekova frmPopisLijekova = new FrmPopisLijekova();
+                frmPopisLijekova.Show();
+                this.Close();
             }
         }
         private void btnOdustani_Click(object sender, EventArgs e)

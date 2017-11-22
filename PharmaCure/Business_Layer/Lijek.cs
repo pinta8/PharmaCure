@@ -15,11 +15,12 @@ namespace Business_Layer
         public int ID { get; set; }
         public string Naziv { get; set; }
         public string kratkiOpis { get; set; }
+        public string PuniOpis { get; set; }
         public DateTime datumProizvodnje { get; set; }
         public DateTime datumIsteka { get; set; }
         public int cijena { get; set; }
         public string zemljaPorijekla { get; set; }
-
+        public int KategorijaID { get; set; }
 
         //Funkcija za vraćanje Liste svih lijekova
         public static List<Lijek> DohvatiSveLijekove()

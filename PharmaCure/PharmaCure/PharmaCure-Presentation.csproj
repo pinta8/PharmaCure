@@ -126,6 +126,12 @@
     <Compile Include="FrmKlijent.Designer.cs">
       <DependentUpon>FrmKlijent.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNovaRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNovaRezervacija.Designer.cs">
+      <DependentUpon>FrmNovaRezervacija.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNoviLijek.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     <EmbeddedResource Include="FrmKlijent.resx">
       <DependentUpon>FrmKlijent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNovaRezervacija.resx">
+      <DependentUpon>FrmNovaRezervacija.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNoviLijek.resx">
       <DependentUpon>FrmNoviLijek.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +310,7 @@
     <EmbeddedResource Include="StavkaNarudzbeUC.resx">
       <DependentUpon>StavkaNarudzbeUC.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="PharmaCure-Presentation_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
