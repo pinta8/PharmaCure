@@ -45,16 +45,16 @@ namespace PharmaCure
         }
         private void OsvjeziListu()
         {
-            this.pregledLijekovaKategorijaTableAdapter.Fill(this._17003_DBDataSet.PregledLijekovaKategorija);
+            this.pregledLijekovaKategorijaTableAdapter.SelectVazeci(this._17003_DBDataSet.PregledLijekovaKategorija);
             dgvLijekovi.Sort(dgvLijekovi.Columns[0], ListSortDirection.Ascending);
         }
-         public void btnPromijeni_Click(object sender, EventArgs e)
+        public void btnPromijeni_Click(object sender, EventArgs e)
         {
             FrmNoviLijek frmNoviLijek = new FrmNoviLijek();
             frmNoviLijek.OdabraniLijek = new Lijek();
             frmNoviLijek.OdabraniLijek.ID = int.Parse(dgvLijekovi.CurrentRow.Cells[0].Value.ToString());
-            frmNoviLijek.OdabraniLijek.Naziv= dgvLijekovi.CurrentRow.Cells[1].Value.ToString();
-            frmNoviLijek.OdabraniLijek.kratkiOpis= dgvLijekovi.CurrentRow.Cells[2].Value.ToString();
+            frmNoviLijek.OdabraniLijek.Naziv = dgvLijekovi.CurrentRow.Cells[1].Value.ToString();
+            frmNoviLijek.OdabraniLijek.kratkiOpis = dgvLijekovi.CurrentRow.Cells[2].Value.ToString();
             frmNoviLijek.OdabraniLijek.datumProizvodnje = DateTime.Parse(dgvLijekovi.CurrentRow.Cells[3].Value.ToString());
             frmNoviLijek.OdabraniLijek.datumProizvodnje = DateTime.Parse(dgvLijekovi.CurrentRow.Cells[4].Value.ToString());
             frmNoviLijek.OdabraniLijek.cijena = int.Parse(dgvLijekovi.CurrentRow.Cells[5].Value.ToString());
@@ -69,6 +69,41 @@ namespace PharmaCure
             FrmNoviLijek frmNoviLijek = new FrmNoviLijek();
             frmNoviLijek.Show();
             this.Close();
+        }
+
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            string pogreska = "";
+            if (comboBoxPretraga.Text == "")
+            {
+                pogreska += "Morate označiti prema čemu ćete pretraživati!";
+            }
+            if (txtBoxPretrazi.Text == "")
+            {
+                pogreska += " Morate unijeti tekst pretrage!";
+            }
+            if (pogreska == "")
+            {
+                if (comboBoxPretraga.SelectedIndex == 0)
+                {
+                    try
+                    {
+                        this.pregledLijekovaKategorijaTableAdapter.SelectPretraziID(this._17003_DBDataSet.PregledLijekovaKategorija, int.Parse(txtBoxPretrazi.Text));
+                    }
+                    catch (System.FormatException)
+                    {
+                        MessageBox.Show("Prilikom pretrage prema ID-u potrebno je upisivati isključivo brojke!");
+                    }
+                }
+                else
+                {
+                    this.pregledLijekovaKategorijaTableAdapter.SelectPretraziPremaNaziv(this._17003_DBDataSet.PregledLijekovaKategorija, txtBoxPretrazi.Text);
+                }
+            }
+            else
+            {
+                MessageBox.Show(pogreska);
+            }
         }
     }
 }
