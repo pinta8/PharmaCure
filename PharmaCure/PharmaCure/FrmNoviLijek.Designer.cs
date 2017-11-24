@@ -36,6 +36,7 @@
             System.Windows.Forms.Label datum_proizvodnjeLabel;
             System.Windows.Forms.Label kratki_opisLabel;
             System.Windows.Forms.Label nazivLabel;
+            System.Windows.Forms.Label stanjeLabel;
             this.cijenaTextBox = new System.Windows.Forms.TextBox();
             this.zemlja_porijeklaTextBox = new System.Windows.Forms.TextBox();
             this.btnDodaj = new System.Windows.Forms.Button();
@@ -50,6 +51,8 @@
             this.lijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.LijekoviTableAdapter();
             this.kategorijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.KategorijaTableAdapter();
+            this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
+            this.stanjeCheckBox = new System.Windows.Forms.CheckBox();
             cijenaLabel = new System.Windows.Forms.Label();
             zemlja_porijeklaLabel = new System.Windows.Forms.Label();
             nazivLabel1 = new System.Windows.Forms.Label();
@@ -57,6 +60,7 @@
             datum_proizvodnjeLabel = new System.Windows.Forms.Label();
             kratki_opisLabel = new System.Windows.Forms.Label();
             nazivLabel = new System.Windows.Forms.Label();
+            stanjeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kategorijaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekoviBindingSource)).BeginInit();
@@ -66,7 +70,7 @@
             // 
             cijenaLabel.AutoSize = true;
             cijenaLabel.BackColor = System.Drawing.Color.Transparent;
-            cijenaLabel.Location = new System.Drawing.Point(183, 174);
+            cijenaLabel.Location = new System.Drawing.Point(191, 153);
             cijenaLabel.Name = "cijenaLabel";
             cijenaLabel.Size = new System.Drawing.Size(39, 13);
             cijenaLabel.TabIndex = 55;
@@ -76,7 +80,7 @@
             // 
             zemlja_porijeklaLabel.AutoSize = true;
             zemlja_porijeklaLabel.BackColor = System.Drawing.Color.Transparent;
-            zemlja_porijeklaLabel.Location = new System.Drawing.Point(183, 207);
+            zemlja_porijeklaLabel.Location = new System.Drawing.Point(191, 186);
             zemlja_porijeklaLabel.Name = "zemlja_porijeklaLabel";
             zemlja_porijeklaLabel.Size = new System.Drawing.Size(83, 13);
             zemlja_porijeklaLabel.TabIndex = 57;
@@ -86,7 +90,7 @@
             // 
             nazivLabel1.AutoSize = true;
             nazivLabel1.BackColor = System.Drawing.Color.Transparent;
-            nazivLabel1.Location = new System.Drawing.Point(183, 243);
+            nazivLabel1.Location = new System.Drawing.Point(191, 222);
             nazivLabel1.Name = "nazivLabel1";
             nazivLabel1.Size = new System.Drawing.Size(86, 13);
             nazivLabel1.TabIndex = 60;
@@ -96,7 +100,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = System.Drawing.Color.Transparent;
-            label1.Location = new System.Drawing.Point(183, 136);
+            label1.Location = new System.Drawing.Point(191, 115);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(72, 13);
             label1.TabIndex = 70;
@@ -106,7 +110,7 @@
             // 
             datum_proizvodnjeLabel.AutoSize = true;
             datum_proizvodnjeLabel.BackColor = System.Drawing.Color.Transparent;
-            datum_proizvodnjeLabel.Location = new System.Drawing.Point(183, 103);
+            datum_proizvodnjeLabel.Location = new System.Drawing.Point(191, 82);
             datum_proizvodnjeLabel.Name = "datum_proizvodnjeLabel";
             datum_proizvodnjeLabel.Size = new System.Drawing.Size(98, 13);
             datum_proizvodnjeLabel.TabIndex = 68;
@@ -116,7 +120,7 @@
             // 
             kratki_opisLabel.AutoSize = true;
             kratki_opisLabel.BackColor = System.Drawing.Color.Transparent;
-            kratki_opisLabel.Location = new System.Drawing.Point(183, 63);
+            kratki_opisLabel.Location = new System.Drawing.Point(191, 42);
             kratki_opisLabel.Name = "kratki_opisLabel";
             kratki_opisLabel.Size = new System.Drawing.Size(59, 13);
             kratki_opisLabel.TabIndex = 64;
@@ -126,22 +130,32 @@
             // 
             nazivLabel.AutoSize = true;
             nazivLabel.BackColor = System.Drawing.Color.Transparent;
-            nazivLabel.Location = new System.Drawing.Point(183, 30);
+            nazivLabel.Location = new System.Drawing.Point(191, 9);
             nazivLabel.Name = "nazivLabel";
             nazivLabel.Size = new System.Drawing.Size(37, 13);
             nazivLabel.TabIndex = 63;
             nazivLabel.Text = "Naziv:";
             // 
+            // stanjeLabel
+            // 
+            stanjeLabel.AutoSize = true;
+            stanjeLabel.BackColor = System.Drawing.Color.Transparent;
+            stanjeLabel.Location = new System.Drawing.Point(191, 251);
+            stanjeLabel.Name = "stanjeLabel";
+            stanjeLabel.Size = new System.Drawing.Size(40, 13);
+            stanjeLabel.TabIndex = 70;
+            stanjeLabel.Text = "Stanje:";
+            // 
             // cijenaTextBox
             // 
-            this.cijenaTextBox.Location = new System.Drawing.Point(283, 171);
+            this.cijenaTextBox.Location = new System.Drawing.Point(291, 150);
             this.cijenaTextBox.Name = "cijenaTextBox";
             this.cijenaTextBox.Size = new System.Drawing.Size(111, 20);
             this.cijenaTextBox.TabIndex = 6;
             // 
             // zemlja_porijeklaTextBox
             // 
-            this.zemlja_porijeklaTextBox.Location = new System.Drawing.Point(283, 204);
+            this.zemlja_porijeklaTextBox.Location = new System.Drawing.Point(291, 183);
             this.zemlja_porijeklaTextBox.Name = "zemlja_porijeklaTextBox";
             this.zemlja_porijeklaTextBox.Size = new System.Drawing.Size(111, 20);
             this.zemlja_porijeklaTextBox.TabIndex = 7;
@@ -161,7 +175,7 @@
             this.nazivComboBox.DataSource = this.kategorijaBindingSource;
             this.nazivComboBox.DisplayMember = "Naziv";
             this.nazivComboBox.FormattingEnabled = true;
-            this.nazivComboBox.Location = new System.Drawing.Point(283, 240);
+            this.nazivComboBox.Location = new System.Drawing.Point(291, 219);
             this.nazivComboBox.Name = "nazivComboBox";
             this.nazivComboBox.Size = new System.Drawing.Size(111, 21);
             this.nazivComboBox.TabIndex = 8;
@@ -179,28 +193,28 @@
             // 
             // datum_istekaDateTimePicker
             // 
-            this.datum_istekaDateTimePicker.Location = new System.Drawing.Point(283, 133);
+            this.datum_istekaDateTimePicker.Location = new System.Drawing.Point(291, 112);
             this.datum_istekaDateTimePicker.Name = "datum_istekaDateTimePicker";
             this.datum_istekaDateTimePicker.Size = new System.Drawing.Size(111, 20);
             this.datum_istekaDateTimePicker.TabIndex = 5;
             // 
             // datum_proizvodnjeDateTimePicker
             // 
-            this.datum_proizvodnjeDateTimePicker.Location = new System.Drawing.Point(283, 100);
+            this.datum_proizvodnjeDateTimePicker.Location = new System.Drawing.Point(291, 79);
             this.datum_proizvodnjeDateTimePicker.Name = "datum_proizvodnjeDateTimePicker";
             this.datum_proizvodnjeDateTimePicker.Size = new System.Drawing.Size(111, 20);
             this.datum_proizvodnjeDateTimePicker.TabIndex = 4;
             // 
             // kratki_opisTextBox
             // 
-            this.kratki_opisTextBox.Location = new System.Drawing.Point(283, 60);
+            this.kratki_opisTextBox.Location = new System.Drawing.Point(291, 39);
             this.kratki_opisTextBox.Name = "kratki_opisTextBox";
             this.kratki_opisTextBox.Size = new System.Drawing.Size(111, 20);
             this.kratki_opisTextBox.TabIndex = 2;
             // 
             // nazivTextBox
             // 
-            this.nazivTextBox.Location = new System.Drawing.Point(283, 27);
+            this.nazivTextBox.Location = new System.Drawing.Point(291, 6);
             this.nazivTextBox.Name = "nazivTextBox";
             this.nazivTextBox.Size = new System.Drawing.Size(111, 20);
             this.nazivTextBox.TabIndex = 1;
@@ -228,12 +242,49 @@
             // 
             this.kategorijaTableAdapter.ClearBeforeFill = true;
             // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AkcijaTableAdapter = null;
+            this.tableAdapterManager.Artikli_RacunTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DjelatnikTableAdapter = null;
+            this.tableAdapterManager.DostupnostTableAdapter = null;
+            this.tableAdapterManager.KategorijaTableAdapter = this.kategorijaTableAdapter;
+            this.tableAdapterManager.KlijentTableAdapter = null;
+            this.tableAdapterManager.LijekoviOsiguranjeTableAdapter = null;
+            this.tableAdapterManager.LijekoviReceptTableAdapter = null;
+            this.tableAdapterManager.LijekoviTableAdapter = this.lijekoviTableAdapter;
+            this.tableAdapterManager.NarudzbaTableAdapter = null;
+            this.tableAdapterManager.OsiguranjeTableAdapter = null;
+            this.tableAdapterManager.PopisOsiguranihLijekovaTableAdapter = null;
+            this.tableAdapterManager.PopisTableAdapter = null;
+            this.tableAdapterManager.PoslovnicaTableAdapter = null;
+            this.tableAdapterManager.RacunTableAdapter = null;
+            this.tableAdapterManager.RezervacijaTableAdapter = null;
+            this.tableAdapterManager.StanjaTableAdapter = null;
+            this.tableAdapterManager.StavkeNarudzbeTableAdapter = null;
+            this.tableAdapterManager.TipDjelatnikaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // stanjeCheckBox
+            // 
+            this.stanjeCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stanjeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.lijekoviBindingSource, "Stanje", true));
+            this.stanjeCheckBox.Location = new System.Drawing.Point(333, 246);
+            this.stanjeCheckBox.Name = "stanjeCheckBox";
+            this.stanjeCheckBox.Size = new System.Drawing.Size(81, 24);
+            this.stanjeCheckBox.TabIndex = 9;
+            this.stanjeCheckBox.Text = "aktivan";
+            this.stanjeCheckBox.UseVisualStyleBackColor = false;
+            // 
             // FrmNoviLijek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
-            this.ClientSize = new System.Drawing.Size(535, 329);
+            this.ClientSize = new System.Drawing.Size(535, 337);
+            this.Controls.Add(stanjeLabel);
+            this.Controls.Add(this.stanjeCheckBox);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(label1);
             this.Controls.Add(this.datum_istekaDateTimePicker);
@@ -277,5 +328,7 @@
         private _17003_DBDataSetTableAdapters.LijekoviTableAdapter lijekoviTableAdapter;
         private System.Windows.Forms.BindingSource kategorijaBindingSource;
         private _17003_DBDataSetTableAdapters.KategorijaTableAdapter kategorijaTableAdapter;
+        private _17003_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.CheckBox stanjeCheckBox;
     }
 }

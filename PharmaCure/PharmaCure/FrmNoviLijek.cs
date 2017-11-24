@@ -78,7 +78,12 @@ namespace PharmaCure
             }
             else
             {
-                this.lijekoviTableAdapter.UpdateQuery(nazivTextBox.Text, kratki_opisTextBox.Text, datum_proizvodnjeDateTimePicker.Value.ToString(), datum_istekaDateTimePicker.Value.ToString(), int.Parse(cijenaTextBox.Text), zemlja_porijeklaTextBox.Text, OdabraniLijek.ID, OdabraniLijek.ID);
+                bool stanje = false;
+                if (stanjeCheckBox.Checked)
+                {
+                    stanje = true;
+                }
+                this.lijekoviTableAdapter.UpdateQuery(nazivTextBox.Text, kratki_opisTextBox.Text, datum_proizvodnjeDateTimePicker.Value.ToString(), datum_istekaDateTimePicker.Value.ToString(), int.Parse(cijenaTextBox.Text), zemlja_porijeklaTextBox.Text, int.Parse(nazivComboBox.SelectedValue.ToString()), stanje ,OdabraniLijek.ID, OdabraniLijek.ID);
                 FrmPopisLijekova frmPopisLijekova = new FrmPopisLijekova();
                 frmPopisLijekova.Show();
                 this.Close();
