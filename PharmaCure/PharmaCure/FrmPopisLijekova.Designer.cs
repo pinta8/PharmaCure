@@ -298,6 +298,7 @@
             // 
             // comboBoxPretraga
             // 
+            this.comboBoxPretraga.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPretraga.FormattingEnabled = true;
             this.comboBoxPretraga.Items.AddRange(new object[] {
             "ID ",

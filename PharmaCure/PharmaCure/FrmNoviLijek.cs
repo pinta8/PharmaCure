@@ -27,11 +27,12 @@ namespace PharmaCure
             nazivComboBox.SelectedIndex = -1;
             if (NacinRada != 0)
             {
+                MessageBox.Show(OdabraniLijek.datumProizvodnje.ToString());
                 btnDodaj.Text = "Spremi";
                 nazivTextBox.Text = OdabraniLijek.Naziv;
                 kratki_opisTextBox.Text = OdabraniLijek.kratkiOpis;
-                //datum_proizvodnjeDateTimePicker.Text = OdabraniLijek.datumProizvodnje.ToString();
-                //datum_istekaDateTimePicker.Text = OdabraniLijek.datumIsteka.ToString();
+                datum_proizvodnjeDateTimePicker.Value = OdabraniLijek.datumProizvodnje;
+                datum_istekaDateTimePicker.Value = OdabraniLijek.datumIsteka;
                 cijenaTextBox.Text = OdabraniLijek.cijena.ToString();
                 zemlja_porijeklaTextBox.Text = OdabraniLijek.zemljaPorijekla;
                 nazivComboBox.Text = NazivKategorije;

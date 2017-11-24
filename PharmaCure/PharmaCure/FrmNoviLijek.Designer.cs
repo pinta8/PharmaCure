@@ -174,6 +174,7 @@
             // 
             this.nazivComboBox.DataSource = this.kategorijaBindingSource;
             this.nazivComboBox.DisplayMember = "Naziv";
+            this.nazivComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nazivComboBox.FormattingEnabled = true;
             this.nazivComboBox.Location = new System.Drawing.Point(291, 219);
             this.nazivComboBox.Name = "nazivComboBox";

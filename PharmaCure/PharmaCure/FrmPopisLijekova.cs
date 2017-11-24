@@ -56,7 +56,7 @@ namespace PharmaCure
             frmNoviLijek.OdabraniLijek.Naziv = dgvLijekovi.CurrentRow.Cells[1].Value.ToString();
             frmNoviLijek.OdabraniLijek.kratkiOpis = dgvLijekovi.CurrentRow.Cells[2].Value.ToString();
             frmNoviLijek.OdabraniLijek.datumProizvodnje = DateTime.Parse(dgvLijekovi.CurrentRow.Cells[3].Value.ToString());
-            frmNoviLijek.OdabraniLijek.datumProizvodnje = DateTime.Parse(dgvLijekovi.CurrentRow.Cells[4].Value.ToString());
+            frmNoviLijek.OdabraniLijek.datumIsteka = DateTime.Parse(dgvLijekovi.CurrentRow.Cells[4].Value.ToString());
             frmNoviLijek.OdabraniLijek.cijena = int.Parse(dgvLijekovi.CurrentRow.Cells[5].Value.ToString());
             frmNoviLijek.OdabraniLijek.zemljaPorijekla = dgvLijekovi.CurrentRow.Cells[6].Value.ToString();
             frmNoviLijek.NazivKategorije = dgvLijekovi.CurrentRow.Cells[7].Value.ToString();
