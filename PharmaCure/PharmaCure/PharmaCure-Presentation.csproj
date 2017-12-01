@@ -93,6 +93,8 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.1\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
@@ -106,6 +108,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FrmAzurirajPoslovnicu.cs">
@@ -126,11 +129,11 @@
     <Compile Include="FrmKlijent.Designer.cs">
       <DependentUpon>FrmKlijent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNoviLijek.cs">
+    <Compile Include="FrmLijekNovi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNoviLijek.Designer.cs">
-      <DependentUpon>FrmNoviLijek.cs</DependentUpon>
+    <Compile Include="FrmLijekNovi.Designer.cs">
+      <DependentUpon>FrmLijekNovi.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOsiguranjeLijek.cs">
       <SubType>Form</SubType>
@@ -138,17 +141,41 @@
     <Compile Include="FrmOsiguranjeLijek.Designer.cs">
       <DependentUpon>FrmOsiguranjeLijek.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezervacija.Designer.cs">
+      <DependentUpon>FrmRezervacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRezervacijaLijek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezervacijaDodavanjeLijekova.Designer.cs">
+      <DependentUpon>FrmRezervacijaLijek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRezervacijaPopis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezervacijaPopis.Designer.cs">
+      <DependentUpon>FrmRezervacijaPopis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPoslovnice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPoslovnice.Designer.cs">
       <DependentUpon>FrmPoslovnice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRezervacija.cs">
+    <Compile Include="FrmRezervacija2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRezervacija.Designer.cs">
-      <DependentUpon>FrmRezervacija.cs</DependentUpon>
+    <Compile Include="FrmRezervacija2.Designer.cs">
+      <DependentUpon>FrmRezervacija2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRezervacijaKlijent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezervacijaKlijent.Designer.cs">
+      <DependentUpon>FrmRezervacijaKlijent.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmZaposlenici.cs">
       <SubType>Form</SubType>
@@ -198,11 +225,11 @@
     <Compile Include="FrmStanje.Designer.cs">
       <DependentUpon>FrmStanje.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPopisLijekova.cs">
+    <Compile Include="FrmLijekoviPopis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPopisLijekova.Designer.cs">
-      <DependentUpon>FrmPopisLijekova.cs</DependentUpon>
+    <Compile Include="FrmLijekoviPopis.Designer.cs">
+      <DependentUpon>FrmLijekoviPopis.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProdaja.cs">
       <SubType>Form</SubType>
@@ -242,17 +269,32 @@
     <EmbeddedResource Include="FrmKlijent.resx">
       <DependentUpon>FrmKlijent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNoviLijek.resx">
-      <DependentUpon>FrmNoviLijek.cs</DependentUpon>
+    <EmbeddedResource Include="FrmLijekNovi.resx">
+      <DependentUpon>FrmLijekNovi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOsiguranjeLijek.resx">
       <DependentUpon>FrmOsiguranjeLijek.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervacija.resx">
+      <DependentUpon>FrmRezervacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervacijaDodavanjeLijekova.resx">
+      <DependentUpon>FrmRezervacijaLijek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervacijaLijek.resx">
+      <DependentUpon>FrmRezervacijaLijek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervacijaPopis.resx">
+      <DependentUpon>FrmRezervacijaPopis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPoslovnice.resx">
       <DependentUpon>FrmPoslovnice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRezervacija.resx">
-      <DependentUpon>FrmRezervacija.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRezervacija2.resx">
+      <DependentUpon>FrmRezervacija2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervacijaKlijent.resx">
+      <DependentUpon>FrmRezervacijaKlijent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmZaposlenici.resx">
       <DependentUpon>FrmZaposlenici.cs</DependentUpon>
@@ -278,8 +320,8 @@
     <EmbeddedResource Include="FrmStanje.resx">
       <DependentUpon>FrmStanje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPopisLijekova.resx">
-      <DependentUpon>FrmPopisLijekova.cs</DependentUpon>
+    <EmbeddedResource Include="FrmLijekoviPopis.resx">
+      <DependentUpon>FrmLijekoviPopis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProdaja.resx">
       <DependentUpon>FrmProdaja.cs</DependentUpon>
@@ -301,7 +343,6 @@
     <EmbeddedResource Include="StavkaNarudzbeUC.resx">
       <DependentUpon>StavkaNarudzbeUC.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="PharmaCure-Presentation_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">

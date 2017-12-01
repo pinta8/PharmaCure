@@ -41,7 +41,7 @@ namespace PharmaCure
         //Gumb za odlazak na formu Popisa Lijekova
         private void btnPopisL_Click(object sender, EventArgs e)
         {
-            FrmPopisLijekova popis = new FrmPopisLijekova();
+            FrmLijekoviPopis popis = new FrmLijekoviPopis();
             popis.Show();
             this.Close();
         }
@@ -76,7 +76,7 @@ namespace PharmaCure
         //Gumb za odlazak na formu za dodavanje rezervacija
         private void btnRecepti_Click(object sender, EventArgs e)
         {
-            FrmRezervacija frmRezervacije = new FrmRezervacija();
+            FrmRezervacijaPopis frmRezervacije = new FrmRezervacijaPopis();
             frmRezervacije.Show();
             this.Close();
         }
