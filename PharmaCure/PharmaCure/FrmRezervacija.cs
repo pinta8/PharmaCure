@@ -20,14 +20,12 @@ namespace PharmaCure
         }
         private void FrmRezervacija_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_17003_DBDataSet.PregledRezervacija' table. You can move, or remove it, as needed.
-            this.pregledRezervacijaTableAdapter.Fill(this._17003_DBDataSet.PregledRezervacija);
-            this.pregledRezervacija_LijekoviTableAdapter.Fill(this._17003_DBDataSet.PregledRezervacija_Lijekovi);
             PopuniPodatke();
         }
         private void PopuniPodatke()
         {
             IDRezervacija=int.Parse(rezervacijaTableAdapter.VratizadnjiID().ToString());
+            this.pregledRezervacija_LijekoviTableAdapter.FillByRezervacijaID(this._17003_DBDataSet.PregledRezervacija_Lijekovi, IDRezervacija);
             iD__rezervacijeTextBox.Text = IDRezervacija.ToString();
             imePrezimeTextBox.Text = pregledRezervacijaTableAdapter.SelectVratiNaziv(IDRezervacija);
         }
@@ -49,8 +47,8 @@ namespace PharmaCure
         }
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            FrmRezervacijaDodavanjeLijekova frmRezervacijaDodavanjeLijekova = new FrmRezervacijaDodavanjeLijekova();
-            frmRezervacijaDodavanjeLijekova.Show();
+            FrmRezervacijaLijek frmRezervacijaLijek = new FrmRezervacijaLijek();
+            frmRezervacijaLijek.Show();
             this.Close();
         }
         private void btnPromijeni_Click(object sender, EventArgs e)

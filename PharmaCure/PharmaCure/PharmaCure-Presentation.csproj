@@ -150,7 +150,7 @@
     <Compile Include="FrmRezervacijaLijek.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRezervacijaDodavanjeLijekova.Designer.cs">
+    <Compile Include="FrmRezervacijaLijek.Designer.cs">
       <DependentUpon>FrmRezervacijaLijek.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRezervacijaPopis.cs">
@@ -277,9 +277,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRezervacija.resx">
       <DependentUpon>FrmRezervacija.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRezervacijaDodavanjeLijekova.resx">
-      <DependentUpon>FrmRezervacijaLijek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRezervacijaLijek.resx">
       <DependentUpon>FrmRezervacijaLijek.cs</DependentUpon>
