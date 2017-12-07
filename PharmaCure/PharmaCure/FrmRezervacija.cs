@@ -56,7 +56,17 @@ namespace PharmaCure
         }
         private void btnPromijeni_Click(object sender, EventArgs e)
         {
-
+            int brojRedova = pregledRezervacija_LijekoviDataGridView.RowCount;
+            if (brojRedova > 1)
+            {
+                FrmRezervacijaLijek odabraniLijek = new FrmRezervacijaLijek();
+                odabraniLijek.NazivLijeka = pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[0].Value.ToString();
+                odabraniLijek.Kolicina = int.Parse(pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[1].Value.ToString());
+                odabraniLijek.IDLijek = int.Parse(pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[2].Value.ToString());
+                odabraniLijek.NacinRada = 1;
+                odabraniLijek.Show();
+                this.Close();
+            }
         }
         private void btnObrisi_Click(object sender, EventArgs e)
         {

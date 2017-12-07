@@ -300,7 +300,7 @@
             // ID_Lijeka
             // 
             this.ID_Lijeka.DataPropertyName = "ID_Lijeka";
-            this.ID_Lijeka.HeaderText = "ID Lijek";
+            this.ID_Lijeka.HeaderText = "ID lijek";
             this.ID_Lijeka.Name = "ID_Lijeka";
             this.ID_Lijeka.ReadOnly = true;
             // 

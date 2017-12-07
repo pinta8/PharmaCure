@@ -105,7 +105,7 @@
             // 
             // btnPromijeni
             // 
-            this.btnPromijeni.Location = new System.Drawing.Point(246, 63);
+            this.btnPromijeni.Location = new System.Drawing.Point(246, 54);
             this.btnPromijeni.Name = "btnPromijeni";
             this.btnPromijeni.Size = new System.Drawing.Size(142, 38);
             this.btnPromijeni.TabIndex = 51;
@@ -115,7 +115,7 @@
             // 
             // btnNoviLijek
             // 
-            this.btnNoviLijek.Location = new System.Drawing.Point(83, 63);
+            this.btnNoviLijek.Location = new System.Drawing.Point(83, 54);
             this.btnNoviLijek.Name = "btnNoviLijek";
             this.btnNoviLijek.Size = new System.Drawing.Size(142, 38);
             this.btnNoviLijek.TabIndex = 53;
@@ -125,14 +125,14 @@
             // 
             // txtBoxPretrazi
             // 
-            this.txtBoxPretrazi.Location = new System.Drawing.Point(667, 73);
+            this.txtBoxPretrazi.Location = new System.Drawing.Point(696, 72);
             this.txtBoxPretrazi.Name = "txtBoxPretrazi";
             this.txtBoxPretrazi.Size = new System.Drawing.Size(92, 20);
             this.txtBoxPretrazi.TabIndex = 54;
             // 
             // btnPretrazi
             // 
-            this.btnPretrazi.Location = new System.Drawing.Point(789, 70);
+            this.btnPretrazi.Location = new System.Drawing.Point(818, 69);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(79, 26);
             this.btnPretrazi.TabIndex = 55;
@@ -303,7 +303,7 @@
             this.comboBoxPretraga.Items.AddRange(new object[] {
             "ID ",
             "Naziv"});
-            this.comboBoxPretraga.Location = new System.Drawing.Point(488, 73);
+            this.comboBoxPretraga.Location = new System.Drawing.Point(517, 72);
             this.comboBoxPretraga.Name = "comboBoxPretraga";
             this.comboBoxPretraga.Size = new System.Drawing.Size(88, 21);
             this.comboBoxPretraga.TabIndex = 56;
@@ -312,7 +312,7 @@
             // 
             this.lblPretragaCombo.AutoSize = true;
             this.lblPretragaCombo.BackColor = System.Drawing.Color.Transparent;
-            this.lblPretragaCombo.Location = new System.Drawing.Point(405, 77);
+            this.lblPretragaCombo.Location = new System.Drawing.Point(434, 76);
             this.lblPretragaCombo.Name = "lblPretragaCombo";
             this.lblPretragaCombo.Size = new System.Drawing.Size(77, 13);
             this.lblPretragaCombo.TabIndex = 57;
@@ -322,7 +322,7 @@
             // 
             this.lblPretragaTekst.AutoSize = true;
             this.lblPretragaTekst.BackColor = System.Drawing.Color.Transparent;
-            this.lblPretragaTekst.Location = new System.Drawing.Point(582, 77);
+            this.lblPretragaTekst.Location = new System.Drawing.Point(611, 76);
             this.lblPretragaTekst.Name = "lblPretragaTekst";
             this.lblPretragaTekst.Size = new System.Drawing.Size(79, 13);
             this.lblPretragaTekst.TabIndex = 58;
