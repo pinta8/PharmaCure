@@ -104,6 +104,7 @@
             this.pregledKlijenataDataGridView.DataSource = this.pregledKlijenataBindingSource;
             this.pregledKlijenataDataGridView.Location = new System.Drawing.Point(65, 141);
             this.pregledKlijenataDataGridView.Name = "pregledKlijenataDataGridView";
+            this.pregledKlijenataDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pregledKlijenataDataGridView.Size = new System.Drawing.Size(455, 220);
             this.pregledKlijenataDataGridView.TabIndex = 50;
             // 

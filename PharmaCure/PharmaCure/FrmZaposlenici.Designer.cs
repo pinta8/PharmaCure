@@ -81,9 +81,9 @@
             this.lblZaposlenici.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblZaposlenici.Location = new System.Drawing.Point(28, 94);
             this.lblZaposlenici.Name = "lblZaposlenici";
-            this.lblZaposlenici.Size = new System.Drawing.Size(79, 17);
+            this.lblZaposlenici.Size = new System.Drawing.Size(83, 17);
             this.lblZaposlenici.TabIndex = 9;
-            this.lblZaposlenici.Text = "Zaposlenici";
+            this.lblZaposlenici.Text = "Zaposlenici:";
             // 
             // btnAzuriraj
             // 

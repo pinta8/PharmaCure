@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pregledRezervacijaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.pregledRezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
             this.lblArtikli = new System.Windows.Forms.Label();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnPromijeni = new System.Windows.Forms.Button();
@@ -43,11 +37,18 @@
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.btnPretrazi = new System.Windows.Forms.Button();
             this.txtBoxPretrazi = new System.Windows.Forms.TextBox();
+            this.lblPretragaTekst = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pregledRezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
             this.pregledRezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacijaTableAdapter();
             this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
             this.rezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
-            this.lblPretragaTekst = new System.Windows.Forms.Label();
+            this.btnIzmijeniPodatke = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacijaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacijaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).BeginInit();
@@ -70,42 +71,6 @@
             this.pregledRezervacijaDataGridView.Size = new System.Drawing.Size(571, 220);
             this.pregledRezervacijaDataGridView.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "idRezervacija";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ID ";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ImePrezime";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Ime i prezime";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "datum";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Datum";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Stanje";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Stanje";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            // 
-            // pregledRezervacijaBindingSource
-            // 
-            this.pregledRezervacijaBindingSource.DataMember = "PregledRezervacija";
-            this.pregledRezervacijaBindingSource.DataSource = this._17003_DBDataSet;
-            // 
-            // _17003_DBDataSet
-            // 
-            this._17003_DBDataSet.DataSetName = "_17003_DBDataSet";
-            this._17003_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // lblArtikli
             // 
             this.lblArtikli.AutoSize = true;
@@ -123,15 +88,15 @@
             // 
             this.btnDodaj.Location = new System.Drawing.Point(85, 67);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(106, 23);
+            this.btnDodaj.Size = new System.Drawing.Size(119, 28);
             this.btnDodaj.TabIndex = 41;
-            this.btnDodaj.Text = "Dodaj ";
+            this.btnDodaj.Text = "Dodaj rezervaciju";
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnPromijeni
             // 
-            this.btnPromijeni.Location = new System.Drawing.Point(276, 66);
+            this.btnPromijeni.Location = new System.Drawing.Point(336, 68);
             this.btnPromijeni.Name = "btnPromijeni";
             this.btnPromijeni.Size = new System.Drawing.Size(86, 26);
             this.btnPromijeni.TabIndex = 42;
@@ -176,6 +141,52 @@
             this.txtBoxPretrazi.Size = new System.Drawing.Size(79, 20);
             this.txtBoxPretrazi.TabIndex = 46;
             // 
+            // lblPretragaTekst
+            // 
+            this.lblPretragaTekst.AutoSize = true;
+            this.lblPretragaTekst.BackColor = System.Drawing.Color.Transparent;
+            this.lblPretragaTekst.Location = new System.Drawing.Point(428, 72);
+            this.lblPretragaTekst.Name = "lblPretragaTekst";
+            this.lblPretragaTekst.Size = new System.Drawing.Size(79, 13);
+            this.lblPretragaTekst.TabIndex = 61;
+            this.lblPretragaTekst.Text = "Tekst pretrage:";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "idRezervacija";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID ";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ImePrezime";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ime i prezime";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "datum";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Datum";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Stanje";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Stanje";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // pregledRezervacijaBindingSource
+            // 
+            this.pregledRezervacijaBindingSource.DataMember = "PregledRezervacija";
+            this.pregledRezervacijaBindingSource.DataSource = this._17003_DBDataSet;
+            // 
+            // _17003_DBDataSet
+            // 
+            this._17003_DBDataSet.DataSetName = "_17003_DBDataSet";
+            this._17003_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // pregledRezervacijaTableAdapter
             // 
             this.pregledRezervacijaTableAdapter.ClearBeforeFill = true;
@@ -214,15 +225,14 @@
             // 
             this.rezervacijaTableAdapter.ClearBeforeFill = true;
             // 
-            // lblPretragaTekst
+            // btnIzmijeniPodatke
             // 
-            this.lblPretragaTekst.AutoSize = true;
-            this.lblPretragaTekst.BackColor = System.Drawing.Color.Transparent;
-            this.lblPretragaTekst.Location = new System.Drawing.Point(428, 72);
-            this.lblPretragaTekst.Name = "lblPretragaTekst";
-            this.lblPretragaTekst.Size = new System.Drawing.Size(79, 13);
-            this.lblPretragaTekst.TabIndex = 61;
-            this.lblPretragaTekst.Text = "Tekst pretrage:";
+            this.btnIzmijeniPodatke.Location = new System.Drawing.Point(211, 67);
+            this.btnIzmijeniPodatke.Name = "btnIzmijeniPodatke";
+            this.btnIzmijeniPodatke.Size = new System.Drawing.Size(119, 28);
+            this.btnIzmijeniPodatke.TabIndex = 62;
+            this.btnIzmijeniPodatke.Text = "Izmijeni podatke";
+            this.btnIzmijeniPodatke.UseVisualStyleBackColor = true;
             // 
             // FrmRezervacijaPopis
             // 
@@ -230,6 +240,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
             this.ClientSize = new System.Drawing.Size(759, 391);
+            this.Controls.Add(this.btnIzmijeniPodatke);
             this.Controls.Add(this.lblPretragaTekst);
             this.Controls.Add(this.txtBoxPretrazi);
             this.Controls.Add(this.btnPretrazi);
@@ -274,5 +285,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.Label lblPretragaTekst;
+        private System.Windows.Forms.Button btnIzmijeniPodatke;
     }
 }

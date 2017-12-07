@@ -148,7 +148,7 @@ namespace PharmaCure
                 }
                 int rezervacijaID = int.Parse(pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[0].Value.ToString());
                 int lijekID = int.Parse(pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[2].Value.ToString());
-                this.popisTableAdapter.brisiLijek(lijekID,  rezervacijaID);
+                this.popisTableAdapter.DeleteQueryLijek(lijekID,  rezervacijaID);
                 this.Validate();
                 this.pregledRezervacijaBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this._17003_DBDataSet);

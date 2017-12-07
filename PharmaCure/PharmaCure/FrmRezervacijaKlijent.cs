@@ -18,11 +18,10 @@ namespace PharmaCure
         }
         private void FrmRezervacijaKlijent_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_17003_DBDataSet.Rezervacija' table. You can move, or remove it, as needed.
             this.rezervacijaTableAdapter.Fill(this._17003_DBDataSet.Rezervacija);
             this.pregledKlijenataTableAdapter.Fill(this._17003_DBDataSet.PregledKlijenata);
             this.klijentTableAdapter.Fill(this._17003_DBDataSet.Klijent);
-            comboBoxPretraga.SelectedIndex = 1;
+            comboBoxPretraga.SelectedIndex = 0;
         }
         private void btnPovratak_Click(object sender, EventArgs e)
         {

@@ -32,9 +32,11 @@ namespace PharmaCure
         }
         private void btnSpremi_Click(object sender, EventArgs e)
         {
+            int RezervacijaID = int.Parse(rezervacijaTableAdapter1.VratizadnjiID().ToString());
+            popisTableAdapter.UpdateQueryLijek(int.Parse(comboBoxNaziv.SelectedValue.ToString()), int.Parse(textBoxKolicina.Text) ,RezervacijaID);
             FrmRezervacija frmRezervacija = new FrmRezervacija();
             frmRezervacija.Show();
-            this.Close();
+            this.Close(); 
         }
     }
 }

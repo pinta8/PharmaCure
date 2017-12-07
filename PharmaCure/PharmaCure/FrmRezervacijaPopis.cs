@@ -21,7 +21,6 @@ namespace PharmaCure
         {
             OsvjeziPrikaz();
         }
-       
         private void OsvjeziPrikaz()
         {
             this.pregledRezervacijaTableAdapter.SelectByStanje(this._17003_DBDataSet.PregledRezervacija);
@@ -39,7 +38,7 @@ namespace PharmaCure
         }
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            rezervacijaTableAdapter.InsertNovaRezervacija(DateTime.Now);
+            rezervacijaTableAdapter.InsertNovaRezervacija(DateTime.Now, true);
             FrmRezervacija frmRezervacijaNova = new FrmRezervacija();
             frmRezervacijaNova.Show();
             this.Close();

@@ -13,6 +13,7 @@ namespace PharmaCure
     public partial class FrmRezervacija : Form
     {
         public int IDRezervacija { get; set; }
+        public int IDLijek { get; set; }
         public string ImePrezimeKlijenta { get; set; }
         public FrmRezervacija()
         {
@@ -47,6 +48,8 @@ namespace PharmaCure
         }
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            int RezervacijaID = int.Parse(rezervacijaTableAdapter.VratizadnjiID().ToString());
+            popisTableAdapter1.InsertQueryIDRezervacija(RezervacijaID, 1);
             FrmRezervacijaLijek frmRezervacijaLijek = new FrmRezervacijaLijek();
             frmRezervacijaLijek.Show();
             this.Close();
@@ -57,8 +60,10 @@ namespace PharmaCure
         }
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            int idRezervacija = int.Parse(pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[0].ToString());
-            rezervacijaTableAdapter.DeleteQuery(idRezervacija);
+            IDRezervacija = int.Parse(iD__rezervacijeTextBox.Text);
+            IDLijek = int.Parse(pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[2].Value.ToString());
+            popisTableAdapter1.DeleteQueryLijek(IDLijek, IDRezervacija);
+            this.pregledRezervacija_LijekoviTableAdapter.FillByRezervacijaID(this._17003_DBDataSet.PregledRezervacija_Lijekovi, IDRezervacija);
         }  
     }
 }
