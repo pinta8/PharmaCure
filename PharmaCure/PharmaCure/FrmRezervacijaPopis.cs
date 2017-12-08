@@ -43,6 +43,15 @@ namespace PharmaCure
             frmRezervacijaNova.Show();
             this.Close();
         }
+        private void btnIzmijeniPodatke_Click(object sender, EventArgs e)
+        {
+            FrmRezervacija odabranaRezervacija = new FrmRezervacija();
+            odabranaRezervacija.IDRezervacija = int.Parse(pregledRezervacijaDataGridView.CurrentRow.Cells[0].Value.ToString());
+            odabranaRezervacija.ImePrezimeKlijenta = pregledRezervacijaDataGridView.CurrentRow.Cells[1].Value.ToString();
+            odabranaRezervacija.NacinRada = 1;
+            odabranaRezervacija.Show();
+            this.Close();
+        }
         private void btnPromijeni_Click(object sender, EventArgs e)
         {
             IDRezervacija =int.Parse(pregledRezervacijaDataGridView.CurrentRow.Cells[0].Value.ToString());

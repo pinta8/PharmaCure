@@ -40,13 +40,16 @@
             this.klijentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnOdaberiKlijenta = new System.Windows.Forms.Button();
             this.pregledRezervacija_LijekoviDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Lijeka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pregledRezervacija_LijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.btnPromijeni = new System.Windows.Forms.Button();
             this.rezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
             this.klijentTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.KlijentTableAdapter();
-            this.btnPovratak = new System.Windows.Forms.Button();
+            this.btnSpremiPromjene = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.lblArtikli = new System.Windows.Forms.Label();
             this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
@@ -55,9 +58,6 @@
             this.pregledRezervacija_LijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacija_LijekoviTableAdapter();
             this.pregledRezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacijaTableAdapter();
             this.rezervacijaTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Lijeka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             iD__rezervacijeLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             imePrezimeLabel = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@
             // 
             iD__rezervacijeLabel.AutoSize = true;
             iD__rezervacijeLabel.BackColor = System.Drawing.Color.Transparent;
-            iD__rezervacijeLabel.Location = new System.Drawing.Point(43, 69);
+            iD__rezervacijeLabel.Location = new System.Drawing.Point(28, 22);
             iD__rezervacijeLabel.Name = "iD__rezervacijeLabel";
             iD__rezervacijeLabel.Size = new System.Drawing.Size(75, 13);
             iD__rezervacijeLabel.TabIndex = 1;
@@ -83,7 +83,7 @@
             // 
             datumLabel.AutoSize = true;
             datumLabel.BackColor = System.Drawing.Color.Transparent;
-            datumLabel.Location = new System.Drawing.Point(43, 106);
+            datumLabel.Location = new System.Drawing.Point(28, 59);
             datumLabel.Name = "datumLabel";
             datumLabel.Size = new System.Drawing.Size(41, 13);
             datumLabel.TabIndex = 2;
@@ -93,7 +93,7 @@
             // 
             imePrezimeLabel.AutoSize = true;
             imePrezimeLabel.BackColor = System.Drawing.Color.Transparent;
-            imePrezimeLabel.Location = new System.Drawing.Point(43, 140);
+            imePrezimeLabel.Location = new System.Drawing.Point(28, 93);
             imePrezimeLabel.Name = "imePrezimeLabel";
             imePrezimeLabel.Size = new System.Drawing.Size(107, 13);
             imePrezimeLabel.TabIndex = 4;
@@ -102,7 +102,7 @@
             // iD__rezervacijeTextBox
             // 
             this.iD__rezervacijeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rezervacijaBindingSource, "ID__rezervacije", true));
-            this.iD__rezervacijeTextBox.Location = new System.Drawing.Point(155, 66);
+            this.iD__rezervacijeTextBox.Location = new System.Drawing.Point(140, 19);
             this.iD__rezervacijeTextBox.Name = "iD__rezervacijeTextBox";
             this.iD__rezervacijeTextBox.Size = new System.Drawing.Size(139, 20);
             this.iD__rezervacijeTextBox.TabIndex = 2;
@@ -120,7 +120,7 @@
             // datumDateTimePicker
             // 
             this.datumDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.rezervacijaBindingSource, "Datum", true));
-            this.datumDateTimePicker.Location = new System.Drawing.Point(155, 100);
+            this.datumDateTimePicker.Location = new System.Drawing.Point(140, 53);
             this.datumDateTimePicker.Name = "datumDateTimePicker";
             this.datumDateTimePicker.Size = new System.Drawing.Size(139, 20);
             this.datumDateTimePicker.TabIndex = 3;
@@ -128,7 +128,7 @@
             // imePrezimeTextBox
             // 
             this.imePrezimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klijentBindingSource, "ImePrezime", true));
-            this.imePrezimeTextBox.Location = new System.Drawing.Point(155, 137);
+            this.imePrezimeTextBox.Location = new System.Drawing.Point(140, 90);
             this.imePrezimeTextBox.Name = "imePrezimeTextBox";
             this.imePrezimeTextBox.Size = new System.Drawing.Size(139, 20);
             this.imePrezimeTextBox.TabIndex = 5;
@@ -140,7 +140,7 @@
             // 
             // btnOdaberiKlijenta
             // 
-            this.btnOdaberiKlijenta.Location = new System.Drawing.Point(300, 137);
+            this.btnOdaberiKlijenta.Location = new System.Drawing.Point(285, 90);
             this.btnOdaberiKlijenta.Name = "btnOdaberiKlijenta";
             this.btnOdaberiKlijenta.Size = new System.Drawing.Size(32, 20);
             this.btnOdaberiKlijenta.TabIndex = 6;
@@ -157,11 +157,30 @@
             this.dataGridViewTextBoxColumn3,
             this.ID_Lijeka});
             this.pregledRezervacija_LijekoviDataGridView.DataSource = this.pregledRezervacija_LijekoviBindingSource;
-            this.pregledRezervacija_LijekoviDataGridView.Location = new System.Drawing.Point(64, 222);
+            this.pregledRezervacija_LijekoviDataGridView.Location = new System.Drawing.Point(31, 183);
             this.pregledRezervacija_LijekoviDataGridView.Name = "pregledRezervacija_LijekoviDataGridView";
             this.pregledRezervacija_LijekoviDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pregledRezervacija_LijekoviDataGridView.Size = new System.Drawing.Size(481, 236);
             this.pregledRezervacija_LijekoviDataGridView.TabIndex = 7;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv lijeka";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Kolicina";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Kolicina";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // ID_Lijeka
+            // 
+            this.ID_Lijeka.DataPropertyName = "ID_Lijeka";
+            this.ID_Lijeka.HeaderText = "ID lijek";
+            this.ID_Lijeka.Name = "ID_Lijeka";
+            this.ID_Lijeka.ReadOnly = true;
             // 
             // pregledRezervacija_LijekoviBindingSource
             // 
@@ -170,7 +189,7 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(155, 181);
+            this.btnDodaj.Location = new System.Drawing.Point(140, 134);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(128, 23);
             this.btnDodaj.TabIndex = 8;
@@ -180,7 +199,7 @@
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(482, 181);
+            this.btnObrisi.Location = new System.Drawing.Point(467, 134);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(128, 23);
             this.btnObrisi.TabIndex = 9;
@@ -190,7 +209,7 @@
             // 
             // btnPromijeni
             // 
-            this.btnPromijeni.Location = new System.Drawing.Point(324, 181);
+            this.btnPromijeni.Location = new System.Drawing.Point(309, 134);
             this.btnPromijeni.Name = "btnPromijeni";
             this.btnPromijeni.Size = new System.Drawing.Size(128, 23);
             this.btnPromijeni.TabIndex = 10;
@@ -206,19 +225,19 @@
             // 
             this.klijentTableAdapter.ClearBeforeFill = true;
             // 
-            // btnPovratak
+            // btnSpremiPromjene
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(12, 9);
-            this.btnPovratak.Name = "btnPovratak";
-            this.btnPovratak.Size = new System.Drawing.Size(75, 26);
-            this.btnPovratak.TabIndex = 44;
-            this.btnPovratak.Text = "Povratak";
-            this.btnPovratak.UseVisualStyleBackColor = true;
-            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
+            this.btnSpremiPromjene.Location = new System.Drawing.Point(31, 434);
+            this.btnSpremiPromjene.Name = "btnSpremiPromjene";
+            this.btnSpremiPromjene.Size = new System.Drawing.Size(142, 26);
+            this.btnSpremiPromjene.TabIndex = 44;
+            this.btnSpremiPromjene.Text = "Spremi promjene";
+            this.btnSpremiPromjene.UseVisualStyleBackColor = true;
+            this.btnSpremiPromjene.Click += new System.EventHandler(this.btnSpremiPromjene_Click);
             // 
             // btnIzlaz
             // 
-            this.btnIzlaz.Location = new System.Drawing.Point(496, 9);
+            this.btnIzlaz.Location = new System.Drawing.Point(503, 431);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(75, 26);
             this.btnIzlaz.TabIndex = 45;
@@ -232,12 +251,12 @@
             this.lblArtikli.BackColor = System.Drawing.Color.Transparent;
             this.lblArtikli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArtikli.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblArtikli.Location = new System.Drawing.Point(21, 188);
+            this.lblArtikli.Location = new System.Drawing.Point(6, 141);
             this.lblArtikli.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArtikli.Name = "lblArtikli";
-            this.lblArtikli.Size = new System.Drawing.Size(83, 16);
+            this.lblArtikli.Size = new System.Drawing.Size(57, 16);
             this.lblArtikli.TabIndex = 46;
-            this.lblArtikli.Text = "Rezervacije:";
+            this.lblArtikli.Text = "Lijekovi:";
             // 
             // tableAdapterManager
             // 
@@ -285,34 +304,15 @@
             // 
             this.rezervacijaTableAdapter1.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv lijeka";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Kolicina";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Kolicina";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // ID_Lijeka
-            // 
-            this.ID_Lijeka.DataPropertyName = "ID_Lijeka";
-            this.ID_Lijeka.HeaderText = "ID lijek";
-            this.ID_Lijeka.Name = "ID_Lijeka";
-            this.ID_Lijeka.ReadOnly = true;
-            // 
             // FrmRezervacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
-            this.ClientSize = new System.Drawing.Size(734, 499);
+            this.ClientSize = new System.Drawing.Size(655, 499);
             this.Controls.Add(this.lblArtikli);
             this.Controls.Add(this.btnIzlaz);
-            this.Controls.Add(this.btnPovratak);
+            this.Controls.Add(this.btnSpremiPromjene);
             this.Controls.Add(this.btnPromijeni);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnDodaj);
@@ -357,7 +357,7 @@
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnPromijeni;
-        private System.Windows.Forms.Button btnPovratak;
+        private System.Windows.Forms.Button btnSpremiPromjene;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Label lblArtikli;
         private System.Windows.Forms.BindingSource pregledRezervacijaBindingSource;
