@@ -45,9 +45,16 @@ namespace PharmaCure
         }
         private void btnSpremiPromjene_Click(object sender, EventArgs e)
         {
-            FrmRezervacijaPopis frmRezervacijaPopis = new FrmRezervacijaPopis();
-            frmRezervacijaPopis.Show();
-            this.Close();
+            if (imePrezimeTextBox.Text !="")
+            {
+                FrmRezervacijaPopis frmRezervacijaPopis = new FrmRezervacijaPopis();
+                frmRezervacijaPopis.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Niste odabrali klijenta!");
+            }
         }
         private void btnOdaberiKlijenta_Click(object sender, EventArgs e)
         {
@@ -88,6 +95,5 @@ namespace PharmaCure
                 this.pregledRezervacija_LijekoviTableAdapter.FillByRezervacijaID(this._17003_DBDataSet.PregledRezervacija_Lijekovi, IDRezervacija);
             }
         }
-
     }
 }

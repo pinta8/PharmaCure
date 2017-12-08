@@ -41,7 +41,7 @@ namespace PharmaCure
         //Gumb za odlazak na formu Popisa Lijekova
         private void btnPopisL_Click(object sender, EventArgs e)
         {
-            FrmLijekoviPopis popis = new FrmLijekoviPopis();
+            FrmLijekPopis popis = new FrmLijekPopis();
             popis.Show();
             this.Close();
         }

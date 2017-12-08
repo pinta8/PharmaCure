@@ -25,7 +25,7 @@ namespace PharmaCure
             MessageBox.Show(lijekID.ToString());
             this.kategorijaTableAdapter.Fill(this._17003_DBDataSet.Kategorija);
             this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
-            FrmLijekoviPopis frmPopisLijekova = new FrmLijekoviPopis();
+            FrmLijekPopis frmPopisLijekova = new FrmLijekPopis();
             if (NacinRada != 0)
             {
                 MessageBox.Show(OdabraniLijek.datumProizvodnje.ToString());
@@ -64,7 +64,7 @@ namespace PharmaCure
                     if (Cijena > 0)
                     {
                         this.lijekoviTableAdapter.InsertQuery(lijekID, nazivLijeka, kratkiOpis, datumProizvodnje.ToString(), datumIsteka.ToString(), Cijena, zemljaPorijekla, kategorijaID);
-                        FrmLijekoviPopis frmPopisLijekova = new FrmLijekoviPopis();
+                        FrmLijekPopis frmPopisLijekova = new FrmLijekPopis();
                         frmPopisLijekova.Show();
                         this.Close();
                     }
@@ -86,14 +86,14 @@ namespace PharmaCure
                     stanje = true;
                 }
                 this.lijekoviTableAdapter.UpdateQuery(nazivTextBox.Text, kratki_opisTextBox.Text, datum_proizvodnjeDateTimePicker.Value.ToString(), datum_istekaDateTimePicker.Value.ToString(), int.Parse(cijenaTextBox.Text), zemlja_porijeklaTextBox.Text, int.Parse(nazivComboBox.SelectedValue.ToString()), stanje ,OdabraniLijek.ID, OdabraniLijek.ID);
-                FrmLijekoviPopis frmPopisLijekova = new FrmLijekoviPopis();
+                FrmLijekPopis frmPopisLijekova = new FrmLijekPopis();
                 frmPopisLijekova.Show();
                 this.Close();
             }
         }
         private void btnOdustani_Click(object sender, EventArgs e)
         {
-            FrmLijekoviPopis frmPopisLijekova = new FrmLijekoviPopis();
+            FrmLijekPopis frmPopisLijekova = new FrmLijekPopis();
             frmPopisLijekova.Show();
             this.Close();
         }

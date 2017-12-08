@@ -65,7 +65,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewCheckBoxColumn1});
             this.pregledRezervacijaDataGridView.DataSource = this.pregledRezervacijaBindingSource;
-            this.pregledRezervacijaDataGridView.Location = new System.Drawing.Point(40, 136);
+            this.pregledRezervacijaDataGridView.Location = new System.Drawing.Point(44, 126);
             this.pregledRezervacijaDataGridView.Name = "pregledRezervacijaDataGridView";
             this.pregledRezervacijaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pregledRezervacijaDataGridView.Size = new System.Drawing.Size(571, 220);
@@ -113,7 +113,7 @@
             this.lblArtikli.BackColor = System.Drawing.Color.Transparent;
             this.lblArtikli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArtikli.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblArtikli.Location = new System.Drawing.Point(18, 117);
+            this.lblArtikli.Location = new System.Drawing.Point(11, 107);
             this.lblArtikli.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArtikli.Name = "lblArtikli";
             this.lblArtikli.Size = new System.Drawing.Size(83, 16);
@@ -152,7 +152,7 @@
             // 
             // btnIzlaz
             // 
-            this.btnIzlaz.Location = new System.Drawing.Point(669, 3);
+            this.btnIzlaz.Location = new System.Drawing.Point(662, 12);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(75, 26);
             this.btnIzlaz.TabIndex = 44;
@@ -240,7 +240,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
-            this.ClientSize = new System.Drawing.Size(759, 391);
+            this.ClientSize = new System.Drawing.Size(749, 371);
             this.Controls.Add(this.btnIzmijeniPodatke);
             this.Controls.Add(this.lblPretragaTekst);
             this.Controls.Add(this.txtBoxPretrazi);

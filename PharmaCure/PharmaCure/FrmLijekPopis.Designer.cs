@@ -1,6 +1,6 @@
 ﻿namespace PharmaCure
 {
-    partial class FrmLijekoviPopis
+    partial class FrmLijekPopis
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLijekoviPopis));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLijekPopis));
             this.btnPovratak = new System.Windows.Forms.Button();
             this.lblArtikli = new System.Windows.Forms.Label();
             this.btnIzlaz = new System.Windows.Forms.Button();
