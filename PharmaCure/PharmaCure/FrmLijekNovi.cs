@@ -22,13 +22,11 @@ namespace PharmaCure
         private void FrmNoviLijek_Load(object sender, EventArgs e)
         {
             int lijekID = int.Parse(this.lijekoviTableAdapter.VratiZadnjiID().ToString());
-            MessageBox.Show(lijekID.ToString());
             this.kategorijaTableAdapter.Fill(this._17003_DBDataSet.Kategorija);
             this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
             FrmLijekPopis frmPopisLijekova = new FrmLijekPopis();
             if (NacinRada != 0)
             {
-                MessageBox.Show(OdabraniLijek.datumProizvodnje.ToString());
                 btnDodaj.Text = "Spremi";
                 nazivTextBox.Text = OdabraniLijek.Naziv;
                 kratki_opisTextBox.Text = OdabraniLijek.kratkiOpis;

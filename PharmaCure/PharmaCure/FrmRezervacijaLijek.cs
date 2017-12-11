@@ -12,9 +12,10 @@ namespace PharmaCure
 {
     public partial class FrmRezervacijaLijek : Form
     {
+        public int IDRezervacija { get; set; }
+        public int IDLijek { get; set; }
         public string NazivLijeka { get; set; }
         public int Kolicina { get; set; }
-        public int IDLijek { get; set; }
         public int NacinRada { get; set; }
         public FrmRezervacijaLijek()
         {
@@ -22,8 +23,8 @@ namespace PharmaCure
         }
         private void FrmRezervacijaLijek_Load(object sender, EventArgs e)
         {
-            this.lijekoviTableAdapter.Fill(this._17003_DBDataSet.Lijekovi);
-            if (NacinRada==1)
+            lijekoviTableAdapter.Fill(_17003_DBDataSet.Lijekovi);
+            if (NacinRada == 1)
             {
                 comboBoxNaziv.Text = NazivLijeka;
                 textBoxKolicina.Text = Kolicina.ToString();
@@ -35,17 +36,16 @@ namespace PharmaCure
             frmRezervacija.Show();
             this.Close();
         }
-        private void btnIzlaz_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            int RezervacijaID = int.Parse(rezervacijaTableAdapter1.VratizadnjiID().ToString());
+            IDLijek = int.Parse(comboBoxNaziv.SelectedValue.ToString());
+            Kolicina = int.Parse(textBoxKolicina.Text);
             try
             {
-                popisTableAdapter.UpdateQueryLijek(int.Parse(comboBoxNaziv.SelectedValue.ToString()), int.Parse(textBoxKolicina.Text), RezervacijaID);
+                popisTableAdapter.InsertQuery(IDLijek, IDRezervacija, Kolicina);
                 FrmRezervacija frmRezervacija = new FrmRezervacija();
+                frmRezervacija.IDRezervacija = IDRezervacija;
+                frmRezervacija.NacinRada = 1;
                 frmRezervacija.Show();
                 this.Close();
             }
@@ -56,3 +56,4 @@ namespace PharmaCure
         }
     }
 }
+

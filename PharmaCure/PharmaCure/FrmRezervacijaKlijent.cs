@@ -12,6 +12,7 @@ namespace PharmaCure
 {
     public partial class FrmRezervacijaKlijent : Form
     {
+        public int IDRezervacija { get; set; }
         public FrmRezervacijaKlijent()
         {
             InitializeComponent();
@@ -43,14 +44,15 @@ namespace PharmaCure
             {
                 this.pregledKlijenataTableAdapter.SelectByImePrezime(this._17003_DBDataSet.PregledKlijenata, txtBoxPretrazi.Text);
             }
-
         }
         private void btnDodajKlijenta_Click(object sender, EventArgs e)
         {
-            int idRezervacija = int.Parse(rezervacijaTableAdapter.VratizadnjiID().ToString()) ;
             int idKlijent= int.Parse(pregledKlijenataDataGridView.CurrentRow.Cells[0].Value.ToString());
-            rezervacijaTableAdapter.DodajKlijenta(idKlijent,idRezervacija);
+            rezervacijaTableAdapter.DodajKlijenta(idKlijent,IDRezervacija);
             FrmRezervacija frmRezervacija = new FrmRezervacija();
+            frmRezervacija.IDRezervacija = IDRezervacija;
+            frmRezervacija.ImePrezimeKlijenta= pregledKlijenataDataGridView.CurrentRow.Cells[1].Value.ToString();
+            frmRezervacija.NacinRada = 1;
             frmRezervacija.Show();
             this.Close();
         }

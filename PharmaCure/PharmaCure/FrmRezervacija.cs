@@ -26,9 +26,11 @@ namespace PharmaCure
             if (NacinRada == 1)
             {
                 iD__rezervacijeTextBox.Text = IDRezervacija.ToString();
-                imePrezimeTextBox.Text = ImePrezimeKlijenta;
+                imePrezimeTextBox.Text = pregledRezervacijaTableAdapter.SelectVratiNaziv(IDRezervacija);
+                this.pregledRezervacija_LijekoviTableAdapter.FillByRezervacijaID(this._17003_DBDataSet.PregledRezervacija_Lijekovi, IDRezervacija);
             }
-            else {
+            else
+            {
                 PopuniPodatke();
             }   
         }
@@ -39,9 +41,11 @@ namespace PharmaCure
             iD__rezervacijeTextBox.Text = IDRezervacija.ToString();
             imePrezimeTextBox.Text = pregledRezervacijaTableAdapter.SelectVratiNaziv(IDRezervacija);
         }
-        private void btnIzlaz_Click(object sender, EventArgs e)
+        private void btnOdustani_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            FrmRezervacijaPopis frmRezervacijaPopis = new FrmRezervacijaPopis();
+            frmRezervacijaPopis.Show();
+            this.Close();
         }
         private void btnSpremiPromjene_Click(object sender, EventArgs e)
         {
@@ -59,30 +63,16 @@ namespace PharmaCure
         private void btnOdaberiKlijenta_Click(object sender, EventArgs e)
         {
             FrmRezervacijaKlijent frmRezervacijaKlijent = new FrmRezervacijaKlijent();
+            frmRezervacijaKlijent.IDRezervacija = int.Parse(iD__rezervacijeTextBox.Text);
             frmRezervacijaKlijent.Show();
             this.Close();
         }
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            int RezervacijaID = int.Parse(rezervacijaTableAdapter.VratizadnjiID().ToString());
-            popisTableAdapter1.InsertQueryIDRezervacija(RezervacijaID, 1);
             FrmRezervacijaLijek frmRezervacijaLijek = new FrmRezervacijaLijek();
+            frmRezervacijaLijek.IDRezervacija= int.Parse(iD__rezervacijeTextBox.Text);
             frmRezervacijaLijek.Show();
             this.Close();
-        }
-        private void btnPromijeni_Click(object sender, EventArgs e)
-        {
-            int brojRedova = pregledRezervacija_LijekoviDataGridView.RowCount;
-            if (brojRedova > 1)
-            {
-                FrmRezervacijaLijek odabraniLijek = new FrmRezervacijaLijek();
-                odabraniLijek.NazivLijeka = pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[0].Value.ToString();
-                odabraniLijek.Kolicina = int.Parse(pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[1].Value.ToString());
-                odabraniLijek.IDLijek = int.Parse(pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[2].Value.ToString());
-                odabraniLijek.NacinRada = 1;
-                odabraniLijek.Show();
-                this.Close();
-            }
         }
         private void btnObrisi_Click(object sender, EventArgs e)
         {
@@ -94,6 +84,10 @@ namespace PharmaCure
                 popisTableAdapter1.DeleteQueryLijek(IDLijek, IDRezervacija);
                 this.pregledRezervacija_LijekoviTableAdapter.FillByRezervacijaID(this._17003_DBDataSet.PregledRezervacija_Lijekovi, IDRezervacija);
             }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
