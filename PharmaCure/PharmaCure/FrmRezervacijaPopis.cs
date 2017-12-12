@@ -19,6 +19,7 @@ namespace PharmaCure
         }
         private void FrmPopisRezervacija_Load(object sender, EventArgs e)
         {
+            comboBoxPretraga.SelectedIndex = 0;
             OsvjeziPrikaz();
         }
         private void OsvjeziPrikaz()
@@ -64,28 +65,34 @@ namespace PharmaCure
             this.rezervacijaTableAdapter.UpdateStanje(stanjeUnos, IDRezervacija, IDRezervacija);
             OsvjeziPrikaz();
         }
-
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
-            bool pogreska = false;
-            try
+            if (txtBoxPretrazi.Text =="")
             {
-              
-                IDRezervacija = int.Parse(txtBoxPretrazi.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Upisana vrijednost mora biti broj!");
-                pogreska = true;
-            }
-            if (pogreska)
-            {
+                MessageBox.Show("Nikakva vrijednost nije upisana!");
                 pregledRezervacijaTableAdapter.SelectByStanje(this._17003_DBDataSet.PregledRezervacija);
             }
             else
             {
-                pregledRezervacijaTableAdapter.FillByIDRezervacije(this._17003_DBDataSet.PregledRezervacija, IDRezervacija);
-                pregledRezervacijaDataGridView.Columns[3].Visible = true;
+                if (comboBoxPretraga.SelectedIndex == 0)
+                {
+                    try
+                    {
+                        IDRezervacija = int.Parse(txtBoxPretrazi.Text);
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Upisana vrijednost mora biti broj!");
+                        pregledRezervacijaTableAdapter.SelectByStanje(this._17003_DBDataSet.PregledRezervacija);
+                    }
+                    pregledRezervacijaTableAdapter.SelectPretraziIByIDRezervacije(this._17003_DBDataSet.PregledRezervacija, IDRezervacija);
+                    pregledRezervacijaDataGridView.Columns[3].Visible = true;
+                }
+                else
+                {
+                    pregledRezervacijaTableAdapter.SelectPretraziByNaziv(this._17003_DBDataSet.PregledRezervacija, txtBoxPretrazi.Text);
+                    pregledRezervacijaDataGridView.Columns[3].Visible = true;
+                }
             }
         }
     }

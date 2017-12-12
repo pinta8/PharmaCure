@@ -49,6 +49,8 @@
             this.rezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
             this.btnIzmijeniPodatke = new System.Windows.Forms.Button();
+            this.lblPretragaCombo = new System.Windows.Forms.Label();
+            this.comboBoxPretraga = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacijaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacijaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).BeginInit();
@@ -65,17 +67,19 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewCheckBoxColumn1});
             this.pregledRezervacijaDataGridView.DataSource = this.pregledRezervacijaBindingSource;
-            this.pregledRezervacijaDataGridView.Location = new System.Drawing.Point(44, 126);
+            this.pregledRezervacijaDataGridView.Location = new System.Drawing.Point(38, 153);
             this.pregledRezervacijaDataGridView.Name = "pregledRezervacijaDataGridView";
+            this.pregledRezervacijaDataGridView.ReadOnly = true;
             this.pregledRezervacijaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pregledRezervacijaDataGridView.Size = new System.Drawing.Size(571, 220);
-            this.pregledRezervacijaDataGridView.TabIndex = 1;
+            this.pregledRezervacijaDataGridView.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "idRezervacija";
             this.dataGridViewTextBoxColumn2.HeaderText = "ID ";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 80;
             // 
             // dataGridViewTextBoxColumn3
@@ -83,6 +87,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ImePrezime";
             this.dataGridViewTextBoxColumn3.HeaderText = "Ime i prezime";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // dataGridViewTextBoxColumn1
@@ -90,12 +95,14 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "datum";
             this.dataGridViewTextBoxColumn1.HeaderText = "Datum";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "Stanje";
             this.dataGridViewCheckBoxColumn1.HeaderText = "Stanje";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // pregledRezervacijaBindingSource
             // 
@@ -113,7 +120,7 @@
             this.lblArtikli.BackColor = System.Drawing.Color.Transparent;
             this.lblArtikli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArtikli.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblArtikli.Location = new System.Drawing.Point(11, 107);
+            this.lblArtikli.Location = new System.Drawing.Point(9, 123);
             this.lblArtikli.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArtikli.Name = "lblArtikli";
             this.lblArtikli.Size = new System.Drawing.Size(83, 16);
@@ -122,20 +129,20 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(85, 67);
+            this.btnDodaj.Location = new System.Drawing.Point(90, 65);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(119, 28);
-            this.btnDodaj.TabIndex = 41;
+            this.btnDodaj.TabIndex = 1;
             this.btnDodaj.Text = "Dodaj rezervaciju";
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnPromijeni
             // 
-            this.btnPromijeni.Location = new System.Drawing.Point(336, 68);
+            this.btnPromijeni.Location = new System.Drawing.Point(374, 68);
             this.btnPromijeni.Name = "btnPromijeni";
             this.btnPromijeni.Size = new System.Drawing.Size(86, 26);
-            this.btnPromijeni.TabIndex = 42;
+            this.btnPromijeni.TabIndex = 3;
             this.btnPromijeni.Text = "Arhiviraj";
             this.btnPromijeni.UseVisualStyleBackColor = true;
             this.btnPromijeni.Click += new System.EventHandler(this.btnPromijeni_Click);
@@ -145,43 +152,43 @@
             this.btnPovratak.Location = new System.Drawing.Point(12, 12);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(75, 26);
-            this.btnPovratak.TabIndex = 43;
+            this.btnPovratak.TabIndex = 7;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
             // btnIzlaz
             // 
-            this.btnIzlaz.Location = new System.Drawing.Point(662, 12);
+            this.btnIzlaz.Location = new System.Drawing.Point(795, 12);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(75, 26);
-            this.btnIzlaz.TabIndex = 44;
+            this.btnIzlaz.TabIndex = 8;
             this.btnIzlaz.Text = "Izlaz";
             this.btnIzlaz.UseVisualStyleBackColor = true;
             this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
             // 
             // btnPretrazi
             // 
-            this.btnPretrazi.Location = new System.Drawing.Point(651, 69);
+            this.btnPretrazi.Location = new System.Drawing.Point(798, 100);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(79, 26);
-            this.btnPretrazi.TabIndex = 45;
+            this.btnPretrazi.TabIndex = 5;
             this.btnPretrazi.Text = "Pretraži";
             this.btnPretrazi.UseVisualStyleBackColor = true;
             this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
             // 
             // txtBoxPretrazi
             // 
-            this.txtBoxPretrazi.Location = new System.Drawing.Point(566, 72);
+            this.txtBoxPretrazi.Location = new System.Drawing.Point(713, 103);
             this.txtBoxPretrazi.Name = "txtBoxPretrazi";
             this.txtBoxPretrazi.Size = new System.Drawing.Size(79, 20);
-            this.txtBoxPretrazi.TabIndex = 46;
+            this.txtBoxPretrazi.TabIndex = 4;
             // 
             // lblPretragaTekst
             // 
             this.lblPretragaTekst.AutoSize = true;
             this.lblPretragaTekst.BackColor = System.Drawing.Color.Transparent;
-            this.lblPretragaTekst.Location = new System.Drawing.Point(481, 75);
+            this.lblPretragaTekst.Location = new System.Drawing.Point(628, 106);
             this.lblPretragaTekst.Name = "lblPretragaTekst";
             this.lblPretragaTekst.Size = new System.Drawing.Size(79, 13);
             this.lblPretragaTekst.TabIndex = 61;
@@ -227,20 +234,44 @@
             // 
             // btnIzmijeniPodatke
             // 
-            this.btnIzmijeniPodatke.Location = new System.Drawing.Point(211, 67);
+            this.btnIzmijeniPodatke.Location = new System.Drawing.Point(229, 66);
             this.btnIzmijeniPodatke.Name = "btnIzmijeniPodatke";
             this.btnIzmijeniPodatke.Size = new System.Drawing.Size(119, 28);
-            this.btnIzmijeniPodatke.TabIndex = 62;
+            this.btnIzmijeniPodatke.TabIndex = 2;
             this.btnIzmijeniPodatke.Text = "Izmijeni podatke";
             this.btnIzmijeniPodatke.UseVisualStyleBackColor = true;
             this.btnIzmijeniPodatke.Click += new System.EventHandler(this.btnIzmijeniPodatke_Click);
+            // 
+            // lblPretragaCombo
+            // 
+            this.lblPretragaCombo.AutoSize = true;
+            this.lblPretragaCombo.BackColor = System.Drawing.Color.Transparent;
+            this.lblPretragaCombo.Location = new System.Drawing.Point(451, 104);
+            this.lblPretragaCombo.Name = "lblPretragaCombo";
+            this.lblPretragaCombo.Size = new System.Drawing.Size(77, 13);
+            this.lblPretragaCombo.TabIndex = 63;
+            this.lblPretragaCombo.Text = "Pretraži prema:";
+            // 
+            // comboBoxPretraga
+            // 
+            this.comboBoxPretraga.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPretraga.FormattingEnabled = true;
+            this.comboBoxPretraga.Items.AddRange(new object[] {
+            "ID ",
+            "Ime i prezime"});
+            this.comboBoxPretraga.Location = new System.Drawing.Point(534, 100);
+            this.comboBoxPretraga.Name = "comboBoxPretraga";
+            this.comboBoxPretraga.Size = new System.Drawing.Size(88, 21);
+            this.comboBoxPretraga.TabIndex = 62;
             // 
             // FrmRezervacijaPopis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
-            this.ClientSize = new System.Drawing.Size(749, 371);
+            this.ClientSize = new System.Drawing.Size(882, 371);
+            this.Controls.Add(this.lblPretragaCombo);
+            this.Controls.Add(this.comboBoxPretraga);
             this.Controls.Add(this.btnIzmijeniPodatke);
             this.Controls.Add(this.lblPretragaTekst);
             this.Controls.Add(this.txtBoxPretrazi);
@@ -281,11 +312,13 @@
         private System.Windows.Forms.TextBox txtBoxPretrazi;
         private System.Windows.Forms.BindingSource rezervacijaBindingSource;
         private _17003_DBDataSetTableAdapters.RezervacijaTableAdapter rezervacijaTableAdapter;
+        private System.Windows.Forms.Label lblPretragaTekst;
+        private System.Windows.Forms.Button btnIzmijeniPodatke;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.Label lblPretragaTekst;
-        private System.Windows.Forms.Button btnIzmijeniPodatke;
+        private System.Windows.Forms.Label lblPretragaCombo;
+        private System.Windows.Forms.ComboBox comboBoxPretraga;
     }
 }

@@ -57,7 +57,6 @@
             this.pregledRezervacija_LijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacija_LijekoviTableAdapter();
             this.pregledRezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacijaTableAdapter();
             this.rezervacijaTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             iD__rezervacijeLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             imePrezimeLabel = new System.Windows.Forms.Label();
@@ -73,7 +72,7 @@
             // 
             iD__rezervacijeLabel.AutoSize = true;
             iD__rezervacijeLabel.BackColor = System.Drawing.Color.Transparent;
-            iD__rezervacijeLabel.Location = new System.Drawing.Point(28, 22);
+            iD__rezervacijeLabel.Location = new System.Drawing.Point(12, 60);
             iD__rezervacijeLabel.Name = "iD__rezervacijeLabel";
             iD__rezervacijeLabel.Size = new System.Drawing.Size(75, 13);
             iD__rezervacijeLabel.TabIndex = 1;
@@ -83,7 +82,7 @@
             // 
             datumLabel.AutoSize = true;
             datumLabel.BackColor = System.Drawing.Color.Transparent;
-            datumLabel.Location = new System.Drawing.Point(28, 59);
+            datumLabel.Location = new System.Drawing.Point(12, 97);
             datumLabel.Name = "datumLabel";
             datumLabel.Size = new System.Drawing.Size(41, 13);
             datumLabel.TabIndex = 2;
@@ -93,7 +92,7 @@
             // 
             imePrezimeLabel.AutoSize = true;
             imePrezimeLabel.BackColor = System.Drawing.Color.Transparent;
-            imePrezimeLabel.Location = new System.Drawing.Point(28, 93);
+            imePrezimeLabel.Location = new System.Drawing.Point(12, 131);
             imePrezimeLabel.Name = "imePrezimeLabel";
             imePrezimeLabel.Size = new System.Drawing.Size(107, 13);
             imePrezimeLabel.TabIndex = 4;
@@ -102,7 +101,7 @@
             // iD__rezervacijeTextBox
             // 
             this.iD__rezervacijeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rezervacijaBindingSource, "ID__rezervacije", true));
-            this.iD__rezervacijeTextBox.Location = new System.Drawing.Point(140, 19);
+            this.iD__rezervacijeTextBox.Location = new System.Drawing.Point(124, 57);
             this.iD__rezervacijeTextBox.Name = "iD__rezervacijeTextBox";
             this.iD__rezervacijeTextBox.Size = new System.Drawing.Size(139, 20);
             this.iD__rezervacijeTextBox.TabIndex = 2;
@@ -120,7 +119,7 @@
             // datumDateTimePicker
             // 
             this.datumDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.rezervacijaBindingSource, "Datum", true));
-            this.datumDateTimePicker.Location = new System.Drawing.Point(140, 53);
+            this.datumDateTimePicker.Location = new System.Drawing.Point(124, 91);
             this.datumDateTimePicker.Name = "datumDateTimePicker";
             this.datumDateTimePicker.Size = new System.Drawing.Size(139, 20);
             this.datumDateTimePicker.TabIndex = 3;
@@ -128,7 +127,7 @@
             // imePrezimeTextBox
             // 
             this.imePrezimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klijentBindingSource, "ImePrezime", true));
-            this.imePrezimeTextBox.Location = new System.Drawing.Point(140, 90);
+            this.imePrezimeTextBox.Location = new System.Drawing.Point(124, 128);
             this.imePrezimeTextBox.Name = "imePrezimeTextBox";
             this.imePrezimeTextBox.Size = new System.Drawing.Size(139, 20);
             this.imePrezimeTextBox.TabIndex = 5;
@@ -140,7 +139,7 @@
             // 
             // btnOdaberiKlijenta
             // 
-            this.btnOdaberiKlijenta.Location = new System.Drawing.Point(285, 90);
+            this.btnOdaberiKlijenta.Location = new System.Drawing.Point(269, 128);
             this.btnOdaberiKlijenta.Name = "btnOdaberiKlijenta";
             this.btnOdaberiKlijenta.Size = new System.Drawing.Size(32, 20);
             this.btnOdaberiKlijenta.TabIndex = 6;
@@ -157,10 +156,10 @@
             this.dataGridViewTextBoxColumn3,
             this.ID_Lijeka});
             this.pregledRezervacija_LijekoviDataGridView.DataSource = this.pregledRezervacija_LijekoviBindingSource;
-            this.pregledRezervacija_LijekoviDataGridView.Location = new System.Drawing.Point(54, 186);
+            this.pregledRezervacija_LijekoviDataGridView.Location = new System.Drawing.Point(28, 227);
             this.pregledRezervacija_LijekoviDataGridView.Name = "pregledRezervacija_LijekoviDataGridView";
             this.pregledRezervacija_LijekoviDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pregledRezervacija_LijekoviDataGridView.Size = new System.Drawing.Size(481, 236);
+            this.pregledRezervacija_LijekoviDataGridView.Size = new System.Drawing.Size(481, 223);
             this.pregledRezervacija_LijekoviDataGridView.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn2
@@ -190,7 +189,7 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(84, 141);
+            this.btnDodaj.Location = new System.Drawing.Point(104, 194);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(128, 23);
             this.btnDodaj.TabIndex = 8;
@@ -200,7 +199,7 @@
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(395, 141);
+            this.btnObrisi.Location = new System.Drawing.Point(307, 194);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(128, 23);
             this.btnObrisi.TabIndex = 9;
@@ -218,9 +217,9 @@
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(381, 52);
+            this.btnSpremi.Location = new System.Drawing.Point(8, 11);
             this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(119, 26);
+            this.btnSpremi.Size = new System.Drawing.Size(78, 27);
             this.btnSpremi.TabIndex = 44;
             this.btnSpremi.Text = "Spremi ";
             this.btnSpremi.UseVisualStyleBackColor = true;
@@ -228,7 +227,7 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(560, 52);
+            this.btnOdustani.Location = new System.Drawing.Point(522, 11);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 26);
             this.btnOdustani.TabIndex = 45;
@@ -242,7 +241,7 @@
             this.lblArtikli.BackColor = System.Drawing.Color.Transparent;
             this.lblArtikli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArtikli.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblArtikli.Location = new System.Drawing.Point(6, 141);
+            this.lblArtikli.Location = new System.Drawing.Point(11, 194);
             this.lblArtikli.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArtikli.Name = "lblArtikli";
             this.lblArtikli.Size = new System.Drawing.Size(57, 16);
@@ -295,23 +294,12 @@
             // 
             this.rezervacijaTableAdapter1.ClearBeforeFill = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(560, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Izlaz";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FrmRezervacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
-            this.ClientSize = new System.Drawing.Size(647, 448);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(609, 462);
             this.Controls.Add(this.lblArtikli);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremi);
@@ -367,6 +355,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Lijeka;
-        private System.Windows.Forms.Button button1;
     }
 }
