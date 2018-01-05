@@ -36,7 +36,6 @@
             System.Windows.Forms.Label datum_proizvodnjeLabel;
             System.Windows.Forms.Label kratki_opisLabel;
             System.Windows.Forms.Label nazivLabel;
-            System.Windows.Forms.Label stanjeLabel;
             this.cijenaTextBox = new System.Windows.Forms.TextBox();
             this.zemlja_porijeklaTextBox = new System.Windows.Forms.TextBox();
             this.btnDodaj = new System.Windows.Forms.Button();
@@ -53,6 +52,7 @@
             this.kategorijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.KategorijaTableAdapter();
             this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
             this.stanjeCheckBox = new System.Windows.Forms.CheckBox();
+            this.lblStanje = new System.Windows.Forms.Label();
             cijenaLabel = new System.Windows.Forms.Label();
             zemlja_porijeklaLabel = new System.Windows.Forms.Label();
             nazivLabel1 = new System.Windows.Forms.Label();
@@ -60,7 +60,6 @@
             datum_proizvodnjeLabel = new System.Windows.Forms.Label();
             kratki_opisLabel = new System.Windows.Forms.Label();
             nazivLabel = new System.Windows.Forms.Label();
-            stanjeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kategorijaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekoviBindingSource)).BeginInit();
@@ -135,16 +134,6 @@
             nazivLabel.Size = new System.Drawing.Size(37, 13);
             nazivLabel.TabIndex = 63;
             nazivLabel.Text = "Naziv:";
-            // 
-            // stanjeLabel
-            // 
-            stanjeLabel.AutoSize = true;
-            stanjeLabel.BackColor = System.Drawing.Color.Transparent;
-            stanjeLabel.Location = new System.Drawing.Point(191, 251);
-            stanjeLabel.Name = "stanjeLabel";
-            stanjeLabel.Size = new System.Drawing.Size(40, 13);
-            stanjeLabel.TabIndex = 70;
-            stanjeLabel.Text = "Stanje:";
             // 
             // cijenaTextBox
             // 
@@ -278,13 +267,24 @@
             this.stanjeCheckBox.Text = "aktivan";
             this.stanjeCheckBox.UseVisualStyleBackColor = false;
             // 
-            // FrmNoviLijek
+            // lblStanje
+            // 
+            this.lblStanje.AutoSize = true;
+            this.lblStanje.BackColor = System.Drawing.Color.Transparent;
+            this.lblStanje.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblStanje.Location = new System.Drawing.Point(191, 251);
+            this.lblStanje.Name = "lblStanje";
+            this.lblStanje.Size = new System.Drawing.Size(40, 13);
+            this.lblStanje.TabIndex = 71;
+            this.lblStanje.Text = "Stanje:";
+            // 
+            // FrmLijekNovi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
             this.ClientSize = new System.Drawing.Size(535, 337);
-            this.Controls.Add(stanjeLabel);
+            this.Controls.Add(this.lblStanje);
             this.Controls.Add(this.stanjeCheckBox);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(label1);
@@ -303,7 +303,7 @@
             this.Controls.Add(cijenaLabel);
             this.Controls.Add(this.cijenaTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmNoviLijek";
+            this.Name = "FrmLijekNovi";
             this.Text = "FrmNoviLijek";
             this.Load += new System.EventHandler(this.FrmNoviLijek_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kategorijaBindingSource)).EndInit();
@@ -331,5 +331,6 @@
         private _17003_DBDataSetTableAdapters.KategorijaTableAdapter kategorijaTableAdapter;
         private _17003_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.CheckBox stanjeCheckBox;
+        private System.Windows.Forms.Label lblStanje;
     }
 }

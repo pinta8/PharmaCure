@@ -67,7 +67,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewCheckBoxColumn1});
             this.pregledRezervacijaDataGridView.DataSource = this.pregledRezervacijaBindingSource;
-            this.pregledRezervacijaDataGridView.Location = new System.Drawing.Point(38, 153);
+            this.pregledRezervacijaDataGridView.Location = new System.Drawing.Point(51, 142);
             this.pregledRezervacijaDataGridView.Name = "pregledRezervacijaDataGridView";
             this.pregledRezervacijaDataGridView.ReadOnly = true;
             this.pregledRezervacijaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -169,7 +169,7 @@
             // 
             // btnPretrazi
             // 
-            this.btnPretrazi.Location = new System.Drawing.Point(798, 100);
+            this.btnPretrazi.Location = new System.Drawing.Point(798, 97);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(79, 26);
             this.btnPretrazi.TabIndex = 5;
@@ -179,7 +179,7 @@
             // 
             // txtBoxPretrazi
             // 
-            this.txtBoxPretrazi.Location = new System.Drawing.Point(713, 103);
+            this.txtBoxPretrazi.Location = new System.Drawing.Point(713, 100);
             this.txtBoxPretrazi.Name = "txtBoxPretrazi";
             this.txtBoxPretrazi.Size = new System.Drawing.Size(79, 20);
             this.txtBoxPretrazi.TabIndex = 4;
@@ -188,7 +188,7 @@
             // 
             this.lblPretragaTekst.AutoSize = true;
             this.lblPretragaTekst.BackColor = System.Drawing.Color.Transparent;
-            this.lblPretragaTekst.Location = new System.Drawing.Point(628, 106);
+            this.lblPretragaTekst.Location = new System.Drawing.Point(628, 103);
             this.lblPretragaTekst.Name = "lblPretragaTekst";
             this.lblPretragaTekst.Size = new System.Drawing.Size(79, 13);
             this.lblPretragaTekst.TabIndex = 61;
@@ -269,7 +269,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
-            this.ClientSize = new System.Drawing.Size(882, 371);
+            this.ClientSize = new System.Drawing.Size(882, 378);
             this.Controls.Add(this.lblPretragaCombo);
             this.Controls.Add(this.comboBoxPretraga);
             this.Controls.Add(this.btnIzmijeniPodatke);

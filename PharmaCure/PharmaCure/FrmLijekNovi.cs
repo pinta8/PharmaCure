@@ -36,6 +36,11 @@ namespace PharmaCure
                 zemlja_porijeklaTextBox.Text = OdabraniLijek.zemljaPorijekla;
                 nazivComboBox.Text = NazivKategorije;
             }
+            else
+            {
+                stanjeCheckBox.Visible = false;
+                lblStanje.Visible = false;
+            }
         }
         private void btnDodaj_Click(object sender, EventArgs e)
         {
@@ -61,7 +66,7 @@ namespace PharmaCure
                     int kategorijaID = int.Parse(nazivComboBox.SelectedValue.ToString());
                     if (Cijena > 0)
                     {
-                        this.lijekoviTableAdapter.InsertQuery(lijekID, nazivLijeka, kratkiOpis, datumProizvodnje.ToString(), datumIsteka.ToString(), Cijena, zemljaPorijekla, kategorijaID);
+                        this.lijekoviTableAdapter.InsertQuery(lijekID, nazivLijeka, kratkiOpis, datumProizvodnje.ToString(), datumIsteka.ToString(), Cijena, zemljaPorijekla, kategorijaID, true);
                         FrmLijekPopis frmPopisLijekova = new FrmLijekPopis();
                         frmPopisLijekova.Show();
                         this.Close();

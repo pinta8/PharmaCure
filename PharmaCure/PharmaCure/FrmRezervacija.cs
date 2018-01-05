@@ -12,6 +12,7 @@ namespace PharmaCure
 {
     public partial class FrmRezervacija : Form
     {
+        CrtajGraf.FrmKolicine frmKolicine = new CrtajGraf.FrmKolicine();
         public int IDRezervacija { get; set; }
         public int IDLijek { get; set; }
         public int Kolicina { get; set; }
@@ -20,7 +21,7 @@ namespace PharmaCure
         public FrmRezervacija()
         {
             InitializeComponent();
-        }
+        } 
         private void FrmRezervacija_Load(object sender, EventArgs e)
         {
             if (NacinRada == 1)
@@ -36,7 +37,7 @@ namespace PharmaCure
         }
         private void PopuniPodatke()
         {
-            IDRezervacija=int.Parse(rezervacijaTableAdapter.VratizadnjiID().ToString());
+            IDRezervacija = frmKolicine.VratiZadnjiID();
             this.pregledRezervacija_LijekoviTableAdapter.FillByRezervacijaID(this._17003_DBDataSet.PregledRezervacija_Lijekovi, IDRezervacija);
             iD__rezervacijeTextBox.Text = IDRezervacija.ToString();
             imePrezimeTextBox.Text = pregledRezervacijaTableAdapter.SelectVratiNaziv(IDRezervacija);
@@ -85,9 +86,6 @@ namespace PharmaCure
                 this.pregledRezervacija_LijekoviTableAdapter.FillByRezervacijaID(this._17003_DBDataSet.PregledRezervacija_Lijekovi, IDRezervacija);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+       
     }
 }

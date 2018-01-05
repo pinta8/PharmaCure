@@ -53,6 +53,7 @@
             this.prikaziSve = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.btnPovratak = new System.Windows.Forms.Button();
+            this.lijekoviReceptTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.LijekoviReceptTableAdapter();
             lijekovi_IDLabel = new System.Windows.Forms.Label();
             poslovnica_IDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).BeginInit();
@@ -154,7 +155,7 @@
             this.lijekoviComboBox.Size = new System.Drawing.Size(121, 21);
             this.lijekoviComboBox.TabIndex = 2;
             this.lijekoviComboBox.ValueMember = "ID_Lijek";
-            this.lijekoviComboBox.SelectedIndexChanged += new System.EventHandler(this.lijekoviComboBox_SelectedIndexChanged);
+            this.lijekoviComboBox.SelectedIndexChanged += new System.EventHandler(this.LijekoviComboBox_SelectedIndexChanged);
             // 
             // poslovniceComboBox
             // 
@@ -233,6 +234,10 @@
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click_1);
             // 
+            // lijekoviReceptTableAdapter1
+            // 
+            this.lijekoviReceptTableAdapter1.ClearBeforeFill = true;
+            // 
             // FrmKolicine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,5 +287,6 @@
         private System.Windows.Forms.Button prikaziSve;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Button btnPovratak;
+        private _17003_DBDataSetTableAdapters.LijekoviReceptTableAdapter lijekoviReceptTableAdapter1;
     }
 }

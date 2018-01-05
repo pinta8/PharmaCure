@@ -28,8 +28,9 @@ namespace PharmaCure
             //else
             //{
                 FrmMain m = new FrmMain();
-				this.Hide();
 				m.Show();
+                this.Hide();
+            
             //}
         }
         //Gumb za izlazak iz aplikacije
