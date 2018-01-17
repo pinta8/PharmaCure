@@ -19,6 +19,12 @@ namespace PharmaCure
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Forma ima 2 načina rada kao i kod rezervacija (unos novog lijeka ili izmjena podataka o postojećem lijeku). Ukoliko je 
+        /// varijabla NacinRada !=0 tada se prikazuju u formi podaci od odabranog lijeka.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmNoviLijek_Load(object sender, EventArgs e)
         {
             int lijekID = int.Parse(this.lijekoviTableAdapter.VratiZadnjiID().ToString());
@@ -42,6 +48,12 @@ namespace PharmaCure
                 lblStanje.Visible = false;
             }
         }
+        /// <summary>
+        /// Dodavanje novog lijeka u bazu podataka. Sve pogreške u radu (npr. ukoliko se unese slovo umjesto brojke kod polja za 
+        /// unos "Količina") jest rješeno pomoću iznimki.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             if (NacinRada == 0)
@@ -94,6 +106,11 @@ namespace PharmaCure
                 this.Close();
             }
         }
+        /// <summary>
+        /// Izlaz iz aplikacije.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             FrmLijekPopis frmPopisLijekova = new FrmLijekPopis();

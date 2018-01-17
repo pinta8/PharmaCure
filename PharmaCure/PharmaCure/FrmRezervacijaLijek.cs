@@ -21,6 +21,11 @@ namespace PharmaCure
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Ukoliko je odabran određen lijek u prijašnjoj formi tada se popunjavaju podaci prema tom lijeku
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmRezervacijaLijek_Load(object sender, EventArgs e)
         {
             lijekoviTableAdapter.Fill(_17003_DBDataSet.Lijekovi);
@@ -36,6 +41,11 @@ namespace PharmaCure
             frmRezervacija.Show();
             this.Close();
         }
+        /// <summary>
+        /// Metoda za unos novog lijeka u određenu rezervaciju
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             bool pogreska = false;

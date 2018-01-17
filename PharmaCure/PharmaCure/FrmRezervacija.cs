@@ -22,6 +22,12 @@ namespace PharmaCure
         {
             InitializeComponent();
         } 
+        /// <summary>
+        /// Forma radi na 2 načina, ukoliko je NacinRada==1 tada to znači da smo u prijašnjoj formi odabrali neku postojeću rezervaciju 
+        /// te nam se podaci pune prema toj postojećoj rezervaciji.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmRezervacija_Load(object sender, EventArgs e)
         {
             if (NacinRada == 1)
@@ -48,6 +54,11 @@ namespace PharmaCure
             frmRezervacijaPopis.Show();
             this.Close();
         }
+        /// <summary>
+        /// Spremanje promjena te otvaranje prijašnje forme za odabir rezervacija.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSpremiPromjene_Click(object sender, EventArgs e)
         {
             if (imePrezimeTextBox.Text !="")
@@ -61,6 +72,11 @@ namespace PharmaCure
                 MessageBox.Show("Niste odabrali klijenta!");
             }
         }
+        /// <summary>
+        /// Metoda za otvaranje forme za odabir klijenta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOdaberiKlijenta_Click(object sender, EventArgs e)
         {
             FrmRezervacijaKlijent frmRezervacijaKlijent = new FrmRezervacijaKlijent();
@@ -68,6 +84,11 @@ namespace PharmaCure
             frmRezervacijaKlijent.Show();
             this.Close();
         }
+        /// <summary>
+        /// Otvaranje forme za dodavanje lijeka za određenu rezervaciju.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             FrmRezervacijaLijek frmRezervacijaLijek = new FrmRezervacijaLijek();
@@ -75,6 +96,11 @@ namespace PharmaCure
             frmRezervacijaLijek.Show();
             this.Close();
         }
+        /// <summary>
+        /// Metoda za brisanje lijeka iz rezervacije.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             int brojRedova = pregledRezervacija_LijekoviDataGridView.RowCount;
@@ -86,6 +112,11 @@ namespace PharmaCure
                 this.pregledRezervacija_LijekoviTableAdapter.FillByRezervacijaID(this._17003_DBDataSet.PregledRezervacija_Lijekovi, IDRezervacija);
             }
         }
+        /// <summary>
+        /// Brisanje lijeka iz određene rezervacije.
+        /// </summary>
+        /// <param name="IDLijek"></param>
+        /// <param name="IDRezervacija"></param>
        public void ObrisiLijek(int IDLijek, int IDRezervacija)
         {
             popisTableAdapter1.DeleteQueryLijek(IDLijek, IDRezervacija);

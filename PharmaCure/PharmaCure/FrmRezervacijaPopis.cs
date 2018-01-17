@@ -22,21 +22,39 @@ namespace PharmaCure
             comboBoxPretraga.SelectedIndex = 0;
             OsvjeziPrikaz();
         }
+        /// <summary>
+        /// Metoda za osvježivanje prikaza u dgv-u.
+        /// </summary>
         private void OsvjeziPrikaz()
         {
             this.pregledRezervacijaTableAdapter.SelectByStanje(this._17003_DBDataSet.PregledRezervacija);
             pregledRezervacijaDataGridView.Columns[3].Visible = false;
         }
+        /// <summary>
+        /// Metoda za povratak u prijašnju formu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             FrmMain frmMain = new FrmMain();
             frmMain.Show();
             this.Close();
         }
+        /// <summary>
+        /// Metoda za izlaz iz programa.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        /// <summary>
+        /// Dodavanje nove rezervacije u bazu podataka.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             rezervacijaTableAdapter.InsertNovaRezervacija(DateTime.Now, true);
@@ -44,6 +62,11 @@ namespace PharmaCure
             frmRezervacijaNova.Show();
             this.Close();
         }
+        /// <summary>
+        /// Metoda za izmjenu podataka o određenoj rezervaciji.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzmijeniPodatke_Click(object sender, EventArgs e)
         {
             FrmRezervacija odabranaRezervacija = new FrmRezervacija();
@@ -53,6 +76,11 @@ namespace PharmaCure
             odabranaRezervacija.Show();
             this.Close();
         }
+        /// <summary>
+        /// Metoda za arhiviranje određene rezervacije.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPromijeni_Click(object sender, EventArgs e)
         {
             IDRezervacija =int.Parse(pregledRezervacijaDataGridView.CurrentRow.Cells[0].Value.ToString());
@@ -65,6 +93,11 @@ namespace PharmaCure
             this.rezervacijaTableAdapter.UpdateStanje(stanjeUnos, IDRezervacija, IDRezervacija);
             OsvjeziPrikaz();
         }
+        /// <summary>
+        /// Pretraživanje rezervacija po ID-u ili imenu i prezimenu klijenta.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
             if (txtBoxPretrazi.Text =="")

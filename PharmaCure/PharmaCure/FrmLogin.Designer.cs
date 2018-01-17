@@ -50,7 +50,7 @@
             this.btnPrijaviSe.TabIndex = 3;
             this.btnPrijaviSe.Text = "Prijavi se";
             this.btnPrijaviSe.UseVisualStyleBackColor = true;
-            this.btnPrijaviSe.Click += new System.EventHandler(this.button1_Click);
+            this.btnPrijaviSe.Click += new System.EventHandler(this.btnPrijava);
             // 
             // lblKorisnickoIme
             // 
@@ -130,7 +130,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

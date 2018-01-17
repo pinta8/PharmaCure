@@ -21,17 +21,33 @@ namespace PharmaCure
             InitializeComponent();
             this.KeyPreview = true;
         }
+        /// <summary>
+        /// Metoda za prikaz F1 pomoći.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmKolicine_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)
             {
                 System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisni%C4%8Dka-dokumentacija#23-koli%C4%8Dina-lijekova-po-poslovnicama");
             }
-        }private void prikaziSve_Click(object sender, EventArgs e)
+        }
+        /// <summary>
+        /// Metoda za prikaz svih lijekovi na izvještaju.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void prikaziSve_Click(object sender, EventArgs e)
         {
             this.PregledLijekovaTableAdapter.Fill(this._17003_DBDataSet.PregledLijekova);
             OsvjeziPrikaz();
         }
+        /// <summary>
+        /// Omogućavanje prikaza sadržaja u izvještaju i grafu prilikom učitavanja forme.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmKolicine_Load(object sender, EventArgs e)
         {
             this.PregledLijekovaTableAdapter.Fill(this._17003_DBDataSet.PregledLijekova);
@@ -50,6 +66,11 @@ namespace PharmaCure
             m.Show();
             this.Close();
         }
+        /// <summary>
+        /// Metoda koja kod svake promjene poslovnice osvježava prikaz izvještaja i grafa.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void poslovniceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (poslovniceComboBox.SelectedItem != null)
@@ -62,6 +83,11 @@ namespace PharmaCure
                 OsvjeziPrikaz();
             }
         }
+        /// <summary>
+        /// Metoda koja kod svake odabranog lijeka osvježava prikaz izvještaja i grafa.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LijekoviComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lijekoviComboBox.SelectedItem != null && poslovniceComboBox.SelectedItem!=null) 
@@ -73,10 +99,16 @@ namespace PharmaCure
                 OsvjeziPrikaz();
             }
         }
+        /// <summary>
+        /// Metoda za osvježavanje prikaza izvještaja.
+        /// </summary>
         private void OsvjeziPrikaz()
         {
             this.reportViewer1.RefreshReport();
         }
+        /// <summary>
+        /// Metoda koja omogućava crtanje grafova. Podaci se pune iz pogleda "PregledLijekova".
+        /// </summary>
         private void CrtajGraf()
         {
             Series podaciGraf = new Series();

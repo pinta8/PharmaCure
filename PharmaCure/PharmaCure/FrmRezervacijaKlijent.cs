@@ -34,6 +34,11 @@ namespace PharmaCure
         {
             Application.Exit();
         }
+        /// <summary>
+        /// Metoda koja služi za pretragu prema ID-u ili nazivu klijenta.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
             if (comboBoxPretraga.SelectedIndex == 0)
@@ -45,6 +50,11 @@ namespace PharmaCure
                 this.pregledKlijenataTableAdapter.SelectByImePrezime(this._17003_DBDataSet.PregledKlijenata, txtBoxPretrazi.Text);
             }
         }
+        /// <summary>
+        /// Metoda za spremanje promjena te dodavanja klijenta za određenu rezervaciju.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodajKlijenta_Click(object sender, EventArgs e)
         {
             int idKlijent= int.Parse(pregledKlijenataDataGridView.CurrentRow.Cells[0].Value.ToString());
