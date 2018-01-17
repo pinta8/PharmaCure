@@ -95,5 +95,9 @@ namespace PharmaCure
                 }
             }
         }
+        public int TestStanje()
+        {
+            return int.Parse(pregledRezervacijaTableAdapter.SelectCountStanje().ToString());
+        }
     }
 }

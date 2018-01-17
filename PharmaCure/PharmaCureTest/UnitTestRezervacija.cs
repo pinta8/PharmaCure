@@ -6,6 +6,9 @@ namespace PharmaCureTest
     public class UnitTest1
     {
         [TestMethod]
+        ///<summary>
+        ///Vraća 
+        ///</summary>
         public void TestVratiZadnjiID()
         {
             CrtajGraf.FrmKolicine testFrmKolicine = new CrtajGraf.FrmKolicine();

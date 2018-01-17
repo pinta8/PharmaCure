@@ -26,7 +26,7 @@ namespace PharmaCure
             m.Show();
             this.Close();
         }
-        private void OsvjeziListu()
+        public void OsvjeziListu()
         {
             kl = Klijent.DohvatiSveKlijente();
             dgvKlijenti.DataSource = kl;

@@ -38,21 +38,41 @@ namespace PharmaCure
         }
         private void btnSpremi_Click(object sender, EventArgs e)
         {
+            bool pogreska = false;
             IDLijek = int.Parse(comboBoxNaziv.SelectedValue.ToString());
-            Kolicina = int.Parse(textBoxKolicina.Text);
             try
             {
-                popisTableAdapter.InsertQuery(IDLijek, IDRezervacija, Kolicina);
-                FrmRezervacija frmRezervacija = new FrmRezervacija();
-                frmRezervacija.IDRezervacija = IDRezervacija;
-                frmRezervacija.NacinRada = 1;
-                frmRezervacija.Show();
-                this.Close();
+                Kolicina = int.Parse(textBoxKolicina.Text);
             }
             catch (FormatException)
             {
+                pogreska = true;
                 MessageBox.Show("Provjerite da li je količina unešena te da li je unešena brojka!");
             }
+            if (!pogreska)
+            {
+                try
+                {
+                    popisTableAdapter.InsertQuery(IDLijek, IDRezervacija, Kolicina);
+                    FrmRezervacija frmRezervacija = new FrmRezervacija();
+                    frmRezervacija.IDRezervacija = IDRezervacija;
+                    frmRezervacija.NacinRada = 1;
+                    frmRezervacija.Show();
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    pogreska = true;
+                    MessageBox.Show("Već se odabrali traženi lijek!");
+                }
+            }
+            if (!pogreska)
+            {
+                this.Close();
+            }
+        }
+        public void UnesiLijek(int IDLijek, int IDRezervacija, int Kolicina)
+        {
+            popisTableAdapter.InsertQuery(IDLijek, IDRezervacija, Kolicina);
         }
     }
 }

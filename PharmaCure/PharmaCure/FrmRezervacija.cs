@@ -82,10 +82,13 @@ namespace PharmaCure
             {
                 IDRezervacija = int.Parse(iD__rezervacijeTextBox.Text);
                 IDLijek = int.Parse(pregledRezervacija_LijekoviDataGridView.CurrentRow.Cells[2].Value.ToString());
-                popisTableAdapter1.DeleteQueryLijek(IDLijek, IDRezervacija);
+                ObrisiLijek(IDLijek, IDRezervacija);
                 this.pregledRezervacija_LijekoviTableAdapter.FillByRezervacijaID(this._17003_DBDataSet.PregledRezervacija_Lijekovi, IDRezervacija);
             }
         }
-       
+       public void ObrisiLijek(int IDLijek, int IDRezervacija)
+        {
+            popisTableAdapter1.DeleteQueryLijek(IDLijek, IDRezervacija);
+        }
     }
 }
