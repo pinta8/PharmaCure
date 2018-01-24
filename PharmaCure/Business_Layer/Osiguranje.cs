@@ -12,9 +12,9 @@ namespace Business_Layer
     //Klasa napravljena od strane Krešimir Zelenika
     public class Osiguranje
     {
-        public int idOsiguranje { get; set; }
-        public string naziv { get; set; }
-
+        public int IDOsiguranje { get; set; }
+        public string Naziv { get; set; }
+        public double Partipacipacija { get; set; }
         //Metoda koja vraća listu Osiguranja
         public static List<Osiguranje> DohvatiOsiguranja()
         {
@@ -37,8 +37,8 @@ namespace Business_Layer
         public Osiguranje MakeOsiguranje(DataRow row)
         {
             Osiguranje lije = new Osiguranje();
-            lije.idOsiguranje = int.Parse(row["ID_Osiguranje"].ToString());
-            lije.naziv = row["Naziv"].ToString();
+            lije.IDOsiguranje = int.Parse(row["ID_Osiguranje"].ToString());
+            lije.Naziv = row["Naziv"].ToString();
             return lije;
         }
     }

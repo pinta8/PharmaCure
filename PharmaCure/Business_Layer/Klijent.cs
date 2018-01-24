@@ -12,9 +12,9 @@ namespace Business_Layer
     //Klasa napravljena od strane Krešimir Zelenika
     public class Klijent
     {
-        public int idKlijent { get; set; }
+        public int IDKlijent { get; set; }
         public string ImePrezime { get; set; }
-        public int osiguranje { get; set; }
+        public int OsiguranjeID { get; set; }
         
         //Metoda Koja vraća listu svih Klijenata
         public static List<Klijent> DohvatiSveKlijente()
@@ -54,9 +54,9 @@ namespace Business_Layer
         public Klijent MakeKlijent(DataRow row)
         {
             Klijent klije = new Klijent();
-            klije.idKlijent = int.Parse(row["ID_Klijent"].ToString());
+            klije.IDKlijent = int.Parse(row["ID_Klijent"].ToString());
             klije.ImePrezime = row["ImePrezime"].ToString();
-            klije.osiguranje = int.Parse(row["ID_Osiguranje"].ToString());
+            klije.OsiguranjeID = int.Parse(row["ID_Osiguranje"].ToString());
             return klije;
         }
     }

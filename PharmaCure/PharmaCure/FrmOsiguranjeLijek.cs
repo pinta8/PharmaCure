@@ -14,7 +14,7 @@ namespace PharmaCure
     public partial class FrmOsiguranjeLijek : Form
     {
         public List<Lijek> ll = new List<Lijek>();
-        public List<LijekOsiguranje> lo = new List<LijekOsiguranje>();
+        public List<Osiguranje> lo = new List<Osiguranje>();
         public List<PopisOsiguranihLijekova> pol = new List<PopisOsiguranihLijekova>();
         public FrmOsiguranjeLijek()
         {
@@ -40,7 +40,7 @@ namespace PharmaCure
         }
         private void dgvLijekovi_SelectionChanged(object sender, EventArgs e)
         {
-            lo = LijekOsiguranje.DohvatiOsiguranja(int.Parse(dgvLijekovi.CurrentRow.Cells[0].Value.ToString()));
+            lo = Osiguranje.DohvatiOsiguranja();
             cmbOsiguranje.DisplayMember = "naziv";
             cmbOsiguranje.ValueMember = "idOsiguranje";
             cmbOsiguranje.DataSource = lo;

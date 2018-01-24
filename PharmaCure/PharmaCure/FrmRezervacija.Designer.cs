@@ -32,40 +32,40 @@
             System.Windows.Forms.Label iD__rezervacijeLabel;
             System.Windows.Forms.Label datumLabel;
             System.Windows.Forms.Label imePrezimeLabel;
-            this.iD__rezervacijeTextBox = new System.Windows.Forms.TextBox();
-            this.rezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
             this.datumDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imePrezimeTextBox = new System.Windows.Forms.TextBox();
-            this.klijentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnOdaberiKlijenta = new System.Windows.Forms.Button();
             this.pregledRezervacija_LijekoviDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Lijeka = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pregledRezervacija_LijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
-            this.rezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
-            this.klijentTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.KlijentTableAdapter();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.lblArtikli = new System.Windows.Forms.Label();
+            this.iD__rezervacijeTextBox = new System.Windows.Forms.Label();
+            this.pregledRezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pregledRezervacija_LijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.klijentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
+            this.klijentTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.KlijentTableAdapter();
             this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
             this.popisTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.PopisTableAdapter();
-            this.pregledRezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pregledRezervacija_LijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacija_LijekoviTableAdapter();
             this.pregledRezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacijaTableAdapter();
             this.rezervacijaTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
             iD__rezervacijeLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             imePrezimeLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.rezervacijaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacija_LijekoviDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacija_LijekoviBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacijaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacija_LijekoviBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rezervacijaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iD__rezervacijeLabel
@@ -98,27 +98,10 @@
             imePrezimeLabel.TabIndex = 4;
             imePrezimeLabel.Text = "Ime i prezime klijenta:";
             // 
-            // iD__rezervacijeTextBox
-            // 
-            this.iD__rezervacijeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rezervacijaBindingSource, "ID__rezervacije", true));
-            this.iD__rezervacijeTextBox.Location = new System.Drawing.Point(124, 57);
-            this.iD__rezervacijeTextBox.Name = "iD__rezervacijeTextBox";
-            this.iD__rezervacijeTextBox.Size = new System.Drawing.Size(139, 20);
-            this.iD__rezervacijeTextBox.TabIndex = 2;
-            // 
-            // rezervacijaBindingSource
-            // 
-            this.rezervacijaBindingSource.DataMember = "Rezervacija";
-            this.rezervacijaBindingSource.DataSource = this._17003_DBDataSet;
-            // 
-            // _17003_DBDataSet
-            // 
-            this._17003_DBDataSet.DataSetName = "_17003_DBDataSet";
-            this._17003_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // datumDateTimePicker
             // 
             this.datumDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.rezervacijaBindingSource, "Datum", true));
+            this.datumDateTimePicker.Enabled = false;
             this.datumDateTimePicker.Location = new System.Drawing.Point(124, 91);
             this.datumDateTimePicker.Name = "datumDateTimePicker";
             this.datumDateTimePicker.Size = new System.Drawing.Size(139, 20);
@@ -131,11 +114,6 @@
             this.imePrezimeTextBox.Name = "imePrezimeTextBox";
             this.imePrezimeTextBox.Size = new System.Drawing.Size(139, 20);
             this.imePrezimeTextBox.TabIndex = 5;
-            // 
-            // klijentBindingSource
-            // 
-            this.klijentBindingSource.DataMember = "Klijent";
-            this.klijentBindingSource.DataSource = this._17003_DBDataSet;
             // 
             // btnOdaberiKlijenta
             // 
@@ -162,30 +140,12 @@
             this.pregledRezervacija_LijekoviDataGridView.Size = new System.Drawing.Size(481, 223);
             this.pregledRezervacija_LijekoviDataGridView.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv lijeka";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Kolicina";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Kolicina";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
             // ID_Lijeka
             // 
             this.ID_Lijeka.DataPropertyName = "ID_Lijeka";
             this.ID_Lijeka.HeaderText = "ID lijek";
             this.ID_Lijeka.Name = "ID_Lijeka";
             this.ID_Lijeka.ReadOnly = true;
-            // 
-            // pregledRezervacija_LijekoviBindingSource
-            // 
-            this.pregledRezervacija_LijekoviBindingSource.DataMember = "PregledRezervacija_Lijekovi";
-            this.pregledRezervacija_LijekoviBindingSource.DataSource = this._17003_DBDataSet;
             // 
             // btnDodaj
             // 
@@ -206,14 +166,6 @@
             this.btnObrisi.Text = "Obrisi lijek";
             this.btnObrisi.UseVisualStyleBackColor = true;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
-            // 
-            // rezervacijaTableAdapter
-            // 
-            this.rezervacijaTableAdapter.ClearBeforeFill = true;
-            // 
-            // klijentTableAdapter
-            // 
-            this.klijentTableAdapter.ClearBeforeFill = true;
             // 
             // btnSpremi
             // 
@@ -248,6 +200,61 @@
             this.lblArtikli.TabIndex = 46;
             this.lblArtikli.Text = "Lijekovi:";
             // 
+            // iD__rezervacijeTextBox
+            // 
+            this.iD__rezervacijeTextBox.AutoSize = true;
+            this.iD__rezervacijeTextBox.Location = new System.Drawing.Point(124, 60);
+            this.iD__rezervacijeTextBox.Name = "iD__rezervacijeTextBox";
+            this.iD__rezervacijeTextBox.Size = new System.Drawing.Size(35, 13);
+            this.iD__rezervacijeTextBox.TabIndex = 47;
+            this.iD__rezervacijeTextBox.Text = "label1";
+            // 
+            // pregledRezervacijaBindingSource
+            // 
+            this.pregledRezervacijaBindingSource.DataMember = "PregledRezervacija";
+            this.pregledRezervacijaBindingSource.DataSource = this._17003_DBDataSet;
+            // 
+            // _17003_DBDataSet
+            // 
+            this._17003_DBDataSet.DataSetName = "_17003_DBDataSet";
+            this._17003_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv lijeka";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Kolicina";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Kolicina";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // pregledRezervacija_LijekoviBindingSource
+            // 
+            this.pregledRezervacija_LijekoviBindingSource.DataMember = "PregledRezervacija_Lijekovi";
+            this.pregledRezervacija_LijekoviBindingSource.DataSource = this._17003_DBDataSet;
+            // 
+            // klijentBindingSource
+            // 
+            this.klijentBindingSource.DataMember = "Klijent";
+            this.klijentBindingSource.DataSource = this._17003_DBDataSet;
+            // 
+            // rezervacijaBindingSource
+            // 
+            this.rezervacijaBindingSource.DataMember = "Rezervacija";
+            this.rezervacijaBindingSource.DataSource = this._17003_DBDataSet;
+            // 
+            // rezervacijaTableAdapter
+            // 
+            this.rezervacijaTableAdapter.ClearBeforeFill = true;
+            // 
+            // klijentTableAdapter
+            // 
+            this.klijentTableAdapter.ClearBeforeFill = true;
+            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.AkcijaTableAdapter = null;
@@ -277,11 +284,6 @@
             // 
             this.popisTableAdapter1.ClearBeforeFill = true;
             // 
-            // pregledRezervacijaBindingSource
-            // 
-            this.pregledRezervacijaBindingSource.DataMember = "PregledRezervacija";
-            this.pregledRezervacijaBindingSource.DataSource = this._17003_DBDataSet;
-            // 
             // pregledRezervacija_LijekoviTableAdapter
             // 
             this.pregledRezervacija_LijekoviTableAdapter.ClearBeforeFill = true;
@@ -299,7 +301,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaCure.Properties.Resources.medical_cross_background_11;
-            this.ClientSize = new System.Drawing.Size(609, 462);
+            this.ClientSize = new System.Drawing.Size(617, 470);
+            this.Controls.Add(this.iD__rezervacijeTextBox);
             this.Controls.Add(this.lblArtikli);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremi);
@@ -312,17 +315,16 @@
             this.Controls.Add(datumLabel);
             this.Controls.Add(this.datumDateTimePicker);
             this.Controls.Add(iD__rezervacijeLabel);
-            this.Controls.Add(this.iD__rezervacijeTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRezervacija";
             this.Text = "FrmRezervacija";
             this.Load += new System.EventHandler(this.FrmRezervacija_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.rezervacijaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacija_LijekoviDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacija_LijekoviBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacijaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacija_LijekoviBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rezervacijaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,7 +337,6 @@
         private _17003_DBDataSetTableAdapters.RezervacijaTableAdapter rezervacijaTableAdapter;
         private _17003_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private _17003_DBDataSetTableAdapters.KlijentTableAdapter klijentTableAdapter;
-        private System.Windows.Forms.TextBox iD__rezervacijeTextBox;
         private System.Windows.Forms.DateTimePicker datumDateTimePicker;
         private System.Windows.Forms.BindingSource klijentBindingSource;
         private System.Windows.Forms.TextBox imePrezimeTextBox;
@@ -355,5 +356,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Lijeka;
+        private System.Windows.Forms.Label iD__rezervacijeTextBox;
     }
 }

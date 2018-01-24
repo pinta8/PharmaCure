@@ -12,11 +12,11 @@ namespace Business_Layer
     //klasa napravljena od strane Krešimir Zelenika
     public class LijekRecept
     {
-        public int ID_Lijek { get; set; }
+        public int IDLijek { get; set; }
         public string Naziv { get; set; }
-        public int ID_Klijent { get; set; }
         public int Kolicina { get; set; }
         public int Participacija { get; set; }
+        public int KlijentID { get; set; }
 
         //Metoda koja vraća listu svih recepata a za parametar prima id klijenta
         public static List<LijekRecept> DohvatiRecepte(int pom)
@@ -49,9 +49,9 @@ namespace Business_Layer
             SqlCommand Command = new SqlCommand();
             Command.CommandType = CommandType.Text;
             Command.CommandText = "INSERT INTO LijekoviRecept (ID_Lijeka, Naziv, ID_Klijent, Kolicina, Participacija) values (@ID_Lijek, @naziv, @ID_Klijent, @kolicina, @participacija)";
-            Command.Parameters.AddWithValue("@ID_Lijek", ID_Lijek);
+            Command.Parameters.AddWithValue("@ID_Lijek", IDLijek);
             Command.Parameters.AddWithValue("@naziv", Naziv);
-            Command.Parameters.AddWithValue("@ID_Klijent", ID_Klijent);
+            Command.Parameters.AddWithValue("@ID_Klijent", KlijentID);
             Command.Parameters.AddWithValue("@kolicina", Kolicina);
             Command.Parameters.AddWithValue("@participacija", Participacija);
             DBCon DB = new DBCon();
@@ -63,9 +63,9 @@ namespace Business_Layer
         public LijekRecept MakeLijekRecept(DataRow row)
         {
             LijekRecept rec = new LijekRecept();
-            rec.ID_Lijek = int.Parse(row["ID_Lijeka"].ToString());
+            rec.IDLijek = int.Parse(row["ID_Lijeka"].ToString());
             rec.Naziv = row["Naziv"].ToString();
-            rec.ID_Klijent = int.Parse(row["ID_Klijent"].ToString());
+            rec.KlijentID = int.Parse(row["ID_Klijent"].ToString());
             rec.Kolicina = int.Parse(row["Kolicina"].ToString());
             rec.Participacija = int.Parse(row["Participacija"].ToString());
             return rec;

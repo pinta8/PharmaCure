@@ -12,8 +12,8 @@ namespace Business_Layer
     //Klasa napravljena od strane Krešimir Zelenika
     public class PopisOsiguranihLijekova
     {
-        public string lijek { get; set; }
-        public string osiguranje { get; set; }
+        public int LijekID { get; set; }
+        public int OsiguranjeID { get; set; }
 
         //Metoda koja vraća listu svih lijekova i osiguranja
         public static List<PopisOsiguranihLijekova> DohvatiSvaOsiguranja()
@@ -53,8 +53,8 @@ namespace Business_Layer
         public PopisOsiguranihLijekova MakeOsiguranje(DataRow row)
         {
             PopisOsiguranihLijekova lije = new PopisOsiguranihLijekova();
-            lije.lijek = row["Naziv"].ToString();
-            lije.osiguranje = row["Osiguranje"].ToString();
+            lije.LijekID =int.Parse( row["Naziv"].ToString());
+            lije.OsiguranjeID = int.Parse(row["Osiguranje"].ToString());
             return lije;
         }
     }

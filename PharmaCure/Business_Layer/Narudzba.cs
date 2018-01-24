@@ -14,7 +14,6 @@ namespace Business_Layer
     {
         int poslovnicaId;
         int djelatnikId;
-
         int lijekId;
 
         List<StavkaNarudzbe> stavke;

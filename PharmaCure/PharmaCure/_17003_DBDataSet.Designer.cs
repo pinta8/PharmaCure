@@ -19264,7 +19264,7 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Datum, ImePrezime, idRezervacija, Klijent_id, Stanje FROM PregledRezervaci" +
@@ -19288,23 +19288,29 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        Datum, ImePrezime, idRezervacija, Klijent_id, Stanje\r\nFROM         " +
-                "   PregledRezervacija\r\nWHERE        (ImePrezime LIKE @imeprezime + \'%\')";
+            this._commandCollection[4].CommandText = "SELECT        Datum\r\nFROM            PregledRezervacija\r\nWHERE        (idRezervac" +
+                "ija = @idRezervacija)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imeprezime", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ImePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idRezervacija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idRezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        Datum, idRezervacija, Klijent_id, Stanje, ImePrezime\r\nFROM         " +
-                "   PregledRezervacija\r\nWHERE        (idRezervacija LIKE CAST(@idrezervacija AS v" +
-                "archar(255)) + \'%\')";
+            this._commandCollection[5].CommandText = "SELECT        Datum, ImePrezime, idRezervacija, Klijent_id, Stanje\r\nFROM         " +
+                "   PregledRezervacija\r\nWHERE        (ImePrezime LIKE @imeprezime + \'%\')";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idrezervacija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idRezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imeprezime", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ImePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        ImePrezime AS IDRez\r\nFROM            PregledRezervacija\r\nWHERE     " +
-                "   (idRezervacija = @idRezervacija)";
+            this._commandCollection[6].CommandText = "SELECT        Datum, idRezervacija, Klijent_id, Stanje, ImePrezime\r\nFROM         " +
+                "   PregledRezervacija\r\nWHERE        (idRezervacija LIKE CAST(@idrezervacija AS v" +
+                "archar(255)) + \'%\')";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idRezervacija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idRezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idrezervacija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idRezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT        ImePrezime AS IDRez\r\nFROM            PregledRezervacija\r\nWHERE     " +
+                "   (idRezervacija = @idRezervacija)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idRezervacija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idRezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19396,7 +19402,7 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int SelectPretraziByNaziv(_17003_DBDataSet.PregledRezervacijaDataTable dataTable, string imeprezime) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((imeprezime == null)) {
                 throw new global::System.ArgumentNullException("imeprezime");
             }
@@ -19415,7 +19421,7 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual _17003_DBDataSet.PregledRezervacijaDataTable GetDataBy4(string imeprezime) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((imeprezime == null)) {
                 throw new global::System.ArgumentNullException("imeprezime");
             }
@@ -19432,7 +19438,7 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int SelectPretraziIByIDRezervacije(_17003_DBDataSet.PregledRezervacijaDataTable dataTable, int idrezervacija) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idrezervacija));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19445,8 +19451,8 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual _17003_DBDataSet.PregledRezervacijaDataTable GetDataBy2(int idrezervacija) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+        public virtual _17003_DBDataSet.PregledRezervacijaDataTable GetDataBy21(int idrezervacija) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idrezervacija));
             _17003_DBDataSet.PregledRezervacijaDataTable dataTable = new _17003_DBDataSet.PregledRezervacijaDataTable();
             this.Adapter.Fill(dataTable);
@@ -19484,8 +19490,37 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<global::System.DateTime> SelectDatum(int idRezervacija) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            command.Parameters[0].Value = ((int)(idRezervacija));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<global::System.DateTime>();
+            }
+            else {
+                return new global::System.Nullable<global::System.DateTime>(((global::System.DateTime)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual string SelectVratiNaziv(int idRezervacija) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             command.Parameters[0].Value = ((int)(idRezervacija));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

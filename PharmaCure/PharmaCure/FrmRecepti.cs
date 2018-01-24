@@ -15,12 +15,11 @@ namespace PharmaCure
     {
         public List<LijekRecept> lr = new List<LijekRecept>();
         public List<Lijek> ll = new List<Lijek>();
-        public List<LijekOsiguranje> lo = new List<LijekOsiguranje>();
+        public List<Osiguranje> lo = new List<Osiguranje>();
         public FrmRecepti()
         {
             InitializeComponent();
         }
-
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             FrmMain m = new FrmMain();
@@ -42,10 +41,6 @@ namespace PharmaCure
             ll = Lijek.DohvatiSveLijekove();
             dgvLijekoviPravo.DataSource = ll;
         }
-        private void FrmRecepti_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void txtIDLijek_TextChanged(object sender, EventArgs e)
         {
@@ -54,7 +49,7 @@ namespace PharmaCure
 
         private void dgvLijekoviPravo_SelectionChanged(object sender, EventArgs e)
         {
-            lo = LijekOsiguranje.DohvatiOsiguranjaLijeka(int.Parse(dgvLijekoviPravo.CurrentRow.Cells[0].Value.ToString()));
+            lo = Osiguranje.DohvatiOsiguranja();
             cmbOsiguranje.DisplayMember = "naziv";
             cmbOsiguranje.ValueMember = "participacija";
             cmbOsiguranje.DataSource = lo;
@@ -63,9 +58,9 @@ namespace PharmaCure
         private void btnPropisi_Click(object sender, EventArgs e)
         {
             LijekRecept lijeR = new LijekRecept();
-            lijeR.ID_Lijek = int.Parse(dgvLijekoviPravo.CurrentRow.Cells[0].Value.ToString());
+            lijeR.IDLijek = int.Parse(dgvLijekoviPravo.CurrentRow.Cells[0].Value.ToString());
             lijeR.Naziv = dgvLijekoviPravo.CurrentRow.Cells[1].Value.ToString();
-            lijeR.ID_Klijent = int.Parse(txtIDKlijent.Text);
+            lijeR.KlijentID = int.Parse(txtIDKlijent.Text);
             lijeR.Kolicina = int.Parse(txtKolicina.Text);
             lijeR.Participacija = int.Parse(cmbOsiguranje.SelectedValue.ToString());
             lijeR.DodajRecept();
