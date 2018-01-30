@@ -32,7 +32,7 @@
             System.Windows.Forms.Label cijenaLabel;
             System.Windows.Forms.Label zemlja_porijeklaLabel;
             System.Windows.Forms.Label nazivLabel1;
-            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label lblDatumIsteka;
             System.Windows.Forms.Label datum_proizvodnjeLabel;
             System.Windows.Forms.Label kratki_opisLabel;
             System.Windows.Forms.Label nazivLabel;
@@ -56,7 +56,7 @@
             cijenaLabel = new System.Windows.Forms.Label();
             zemlja_porijeklaLabel = new System.Windows.Forms.Label();
             nazivLabel1 = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
+            lblDatumIsteka = new System.Windows.Forms.Label();
             datum_proizvodnjeLabel = new System.Windows.Forms.Label();
             kratki_opisLabel = new System.Windows.Forms.Label();
             nazivLabel = new System.Windows.Forms.Label();
@@ -95,15 +95,15 @@
             nazivLabel1.TabIndex = 60;
             nazivLabel1.Text = "Naziv kategorije:";
             // 
-            // label1
+            // lblDatumIsteka
             // 
-            label1.AutoSize = true;
-            label1.BackColor = System.Drawing.Color.Transparent;
-            label1.Location = new System.Drawing.Point(191, 115);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(72, 13);
-            label1.TabIndex = 70;
-            label1.Text = "Datum isteka:";
+            lblDatumIsteka.AutoSize = true;
+            lblDatumIsteka.BackColor = System.Drawing.Color.Transparent;
+            lblDatumIsteka.Location = new System.Drawing.Point(191, 115);
+            lblDatumIsteka.Name = "lblDatumIsteka";
+            lblDatumIsteka.Size = new System.Drawing.Size(72, 13);
+            lblDatumIsteka.TabIndex = 70;
+            lblDatumIsteka.Text = "Datum isteka:";
             // 
             // datum_proizvodnjeLabel
             // 
@@ -287,7 +287,7 @@
             this.Controls.Add(this.lblStanje);
             this.Controls.Add(this.stanjeCheckBox);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(label1);
+            this.Controls.Add(lblDatumIsteka);
             this.Controls.Add(this.datum_istekaDateTimePicker);
             this.Controls.Add(datum_proizvodnjeLabel);
             this.Controls.Add(this.datum_proizvodnjeDateTimePicker);
@@ -306,6 +306,7 @@
             this.Name = "FrmLijekNovi";
             this.Text = "FrmNoviLijek";
             this.Load += new System.EventHandler(this.FrmNoviLijek_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLijekNovi_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.kategorijaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekoviBindingSource)).EndInit();

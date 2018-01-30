@@ -16,6 +16,7 @@ namespace PharmaCure
         public FrmRezervacijaKlijent()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         private void FrmRezervacijaKlijent_Load(object sender, EventArgs e)
         {
@@ -65,6 +66,14 @@ namespace PharmaCure
             frmRezervacija.NacinRada = 1;
             frmRezervacija.Show();
             this.Close();
+        }
+
+        private void FrmRezervacijaKlijent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisnička-dokumentacija#2113-odabir-klijenta");
+            }
         }
     }
 }

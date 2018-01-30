@@ -18,7 +18,9 @@ namespace PharmaCure
         public FrmLijekNovi()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
+
         /// <summary>
         /// Forma ima 2 načina rada kao i kod rezervacija (unos novog lijeka ili izmjena podataka o postojećem lijeku). Ukoliko je 
         /// varijabla NacinRada !=0 tada se prikazuju u formi podaci od odabranog lijeka.
@@ -116,6 +118,14 @@ namespace PharmaCure
             FrmLijekPopis frmPopisLijekova = new FrmLijekPopis();
             frmPopisLijekova.Show();
             this.Close();
+        }
+
+        private void FrmLijekNovi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisnička-dokumentacija#212-unos-novog-lijeka");
+            }
         }
     }
 }

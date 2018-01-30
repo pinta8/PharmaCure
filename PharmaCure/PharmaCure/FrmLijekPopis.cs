@@ -13,10 +13,10 @@ namespace PharmaCure
 {
     public partial class FrmLijekPopis : Form
     {
-        public List<Lijek> l = new List<Lijek>();
         public FrmLijekPopis()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         /// <summary>
         /// Metoda za pozivanje F1 pomoći

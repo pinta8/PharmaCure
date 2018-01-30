@@ -20,6 +20,7 @@ namespace PharmaCure
         public FrmRezervacijaLijek()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         /// <summary>
         /// Ukoliko je odabran određen lijek u prijašnjoj formi tada se popunjavaju podaci prema tom lijeku
@@ -83,6 +84,14 @@ namespace PharmaCure
         public void UnesiLijek(int IDLijek, int IDRezervacija, int Kolicina)
         {
             popisTableAdapter.InsertQuery(IDLijek, IDRezervacija, Kolicina);
+        }
+
+        private void FrmRezervacijaLijek_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisnička-dokumentacija#2114-odabir-lijeka");
+            }
         }
     }
 }

@@ -16,6 +16,7 @@ namespace PharmaCure
         public FrmRezervacijaPopis()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         private void FrmPopisRezervacija_Load(object sender, EventArgs e)
         {
@@ -131,6 +132,14 @@ namespace PharmaCure
         public int TestStanje()
         {
             return int.Parse(pregledRezervacijaTableAdapter.SelectCountStanje().ToString());
+        }
+
+        private void FrmRezervacijaPopis_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisnička-dokumentacija#211-rezervacija-lijeka");
+            }
         }
     }
 }

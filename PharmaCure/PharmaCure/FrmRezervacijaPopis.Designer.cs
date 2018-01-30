@@ -287,6 +287,7 @@
             this.Name = "FrmRezervacijaPopis";
             this.Text = "FrmPopisRezervacija";
             this.Load += new System.EventHandler(this.FrmPopisRezervacija_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmRezervacijaPopis_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacijaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pregledRezervacijaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).EndInit();

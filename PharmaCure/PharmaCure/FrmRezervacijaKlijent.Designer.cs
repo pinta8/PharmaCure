@@ -245,6 +245,7 @@
             this.Name = "FrmRezervacijaKlijent";
             this.Text = "FrmRezervacijaNova";
             this.Load += new System.EventHandler(this.FrmRezervacijaKlijent_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmRezervacijaKlijent_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pregledKlijenataDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pregledKlijenataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._17003_DBDataSet)).EndInit();

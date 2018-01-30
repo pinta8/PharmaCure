@@ -48,5 +48,10 @@ namespace PharmaCure
                 System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisnička-dokumentacija#11-korisni%C4%8Dki-podaci");
             }
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

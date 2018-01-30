@@ -21,6 +21,7 @@ namespace PharmaCure
         public FrmRezervacija()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         } 
         /// <summary>
         /// Forma radi na 2 načina, ukoliko je NacinRada==1 tada to znači da smo u prijašnjoj formi odabrali neku postojeću rezervaciju 
@@ -120,6 +121,14 @@ namespace PharmaCure
        public void ObrisiLijek(int IDLijek, int IDRezervacija)
         {
             popisTableAdapter1.DeleteQueryLijek(IDLijek, IDRezervacija);
+        }
+
+        private void FrmRezervacija_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisnička-dokumentacija#2112-odre%C4%91ena-rezervacija");
+            }
         }
     }
 }
