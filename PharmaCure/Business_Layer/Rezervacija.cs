@@ -8,5 +8,12 @@ namespace Business_Layer
 {
     class Rezervacija
     {
+        public Osiguranje Osiguranje
+        {
+            get => default(Osiguranje);
+            set
+            {
+            }
+        }
     }
 }

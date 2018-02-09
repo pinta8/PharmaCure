@@ -167,8 +167,5 @@ namespace Business_Layer
 			SqlCommand command = new SqlCommand("DELETE FROM Djelatnik WHERE ID_Djelatnika="+zaposlenik.zaposlenikId);
 			baza.IzvrsiUpit(command);
 		}
-
-        
-        
 	}
 }
