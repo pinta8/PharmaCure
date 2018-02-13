@@ -14,14 +14,10 @@ namespace PharmaCure
     public partial class FrmStanje : Form
     {
         List<Dostupnost> dostupnost;
-        
         public FrmStanje()
         {
             InitializeComponent();
-            
-            
         }
-        
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             FrmMain m = new FrmMain();
@@ -46,7 +42,6 @@ namespace PharmaCure
             PripremiDgvLijek();
             PripremiKolicineManjeOdDeset();
         }
-
         private void btnNaruci_Click(object sender, EventArgs e) {
             FrmNabava f = new FrmNabava();
             f.ShowDialog();

@@ -15,10 +15,12 @@ namespace Business_Layer
         public int IDKlijent { get; set; }
         public string ImePrezime { get; set; }
         public int OsiguranjeID { get; set; }
+        DBCon dBCon = new DBCon();
         
         //Metoda Koja vraća listu svih Klijenata
         public static List<Klijent> DohvatiSveKlijente()
         {
+            DBCon dBCon = new DBCon();
             List<Klijent> ListaKlijenata = new List<Klijent>();
             SqlCommand Command = new SqlCommand();
             Command.CommandType = CommandType.Text;
