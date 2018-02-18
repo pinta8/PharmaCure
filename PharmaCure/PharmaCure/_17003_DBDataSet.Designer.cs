@@ -12390,11 +12390,18 @@ SELECT ID_Djelatnika, Ime, Lozinka, ID_Poslovnice, ID_Tip FROM Djelatnik WHERE (
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Djelatnika, Ime, Lozinka, ID_Poslovnice, ID_Tip FROM dbo.Djelatnik";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        COUNT(*) AS Expr1, Ime, Lozinka\r\nFROM            Djelatnik\r\nGROUP B" +
+                "Y Ime, Lozinka\r\nHAVING        (Ime = @korime) AND (Lozinka = @lozinka)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@korime", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Ime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lozinka", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Lozinka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12578,6 +12585,46 @@ SELECT ID_Djelatnika, Ime, Lozinka, ID_Poslovnice, ID_Tip FROM Djelatnik WHERE (
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Ime, string Lozinka, int ID_Poslovnice, int ID_Tip, int Original_ID_Djelatnika, string Original_Ime, string Original_Lozinka, int Original_ID_Poslovnice, int Original_ID_Tip) {
             return this.Update(Ime, Lozinka, ID_Poslovnice, ID_Tip, Original_ID_Djelatnika, Original_Ime, Original_Lozinka, Original_ID_Poslovnice, Original_ID_Tip, Original_ID_Djelatnika);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> SelectCountnadjidjelatnika(string korime, string lozinka) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((korime == null)) {
+                throw new global::System.ArgumentNullException("korime");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(korime));
+            }
+            if ((lozinka == null)) {
+                throw new global::System.ArgumentNullException("lozinka");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(lozinka));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
         }
     }
     

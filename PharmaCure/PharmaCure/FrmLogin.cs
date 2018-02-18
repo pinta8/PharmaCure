@@ -25,17 +25,17 @@ namespace PharmaCure
         /// <param name="e"></param>
         private void btnPrijava(object sender, EventArgs e)
         {
-            Zaposlenik z = Zaposlenik.DohvatiZaposlenika(tbxKorisnickoIme.Text, tbxLozinka.Text);
-            //if (z == null)
-            //{
-            //    MessageBox.Show("Neuspješna prijava");
-            //}
-            //else
-            //{
-            FrmMain m = new FrmMain();
-            m.Show();
-            this.Hide();
-            //}
+            try
+            {
+                int pronadjeno = int.Parse(djelatnikTableAdapter1.SelectCountnadjidjelatnika(tbxKorisnickoIme.Text, tbxLozinka.Text).ToString());
+                FrmMain m = new FrmMain();
+                m.Show();
+                this.Hide();
+            }
+            catch (System.FormatException)
+            {
+                MessageBox.Show("Neuspješna prijava");
+            }
         }
         private void button1_Click_1(object sender, EventArgs e)
         {

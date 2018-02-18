@@ -13,7 +13,7 @@ namespace PharmaCure
 {
     public partial class FrmStanje : Form
     {
-        List<Dostupnost> dostupnost;
+        List<Dostupnost> dostupnost = new List<Dostupnost>();
         public FrmStanje()
         {
             InitializeComponent();
