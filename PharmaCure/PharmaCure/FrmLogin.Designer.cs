@@ -36,7 +36,7 @@
             this.tbxLozinka = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.djelatnikTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.DjelatnikTableAdapter();
+            this.djelatnikTableAdapter1 = new PharmaCure._17003_DBDataSet1TableAdapters.DjelatnikTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,7 +113,6 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Izlaz";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // djelatnikTableAdapter1
             // 
@@ -135,8 +134,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,7 +149,7 @@
 		private System.Windows.Forms.TextBox tbxLozinka;
 		private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private _17003_DBDataSetTableAdapters.DjelatnikTableAdapter djelatnikTableAdapter1;
+        private _17003_DBDataSet1TableAdapters.DjelatnikTableAdapter djelatnikTableAdapter1;
     }
 }
 

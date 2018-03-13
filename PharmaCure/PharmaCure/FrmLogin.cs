@@ -37,21 +37,5 @@ namespace PharmaCure
                 MessageBox.Show("Neuspješna prijava");
             }
         }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.F1)
-            {
-                System.Diagnostics.Process.Start("https://github.com/foivz/r17003/wiki/Korisnička-dokumentacija#11-korisni%C4%8Dki-podaci");
-            }
-        }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

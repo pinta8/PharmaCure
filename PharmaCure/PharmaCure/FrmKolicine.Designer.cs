@@ -40,20 +40,20 @@
             this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
             this.dostupnostBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poslovnicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.poslovnicaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PoslovnicaTableAdapter();
-            this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
-            this.dostupnostTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.DostupnostTableAdapter();
-            this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.LijekoviTableAdapter();
+            this.poslovnicaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.PoslovnicaTableAdapter();
+            this.tableAdapterManager = new PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager();
+            this.dostupnostTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.DostupnostTableAdapter();
+            this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.LijekoviTableAdapter();
             this.lijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lijekoviComboBox = new System.Windows.Forms.ComboBox();
             this.poslovniceComboBox = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PregledLijekovaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter();
+            this.PregledLijekovaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.PregledLijekovaTableAdapter();
             this.grafStatistika = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.prikaziSve = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.btnPovratak = new System.Windows.Forms.Button();
-            this.lijekoviReceptTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.LijekoviReceptTableAdapter();
+            this.lijekoviReceptTableAdapter1 = new PharmaCure._17003_DBDataSet1TableAdapters.LijekoviReceptTableAdapter();
             lijekovi_IDLabel = new System.Windows.Forms.Label();
             poslovnica_IDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PregledLijekovaBindingSource)).BeginInit();
@@ -130,7 +130,7 @@
             this.tableAdapterManager.StanjaTableAdapter = null;
             this.tableAdapterManager.StavkeNarudzbeTableAdapter = null;
             this.tableAdapterManager.TipDjelatnikaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dostupnostTableAdapter
             // 
@@ -272,21 +272,21 @@
         #endregion
         private _17003_DBDataSet _17003_DBDataSet;
         private System.Windows.Forms.BindingSource poslovnicaBindingSource;
-        private _17003_DBDataSetTableAdapters.PoslovnicaTableAdapter poslovnicaTableAdapter;
-        private _17003_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private _17003_DBDataSetTableAdapters.DostupnostTableAdapter dostupnostTableAdapter;
+        private _17003_DBDataSet1TableAdapters.PoslovnicaTableAdapter poslovnicaTableAdapter;
+        private _17003_DBDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private _17003_DBDataSet1TableAdapters.DostupnostTableAdapter dostupnostTableAdapter;
         private System.Windows.Forms.BindingSource dostupnostBindingSource;
-        private _17003_DBDataSetTableAdapters.LijekoviTableAdapter lijekoviTableAdapter;
+        private _17003_DBDataSet1TableAdapters.LijekoviTableAdapter lijekoviTableAdapter;
         private System.Windows.Forms.BindingSource lijekoviBindingSource;
         private System.Windows.Forms.ComboBox lijekoviComboBox;
         private System.Windows.Forms.ComboBox poslovniceComboBox;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource PregledLijekovaBindingSource;
-        private _17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter PregledLijekovaTableAdapter;
+        private _17003_DBDataSet1TableAdapters.PregledLijekovaTableAdapter PregledLijekovaTableAdapter;
         private System.Windows.Forms.DataVisualization.Charting.Chart grafStatistika;
         private System.Windows.Forms.Button prikaziSve;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Button btnPovratak;
-        private _17003_DBDataSetTableAdapters.LijekoviReceptTableAdapter lijekoviReceptTableAdapter1;
+        private _17003_DBDataSet1TableAdapters.LijekoviReceptTableAdapter lijekoviReceptTableAdapter1;
     }
 }

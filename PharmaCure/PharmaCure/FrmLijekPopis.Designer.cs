@@ -40,13 +40,13 @@
             this.pregledLijekovaKategorijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._17003_DBDataSet = new PharmaCure._17003_DBDataSet();
             this.lijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.LijekoviTableAdapter();
-            this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
+            this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.LijekoviTableAdapter();
+            this.tableAdapterManager = new PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager();
             this.kategorijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kategorijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.KategorijaTableAdapter();
+            this.kategorijaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.KategorijaTableAdapter();
             this.pregledLijekovaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pregledLijekovaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter();
-            this.pregledLijekovaKategorijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledLijekovaKategorijaTableAdapter();
+            this.pregledLijekovaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.PregledLijekovaTableAdapter();
+            this.pregledLijekovaKategorijaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.PregledLijekovaKategorijaTableAdapter();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -181,7 +181,7 @@
             this.tableAdapterManager.StanjaTableAdapter = null;
             this.tableAdapterManager.StavkeNarudzbeTableAdapter = null;
             this.tableAdapterManager.TipDjelatnikaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // kategorijaBindingSource
             // 
@@ -369,18 +369,18 @@
         private System.Windows.Forms.Label lblArtikli;
         private _17003_DBDataSet _17003_DBDataSet;
         private System.Windows.Forms.BindingSource lijekoviBindingSource;
-        private _17003_DBDataSetTableAdapters.LijekoviTableAdapter lijekoviTableAdapter;
-        private _17003_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private _17003_DBDataSet1TableAdapters.LijekoviTableAdapter lijekoviTableAdapter;
+        private _17003_DBDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingSource kategorijaBindingSource;
-        private _17003_DBDataSetTableAdapters.KategorijaTableAdapter kategorijaTableAdapter;
+        private _17003_DBDataSet1TableAdapters.KategorijaTableAdapter kategorijaTableAdapter;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Button btnPromijeni;
         private System.Windows.Forms.Button btnNoviLijek;
         private System.Windows.Forms.BindingSource pregledLijekovaBindingSource;
-        private _17003_DBDataSetTableAdapters.PregledLijekovaTableAdapter pregledLijekovaTableAdapter;
+        private _17003_DBDataSet1TableAdapters.PregledLijekovaTableAdapter pregledLijekovaTableAdapter;
         private System.Windows.Forms.TextBox txtBoxPretrazi;
         private System.Windows.Forms.BindingSource pregledLijekovaKategorijaBindingSource;
-        private _17003_DBDataSetTableAdapters.PregledLijekovaKategorijaTableAdapter pregledLijekovaKategorijaTableAdapter;
+        private _17003_DBDataSet1TableAdapters.PregledLijekovaKategorijaTableAdapter pregledLijekovaKategorijaTableAdapter;
         private System.Windows.Forms.Button btnPretrazi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;

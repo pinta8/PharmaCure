@@ -47,7 +47,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -66,13 +66,13 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PharmaCure.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrtajGraf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Data_Layer\CrtajGraf.dll</HintPath>
-    </Reference>
-    <Reference Include="GoogleChartSharp">
-      <HintPath>..\..\..\..\..\Desktop\PI\GoogleChartSharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -251,9 +251,6 @@
     <Compile Include="StavkaNarudzbeUC.Designer.cs">
       <DependentUpon>StavkaNarudzbeUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="_17003_DBDataSet.cs">
-      <DependentUpon>_17003_DBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="_17003_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -336,7 +333,6 @@
     <EmbeddedResource Include="StavkaNarudzbeUC.resx">
       <DependentUpon>StavkaNarudzbeUC.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram3.cd" />
     <None Include="packages.config" />
     <None Include="PharmaCure-Presentation_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">

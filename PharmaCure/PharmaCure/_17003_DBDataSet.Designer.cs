@@ -20,7 +20,7 @@ namespace PharmaCure {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("_17003_DBDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("_17003_DBDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class _17003_DBDataSet : global::System.Data.DataSet {
         
@@ -811,9 +811,9 @@ namespace PharmaCure {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "_17003_DBDataSet";
+            this.DataSetName = "_17003_DBDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/_17003_DBDataSet.xsd";
+            this.Namespace = "http://tempuri.org/_17003_DBDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAkcija = new AkcijaDataTable();
@@ -11593,7 +11593,7 @@ namespace PharmaCure {
         }
     }
 }
-namespace PharmaCure._17003_DBDataSetTableAdapters {
+namespace PharmaCure._17003_DBDataSet1TableAdapters {
     
     
     /// <summary>
@@ -12780,9 +12780,8 @@ SELECT ID_Djelatnika, Ime, Lozinka, ID_Poslovnice, ID_Tip FROM Djelatnik WHERE (
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Lijekovi_ID, Poslovnica_ID, Kolicina_skladiste\r\nFROM            Dos" +
-                "tupnost\r\nWHERE        (Lijekovi_ID = @lijek_id) AND (Poslovnica_ID = @poslovnica" +
-                "_id)";
+            this._commandCollection[1].CommandText = "SELECT Kolicina_skladiste, Lijekovi_ID, Poslovnica_ID FROM Dostupnost WHERE (Lije" +
+                "kovi_ID = @lijek_id) AND (Poslovnica_ID = @poslovnica_id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lijek_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Lijekovi_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@poslovnica_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Poslovnica_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -13069,8 +13068,8 @@ SELECT ID_kategorija, Naziv, Opis FROM Kategorija WHERE (ID_kategorija = @ID_kat
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Naziv\r\nFROM            Kategorija\r\nWHERE        (ID_kategorija = @i" +
-                "dKategorija)";
+            this._commandCollection[1].CommandText = "SELECT ID_kategorija, Naziv, Opis FROM Kategorija WHERE (ID_kategorija = @idKateg" +
+                "orija)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKategorija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_kategorija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -13799,12 +13798,14 @@ SELECT ID_Lijek, Naziv, Kratki_opis, Datum_proizvodnje, Datum_isteka, Cijena, Ze
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Lijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT ID_Lijek, Naziv, Stanje FROM Lijekovi WHERE (Naziv = @nazivLijek)";
+            this._commandCollection[2].CommandText = "SELECT Cijena, Datum_isteka, Datum_proizvodnje, ID_Lijek, Kategorija_ID, Kratki_o" +
+                "pis, Naziv, Stanje, Zemlja_porijekla FROM Lijekovi WHERE (Naziv = @nazivLijek)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazivLijek", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Naziv, Stanje FROM Lijekovi WHERE (ID_Lijek = @idLijek)";
+            this._commandCollection[3].CommandText = "SELECT Cijena, Datum_isteka, Datum_proizvodnje, ID_Lijek, Kategorija_ID, Kratki_o" +
+                "pis, Naziv, Stanje, Zemlja_porijekla FROM Lijekovi WHERE (ID_Lijek = @idLijek)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
@@ -13825,8 +13826,8 @@ SELECT ID_Lijek, Naziv, Kratki_opis, Datum_proizvodnje, Datum_isteka, Cijena, Ze
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stanje", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Stanje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT ID_Lijek, Naziv, Kratki_opis, Datum_proizvodnje, Datum_isteka, Cijena, Zem" +
-                "lja_porijekla, Kategorija_ID, Stanje FROM Lijekovi WHERE (ID_Lijek = @idLijek)";
+            this._commandCollection[5].CommandText = "SELECT Cijena, Datum_isteka, Datum_proizvodnje, ID_Lijek, Kategorija_ID, Kratki_o" +
+                "pis, Naziv, Stanje, Zemlja_porijekla FROM Lijekovi WHERE (ID_Lijek = @idLijek)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
@@ -15907,14 +15908,14 @@ SELECT ID_Lijeka, ID__Rezervacija, Kolicina FROM Popis WHERE (ID_Lijeka = @ID_Li
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idRezervacija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID__Rezervacija", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        ID_Lijeka, ID__Rezervacija, Kolicina\r\nFROM            Popis\r\nWHERE " +
-                "       (ID__Rezervacija = @rezervacijaID)";
+            this._commandCollection[3].CommandText = "SELECT ID_Lijeka, ID__Rezervacija, Kolicina FROM Popis WHERE (ID__Rezervacija = @" +
+                "rezervacijaID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rezervacijaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID__Rezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        ID_Lijeka, ID__Rezervacija, Kolicina\r\nFROM            Popis\r\nWHERE " +
-                "       (ID__Rezervacija = @rezervacijaID)";
+            this._commandCollection[4].CommandText = "SELECT ID_Lijeka, ID__Rezervacija, Kolicina FROM Popis WHERE (ID__Rezervacija = @" +
+                "rezervacijaID)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rezervacijaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID__Rezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
@@ -17469,8 +17470,8 @@ SELECT ID__rezervacije, Datum, Klijent_id, Stanje FROM Rezervacija WHERE (ID__re
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKlijent", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Klijent_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        ID__rezervacije, Datum, Klijent_id, Stanje\r\nFROM            Rezerva" +
-                "cija\r\nWHERE        (ID__rezervacije = @idRezervacija)";
+            this._commandCollection[5].CommandText = "SELECT Datum, ID__rezervacije, Klijent_id, Stanje FROM Rezervacija WHERE (ID__rez" +
+                "ervacije = @idRezervacija)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idRezervacija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID__rezervacije", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
@@ -19079,16 +19080,15 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Naziv, NazivLijeka, Kolicina_skladiste, ID_Lijek, ID_Poslovnica\r\nFR" +
-                "OM            PregledLijekova\r\nWHERE        (ID_Lijek = @id_lijek) AND (ID_Poslo" +
-                "vnica = @id_poslovnica)";
+            this._commandCollection[1].CommandText = "SELECT ID_Lijek, ID_Poslovnica, Kolicina_skladiste, Naziv, NazivLijeka FROM Pregl" +
+                "edLijekova WHERE (ID_Lijek = @id_lijek) AND (ID_Poslovnica = @id_poslovnica)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_lijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_poslovnica", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Poslovnica", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Naziv, NazivLijeka, Kolicina_skladiste, ID_Lijek, ID_Poslovnica\r\nFR" +
-                "OM            PregledLijekova\r\nWHERE        (ID_Poslovnica = @poslovnicaID)";
+            this._commandCollection[2].CommandText = "SELECT ID_Lijek, ID_Poslovnica, Kolicina_skladiste, Naziv, NazivLijeka FROM Pregl" +
+                "edLijekova WHERE (ID_Poslovnica = @poslovnicaID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@poslovnicaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Poslovnica", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -19319,14 +19319,14 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Datum, ImePrezime, idRezervacija, Klijent_id, Stanje FROM PregledRezervaci" +
+            this._commandCollection[1].CommandText = "SELECT Datum, ImePrezime, Klijent_id, Stanje, idRezervacija FROM PregledRezervaci" +
                 "ja WHERE (Klijent_id = @idKlijent)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKlijent", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Klijent_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Datum, ImePrezime, idRezervacija, Klijent_id, Stanje\r\nFROM         " +
-                "   PregledRezervacija\r\nWHERE        (Stanje = 1)";
+            this._commandCollection[2].CommandText = "SELECT Datum, ImePrezime, Klijent_id, Stanje, idRezervacija FROM PregledRezervaci" +
+                "ja WHERE (Stanje = 1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -19341,15 +19341,14 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idRezervacija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idRezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        Datum, ImePrezime, idRezervacija, Klijent_id, Stanje\r\nFROM         " +
-                "   PregledRezervacija\r\nWHERE        (ImePrezime LIKE @imeprezime + \'%\')";
+            this._commandCollection[5].CommandText = "SELECT Datum, ImePrezime, Klijent_id, Stanje, idRezervacija FROM PregledRezervaci" +
+                "ja WHERE (ImePrezime LIKE @imeprezime + \'%\')";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imeprezime", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ImePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        Datum, idRezervacija, Klijent_id, Stanje, ImePrezime\r\nFROM         " +
-                "   PregledRezervacija\r\nWHERE        (idRezervacija LIKE CAST(@idrezervacija AS v" +
-                "archar(255)) + \'%\')";
+            this._commandCollection[6].CommandText = "SELECT Datum, ImePrezime, Klijent_id, Stanje, idRezervacija FROM PregledRezervaci" +
+                "ja WHERE (idRezervacija LIKE CAST(@idrezervacija AS varchar(255)) + \'%\')";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idrezervacija", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idRezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
@@ -19739,7 +19738,7 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT ID__Rezervacija, Naziv, Kolicina, ID_Lijeka FROM PregledRezervacija_Lijeko" +
+            this._commandCollection[1].CommandText = "SELECT ID_Lijeka, ID__Rezervacija, Kolicina, Naziv FROM PregledRezervacija_Lijeko" +
                 "vi WHERE (ID__Rezervacija = @idRezervacije)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idRezervacije", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID__Rezervacija", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -19949,33 +19948,31 @@ SELECT ID_Lijek, ID_Narudzbe, kolicina FROM StavkeNarudzbe WHERE (ID_Lijek = @ID
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        ID_Lijek, naziv, Kratki_opis, Datum_proizvodnje, Datum_isteka, Cijena, Zemlja_porijekla, Kategorija_ID, NazivKategorije, Stanje
-FROM            PregledLijekovaKategorija
-WHERE        (naziv LIKE @naziv) OR
-                         (ID_Lijek LIKE @id)";
+            this._commandCollection[1].CommandText = "SELECT Cijena, Datum_isteka, Datum_proizvodnje, ID_Lijek, Kategorija_ID, Kratki_o" +
+                "pis, NazivKategorije, Stanje, Zemlja_porijekla, naziv FROM PregledLijekovaKatego" +
+                "rija WHERE (naziv LIKE @naziv) OR (ID_Lijek LIKE @id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@naziv", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        ID_Lijek, naziv, Kratki_opis, Datum_proizvodnje, Datum_isteka, Cije" +
-                "na, Zemlja_porijekla, Kategorija_ID, NazivKategorije, Stanje\r\nFROM            Pr" +
-                "egledLijekovaKategorija\r\nWHERE        (ID_Lijek LIKE CAST(@idLijek AS varchar(25" +
-                "5)) + \'%\')";
+            this._commandCollection[2].CommandText = "SELECT Cijena, Datum_isteka, Datum_proizvodnje, ID_Lijek, Kategorija_ID, Kratki_o" +
+                "pis, NazivKategorije, Stanje, Zemlja_porijekla, naziv FROM PregledLijekovaKatego" +
+                "rija WHERE (ID_Lijek LIKE CAST(@idLijek AS varchar(255)) + \'%\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLijek", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Lijek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        ID_Lijek, naziv, Kratki_opis, Datum_proizvodnje, Datum_isteka, Cije" +
-                "na, Zemlja_porijekla, Kategorija_ID, NazivKategorije, Stanje\r\nFROM            Pr" +
-                "egledLijekovaKategorija\r\nWHERE        (naziv LIKE @naziv + \'%\')";
+            this._commandCollection[3].CommandText = "SELECT Cijena, Datum_isteka, Datum_proizvodnje, ID_Lijek, Kategorija_ID, Kratki_o" +
+                "pis, NazivKategorije, Stanje, Zemlja_porijekla, naziv FROM PregledLijekovaKatego" +
+                "rija WHERE (naziv LIKE @naziv + \'%\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@naziv", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        ID_Lijek, naziv, Kratki_opis, Datum_proizvodnje, Datum_isteka, Cije" +
-                "na, Zemlja_porijekla, Kategorija_ID, NazivKategorije, Stanje\r\nFROM            Pr" +
-                "egledLijekovaKategorija\r\nWHERE        (Stanje = 1)";
+            this._commandCollection[4].CommandText = "SELECT Cijena, Datum_isteka, Datum_proizvodnje, ID_Lijek, Kategorija_ID, Kratki_o" +
+                "pis, NazivKategorije, Stanje, Zemlja_porijekla, naziv FROM PregledLijekovaKatego" +
+                "rija WHERE (Stanje = 1)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20272,14 +20269,14 @@ WHERE        (naziv LIKE @naziv) OR
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ID_Klijent, ImePrezime, Naziv\r\nFROM            PregledKlijenata\r\nWH" +
-                "ERE        (ID_Klijent = @idklijent) ";
+            this._commandCollection[1].CommandText = "SELECT ID_Klijent, ImePrezime, Naziv FROM PregledKlijenata WHERE (ID_Klijent = @i" +
+                "dklijent)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idklijent", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klijent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT ID_Klijent, ImePrezime, Naziv FROM dbo.PregledKlijenata where ImePrezime=@" +
-                "imeprezime\r\n";
+            this._commandCollection[2].CommandText = "SELECT ID_Klijent, ImePrezime, Naziv FROM PregledKlijenata WHERE (ImePrezime = @i" +
+                "meprezime)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imeprezime", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ImePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

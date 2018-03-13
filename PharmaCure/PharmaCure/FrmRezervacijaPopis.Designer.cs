@@ -44,10 +44,10 @@
             this.btnPretrazi = new System.Windows.Forms.Button();
             this.txtBoxPretrazi = new System.Windows.Forms.TextBox();
             this.lblPretragaTekst = new System.Windows.Forms.Label();
-            this.pregledRezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacijaTableAdapter();
-            this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
+            this.pregledRezervacijaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.PregledRezervacijaTableAdapter();
+            this.tableAdapterManager = new PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager();
             this.rezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
+            this.rezervacijaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.RezervacijaTableAdapter();
             this.btnIzmijeniPodatke = new System.Windows.Forms.Button();
             this.lblPretragaCombo = new System.Windows.Forms.Label();
             this.comboBoxPretraga = new System.Windows.Forms.ComboBox();
@@ -129,7 +129,7 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(90, 65);
+            this.btnDodaj.Location = new System.Drawing.Point(90, 66);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(119, 28);
             this.btnDodaj.TabIndex = 1;
@@ -221,7 +221,7 @@
             this.tableAdapterManager.StanjaTableAdapter = null;
             this.tableAdapterManager.StavkeNarudzbeTableAdapter = null;
             this.tableAdapterManager.TipDjelatnikaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // rezervacijaBindingSource
             // 
@@ -301,8 +301,8 @@
 
         private _17003_DBDataSet _17003_DBDataSet;
         private System.Windows.Forms.BindingSource pregledRezervacijaBindingSource;
-        private _17003_DBDataSetTableAdapters.PregledRezervacijaTableAdapter pregledRezervacijaTableAdapter;
-        private _17003_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private _17003_DBDataSet1TableAdapters.PregledRezervacijaTableAdapter pregledRezervacijaTableAdapter;
+        private _17003_DBDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView pregledRezervacijaDataGridView;
         private System.Windows.Forms.Label lblArtikli;
         private System.Windows.Forms.Button btnDodaj;
@@ -312,7 +312,7 @@
         private System.Windows.Forms.Button btnPretrazi;
         private System.Windows.Forms.TextBox txtBoxPretrazi;
         private System.Windows.Forms.BindingSource rezervacijaBindingSource;
-        private _17003_DBDataSetTableAdapters.RezervacijaTableAdapter rezervacijaTableAdapter;
+        private _17003_DBDataSet1TableAdapters.RezervacijaTableAdapter rezervacijaTableAdapter;
         private System.Windows.Forms.Label lblPretragaTekst;
         private System.Windows.Forms.Button btnIzmijeniPodatke;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
