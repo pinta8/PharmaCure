@@ -119,7 +119,7 @@ namespace PharmaCure
                         MessageBox.Show("Upisana vrijednost mora biti broj!");
                         pregledRezervacijaTableAdapter.SelectByStanje(this._17003_DBDataSet.PregledRezervacija);
                     }
-                    pregledRezervacijaTableAdapter.SelectPretraziIByIDRezervacije(this._17003_DBDataSet.PregledRezervacija, IDRezervacija);
+                    pregledRezervacijaTableAdapter.SelectPretraziByIDRezervacije(this._17003_DBDataSet.PregledRezervacija, IDRezervacija);
                     pregledRezervacijaDataGridView.Columns[3].Visible = true;
                 }
                 else

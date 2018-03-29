@@ -48,9 +48,9 @@
             this.nazivTextBox = new System.Windows.Forms.TextBox();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.lijekoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.LijekoviTableAdapter();
-            this.kategorijaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.KategorijaTableAdapter();
-            this.tableAdapterManager = new PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager();
+            this.lijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.LijekoviTableAdapter();
+            this.kategorijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.KategorijaTableAdapter();
+            this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
             this.stanjeCheckBox = new System.Windows.Forms.CheckBox();
             this.lblStanje = new System.Windows.Forms.Label();
             cijenaLabel = new System.Windows.Forms.Label();
@@ -254,7 +254,7 @@
             this.tableAdapterManager.StanjaTableAdapter = null;
             this.tableAdapterManager.StavkeNarudzbeTableAdapter = null;
             this.tableAdapterManager.TipDjelatnikaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // stanjeCheckBox
             // 
@@ -327,10 +327,10 @@
         private System.Windows.Forms.Button btnOdustani;
         private _17003_DBDataSet _17003_DBDataSet;
         private System.Windows.Forms.BindingSource lijekoviBindingSource;
-        private _17003_DBDataSet1TableAdapters.LijekoviTableAdapter lijekoviTableAdapter;
+        private _17003_DBDataSetTableAdapters.LijekoviTableAdapter lijekoviTableAdapter;
         private System.Windows.Forms.BindingSource kategorijaBindingSource;
-        private _17003_DBDataSet1TableAdapters.KategorijaTableAdapter kategorijaTableAdapter;
-        private _17003_DBDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private _17003_DBDataSetTableAdapters.KategorijaTableAdapter kategorijaTableAdapter;
+        private _17003_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.CheckBox stanjeCheckBox;
         private System.Windows.Forms.Label lblStanje;
     }

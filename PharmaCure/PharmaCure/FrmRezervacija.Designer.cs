@@ -49,13 +49,13 @@
             this.lblArtikli = new System.Windows.Forms.Label();
             this.iD__rezervacijeTextBox = new System.Windows.Forms.Label();
             this.pregledRezervacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rezervacijaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.RezervacijaTableAdapter();
-            this.klijentTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.KlijentTableAdapter();
-            this.tableAdapterManager = new PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager();
-            this.popisTableAdapter1 = new PharmaCure._17003_DBDataSet1TableAdapters.PopisTableAdapter();
-            this.pregledRezervacija_LijekoviTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.PregledRezervacija_LijekoviTableAdapter();
-            this.pregledRezervacijaTableAdapter = new PharmaCure._17003_DBDataSet1TableAdapters.PregledRezervacijaTableAdapter();
-            this.rezervacijaTableAdapter1 = new PharmaCure._17003_DBDataSet1TableAdapters.RezervacijaTableAdapter();
+            this.rezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
+            this.klijentTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.KlijentTableAdapter();
+            this.tableAdapterManager = new PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager();
+            this.popisTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.PopisTableAdapter();
+            this.pregledRezervacija_LijekoviTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacija_LijekoviTableAdapter();
+            this.pregledRezervacijaTableAdapter = new PharmaCure._17003_DBDataSetTableAdapters.PregledRezervacijaTableAdapter();
+            this.rezervacijaTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.RezervacijaTableAdapter();
             iD__rezervacijeLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             imePrezimeLabel = new System.Windows.Forms.Label();
@@ -267,7 +267,7 @@
             this.tableAdapterManager.StanjaTableAdapter = null;
             this.tableAdapterManager.StavkeNarudzbeTableAdapter = null;
             this.tableAdapterManager.TipDjelatnikaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = PharmaCure._17003_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // popisTableAdapter1
             // 
@@ -323,24 +323,24 @@
 
         private _17003_DBDataSet _17003_DBDataSet;
         private System.Windows.Forms.BindingSource rezervacijaBindingSource;
-        private _17003_DBDataSet1TableAdapters.RezervacijaTableAdapter rezervacijaTableAdapter;
-        private _17003_DBDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
-        private _17003_DBDataSet1TableAdapters.KlijentTableAdapter klijentTableAdapter;
+        private _17003_DBDataSetTableAdapters.RezervacijaTableAdapter rezervacijaTableAdapter;
+        private _17003_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private _17003_DBDataSetTableAdapters.KlijentTableAdapter klijentTableAdapter;
         private System.Windows.Forms.DateTimePicker datumDateTimePicker;
         private System.Windows.Forms.BindingSource klijentBindingSource;
         private System.Windows.Forms.TextBox imePrezimeTextBox;
         private System.Windows.Forms.Button btnOdaberiKlijenta;
         private System.Windows.Forms.BindingSource pregledRezervacija_LijekoviBindingSource;
-        private _17003_DBDataSet1TableAdapters.PregledRezervacija_LijekoviTableAdapter pregledRezervacija_LijekoviTableAdapter;
+        private _17003_DBDataSetTableAdapters.PregledRezervacija_LijekoviTableAdapter pregledRezervacija_LijekoviTableAdapter;
         private System.Windows.Forms.DataGridView pregledRezervacija_LijekoviDataGridView;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Label lblArtikli;
         private System.Windows.Forms.BindingSource pregledRezervacijaBindingSource;
-        private _17003_DBDataSet1TableAdapters.PregledRezervacijaTableAdapter pregledRezervacijaTableAdapter;
-        private _17003_DBDataSet1TableAdapters.PopisTableAdapter popisTableAdapter1;
-        private _17003_DBDataSet1TableAdapters.RezervacijaTableAdapter rezervacijaTableAdapter1;
+        private _17003_DBDataSetTableAdapters.PregledRezervacijaTableAdapter pregledRezervacijaTableAdapter;
+        private _17003_DBDataSetTableAdapters.PopisTableAdapter popisTableAdapter1;
+        private _17003_DBDataSetTableAdapters.RezervacijaTableAdapter rezervacijaTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Lijeka;

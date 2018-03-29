@@ -36,7 +36,7 @@
             this.tbxLozinka = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.djelatnikTableAdapter1 = new PharmaCure._17003_DBDataSet1TableAdapters.DjelatnikTableAdapter();
+            this.djelatnikTableAdapter1 = new PharmaCure._17003_DBDataSetTableAdapters.DjelatnikTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,6 +113,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Izlaz";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // djelatnikTableAdapter1
             // 
@@ -149,7 +150,7 @@
 		private System.Windows.Forms.TextBox tbxLozinka;
 		private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private _17003_DBDataSet1TableAdapters.DjelatnikTableAdapter djelatnikTableAdapter1;
+        private _17003_DBDataSetTableAdapters.DjelatnikTableAdapter djelatnikTableAdapter1;
     }
 }
 

@@ -251,6 +251,9 @@
     <Compile Include="StavkaNarudzbeUC.Designer.cs">
       <DependentUpon>StavkaNarudzbeUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="_17003_DBDataSet.cs">
+      <DependentUpon>_17003_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_17003_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

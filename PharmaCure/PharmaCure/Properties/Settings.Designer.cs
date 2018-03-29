@@ -44,5 +44,16 @@ namespace PharmaCure.Properties {
                 return ((string)(this["_17003_DBConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\danij\\source\\repos\\r" +
+            "17003v2\\PharmaCure\\Data_Layer\\DB_17003.mdf;Integrated Security=True")]
+        public string DB_17003MDFConnectionString {
+            get {
+                return ((string)(this["DB_17003MDFConnectionString"]));
+            }
+        }
     }
 }
